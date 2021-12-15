@@ -1,0 +1,69 @@
+.box-produtos {
+/*    width: 200px;
+    height: 400px;*/
+/*    padding: 10px;*/
+/*    margin: 10px;*/
+/*    float: left;*/
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width:96%;
+}
+.box-produtos .mask,.box-produtos .content {
+width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+}
+.box-produtos img {
+   display: block;
+   position: relative;
+}
+.box-produtos h2 {
+   text-transform: uppercase;
+   color: #fff;
+   text-align: center;
+   position: relative;
+   font-size: 17px;
+   padding: 10px;
+   background: rgba(0, 0, 0, 0.8);
+   margin: 20px 0 0 0;
+}
+.box-produtos p {
+
+    font-size: 14px;
+    position: relative;
+    color: #040404;
+    text-align: center;
+}
+.titulo-produto {
+    /*font-size: 16px !important;*/
+    font-size: 12px !important;
+    text-transform: uppercase;
+}
+
+.desc-produto {
+    margin:5% 0 !important;
+}
+
+.valor-de-para {
+    margin-bottom:5% !important;
+}
+.box-produtos a.info {
+   display: inline-block;
+   text-decoration: none;
+   padding: 7px 14px;
+   background: #000;
+   color: #fff;
+   text-transform: uppercase;
+   -webkit-box-shadow: 0 0 1px #000;
+   -moz-box-shadow: 0 0 1px #000;
+   box-shadow: 0 0 1px #000;
+}
+.box-produtos a.info: hover {
+   -webkit-box-shadow: 0 0 5px #000;
+   -moz-box-shadow: 0 0 5px #000;
+   box-shadow: 0 0 5px #000;
+}

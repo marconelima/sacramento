@@ -1,0 +1,29 @@
+CIA DO SITE - TESTE CADASTRO NO FORMULÁRIO DE PRÉ-CADASTRO
+999.888.777-55
+MG-9.253.654
+07/11/2000
+Avenida Doutor Cristiano Machado
+10236
+32.500-300
+Vila Real Europeia
+Governador Valadares
+MG
+(31) 3689-5274
+(31) 98747-6885
+ciadosite@ciadosite.com.br
+Sim
+Produtos Diversos
+1.587,90
+MONICA CUNHA FARIA DE LIMA
+Irmã
+(35) 6564-7978
+(35) 99550-6078
+Paulo Araujo Nascimento da Costa
+Pai
+(38) 7580-7040
+(31) 98440-2030
+ÂNGELA MARIA GABRIELA MARQUES CRUZ
+Mãe
+(33) 4050-7980
+(34) 97060-8531
+CIA DO SITE - TESTE CADASTRO NO FORMULÁRIO DE PRÉ-CADASTRO - Testando este formulário para verificar se esta funcionando normalmente teste realizado em 07/11/2016 às 18:25h.

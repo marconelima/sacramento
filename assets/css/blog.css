@@ -1,0 +1,174 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,300,700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+
+/*
+Table Of Contents
+
+bootstrap override 		- Here we overriding some of predefined bootstrap styles.
+vertical margins		- Here we set up a vertical margins and paddings for main sections of our HTML Temlpate.
+general styles 			- In this section we set up a base template styles, such as links color, general section styles, theme styled buttons, utility classes etc.
+Common Sections  		- In this section we styling our main sections classes (color sections, dark and light sections, parallax) and common elements within it (headings, links, etc).
+Main Menu Styles  		- In this section we styling our Main Menu.
+blocks  				- Here you can find styles for common blocks, such as upcomming events, classes, timetable etc.
+blog 				 	- This section contains styles for a blog page and a single post page.
+widgets 				- In this sections we styled all major shortcodes and widgets.
+page preloader 			- In this section are styles page preloader.
+owl carousel 			- This section contains styles for owl carousel plugin
+BxSlider 				- This section contains styles for Bx Slider plugin
+totop 				 	- In this section you'll find a styles for ToTop button.
+teaser icons 			- This section responsible for decorative icons that we use in our template. You can find all of these icons in this documentation.
+social icons 			- This section responsible for social icons that we use in our template. You can find all of these icons in this documentation.
+prettyPhoto 			- In this section are styles for prettyPhoto LightBox plugin.
+
+*/
+
+/*blog*/
+
+.blog-posts figure {
+    background-color: <?php echo $rs_configuracao['barra_cabecalho'];?>;
+    position: relative;
+}
+figure.effect-milo {
+    overflow: hidden;
+}
+.blog-posts .date {
+    text-align: center;
+    background-color: <?php echo $rs_configuracao['barra_cabecalho'];?>;
+    left: 0;
+    padding: 8px;
+    position: absolute;
+    top: 0; 
+    z-index: 9;
+}
+.date h3, .date h6 {
+    color: #fff;   
+    margin: 0;
+    text-align: center;
+}
+#post-blogs img {
+    max-width: 100%;
+    opacity: 1;
+    transition: all 0.5s ease 0s;
+}
+
+.blog-posts .likes-n-comments {
+    background-color: rgba(0, 0, 0, 0.6);
+    bottom: 0;
+    color: #fff;
+    height: 100%;
+    left: 0;
+    padding: 30px;
+    position: absolute;
+    transition: all 0.3s ease-out 0s;
+    width: 100%;
+}
+.blog-posts .likes {
+    margin-top: 20%;
+    color: #fff;
+    transition: all 0.3s ease 0s;
+}
+figure.effect-milo p {
+    padding: 0 10px 0 0;   
+   
+}
+.blog-posts .more-btn {
+    border: 2px solid #fff;
+    color: #fff;
+    transition: all 0.3s ease 0s;
+}
+.blog-posts .more-btn:hover {
+    background: transparent;
+    border: 2px solid <?php echo $rs_configuracao['barra_cabecalho'];?>;
+    color: <?php echo $rs_configuracao['barra_cabecalho'];?>;   
+}
+.blog-post-heading {
+    margin: 0 0 36px;
+    padding: 0 0 5px;
+}
+
+.blog-post-type:after, .blog-post-type:before {
+    border: medium solid transparent;
+    content: " ";
+    height: 0;
+    left: 100%;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    width: 0;
+}
+.blog-post-type:after, .blog-post-type:before {
+    border: medium solid transparent;
+    content: " ";
+    height: 0;
+    left: 100%;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    width: 0;
+}
+.blog-post-type:after {
+    border-color: rgba(255, 255, 255, 0) rgba(255, 255, 255, 0) rgba(255, 255, 255, 0) #ffffff;
+    border-width: 2px;
+    margin-top: -2px;
+}
+.blog-post-type:before {
+    border-color: rgba(127, 148, 161, 0) rgba(127, 148, 161, 0) rgba(127, 148, 161, 0) #acacac;
+    border-width: 4px;
+    margin-top: -4px;
+}
+.blog-post-type {
+    border-right: 1px solid #acacac;
+    display: inline-block;
+    margin: 10px 0;
+    padding-right: 20px;
+    position: relative;
+    vertical-align: text-bottom;
+}
+.blog-post-heading .fa {
+    border-color: <?php echo $rs_configuracao['barra_cabecalho'];?>;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 4px;
+    color: <?php echo $rs_configuracao['barra_cabecalho'];?>;
+    font-size: 24px;
+    padding: 3px 4px;
+}
+.blog-post-title {
+    display: inline-block;
+    padding-left: 20px;
+}
+.blog-post-title h3 {
+    color: #626161;
+    font: 400 23px 'Lato',sans-serif;
+}
+.blog-post-title h6 {
+    color: #878787;
+    font: 400 14px 'Lato',sans-serif;
+}
+.blog-post-heading .fa-play {
+    padding: 5px 5px 5px 10px;
+}
+.blog-post-heading .fa-bars {
+    border-radius: 5px;
+}
+.blog-post-heading .fa-music {
+    padding: 6px 8px;
+}
+.blog-post-heading .fa-music {
+    padding: 6px 8px;
+}
+.likes-n-comments a, .likes-n-comments p, .likes-n-comments{
+    opacity: 0;
+    transform: scale(0.5);
+}
+.blog-posts:hover .likes-n-comments a,.blog-posts:hover .likes-n-comments p,.blog-posts:hover .likes-n-comments{
+    opacity: 1;
+    transform: scale(1);
+}
+@media screen and (max-width: 320px) {
+    .blog-posts .likes {
+    margin-top: 6%;}
+}
+
+
+

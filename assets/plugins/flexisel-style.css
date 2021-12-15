@@ -1,0 +1,66 @@
+#flexiselDemo1, #flexiselDemo2, #manufacturers{
+display:none;
+}
+
+.nbs-flexisel-container {
+    position:relative;
+    max-width:100%;
+}
+
+.nbs-flexisel-ul {
+    position:relative;
+    width:15999px;
+    margin:0px;
+    padding:0px;
+    list-style-type:none;
+    text-align:center;
+}
+
+.nbs-flexisel-inner {
+    overflow:hidden;
+    float:left;
+    width:99%;
+}
+
+.nbs-flexisel-item {
+    float:left;
+    margin:0px;
+    padding:0px;
+    cursor:pointer;
+    position:relative;
+    /*width: 200px !important;*/
+    margin: 0 !important;
+}
+
+article { padding-bottom: 20px !important;}
+
+.nbs-flexisel-item img {
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+/*** Navigation ***/
+
+.nbs-flexisel-nav-left,
+.nbs-flexisel-nav-right {
+    width: 30px;
+    height: 60px;
+    position: absolute;
+    cursor: pointer;
+    z-index: 90;
+    opacity: 0.5;
+}
+
+.nbs-flexisel-nav-left {
+    left: 0px;
+    background: url(../img/seta_esquerda.png) no-repeat;
+	background-size: 30px 60px;
+}
+
+.nbs-flexisel-nav-right {
+    right: 0px;
+    background: url(../img/seta_direita.png) no-repeat;
+	background-size: 30px 60px;
+}

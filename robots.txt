@@ -1,0 +1,12 @@
+# robots.txt gerado em
+# marketingdebusca.com.br/robots-txt/
+User-agent: *
+Allow: 
+User-agent: Googlebot
+Allow:
+User-agent: Googlebot-Image
+Allow:
+User-agent: Mediapartners-Google
+Allow:
+User-agent: Adsbot-Google
+Allow:

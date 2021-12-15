@@ -1,0 +1,4 @@
+[28-Oct-2018 11:20:18 America/Chicago] PHP Warning:  require(vendor/autoload.php): failed to open stream: No such file or directory in /home/fajee520/public_html/faculdadejesuita/eventos/phpmailer/get_oauth_token.php on line 18
+[28-Oct-2018 11:20:18 America/Chicago] PHP Warning:  require(vendor/autoload.php): failed to open stream: No such file or directory in /home/fajee520/public_html/faculdadejesuita/eventos/phpmailer/get_oauth_token.php on line 18
+[28-Oct-2018 11:20:18 America/Chicago] PHP Fatal error:  require(): Failed opening required 'vendor/autoload.php' (include_path='.:/opt/php56/lib/php') in /home/fajee520/public_html/faculdadejesuita/eventos/phpmailer/get_oauth_token.php on line 18
+[28-Oct-2018 11:22:19 America/Chicago] PHP Fatal error:  Class 'PHPMailer' not found in /home/fajee520/public_html/faculdadejesuita/eventos/phpmailer/class.phpmaileroauth.php on line 27

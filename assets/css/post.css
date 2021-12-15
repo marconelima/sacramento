@@ -1,0 +1,51 @@
+div.post{
+	background-color: white;
+	padding: 50px;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	height: 800px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	position: relative;
+}
+
+.social_media{
+	padding: 20px 0; 
+	border-top: 1px solid #626161;
+	border-bottom: 1px solid #626161;
+	width: 100%;
+	
+}
+
+.social_media iframe, .social_media a, .social_media div{
+	float: left;
+	margin: 0 !important;
+	margin-right:30px !important;
+	padding: 0;
+	
+}
+
+.social_media iframe {
+	width: 95px;
+	height: 20px;
+}
+
+.g-plusone{
+	width: 80px !impoartant;
+
+}
+
+article{
+	margin-bottom: 50px;
+}
+
+.commentary_iten{
+	margin: 40px 0;
+}
+
+#commentary_form{
+	margin-top: 40px;
+	border-top: 1px solid #626161;
+	padding-top: 30px;
+}
+

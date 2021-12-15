@@ -1,0 +1,203 @@
+.custom-file-input::-webkit-file-upload-button {
+  background: <?php echo $rs_configuracao['barra_cabecalho'];?>;
+  border: 0;
+  padding: 5px 8px;
+  position: absolute;
+  top: 4px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  font-size: 10pt;
+  color: white;
+}
+
+/* Inicio Página de Compra por Atacado */
+.service_iten{
+	padding: 5px 15px;
+	border: 1px dotted #333333;
+	margin: 15px 0;
+	vertical-align: middle;
+}
+
+.buttons{
+	margin-right: 10px;
+	position: relative;
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.buttons img{
+	position: absolute;
+	top: 3px;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.minus{
+	display: none;
+}
+
+.service_iten_title{
+	display: inline-block;
+	text-transform: uppercase;
+	font-size: 22px;
+	cursor: pointer;
+}
+
+.service_iten_info{
+	display: none;
+	margin: 10px 0 0 35px;
+}
+
+/* Fim Página de Compra por Atacado */
+
+
+
+/* Inicio Página de Download */
+#download_table{
+	width: 100%;
+	text-align: center;
+	font-weight: bold;
+	font-size: 10pt;
+}
+
+#header{
+	line-height: 30pt;
+	font-size: 13pt;
+}
+
+.odd_line{
+	background-color: #bfd9ee;
+}
+
+.download_item td img{
+	width: 50px;
+	height: 50px;
+	margin: 10px;
+}
+/* Fim Página de Download */
+
+/* Inicio Página de Depoimentos */
+
+.testimonial{
+	width: 100% !important;
+	margin: 0 0 !important;
+}
+
+h4.media-heading{
+	font-size: 15pt !important;
+}
+
+div.media-body p{
+	font-size: 15pt !important;
+	line-height: 20pt;
+}
+/* Fim Página de Depoimentos */
+
+/* Inicio Páginas de Galéria */
+
+#categories_list ul{
+	margin: 0 auto 20px;
+	max-width: 100%;
+	list-style: none;
+	text-transform: uppercase;
+	font-size: 16pt;
+}
+
+#categories_list ul .category_iten{
+	display: inline-block;
+	cursor: pointer;
+	margin: 0 10px;
+	padding: 5px;
+}
+
+#categories_list ul .category_iten:hover{
+	color: white;
+	background-color: <?php echo $rs_configuracao['barra_cabecalho'];?>;
+}
+
+.categories_ativo {
+    color: white;
+	background-color: <?php echo $rs_configuracao['barra_cabecalho'];?>;
+}
+
+.gallery_iten{
+  -webkit-transition: all .4s ease-in-out;
+  -moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -ms-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+
+/* Fim Página de Galéria */
+
+/* Inicio Página de Contato */
+
+#info{
+	display: block;
+}
+
+#info ul li{
+	position: relative;
+	overflow: hidden;
+	width: 300px;
+	display: inline-block;
+}
+
+img.email_form_icon{
+	padding: 10px;
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+}
+
+#info ul li p{
+	display: inline-block;
+	width: 100%;
+	position: absolute;
+	top: 40px;
+}
+
+#info ul li p#address{
+	top: 30px;
+}
+
+#contact_info_form{
+	margin-bottom: 50px;
+}
+
+div.contact_section{
+	display: inline-block;
+}
+
+div#email_form{
+	width: 100%;
+}
+
+div#email_form form legend{
+	text-indent: 14px;
+}
+
+#localization{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	margin-top: 20px;
+}
+
+.google_maps{
+	padding: 0 !important;
+	margin: 0!important;
+	width: 49%;
+	height: 400px;
+	display: inline-block;
+}
+
+
+
+/* Fim Página de Contato */

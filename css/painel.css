@@ -1,0 +1,108 @@
+@charset "utf-8";
+/* CSS Document */
+
+.body_fundo{ background: #6b6b6b; /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIxJSIgc3RvcC1jb2xvcj0iIzZiNmI2YiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzhjOGM4YyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlYWVhZWEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(left,  #6b6b6b 1%, #8c8c8c 50%, #eaeaea 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(1%,#6b6b6b), color-stop(50%,#8c8c8c), color-stop(100%,#eaeaea)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left,  #6b6b6b 1%,#8c8c8c 50%,#eaeaea 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left,  #6b6b6b 1%,#8c8c8c 50%,#eaeaea 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(left,  #6b6b6b 1%,#8c8c8c 50%,#eaeaea 100%); /* IE10+ */
+background: linear-gradient(to right,  #6b6b6b 1%,#8c8c8c 50%,#eaeaea 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6b6b6b', endColorstr='#eaeaea',GradientType=1 ); /* IE6-8 */
+}
+
+.container {background:#fff; margin:10px auto; border-radius:10px 10px 10px 10px }
+
+.titulo_painel {color:#069; text-shadow:2px 2px 2px #000;}
+.logo_painel { margin-top:20px; float:right; }
+
+.btn_direita {float:right !important; margin-left:10px !important; margin-top:5px;}
+.texto_adireita {text-align:right !important;}
+.limpo {background:#fff !important; border:0 !important;}
+
+.panel-body {padding:0px;}
+.panel-body_copy {padding:10px;}
+.panel_body_index {padding:10px;}
+.panel-body a {width:100%; float:left; padding:5px 15px; background:#fafafa; border-bottom:1px solid #ccc;}
+.panel-body a.active {background:#428bca; font-weight:bold; color:#FFF;}
+.pequeno {width:16px; margin:0 !important;}
+
+.alert_h {padding-top:0; padding-bottom:0;}
+.border_zero {border:0; margin-top:5px; margin-bottom:5px;}
+
+.borda {border-radius:10px 10px 10px 10px; border:1px solid #eaeaea; width:100%; height:auto;  margin-bottom:10px; padding:20px; float:left;}
+
+.tamanho_alert_index {width:300px; top:50%; left:50%; margin-top:-150px; margin-left:-150px; position:absolute;}
+
+.cabecalho {border-bottom:5px solid #ccc; margin-bottom:10px; }
+
+.input-group { margin-top:6px; }
+.central {text-align:center;}
+
+.btn-primary {margin:15px 0 30px 0;}
+.btn-warning {margin:15px 0 30px 0;}
+
+.separa {width:100%; height:1px; float:left;}
+.centro {width:100%; text-align:center; margin-top:10px;}
+.superior {margin-top:20px; border-top:5px solid #069; padding-top:20px;}
+
+.thumbnail {height:95px; margin-bottom:5px;}
+.thumbnail img {height:84px;}
+
+/* ####################################### */
+
+.abas {display:none;}
+.aberto {display:block;}
+
+.separa_bottom {margin-bottom:15px;}
+
+
+/* ######################################### */
+#seletorcorpadrao {width:30px; height:30px; float:left; margin-left:5px; }
+#seletorcorsecundaria  {width:30px; height:30px; float:left; margin-left:5px; }
+#seletorfontepadrao {width:30px; height:30px; float:left; margin-left:5px; }
+
+.campoSub {border-radius:5px 5px 5px 5px; border:1px solid #ccc; height30px;}
+
+/********************* COMENTÁRIOS ********************************8*/
+
+.comentario_noticia {width:100%; height:18px; float:left; display:block; cursor:pointer; font:11px Arial, Helvetica, sans-serif; color:#000; margin:3px 0; border-bottom:1px solid #D0D0D0; padding:4px 0;}
+
+div title {background:#060;}
+
+.comentario_noticia img{width:18px; height:18px; float:left;}
+.comentario_noticia span{width:520px; height:auto; float:left; margin-left:5px; margin-top:2px;}
+#comentario_complemento {width:100%; height:auto; float:left;}
+#box_item{width:100%; height:28px; float:left; overflow:hidden; border-bottom:1px solid #D0D0D0; }
+
+#comentario_aprovar {width:100%; float:left; height:18px; text-align:center; margin:2px 5px;}
+#comentario_aprovar img {width:16px; height:16px; float:left; margin-left:20px;}
+#comentario_editar {width:100%; float:left; height:18px; text-align:center;  margin:2px 5px;}
+#comentario_editar img {width:16px; height:16px; float:left; margin-left:24px;}
+#comentario_excluir {width:100%; float:left; height:18px; text-align:center; margin:2px 5px;}
+#comentario_excluir img {width:16px; height:16px; float:left; margin-left:24px;}
+
+.comentario_titulo {font:11px Arial, Helvetica, sans-serif; color:#000; font-weight:bold;  float:left; display:block; width:auto;}
+.comentario_ip {font:11px Arial, Helvetica, sans-serif; color:#000; float:left; display:block; width:auto; margin:0 20px 0 5px; }
+.comentario_nome {font:11px Arial, Helvetica, sans-serif; color:#000; float:left; display:block; width:auto; margin:0 30px 0 5px; }
+.comentario_email {font:11px Arial, Helvetica, sans-serif; color:#000; float:left; display:block; width:auto; margin:0 30px 0 5px;}
+.comentario_cidade {font:11px Arial, Helvetica, sans-serif; color:#000; float:left; display:block; width:auto; margin:0 30px 0 5px;}
+.comentario_data {font:11px Arial, Helvetica, sans-serif; color:#000; float:left; display:block; width:auto; margin:0 30px 0 5px;}
+.comentario_texto {font:11px Arial, Helvetica, sans-serif; color:#000; float:left; display:block; width:100%; margin:0 0 5px 0;}
+
+.comentario_link {font-family:'Trebuchet MS', Arial, Helvetica, sans-serif, Calibri; font-size:10px; font-weight:bold; color:#508790;}
+.comentario_link a{color:#508790; text-decoration:none;}
+.comentario_link a:hover{text-decoration:underline;}
+
+h8{width:auto; float:left; color:#198892;}
+
+.filtro {float:left; margin:15px 0 !important; background:#fafafa; border:1px solid #eaeaea; border-radius:5px 5px 5px 5px; padding:10px;}
+.campo_filtro {width:150px; float:left; margin-right:10px;}
+
+.tabela_ficha {background:#fafafa; border:1px solid #eaeaea; margin:10px 0;}
+
+.cores_slc {width: 30px; height:30px;}
+
+.campo_cor {width:90px !important; float:left; margin-right: 2%;}
