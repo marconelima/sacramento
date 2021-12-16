@@ -1874,10 +1874,10 @@ if (isset($_POST['novo_campo'])) {
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th>Cód. API<br>
+                    <th id="p.codigo" class="orderby">Cód. API&nbsp;<i class="fas fa-sort"></i><br>
                     <th>Categoria<br>
                         SubCategoria</th>
-                    <th>Produto</th>
+                    <th id="p.nome" class="orderby">Produto&nbsp;<i class="fas fa-sort"></i></th>
                     <th>Marca<br>
                         Modelo</th>
                     <th class="central">Status</th>
