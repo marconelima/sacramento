@@ -1765,15 +1765,13 @@ if (isset($_POST['novo_campo'])) {
 
     $order = (isset($_POST['order']) && $_POST['order'] != '') ? $_POST['order'] : "categoria, subcategoria, produto";
 
-    var_dump($order);
-
     $sql = "
 			SELECT c.titulo as categoria, sc.titulo as subcategoria, p.nome as produto, p.codigo, m.titulo as marca, p.modelo, p.preco, p.estoque, p.id, p.status
 			FROM tbproduto p LEFT JOIN tbprod_subcategoria sc on subcategoria_id = sc.id
 			LEFT JOIN tbprod_categoria c on c.id = sc.categoria_id
 			 LEFT JOIN tbprod_marca m ON m.id = p.marca
 			 WHERE 1 = 1 $filtro_busca $filtro_marcab $filtro_subcategoriab $filtro_categoriab $filtro_categoriab $filtro_montadorab $filtro_modelob $filtro_anob $filtro_versaob $filtro_tipob
-			ORDER BY categoria, subcategoria, produto ASC LIMIT $inicio, $maximo
+			ORDER BY ". $order." ASC LIMIT $inicio, $maximo
 		";
 
     $sql_paginacao = "SELECT c.titulo as categoria, sc.titulo as subcategoria, p.nome as produto, p.codigo, m.titulo as marca, p.modelo, p.preco, p.estoque, p.id, p.status
@@ -1781,7 +1779,7 @@ if (isset($_POST['novo_campo'])) {
 			LEFT JOIN tbprod_categoria c on c.id = sc.categoria_id
 			 LEFT JOIN tbprod_marca m ON m.id = p.marca
 			 WHERE 1 = 1 $filtro_busca $filtro_marcab $filtro_subcategoriab $filtro_categoriab $filtro_categoriab $filtro_montadorab $filtro_modelob $filtro_anob $filtro_versaob $filtro_tipob
-			ORDER BY categoria, subcategoria, produto ASC";
+			ORDER BY " . $order . " ASC";
 
     $resultado = $conecta->selecionar($conecta->conn, $sql);
     $qtde_atual = mysqli_num_rows($resultado);
