@@ -109,3 +109,16 @@ if(document.querySelector(".detalheProduto")){
         });
     });
 }
+
+if (document.querySelector("#form-search")) {
+  let form = document.querySelector("#form-search");
+  let campo = document.querySelector("#order");
+  let colunas = document.querySelectorAll(".orderBy");
+
+  colunas.forEach(function (el) {
+    el.addEventListener("click", (e) => {
+      campo.value = el.id;
+      form.submit();
+    });
+  });
+}

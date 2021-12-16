@@ -1763,6 +1763,10 @@ if (isset($_POST['novo_campo'])) {
         $filtro_tipob = " AND p.tipo_id = " . $_POST['tipo'];
     }
 
+    $order = (isset($_POST['order']) && $_POST['order'] != '') ? $_POST['order'] : "categoria, subcategoria, produto";
+
+    var_dump($order);
+
     $sql = "
 			SELECT c.titulo as categoria, sc.titulo as subcategoria, p.nome as produto, p.codigo, m.titulo as marca, p.modelo, p.preco, p.estoque, p.id, p.status
 			FROM tbproduto p LEFT JOIN tbprod_subcategoria sc on subcategoria_id = sc.id
@@ -1870,14 +1874,18 @@ if (isset($_POST['novo_campo'])) {
 
         </form>
     </div>
+    <form name="form-search" method="POST" enctype="multipart/form-data" id="form-search" class="d-flex flex-row">
+        <input type="hidden" name="order" id="order" />
+        <button type="submit"><i class="fas fa-search"></i></button>
+    </form>
     <div class="table-responsive">
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th id="p.codigo" class="orderby">Cód. API&nbsp;<i class="fas fa-sort"></i><br>
+                    <th id="p.codigo" class="orderBy pointer">Cód. API&nbsp;<i class="fas fa-sort"></i><br>
                     <th>Categoria<br>
                         SubCategoria</th>
-                    <th id="p.nome" class="orderby">Produto&nbsp;<i class="fas fa-sort"></i></th>
+                    <th id="p.nome" class="orderBy pointer">Produto&nbsp;<i class="fas fa-sort"></i></th>
                     <th>Marca<br>
                         Modelo</th>
                     <th class="central">Status</th>
