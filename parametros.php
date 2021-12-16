@@ -1,7 +1,7 @@
 <?php
 $nomeSite = "Industria Sacramento";
 $emailSite = "vendas@industriasacramento.com.br";
-$linkSite = "https://www.industriasacramento.com.br/";
+$linkSite = "https://www.industriasacramento.com.br/testenovo/";
 
 
 $tituloSite = "Mercadão da Carne BH";
