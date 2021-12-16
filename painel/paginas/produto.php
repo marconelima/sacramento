@@ -1719,7 +1719,7 @@ if (isset($_POST['novo_campo'])) {
     if (isset($_POST['search']) && @$_POST['search'] != '') {
         $filtro_busca = " AND ( p.descricao like '%" . strip_tags(trim($_POST['search'])) . "%'";
         $filtro_busca .= " OR p.nome like '%" . strip_tags(trim($_POST['search'])) . "%')";
-        $filtro_busca .= " OR p.codigo = '%" . strip_tags(trim($_POST['search'])) . "%')";
+        $filtro_busca .= " OR p.codigo = " . strip_tags(trim($_POST['search'])) . ")";
     }
 
     $filtro_categoriab = "";
