@@ -191,6 +191,7 @@ if (isset($_POST['novo_campo'])) {
     unset($dados['tbproduto']['id']);
 
     $nome = strip_tags(trim($dados['tbproduto']['nome']));
+    $codigo = strip_tags(trim($dados['tbproduto']['codigo']));
     $numero_original = strip_tags(trim($dados['tbproduto']['numero_original']));
     $referencia = strip_tags(trim($dados['tbproduto']['referencia']));
     $modelo = strip_tags(trim($dados['tbproduto']['modelo']));
@@ -276,6 +277,7 @@ if (isset($_POST['novo_campo'])) {
     unset($dados['tbproduto']['id']);
 
     $nome = strip_tags(trim($dados['tbproduto']['nome']));
+    $codigo = strip_tags(trim($dados['tbproduto']['codigo']));
     $numero_original = strip_tags(trim($dados['tbproduto']['numero_original']));
     $referencia = strip_tags(trim($dados['tbproduto']['referencia']));
     $modelo = strip_tags(trim($dados['tbproduto']['modelo']));
@@ -360,6 +362,7 @@ if (isset($_POST['novo_campo'])) {
     $id = strip_tags(trim($dados['tbproduto']['id']));
     unset($dados['tbproduto']['id']);
     $nome = strip_tags(trim($dados['tbproduto']['nome']));
+    $codigo = strip_tags(trim($dados['tbproduto']['codigo']));
     $numero_original = strip_tags(trim($dados['tbproduto']['numero_original']));
     $referencia = strip_tags(trim($dados['tbproduto']['referencia']));
     $modelo = strip_tags(trim($dados['tbproduto']['modelo']));
@@ -452,6 +455,7 @@ if (isset($_POST['novo_campo'])) {
     $id = strip_tags(trim($dados['tbproduto']['id']));
     unset($dados['tbproduto']['id']);
     $nome = strip_tags(trim($dados['tbproduto']['nome']));
+    $codigo = strip_tags(trim($dados['tbproduto']['codigo']));
     $numero_original = strip_tags(trim($dados['tbproduto']['numero_original']));
     $referencia = strip_tags(trim($dados['tbproduto']['referencia']));
     $modelo = strip_tags(trim($dados['tbproduto']['modelo']));
@@ -797,6 +801,7 @@ if (isset($_POST['novo_campo'])) {
     $dados['tbproduto'] = mysqli_fetch_array($resultado);
 
     $nome = $dados['tbproduto']['nome'];
+    $codigo = $dados['tbproduto']['codigo'];
     $referencia = $dados['tbproduto']['referencia'];
     $numero_original = $dados['tbproduto']['numero_original'];
     $modelo = $dados['tbproduto']['modelo'];
@@ -1759,7 +1764,7 @@ if (isset($_POST['novo_campo'])) {
     }
 
     $sql = "
-			SELECT c.titulo as categoria, sc.titulo as subcategoria, p.nome as produto, m.titulo as marca, p.modelo, p.preco, p.estoque, p.id, p.status
+			SELECT c.titulo as categoria, sc.titulo as subcategoria, p.nome as produto, p.codigo, m.titulo as marca, p.modelo, p.preco, p.estoque, p.id, p.status
 			FROM tbproduto p LEFT JOIN tbprod_subcategoria sc on subcategoria_id = sc.id
 			LEFT JOIN tbprod_categoria c on c.id = sc.categoria_id
 			 LEFT JOIN tbprod_marca m ON m.id = p.marca
@@ -1767,7 +1772,7 @@ if (isset($_POST['novo_campo'])) {
 			ORDER BY categoria, subcategoria, produto ASC LIMIT $inicio, $maximo
 		";
 
-    $sql_paginacao = "SELECT c.titulo as categoria, sc.titulo as subcategoria, p.nome as produto, m.titulo as marca, p.modelo, p.preco, p.estoque, p.id, p.status
+    $sql_paginacao = "SELECT c.titulo as categoria, sc.titulo as subcategoria, p.nome as produto, p.codigo, m.titulo as marca, p.modelo, p.preco, p.estoque, p.id, p.status
 			FROM tbproduto p LEFT JOIN tbprod_subcategoria sc on subcategoria_id = sc.id
 			LEFT JOIN tbprod_categoria c on c.id = sc.categoria_id
 			 LEFT JOIN tbprod_marca m ON m.id = p.marca
