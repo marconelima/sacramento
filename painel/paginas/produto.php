@@ -1053,6 +1053,14 @@ if (isset($_POST['novo_campo'])) {
 			</div>
 		</div>
 -->
+
+            <div class="form-group">
+                <label for="titulo" class="col-sm-3 control-label">Código API</label>
+                <div class="col-sm-9">
+                    <input type="text" name="dados[tbproduto][codigo]" style="width:200px; display:inline;" value="<?php echo @$codigo; ?>" class="form-control" />
+                </div>
+            </div>
+
             <div class="form-group">
                 <label for="titulo" class="col-sm-3 control-label">Código Referência</label>
                 <div class="col-sm-9">
@@ -1861,6 +1869,7 @@ if (isset($_POST['novo_campo'])) {
         <table class="table table-hover">
             <thead>
                 <tr>
+                    <th>Cód. API<br>
                     <th>Categoria<br>
                         SubCategoria</th>
                     <th>Produto</th>
@@ -1874,6 +1883,7 @@ if (isset($_POST['novo_campo'])) {
             <tbody>
                 <?php while ($rs = mysqli_fetch_array($resultado)) { ?>
                     <tr>
+                        <td><?php echo $rs['codigo']; ?></td>
                         <td><?php echo $rs['categoria']; ?><br>
                             <?php echo $rs['subcategoria']; ?></td>
                         <td><?php echo $rs['produto']; ?></td>
