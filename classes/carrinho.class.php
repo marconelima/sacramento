@@ -15,7 +15,7 @@
 class Carrinho{
 	private $produto;
 
-	public function Carrinho(){}
+	//public function Carrinho(){}
         //Adiciona um produto
 	public function addProduto(Produto $m){
 		$this->produto[] = $m;
@@ -32,7 +32,10 @@ class Carrinho{
 	}
 
 	public function getQtdeProdutos(){
-		return count($this->produto);
+        if(isset($this->produto))
+		    return count($this->produto);
+        else
+            return 0;
 	}
 
 	public function getProdutos(){
@@ -180,10 +183,7 @@ if($total < 201) {
 					</div>
 					<div class="col-sm-3 col-md-1 centrar-carrinho">
 						<h5>Unidade</h5>
-						<select name="kilo_grama" style="border-radius:10px;">
-							<option value="unidades" '.$marcadoselk.'>Unidades</option>
-							<option value="duzias" '.$marcadoselg. '>Dúzias</option>
-						</select>
+						<p>'. $pro->getMedida().'</p>
 					</div>
 					<div class="col-sm-3 dnone-descricao" style="padding-left: 2%;">
 						<h5>Observações sobre o produto</h5>
@@ -224,9 +224,52 @@ if($total < 201) {
 
         $siteUrl = $rs_configuracao['linkloja'] . "/";
 
+        $API = new ComunicacaoAPI();
+
+        if (empty($_SESSION['token_api'])) {
+
+            $API->getToken('http://sistemas.spacearea.com.br/homologacao/ecommerceapi/v1/autenticacao/entrar');
+
+            $_SESSION['token_api'] = $API->token;
+        } else {
+            $API->token = $_SESSION['token_api'];
+        }
+
         $i = 0;
+        
+        $preco_total_carrinho = 0;
         foreach ($this->produto as $pro) {
 
+            $preco_total_produto = 0;
+            $produtos = $API->getProdutoEstoque($pro->getCodigo());
+
+            $preco = 0;;
+            $preco_promocional = 0;
+            $estoque = 0;
+            $ativo = 0;
+            $unidade = '';
+
+            $produto = json_decode($produtos);
+
+            $i = 0;
+
+            $preco = $produto->{'produtos'}[$i]->{'preco'};
+            $preco_promocional = $produto->{'produtos'}[$i]->{'precoPromocional'};
+            $estoque = $produto->{'produtos'}[$i]->{'estoque'};
+            $ativo = $produto->{'produtos'}[$i]->{'ativo'};
+            $unidade = $produto->{'produtos'}[$i]->{'unidade'};
+
+
+            $preco = $preco > 0 ? $preco + $preco * 0.2 : 0;
+            $preco_promocional = $preco_promocional > 0 ? $preco_promocional + $preco_promocional * 0.2 : 0;
+
+            $preco = $preco_promocional > 0 ? $preco_promocional : $preco;
+            
+            $preco_total_produto = $preco_total_produto + ($preco * $pro->getQuantidade());
+                     
+            $preco_total_carrinho = $preco_total_carrinho + $preco_total_produto;
+
+           
             $sql_tamcor = "SELECT tamanho, cor FROM tbprod_tamanhocor WHERE id = " . substr($pro->getId(), (stripos($pro->getId(), "_") > 0 ? stripos($pro->getId(), "_") + 1 : 0));
             $resultado_tamcor = $conecta->selecionar($conecta->conn, $sql_tamcor);
 
@@ -235,50 +278,51 @@ if($total < 201) {
                 $compemento_cortamanho = '<br/>Tamanho: ' . $rs_tamcor['tamanho'] . ' | Cor: ' . $rs_tamcor['cor'];
             }
 
-            if ($pro->getMedida() == 'unidades') {
+            if ($pro->getMedida() == 'unidades' || $unidade == 'UN') {
                 $marcadoselg = "selected";
+            } else {
+                $marcadoselg = '';
             }
-            if ($pro->getMedida() == 'duzias') {
+            if ($pro->getMedida() == 'duzias' || $unidade == 'DZ') {
                 $marcadoselk = "selected";
+            } else {
+                $marcadoselk = '';
             }
 
             echo '<input type="hidden" name="prodid' . $i . '" value="' . $pro->getId() . '" />
-				<div class="row kart-iten d-flex align-items-center" style="border: 1px solid #000;  padding: 10px; margin:5px 0;">
-					<div class="col-sm-4 col-md-2">
+				<div class="row kart-iten d-flex align-items-top" style="border: 1px solid #EAEAEA;  padding: 10px; margin:5px 0;">
+					<div class="col-sm-4 col-md-1">
 						<img src="' . $siteUrl . 'source/Produtos/' . $pro->getFoto() . '" alt="" style="width:100%;"/>
 					</div>
-					<div class="col-sm-3 col-md-3">
-						<h4>' . $pro->getNome() . '</h4>
+					<div class="col-sm-4 col-md-3">
+						<h6>' . $pro->getNome() . '</h6>
 						<p>' . $compemento_cortamanho . '</p>
 					</div>
 					<div class="col-sm-4 col-md-1" style="text-align: center;">
-						<h6>Quantidade</h6>
-						<input type="text" name="qtde_prod' . $i . '" class="quantity" style="text-align:center; border-radius:10px;" value="' . $pro->getQuantidade() . '" size="3" />
+						<h6>Quant.</h6>
+						<input type="text" name="qtde_prod' . $i . '" class="quantity" style="text-align:center; border-radius:5px; padding:2% 1%; height:30px;" value="' . $pro->getQuantidade() . '" size="3" />
 					</div>
 					<div class="col-sm-4 col-md-1 centrar-carrinho">
-						<h5>Unidade</h5>
-						<select name="kilo_grama" style="border-radius:10px;">
-							<option value="unidades" ' . $marcadoselk . '>Unidades</option>
-							<option value="duzias" ' . $marcadoselg . '>Dúzias</option>
-						</select>
+						<h6 style="text-align:center;">Unidade</h6>
+						<p style="text-align:center;">'. $unidade.'</p>
 					</div>
-					<div class="col-sm-4 col-md-2 dnone-descricao" style="padding-left: 2%;">
-						<h5>Observações sobre o produto</h5>
-						<textarea name="message' . $i . '" id="input-message" style="border-radius:10px; max-width: 100%;" rows="5" placeholder="Digite sua mensagem" class="placeholder">' . $pro->getComplemento() . '</textarea>
+					<div class="col-sm-4 col-md-3 dnone-descricao" style="padding-left: 2%;">
+						<h6>Observações sobre o produto</h6>
+						<textarea name="message' . $i . '" rows="3" id="input-message" style="border-radius:5px; padding:2% 1%; max-width: 100%;" rows="5" placeholder="Digite sua mensagem" class="placeholder">' . $pro->getComplemento() . '</textarea>
 					</div>
-					<div class="col-sm-4 col-md-1 centrar-carrinho">
-						<h5>Excluir</h5>
+					<div class="col-sm-4 col-md-1 centrar-carrinho" style="text-align:center;">
+						<h6 style="text-align:center;">Excluir</h6>
 
-						<a href="' . $siteUrl . 'carrinho/48/0/0/0/0/0/0/0/0/0/' . $pro->getId() . '"><img src="' . $siteUrl . 'assets/img/x_mark_red.jpg" width="20" id="remover" style="width:20px !important; margin:20px 0 0 0px;" /></a>
+						<a href="' . $siteUrl . 'carrinho/48/0/0/0/0/0/0/0/0/0/' . $pro->getId() . '" style="text-align:center;"><img src="' . $siteUrl . 'assets/img/x_mark_red.jpg" width="20" id="remover" style="width:20px !important; margin:20px 0 0 0px;" /></a>
 
 					</div>
                     <div class="col-sm-6 col-md-1 centrar-carrinho">
-                        <h5>Preço</h5>
-                        R$ 99.999,00
+                        <h6>Preço</h6>
+                        R$ ' . number_format($preco, 2, ",", ".") . '
                     </div>
                     <div class="col-sm-6 col-md-1 centrar-carrinho">
-                        <h5>Total</h5>
-                        R$ 99.999,00
+                        <h6>Total</h6>
+                        R$ ' . number_format($preco_total_produto, 2, ",", ".") . '
                     </div>
 				</div>';
 
@@ -289,7 +333,7 @@ if($total < 201) {
 		<div class="container">
 			<div class="row send-quotation">
                 <div style="width:50%; float:left; height:auto; text-align:left; font-weight:bold;">Total Carrinho</div>
-                <div style="width:50%; float:left; height:auto; text-align:right; font-weight:bold;">R$ 99.999,00</div>
+                <div style="width:50%; float:left; height:auto; text-align:right; font-weight:bold;">R$ ' . number_format($preco_total_carrinho, 2, ",", ".") . '</div>
 			</div>
 		</div>
 	</section>';

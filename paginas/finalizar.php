@@ -41,53 +41,151 @@
 
         $date = date("d/m/Y h:i");
 
-        // FORMA COMO RECEBERÁ O E-MAIL (FORMULÁRIO)
-        $assunto =  "Pedido de Orçamento";
-        $cabecalho_da_mensagem_original = "From: " . $rs_configuracao['nomeloja'] . " <" . $rs_configuracao['emailloja'] . ">\n";
-        $configuracao_da_mensagem_original = "<strong>Orçamento " . $rs_configuracao['nomeloja'] . ":</strong><br>
-			<br>
-			De: " . $name . "<br>
-			Responder para: " . $email . "<br>
-            Telefone: " . $telefone . "<br>
-			Assunto: Pedido de Orçamento<br>
-			<br>
-			<strong>Produtos Solicitados:</strong><br>
-			<br>
-			<table width='100%' border='1'>
-			  <tr>
-				<td>Foto</td>
-				<td>Código</td>
-				<td>Nome</td>
-				<td>Quantidade</td>
-				<td>Observação</td>
-			  </tr>";
-        $i = 0;
-        foreach ($carrinhoSessao->getProdutos() as $pro) :
+        if (@$_SESSION['cliente'] > 0) {
+            $API = new ComunicacaoAPI();
+
+            if (empty($_SESSION['token_api'])) {
+
+                $API->getToken('http://sistemas.spacearea.com.br/homologacao/ecommerceapi/v1/autenticacao/entrar');
+
+                $_SESSION['token_api'] = $API->token;
+            } else {
+                $API->token = $_SESSION['token_api'];
+            }
+
+            $preco_total_carrinho = 0;
+
+            // FORMA COMO RECEBERÁ O E-MAIL (FORMULÁRIO)
+            $assunto =  "Pedido de Orçamento";
+            $cabecalho_da_mensagem_original = "From: " . $rs_configuracao['nomeloja'] . " <" . $rs_configuracao['emailloja'] . ">\n";
+            $configuracao_da_mensagem_original = "<strong>Orçamento " . $rs_configuracao['nomeloja'] . ":</strong><br>
+                <br>
+                De: " . $name . "<br>
+                Responder para: " . $email . "<br>
+                Telefone: " . $telefone . "<br>
+                Assunto: Pedido de Orçamento<br>
+                <br>
+                <strong>Produtos Solicitados:</strong><br>
+                <br>
+                <table width='100%' border='1'>
+                <tr>
+                    <td>Foto</td>
+                    <td>Código</td>
+                    <td>Nome</td>
+                    <td>Quantidade</td>
+                    <td>Observação</td>
+                    <td>Preço</td>
+                    <td>Total</td>
+                </tr>";
+            $i = 0;
+            foreach ($carrinhoSessao->getProdutos() as $pro) :
+
+
+                $preco_total_produto = 0;
+                $preco = 0;;
+                $preco_promocional = 0;
+                $estoque = 0;
+                $ativo = 0;
+                $unidade = '';
+
+                $produtos = $API->getProdutoEstoque($pro->getCodigo());
+
+                $produto = json_decode($produtos);
+
+                $i = 0;
+
+                $preco = $produto->{'produtos'}[$i]->{'preco'};
+                $preco_promocional = $produto->{'produtos'}[$i]->{'precoPromocional'};
+                $estoque = $produto->{'produtos'}[$i]->{'estoque'};
+                $ativo = $produto->{'produtos'}[$i]->{'ativo'};
+                $unidade = $produto->{'produtos'}[$i]->{'unidade'};
+
+                $preco = $preco_promocional > 0 ? $preco_promocional : $preco;
+
+                $preco_total_produto = $preco_total_produto + ($preco * $pro->getQuantidade());
+
+                $preco_total_carrinho = $preco_total_carrinho + $preco_total_produto;
+
+                $configuracao_da_mensagem_original .= "<tr>
+                    <td><img src='" . $siteUrl . "source/Produtos/" . $pro->getFoto() . "' alt='' width='60'/></td>
+                    <td>" . $pro->getReferencia() . "</td>
+                    <td>" . $pro->getNome() . "</td>
+                    <td>" . $pro->getQuantidade() . "</td>
+                    <td>" . $pro->getComplemento() . "<br/><br/>" . $_POST['message' . $i] . "</td>
+                    <td>" . $preco . "</td>
+                    <td>" . $preco_total_produto . "</td>
+                </tr>";
+
+
+                $dadosproduto['tbpedido_produto']['pedido_id'] = $idPedido;
+                $dadosproduto['tbpedido_produto']['produto_id'] = substr($pro->getId(), 0, (stripos($pro->getId(), "_") > 0 ? stripos($pro->getId(), "_") : strlen($pro->getId())));
+                $dadosproduto['tbpedido_produto']['cor_tamanho'] = substr($pro->getId(), (stripos($pro->getId(), "_") > 0 ? stripos($pro->getId(), "_") + 1 : strlen($pro->getId())), strlen($pro->getId()));
+                $dadosproduto['tbpedido_produto']['quantidade'] = $pro->getQuantidade();
+                $dadosproduto['tbpedido_produto']['observacao'] = $pro->getComplemento() . "<br/><br/>" . $_POST['message' . $i];
+
+                $idPedidoProduto = $conecta->inserir($dadosproduto);
+
+                $i++;
+            endforeach;
             $configuracao_da_mensagem_original .= "<tr>
-				<td><img src='" . $siteUrl . "source/Produtos/" . $pro->getFoto() . "' alt='' width='60'/></td>
-				<td>" . $pro->getReferencia() . "</td>
-				<td>" . $pro->getNome() . "</td>
-				<td>" . $pro->getQuantidade() . "</td>
-				<td>" . $pro->getComplemento() . "<br/><br/>" . $_POST['message' . $i] . "</td>
-			  </tr>";
+                    <td colspan='6'>Total do Carrinho</td>
+                    <td>" . $preco_total_carrinho . "</td>
+                </tr>
+                </table><br>
+                <br>
+                Enviada em $date por:<br>
+                <br>
+                Industria Sacramento</a>";
+
+        }else {
+            // FORMA COMO RECEBERÁ O E-MAIL (FORMULÁRIO)
+            $assunto =  "Pedido de Orçamento";
+            $cabecalho_da_mensagem_original = "From: " . $rs_configuracao['nomeloja'] . " <" . $rs_configuracao['emailloja'] . ">\n";
+            $configuracao_da_mensagem_original = "<strong>Orçamento " . $rs_configuracao['nomeloja'] . ":</strong><br>
+                <br>
+                De: " . $name . "<br>
+                Responder para: " . $email . "<br>
+                Telefone: " . $telefone . "<br>
+                Assunto: Pedido de Orçamento<br>
+                <br>
+                <strong>Produtos Solicitados:</strong><br>
+                <br>
+                <table width='100%' border='1'>
+                <tr>
+                    <td>Foto</td>
+                    <td>Código</td>
+                    <td>Nome</td>
+                    <td>Quantidade</td>
+                    <td>Observação</td>
+                </tr>";
+            $i = 0;
+            foreach ($carrinhoSessao->getProdutos() as $pro) :
+
+                $configuracao_da_mensagem_original .= "<tr>
+                    <td><img src='" . $siteUrl . "source/Produtos/" . $pro->getFoto() . "' alt='' width='60'/></td>
+                    <td>" . $pro->getReferencia() . "</td>
+                    <td>" . $pro->getNome() . "</td>
+                    <td>" . $pro->getQuantidade() . "</td>
+                    <td>" . $pro->getComplemento() . "<br/><br/>" . $_POST['message' . $i] . "</td>
+                </tr>";
 
 
-            $dadosproduto['tbpedido_produto']['pedido_id'] = $idPedido;
-            $dadosproduto['tbpedido_produto']['produto_id'] = substr($pro->getId(), 0, (stripos($pro->getId(), "_") > 0 ? stripos($pro->getId(), "_") : strlen($pro->getId())));
-            $dadosproduto['tbpedido_produto']['cor_tamanho'] = substr($pro->getId(), (stripos($pro->getId(), "_") > 0 ? stripos($pro->getId(), "_") + 1 : strlen($pro->getId())), strlen($pro->getId()));
-            $dadosproduto['tbpedido_produto']['quantidade'] = $pro->getQuantidade();
-            $dadosproduto['tbpedido_produto']['observacao'] = $pro->getComplemento() . "<br/><br/>" . $_POST['message' . $i];
+                $dadosproduto['tbpedido_produto']['pedido_id'] = $idPedido;
+                $dadosproduto['tbpedido_produto']['produto_id'] = substr($pro->getId(), 0, (stripos($pro->getId(), "_") > 0 ? stripos($pro->getId(), "_") : strlen($pro->getId())));
+                $dadosproduto['tbpedido_produto']['cor_tamanho'] = substr($pro->getId(), (stripos($pro->getId(), "_") > 0 ? stripos($pro->getId(), "_") + 1 : strlen($pro->getId())), strlen($pro->getId()));
+                $dadosproduto['tbpedido_produto']['quantidade'] = $pro->getQuantidade();
+                $dadosproduto['tbpedido_produto']['observacao'] = $pro->getComplemento() . "<br/><br/>" . $_POST['message' . $i];
 
-            $idPedidoProduto = $conecta->inserir($dadosproduto);
+                $idPedidoProduto = $conecta->inserir($dadosproduto);
 
-            $i++;
-        endforeach;
-        $configuracao_da_mensagem_original .= "</table><br>
-			<br>
-			Enviada em $date por:<br>
-			<br>
-			Industria Sacramento</a>";
-
+                $i++;
+            endforeach;
+            $configuracao_da_mensagem_original .= "</table><br>
+                <br>
+                Enviada em $date por:<br>
+                <br>
+                Industria Sacramento</a>";
+        }
         //ENVIO DE MENSAGEM ORIGINAL
         $headers = "$cabecalho_da_mensagem_original";
         $headers .= "Content-Type: text/html; charset=\"UTF-8\"\n\n";

@@ -99,7 +99,7 @@ class ComunicacaoAPI
 
             $resposta = json_decode($response);
 
-            if ($resposta->status === 401) {
+            if (isset($resposta->status) && $resposta->status === 401) {
                 $this->getToken('http://sistemas.spacearea.com.br/homologacao/ecommerceapi/v1/autenticacao/entrar');
                 header("Refresh:1");               
             } 
@@ -108,6 +108,22 @@ class ComunicacaoAPI
             return $e->getMessage();
         }
         return $response;
+    }
+
+    public function getProdutoTodos() 
+    {
+
+        $endpoint = 'http://sistemas.spacearea.com.br/homologacao/ecommerceapi/v1/produto/estoquepreco';
+        $header = [
+                'Content-Type: application/json',
+                'Authorization: Space:' . $this->token,
+                'Connection: keep-alive'
+            ];
+        $data = false;
+
+        $produtos = $this->requestAPI($endpoint, 'GET', $data, $header);
+       
+        return $produtos;
     }
 
     public function getProduto($idproduto) 

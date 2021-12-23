@@ -15,8 +15,9 @@ class Produto{
 	private $largura;
 	private $complemento;
 	private $medida;
+    private $codigo;
 
-	public function Produto($id, $nome, $referencia, $marca, $modelo, $preco, $descricao, $foto, $quantidade=1, $peso, $altura, $comprimento, $largura, $complemento, $medida){
+	public function Produto($id, $nome, $referencia, $marca, $modelo, $preco, $descricao, $foto, $quantidade=1, $peso, $altura, $comprimento, $largura, $complemento, $medida, $codigo){
 		$this->id = $id;
 		$this->nome = $nome;
 		$this->referencia = $referencia;
@@ -32,6 +33,7 @@ class Produto{
 		$this->largura = $largura;
 		$this->complemento = $complemento;
 		$this->medida = $medida;
+        $this->codigo = $codigo;
 	}
 
 	public function getId() {
@@ -138,5 +140,13 @@ class Produto{
 	public function setMedida($medida) {
 		$this->medida = $medida;
 	}
+    public function getCodigo()
+    {
+        return $this->codigo;
+    }
+    public function setCodigo($codigo)
+    {
+        $this->codigo = $codigo;
+    }
 }
 ?>

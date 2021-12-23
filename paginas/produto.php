@@ -11,12 +11,49 @@ LEFT JOIN tbversao ve ON ve.id = p.versao_id
 LEFT JOIN tbano a ON a.id = p.ano_id
 WHERE p.status = 1 AND f.destaque = 1 AND p.id = $vw";
 
+$API = new ComunicacaoAPI();
+
+if (empty($_SESSION['token_api'])) {
+
+    $API->getToken('http://sistemas.spacearea.com.br/homologacao/ecommerceapi/v1/autenticacao/entrar');
+
+    $_SESSION['token_api'] = $API->token;
+} else {
+    $API->token = $_SESSION['token_api'];
+}
+
 $resultado_produto = $conecta->selecionar($conecta->conn, $sql_produto);
 $rs_produto = mysqli_fetch_array($resultado_produto);
 
-$promocional = 0;
-if (strtotime($rs_produto['data_promocional_inicio']) <= strtotime(date('Y-m-d')) && strtotime($rs_produto['data_promocional_fim']) >= strtotime(date('Y-m-d')) && $rs_produto['preco_promocional'] > 0) {
+$preco = 0;;
+$preco_promocional = 0;
+$estoque = 0;
+$ativo = 0;
+
+
+if (@$_SESSION['cliente'] > 0) {
+
+    $produtos = $API->getProdutoEstoque($rs_produto['codigo']);
+    $produto = json_decode($produtos);
+
+    $i = 0;
+
+    $preco = $produto->{'produtos'}[$i]->{'preco'};
+    $preco_promocional = $produto->{'produtos'}[$i]->{'precoPromocional'};
+    $estoque = $produto->{'produtos'}[$i]->{'estoque'};
+    $ativo = $produto->{'produtos'}[$i]->{'ativo'};
+}
+
+$preco = $preco > 0 ? $preco + $preco * 0.2 : 0;
+$preco_promocional = $preco_promocional > 0 ? $preco_promocional + $preco_promocional * 0.2 : 0;
+
+if ($preco_promocional > 0) {
     $promocional = 1;
+} else {
+    $promocional = 0;
+    if (strtotime($rs_produto['data_promocional_inicio']) <= strtotime(date('Y-m-d')) && strtotime($rs_produto['data_promocional_fim']) >= strtotime(date('Y-m-d'))) {
+        $promocional = 1;
+    }
 }
 
 $sql_prod_img = "SELECT * FROM tbprod_foto WHERE produto_id = " . $rs_produto['produto'] . " ORDER BY ordem ASC";
@@ -147,12 +184,12 @@ while ($rs_tag = mysqli_fetch_array($resultado_produto)) {
                                         </div>
                                     <?php } ?>
                                     <p style="margin-top:20px;">
-                                        <?php if ($promocional && $rs_produto['preco'] > 0) { ?>
-                                            <font style="font-size: 1.75em;">de</font> <span class="old-price" style="font-size: 1.5em;">R$ <?php echo number_format($rs_produto['preco'], 2, ",", "."); ?></span><br>
-                                            <font style="font-size: 1.75em;">por</font> <span class="price" style="font-size: 1.75em; margin-top: 0px !important;">R$ <?php echo number_format($rs_produto['preco_promocional'], 2, ",", "."); ?></span>
+                                        <?php if ($promocional && $preco > 0) { ?>
+                                            <font style="font-size: 1.75em;">de</font> <span class="old-price" style="font-size: 1.5em;">R$ <?php echo number_format($preco, 2, ",", "."); ?></span><br>
+                                            <font style="font-size: 1.75em;">por</font> <span class="price" style="font-size: 1.75em; margin-top: 0px !important;">R$ <?php echo number_format($preco_promocional, 2, ",", "."); ?></span>
                                             <?php } else {
-                                            if ($rs_produto['preco'] > 0) { ?>
-                                                <span class="price" style="font-size: 1.75em; "">R$ <?php echo number_format($rs_produto['preco'], 2, ",", "."); ?></span>
+                                            if ($preco > 0) { ?>
+                                                <span class="price" style="font-size: 1.75em; "">R$ <?php echo number_format($preco, 2, ",", "."); ?></span>
                                                                         <?php }
                                                                 } ?>
                                                                 </p>

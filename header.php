@@ -9,6 +9,8 @@ include "funcoes.php";
 
 require_once('phpmailer/PHPMailerAutoload.php');
 
+include_once("classes/comunicacao.class.php");
+
 $conecta = new Recordset;
 $conecta->conexao();
 
@@ -27,8 +29,8 @@ $resultado_configuracao = $conecta->selecionar($conecta->conn, $sql_configuracao
 $rs_configuracao = mysqli_fetch_array($resultado_configuracao);
 
 //$siteUrl = $rs_configuracao['linkloja'];
-//$siteUrl = "http://www.marconesacramento.com.br/";
-$siteUrl = "https://www.industriasacramento.com.br/testenovo/";
+$siteUrl = "http://www.marconesacramento.com.br/";
+//$siteUrl = "https://www.industriasacramento.com.br/testenovo/";
 
 
 if (@$tela != '') {
@@ -59,6 +61,17 @@ if (isset($_POST['entrar']) && $_POST['entrar'] == "Login") {
         $_SESSION['email_cliente'] = $rs_valida['email'];
         $_SESSION['telefone_cliente'] = $rs_valida['celular'];
         $_SESSION['cpf_cliente'] = $rs_valida['cnpj'];
+
+        $API = new ComunicacaoAPI();
+
+        if (empty($_SESSION['token_api'])) {
+
+            $API->getToken('http://sistemas.spacearea.com.br/homologacao/ecommerceapi/v1/autenticacao/entrar');
+
+            $_SESSION['token_api'] = $API->token;
+        } else {
+            $API->token = $_SESSION['token_api'];
+        }
 
         echo "<script>alert('Seja bem vindo " . $_SESSION['nome_cliente'] . "!')</script>";
     } else {
@@ -280,7 +293,7 @@ if ($pagina == "carrinho") {
         $produto1 = $_POST['produto'];
 
 
-        $sqlProduto = "SELECT p.nome, p.id, p.marca, p.referencia, p.modelo, p.preco_promocional, p.preco, p.data_promocional_inicio, p.data_promocional_fim, p.descricao, p.peso, p.altura, p.comprimento, p.largura, c.titulo as categoria, sc.titulo as subcategoria, f.foto, f.legenda
+        $sqlProduto = "SELECT p.nome, p.codigo, p.id, p.marca, p.referencia, p.modelo, p.preco_promocional, p.preco, p.data_promocional_inicio, p.data_promocional_fim, p.descricao, p.peso, p.altura, p.comprimento, p.largura, c.titulo as categoria, sc.titulo as subcategoria, f.foto, f.legenda
 					FROM tbproduto p inner join tbprod_subcategoria sc on sc.id = p.subcategoria_id
 					inner join tbprod_categoria c on c.id = sc.categoria_id
 					inner JOIN tbprod_foto f ON f.produto_id = p.id
@@ -289,6 +302,7 @@ if ($pagina == "carrinho") {
         $resultadoProduto = $conecta->selecionar($conecta->conn, $sqlProduto);
         $rs_produto = mysqli_fetch_array($resultadoProduto);
         $nome = $rs_produto['nome'];
+        $codigo = $rs_produto['codigo'];
 
         if ($rs_produto['preco_promocional'] > 0 && $rs_produto['data_promocional_inicio'] <= date('Y-m-d') && $rs_produto['data_promocional_fim'] >= date('Y-m-d')) {
             $preco = $rs_produto['preco_promocional'];
@@ -332,7 +346,7 @@ if ($pagina == "carrinho") {
                                 $pro->setMedida($kilograma);
                                 $_SESSION['qtde'] = @$_SESSION['qtde'] + $quantidade;
                             } else {
-                                $produto = new Produto($produto1 . "_" . $rs_cor['id'], $nome, $rs_produto['referencia'], $rs_produto['marca'], $rs_produto['modelo'], $preco, $descricao, $rs_produto['foto'], $quantidade, $rs_produto['peso'], $rs_produto['altura'], $rs_produto['comprimento'], $rs_produto['largura'], $complemento, $kilograma);
+                                $produto = new Produto($produto1 . "_" . $rs_cor['id'], $nome, $rs_produto['referencia'], $rs_produto['marca'], $rs_produto['modelo'], $preco, $descricao, $rs_produto['foto'], $quantidade, $rs_produto['peso'], $rs_produto['altura'], $rs_produto['comprimento'], $rs_produto['largura'], $complemento, $kilograma, $codigo);
                                 //Adiciona produto 1
                                 $carrinhoSessao->addProduto($produto);
 
@@ -353,7 +367,7 @@ if ($pagina == "carrinho") {
                         $pro->setMedida($kilograma);
                         $_SESSION['qtde'] = @$_SESSION['qtde'] + $quantidade;
                     } else {
-                        $produto = new Produto($produto1, $nome, $rs_produto['referencia'], $rs_produto['marca'], $rs_produto['modelo'], $preco, $descricao, $rs_produto['foto'], $quantidade, $rs_produto['peso'], $rs_produto['altura'], $rs_produto['comprimento'], $rs_produto['largura'], $complemento, $kilograma);
+                        $produto = new Produto($produto1, $nome, $rs_produto['referencia'], $rs_produto['marca'], $rs_produto['modelo'], $preco, $descricao, $rs_produto['foto'], $quantidade, $rs_produto['peso'], $rs_produto['altura'], $rs_produto['comprimento'], $rs_produto['largura'], $complemento, $kilograma, $codigo);
                         //Adiciona produto 1
                         $carrinhoSessao->addProduto($produto);
                         $_SESSION['qtde'] = @$_SESSION['qtde'] + $quantidade;
