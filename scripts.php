@@ -7,9 +7,46 @@ include "uteis/bancodados.php";
 include "parametros.php";
 include "funcoes.php";
 
+include_once("classes/comunicacao.class.php");
+
 $conecta = new Recordset;
 $conecta->conexao();
 
+
+$API = new ComunicacaoAPI();
+
+if(empty($_SESSION['token_api']))
+{
+
+    $API->getToken('http://sistemas.spacearea.com.br/homologacao/ecommerceapi/v1/autenticacao/entrar');
+
+    $_SESSION['token_api'] = $API->token;
+} else {
+    $API->token = $_SESSION['token_api'];
+}
+var_dump($_SESSION['token_api']);
+
+//BUSCAR SITUACAO DO CLIENTE
+$email = 'testeIV@teste.com';
+//$cliente = $API->getCliente($email);
+//var_dump($cliente);
+
+//BUSCAR UM PRODUTO ESPECIFICO NA API
+$idproduto = 4022;
+//$produto = $API->getProduto($idproduto);
+//var_dump($produto);
+
+//BUSCAR UM PRODUTO E ESTOQUE ESPECIFICO NA API
+$idproduto = 4022;
+//$produtos = $API->getProdutoEstoque($idproduto);
+//var_dump($produtos);
+
+//ENVIAR PEDIDO NA API
+
+$pedido = $API->setPedido();
+var_dump($pedido);
+
+/*
 $sql_configuracao = "SELECT nome, id FROM tbproduto order by nome asc";
 $resultado_configuracao = $conecta->selecionar($conecta->conn, $sql_configuracao);
 
@@ -28,6 +65,6 @@ while($rs_configuracao = mysqli_fetch_array($resultado_configuracao)){
         $conecta->selecionar($conecta->conn, $sql_update);
     }
 
-}
+}*/
 
 $conecta->desconectar(); 

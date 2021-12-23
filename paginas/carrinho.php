@@ -40,7 +40,11 @@
 
                     <form method="post" name="formCarrinho" enctype="multipart/form-data" action="<?php echo $siteUrl; ?>finalizar/49">
                         <?php
-                        $carrinhoSessao->listar_cotacao();
+                        if (@$_SESSION['cliente'] > 0) { 
+                            $carrinhoSessao->listar_cotacao_logado();
+                        } else {
+                            $carrinhoSessao->listar_cotacao();
+                        }
                         ?>
 
                     </form>

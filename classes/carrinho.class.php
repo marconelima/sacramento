@@ -211,6 +211,100 @@ if($total < 201) {
 	</section>';
 	}
 
+    // lista todos os produtos
+    public function listar_cotacao_logado()
+    {
+        /* CONEXÃO COM O BANCO DE DADOS*/
+        $conecta = new Recordset;
+        $conecta->conexao();
+
+        $sql_configuracao = "SELECT * FROM tbconfiguracao WHERE id = 1";
+        $resultado_configuracao = $conecta->selecionar($conecta->conn, $sql_configuracao);
+        $rs_configuracao = mysqli_fetch_array($resultado_configuracao);
+
+        $siteUrl = $rs_configuracao['linkloja'] . "/";
+
+        $i = 0;
+        foreach ($this->produto as $pro) {
+
+            $sql_tamcor = "SELECT tamanho, cor FROM tbprod_tamanhocor WHERE id = " . substr($pro->getId(), (stripos($pro->getId(), "_") > 0 ? stripos($pro->getId(), "_") + 1 : 0));
+            $resultado_tamcor = $conecta->selecionar($conecta->conn, $sql_tamcor);
+
+            $compemento_cortamanho = '';
+            if ($rs_tamcor = mysqli_fetch_array($resultado_tamcor)) {
+                $compemento_cortamanho = '<br/>Tamanho: ' . $rs_tamcor['tamanho'] . ' | Cor: ' . $rs_tamcor['cor'];
+            }
+
+            if ($pro->getMedida() == 'unidades') {
+                $marcadoselg = "selected";
+            }
+            if ($pro->getMedida() == 'duzias') {
+                $marcadoselk = "selected";
+            }
+
+            echo '<input type="hidden" name="prodid' . $i . '" value="' . $pro->getId() . '" />
+				<div class="row kart-iten d-flex align-items-center" style="border: 1px solid #000;  padding: 10px; margin:5px 0;">
+					<div class="col-sm-4 col-md-2">
+						<img src="' . $siteUrl . 'source/Produtos/' . $pro->getFoto() . '" alt="" style="width:100%;"/>
+					</div>
+					<div class="col-sm-3 col-md-3">
+						<h4>' . $pro->getNome() . '</h4>
+						<p>' . $compemento_cortamanho . '</p>
+					</div>
+					<div class="col-sm-4 col-md-1" style="text-align: center;">
+						<h6>Quantidade</h6>
+						<input type="text" name="qtde_prod' . $i . '" class="quantity" style="text-align:center; border-radius:10px;" value="' . $pro->getQuantidade() . '" size="3" />
+					</div>
+					<div class="col-sm-4 col-md-1 centrar-carrinho">
+						<h5>Unidade</h5>
+						<select name="kilo_grama" style="border-radius:10px;">
+							<option value="unidades" ' . $marcadoselk . '>Unidades</option>
+							<option value="duzias" ' . $marcadoselg . '>Dúzias</option>
+						</select>
+					</div>
+					<div class="col-sm-4 col-md-2 dnone-descricao" style="padding-left: 2%;">
+						<h5>Observações sobre o produto</h5>
+						<textarea name="message' . $i . '" id="input-message" style="border-radius:10px; max-width: 100%;" rows="5" placeholder="Digite sua mensagem" class="placeholder">' . $pro->getComplemento() . '</textarea>
+					</div>
+					<div class="col-sm-4 col-md-1 centrar-carrinho">
+						<h5>Excluir</h5>
+
+						<a href="' . $siteUrl . 'carrinho/48/0/0/0/0/0/0/0/0/0/' . $pro->getId() . '"><img src="' . $siteUrl . 'assets/img/x_mark_red.jpg" width="20" id="remover" style="width:20px !important; margin:20px 0 0 0px;" /></a>
+
+					</div>
+                    <div class="col-sm-6 col-md-1 centrar-carrinho">
+                        <h5>Preço</h5>
+                        R$ 99.999,00
+                    </div>
+                    <div class="col-sm-6 col-md-1 centrar-carrinho">
+                        <h5>Total</h5>
+                        R$ 99.999,00
+                    </div>
+				</div>';
+
+            $i++;
+        }
+
+        echo '<section class="page-section" style="padding-top: 30px;">
+		<div class="container">
+			<div class="row send-quotation">
+                <div style="width:50%; float:left; height:auto; text-align:left; font-weight:bold;">Total Carrinho</div>
+                <div style="width:50%; float:left; height:auto; text-align:right; font-weight:bold;">R$ 99.999,00</div>
+			</div>
+		</div>
+	</section>';
+
+        echo '<section class="page-section" style="padding-top: 30px;">
+		<div class="container">
+			<div class="row send-quotation">
+				<a href="javascript:submitform()" class="btn btn-default btn-lg btn-product btn-empresa" style="padding: 1% 2%; margin: 0 2% 2% 0;">Enviar Orçamento</a>
+				<a href="' . $siteUrl . 'catalogo/21" class="btn btn-default btn-lg btn-product btn-empresa" style="padding: 1% 2%; margin: 0 2% 2% 0;">Continuar Orçamento</a>
+                <a href="' . $siteUrl . 'limpar/21" class="btn btn-default btn-lg btn-product btn-empresa" style="padding: 1% 2%; margin: 0 2% 2% 0;">Limpar Orçamento</a>
+			</div>
+		</div>
+	</section>';
+    }
+
 
 	// lista todos os produtos
 	public function listar_cotacao_lateral(){

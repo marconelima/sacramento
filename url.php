@@ -1,5 +1,5 @@
 <?php 
-if($_SERVER['HTTP_X_FORWARDED_PROTO'] == 'http'){
+if(@$_SERVER['HTTP_X_FORWARDED_PROTO'] == 'http'){
 	$protocolo = "https://";
 	header( "Location: ".$protocolo.$_SERVER['SERVER_NAME']);
 }  

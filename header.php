@@ -37,10 +37,13 @@ if (@$tela != '') {
     $rs_tela = mysqli_fetch_array($resultado_tela);
 }
 
-
+$sair = 0;
+if(isset($_POST['sair']) && @$_POST['sair'] == "1"){
+    $sair = 1;
+}
 
 if (isset($sair) && $sair == 1) {
-    unset($_SESSION['cliente'], $_SESSION['nome_cliente'], $_SESSION['email_cliente']);
+    unset($_SESSION['cliente'], $_SESSION['nome_cliente'], $_SESSION['email_cliente'], $_SESSION['cpf_cliente'], $_SESSION['telefone_cliente']);
 }
 
 if (isset($_POST['entrar']) && $_POST['entrar'] == "Login") {
@@ -55,6 +58,7 @@ if (isset($_POST['entrar']) && $_POST['entrar'] == "Login") {
         $_SESSION['nome_cliente'] = $rs_valida['nome'];
         $_SESSION['email_cliente'] = $rs_valida['email'];
         $_SESSION['telefone_cliente'] = $rs_valida['celular'];
+        $_SESSION['cpf_cliente'] = $rs_valida['cnpj'];
 
         echo "<script>alert('Seja bem vindo " . $_SESSION['nome_cliente'] . "!')</script>";
     } else {
@@ -561,7 +565,12 @@ if (isset($_SESSION["carrinho"])) {
                     </li>
                     <li><a href="<?php echo $siteUrl; ?>fale-conosco/16">Fale conosco</a></li>
                     <!--<li><a href="<?php echo $siteUrl; ?>busca/21"><img src="/images/lupa.png" width="25" height="26" alt="pesquisar" title="pesquisar"></a></li>-->
-                    <li><a href="#" data-toggle="modal" data-target="#ModalLogin"><img src="/images/user.png" width="25" height="26" alt="Minha área" title="Minha área"></a></li>
+                    <li><a href="#" data-toggle="modal" data-target="<?php if (@$_SESSION['cliente'] > 0) { ?>#ModalArea<?php } else { ?>#ModalLogin<?php } ?>"><img src="/images/user.png" width="25" height="26" alt="Minha área" title="Minha área">
+                            <?php if (@$_SESSION['cliente'] > 0) { ?>
+                                <span class="numeroProdutos" style="height: 10px; width: 10px; padding: 0; background: #069; top: 10px; left: 20px;"></span>
+                            <?php } ?>
+                        </a>
+                    </li>
 
                     <li>
                         <a href="<?php echo $siteUrl; ?>carrinho/48"><img src="/images/car.png" width="25" height="26" alt="Meu carrinho" title="Meu carrinho">

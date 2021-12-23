@@ -132,6 +132,39 @@
     </div>
 </div>
 
+<div class="modal modal-log-reg fade" id="ModalArea" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="ModalLabelL">Dados do usuário</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p> </p>
+                <form action="" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="sair" id="sair" value="1" />
+                    <div class="form-group">
+                        <label>Nome</label>
+                        <?php echo $_SESSION['nome_cliente']; ?><br />
+                        <?php echo $_SESSION['cpf_cliente']; ?><br />
+                        <?php echo $_SESSION['email_cliente']; ?><br />
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+
+                        </div>
+                        <div class="col-md-6">
+                            <button class="btn btn-primary pull-right" style='border-radius:9rem !important; padding: .175rem 1.75rem !important; float:right;' type="submit" name="enviar" value="Sair">Sair</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Modal Register and Login -->
 <div class="modal modal-log-reg fade" id="ModalLogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -201,8 +234,8 @@
                         <input type="password" required="required" id="regRepeatPassword" class="form-control" name="regrepeatpassword" placeholder="">
                     </div>
                     <div class="form-group">
-                        <label>CNPJ</label>
-                        <input class="form-control" required="required" name="cnpj" id="cnpj" placeholder="">
+                        <label>CPF / CNPJ</label>
+                        <input class="form-control" required="required" name="cnpj" id="nucnpj" placeholder="">
                     </div>
                     <div class="form-group">
                         <label>DDD + Telefone</label>
@@ -292,7 +325,7 @@
         let menulateral = document.querySelector(".menubusca");
         let corposite = document.querySelector(".content-area");
 
-        if (corposite.scrollHeight < menulateral.scrollHeight){
+        if (corposite.scrollHeight < menulateral.scrollHeight) {
             corposite.style.height = menulateral.scrollHeight + "px";
         }
     }
@@ -650,6 +683,7 @@
 <script type="text/javascript" src="<?php echo $siteUrl2; ?>assets/js/custom.js"></script>
 
 <script type="text/javascript" src="<?php echo $siteUrl2; ?>js/jquery.maskedinput.min.js"></script>
+<script type="text/javascript" src="<?php echo $siteUrl2; ?>Inputmask5/dist/jquery.inputmask.min.js"></script>
 
 <script type="text/javascript">
     jQuery(document).ready(function() {
@@ -748,6 +782,12 @@
 
         $('#cpf').mask('999.999.999-99');
         $('#cnpj').mask('99.999.999/9999-99');
+
+        $("input[id*='nucnpj']").inputmask({
+            mask: ['999.999.999-99', '99.999.999/9999-99'],
+            keepStatic: true
+        });
+
         $('#cep').mask('99.999-999');
         $('#data_nasc').mask('99/99/9999');
 
