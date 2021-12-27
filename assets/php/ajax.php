@@ -67,6 +67,7 @@ if (isset($_POST['acao']) && @$_POST['acao'] == 'getColocarCarrinho')
         $_SESSION["carrinho"] = serialize($carrinhoSessao);
     }
 
-    echo $_SESSION["carrinho"];
+    var_dump($_SESSION["carrinho"]);
+     var_dump("teste");
 
 }
