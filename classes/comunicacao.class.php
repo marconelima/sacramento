@@ -99,6 +99,10 @@ class ComunicacaoAPI
 
             $resposta = json_decode($response);
 
+            echo "<pre>";
+            print_r($resposta);
+            echo "</pre>";
+
             if (isset($resposta->status) && $resposta->status === 401) {
                 $this->getToken('http://sistemas.spacearea.com.br/homologacao/ecommerceapi/v1/autenticacao/entrar');
                 header("Refresh:1");               
@@ -183,91 +187,91 @@ class ComunicacaoAPI
             'Connection: keep-alive'
         ];
         $data = '{
-    "numeroOrigem": "222548",
-    "enderecoEntrega": {
-        "codigo": 0,
-        "logradouro": "Rua ingas Entrega II",
-        "numero": "127d",
-        "cep": "32315120",
-        "bairro": "Eldorado",
-        "cidade": "Contagem",
-        "ufSigla": "MG"
-    },
-    "enderecoCobranca": {
-        "codigo": 0,
-        "logradouro": "Rua ingas",
-        "numero": "127B",
-        "cep": "32315120",
-        "bairro": "Eldorado",
-        "cidade": "Contagem",
-        "ufSigla": "MG"
-    },
-    "cliente": {
-        "codigo": 0,
-        "razaoSocial": "Teste de Pedido II",
-        "cnpj": "81.834.885/0001-26",
-        "inscricaoEstadual": "854.824.949/0257",
-        "email": "testeIV@teste.com",
-        "tipo": "J",
-        "sexo": "M",
-        "telefone": "(31) 3198-0201",
-        "telefone2": "(31) 3198-0201",
-        "celular": "(31) 98422-1313",
-        "enderecos": [
-            {
+            "numeroOrigem": "222548",
+            "enderecoEntrega": {
                 "codigo": 0,
-                "logradouro": "Rua ingas",
-                "numero": "127",
+                "logradouro": "Rua ingas Entrega II",
+                "numero": "127d",
                 "cep": "32315120",
                 "bairro": "Eldorado",
                 "cidade": "Contagem",
                 "ufSigla": "MG"
-            }
-        ]
-    },
-    "valorLiquido": 855,
-    "valorFrete": 7,
-    "observacao": "Entregar a noite",
-    "naturezaOperacao": "WEB",
-    "valorDesconto": 5.69,
-    "dataEmissao": "18/06/2018",
-    "horaEmissao": "13:20:30",
-    "observacaoFiscal1": "Obs fiscal 1",
-    "items": [
-        {
-            "produtoCodigo": 98,
-            "quantidade": 10,
-            "valorLiquido": 243.9,
-            "valorUnitario": 24.39,
-            "valorDesconto": 0,
-            "unidade": "DZ",
-            "unidadeQuantidade": 12
-        },
-        {
-            "produtoCodigo": 100,
-            "quantidade": 10,
-            "valorLiquido": 389.9,
-            "valorUnitario": 38.99,
-            "valorDesconto": 0
-        },
-        {
-            "produtoCodigo": 102,
-            "quantidade": 11,
-            "valorLiquido": 219.89,
-            "valorUnitario": 19.99,
-            "valorDesconto": 0,
-            "unidade": "UN",
-            "unidadeQuantidade": 1
-        }
-    ],
-    "pagamentos": [
-        {
-            "formaPagamento": "boleto",
-            "numeroParcelas": 1,
-            "valorPago": 855
-        }
-    ]
-}';
+            },
+            "enderecoCobranca": {
+                "codigo": 0,
+                "logradouro": "Rua ingas",
+                "numero": "127B",
+                "cep": "32315120",
+                "bairro": "Eldorado",
+                "cidade": "Contagem",
+                "ufSigla": "MG"
+            },
+            "cliente": {
+                "codigo": 0,
+                "razaoSocial": "Teste de Pedido II",
+                "cnpj": "81.834.885/0001-26",
+                "inscricaoEstadual": "854.824.949/0257",
+                "email": "testeIV@teste.com",
+                "tipo": "J",
+                "sexo": "M",
+                "telefone": "(31) 3198-0201",
+                "telefone2": "(31) 3198-0201",
+                "celular": "(31) 98422-1313",
+                "enderecos": [
+                    {
+                        "codigo": 0,
+                        "logradouro": "Rua ingas",
+                        "numero": "127",
+                        "cep": "32315120",
+                        "bairro": "Eldorado",
+                        "cidade": "Contagem",
+                        "ufSigla": "MG"
+                    }
+                ]
+            },
+            "valorLiquido": 855,
+            "valorFrete": 7,
+            "observacao": "Entregar a noite",
+            "naturezaOperacao": "WEB",
+            "valorDesconto": 5.69,
+            "dataEmissao": "18/06/2018",
+            "horaEmissao": "13:20:30",
+            "observacaoFiscal1": "Obs fiscal 1",
+            "items": [
+                {
+                    "produtoCodigo": 98,
+                    "quantidade": 10,
+                    "valorLiquido": 243.9,
+                    "valorUnitario": 24.39,
+                    "valorDesconto": 0,
+                    "unidade": "DZ",
+                    "unidadeQuantidade": 12
+                },
+                {
+                    "produtoCodigo": 100,
+                    "quantidade": 10,
+                    "valorLiquido": 389.9,
+                    "valorUnitario": 38.99,
+                    "valorDesconto": 0
+                },
+                {
+                    "produtoCodigo": 102,
+                    "quantidade": 11,
+                    "valorLiquido": 219.89,
+                    "valorUnitario": 19.99,
+                    "valorDesconto": 0,
+                    "unidade": "UN",
+                    "unidadeQuantidade": 1
+                }
+            ],
+            "pagamentos": [
+                {
+                    "formaPagamento": "boleto",
+                    "numeroParcelas": 1,
+                    "valorPago": 855
+                }
+            ]
+        }';
 
 
         $pedido = $this->requestAPI($endpoint, 'POST', $data, $header);

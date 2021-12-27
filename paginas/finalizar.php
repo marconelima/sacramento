@@ -78,6 +78,7 @@
                     <td>Total</td>
                 </tr>";
             $i = 0;
+            $itens = array();
             foreach ($carrinhoSessao->getProdutos() as $pro) :
 
 
@@ -105,6 +106,17 @@
                 $preco_total_produto = $preco_total_produto + ($preco * $pro->getQuantidade());
 
                 $preco_total_carrinho = $preco_total_carrinho + $preco_total_produto;
+
+                $produto = ["produtoCodigo"=> 98,
+                    "quantidade"=> $pro->getQuantidade(),
+                    "valorLiquido"=> ($preco * $pro->getQuantidade()),
+                    "valorUnitario"=> $preco,
+                    "valorDesconto"=> 0,
+                    "unidade"=> $produto->{'produtos'}[$i]->{'unidade'},
+                    "unidadeQuantidade"=> $pro->getQuantidade()
+                ];
+
+                array_push($itens, $produto);
 
                 $configuracao_da_mensagem_original .= "<tr>
                     <td><img src='" . $siteUrl . "source/Produtos/" . $pro->getFoto() . "' alt='' width='60'/></td>
@@ -186,6 +198,12 @@
                 <br>
                 Industria Sacramento</a>";
         }
+
+
+        echo "<pre>";
+        print_r($itens);
+        echo "</pre>";
+
         //ENVIO DE MENSAGEM ORIGINAL
         $headers = "$cabecalho_da_mensagem_original";
         $headers .= "Content-Type: text/html; charset=\"UTF-8\"\n\n";
@@ -278,7 +296,7 @@ Recebido em: $date<br>
                     echo '<div class="alert alert-danger">Problema ao enviar Orçamento!</div>';
                 }
 
-                unset($_SESSION['carrinho'], $_SESSION['qtde'], $_SESSION['criar'], $dadospedido, $dadosproduto);
+                //unset($_SESSION['carrinho'], $_SESSION['qtde'], $_SESSION['criar'], $dadospedido, $dadosproduto);
             }
         } catch (Exception $e) {
             echo '<div class="alert alert-danger">Problema ao enviar Orçamento!</div>';

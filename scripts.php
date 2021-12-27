@@ -12,7 +12,6 @@ include_once("classes/comunicacao.class.php");
 $conecta = new Recordset;
 $conecta->conexao();
 
-
 $API = new ComunicacaoAPI();
 
 if(empty($_SESSION['token_api']))
