@@ -60,12 +60,13 @@ if (isset($_POST['acao']) && @$_POST['acao'] == 'getColocarCarrinho')
         //Adiciona produto 1
 
         var_dump($produto);
-        
+
         $carrinhoSessao->addProduto($produto);
         $_SESSION['qtde'] = @$_SESSION['qtde'] + $quantidade;
 
         $_SESSION["carrinho"] = serialize($carrinhoSessao);
     }
 
+    echo $_SESSION["carrinho"];
 
 }
