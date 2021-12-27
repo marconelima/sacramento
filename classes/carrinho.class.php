@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <script language="javascript">
 	function chamarfrete(){
 		window.location = "index.php?pagina=carrinho&tela=26&acao=frete&cepdestino="+document.getElementById("cep").value;
@@ -242,6 +245,10 @@ if($total < 201) {
 
             $preco_total_produto = 0;
             $produtos = $API->getProdutoEstoque($pro->getCodigo());
+
+            echo "<pre>";
+            print_r($produtos);
+            echo "</pre>";
 
             $preco = 0;;
             $preco_promocional = 0;
