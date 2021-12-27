@@ -243,12 +243,11 @@ if($total < 201) {
         $preco_total_carrinho = 0;
         foreach ($this->produto as $pro) {
 
-            $preco_total_produto = 0;
-            $produtos = $API->getProdutoEstoque($pro->getCodigo());
+            var_dump("teste codigo");
+            var_dump($pro->getCodigo());
 
-            echo "<pre>";
-            print_r($produtos);
-            echo "</pre>";
+            
+            $preco_total_produto = 0;
 
             $preco = 0;;
             $preco_promocional = 0;
@@ -256,15 +255,26 @@ if($total < 201) {
             $ativo = 0;
             $unidade = '';
 
-            $produto = json_decode($produtos);
+            var_dump("teste de porduot");
+            var_dump($pro->getCodigo());
 
-            $i = 0;
+            if ($pro->getCodigo() > 0) {
+                $produtos = $API->getProdutoEstoque($pro->getCodigo());
 
-            $preco = $produto->{'produtos'}[$i]->{'preco'};
-            $preco_promocional = $produto->{'produtos'}[$i]->{'precoPromocional'};
-            $estoque = $produto->{'produtos'}[$i]->{'estoque'};
-            $ativo = $produto->{'produtos'}[$i]->{'ativo'};
-            $unidade = $produto->{'produtos'}[$i]->{'unidade'};
+                echo "<pre>";
+                print_r($produtos);
+                echo "</pre>";
+
+                $produto = json_decode($produtos);
+
+                $i = 0;
+
+                $preco = $produto->{'produtos'}[$i]->{'preco'};
+                $preco_promocional = $produto->{'produtos'}[$i]->{'precoPromocional'};
+                $estoque = $produto->{'produtos'}[$i]->{'estoque'};
+                $ativo = $produto->{'produtos'}[$i]->{'ativo'};
+                $unidade = $produto->{'produtos'}[$i]->{'unidade'};
+            }
 
 
             $preco = $preco > 0 ? $preco + $preco * 0.2 : 0;
