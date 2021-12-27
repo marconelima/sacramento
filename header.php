@@ -347,7 +347,10 @@ if ($pagina == "carrinho") {
                                 $pro->setMedida($kilograma);
                                 $_SESSION['qtde'] = @$_SESSION['qtde'] + $quantidade;
                             } else {
-                                $produto = new Produto($produto1 . "_" . $rs_cor['id'], $nome, $rs_produto['referencia'], $rs_produto['marca'], $rs_produto['modelo'], $preco, $descricao, $rs_produto['foto'], $quantidade, $rs_produto['peso'], $rs_produto['altura'], $rs_produto['comprimento'], $rs_produto['largura'], $complemento, $kilograma, $codigo);
+                                $produto = new Produto($produto1 . "_" . $rs_cor['id'], $nome, $rs_produto['referencia'], $rs_produto['marca'], $rs_produto['modelo'], $preco, $descricao, $rs_produto['foto'], $quantidade, $rs_produto['peso'], $rs_produto['altura'], $rs_produto['comprimento'], $rs_produto['largura'], $complemento, $kilograma, $rs_produto['codigo']);
+
+                                var_dump($produto);
+
                                 //Adiciona produto 1
                                 $carrinhoSessao->addProduto($produto);
 
@@ -368,7 +371,10 @@ if ($pagina == "carrinho") {
                         $pro->setMedida($kilograma);
                         $_SESSION['qtde'] = @$_SESSION['qtde'] + $quantidade;
                     } else {
-                        $produto = new Produto($produto1, $nome, $rs_produto['referencia'], $rs_produto['marca'], $rs_produto['modelo'], $preco, $descricao, $rs_produto['foto'], $quantidade, $rs_produto['peso'], $rs_produto['altura'], $rs_produto['comprimento'], $rs_produto['largura'], $complemento, $kilograma, $codigo);
+                        $produto = new Produto($produto1, $nome, $rs_produto['referencia'], $rs_produto['marca'], $rs_produto['modelo'], $preco, $descricao, $rs_produto['foto'], $quantidade, $rs_produto['peso'], $rs_produto['altura'], $rs_produto['comprimento'], $rs_produto['largura'], $complemento, $kilograma, $rs_produto['codigo']);
+
+                        var_dump($produto);
+                        
                         //Adiciona produto 1
                         $carrinhoSessao->addProduto($produto);
                         $_SESSION['qtde'] = @$_SESSION['qtde'] + $quantidade;

@@ -21,6 +21,7 @@ class Carrinho{
 	//public function Carrinho(){}
         //Adiciona um produto
 	public function addProduto(Produto $m){
+        var_dump($m);
 		$this->produto[] = $m;
 	}
         // Recupera um produto pelo id
