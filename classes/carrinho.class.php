@@ -239,20 +239,18 @@ if($total < 201) {
         }
 
         $i = 0;
-
-        var_dump($this->produto);
         
         $preco_total_carrinho = 0;
         foreach ($this->produto as $pro) {
 
-            $sqlProduto = "SELECT p.nome, p.codigo, p.id, p.marca, p.referencia, p.modelo, p.preco_promocional, p.preco, p.data_promocional_inicio, p.data_promocional_fim, p.descricao, p.peso, p.altura, p.comprimento, p.largura, c.titulo as categoria, sc.titulo as subcategoria, f.foto, f.legenda
+            $sqlProduto1 = "SELECT p.nome, p.codigo, p.id, p.marca, p.referencia, p.modelo, p.preco_promocional, p.preco, p.data_promocional_inicio, p.data_promocional_fim, p.descricao, p.peso, p.altura, p.comprimento, p.largura, c.titulo as categoria, sc.titulo as subcategoria, f.foto, f.legenda
 					FROM tbproduto p inner join tbprod_subcategoria sc on sc.id = p.subcategoria_id
 					inner join tbprod_categoria c on c.id = sc.categoria_id
 					inner JOIN tbprod_foto f ON f.produto_id = p.id
 					where p.id = ".$pro->getId()." AND f.destaque = 1";
 
-            $resultadoProduto = $conecta->selecionar($conecta->conn, $sqlProduto);
-            $rs_produto = mysqli_fetch_array($resultadoProduto);
+            $resultadoProduto1 = $conecta->selecionar($conecta->conn, $sqlProduto1);
+            $rs_produto1 = mysqli_fetch_array($resultadoProduto1);
             
             $preco_total_produto = 0;
 
@@ -262,16 +260,9 @@ if($total < 201) {
             $ativo = 0;
             $unidade = '';
 
-            var_dump("teste de porduot");
-            var_dump($rs_produto['codigo']);
-
-            if ($rs_produto['codigo'] > 0) {
-                $produtos = $API->getProdutoEstoque($rs_produto['codigo']);
-
-                echo "<pre>";
-                print_r($produtos);
-                echo "</pre>";
-
+            if ($rs_produto1['codigo'] > 0) {
+                $produtos = $API->getProdutoEstoque($rs_produto1['codigo']);
+                
                 $produto = json_decode($produtos);
 
                 $i = 0;
