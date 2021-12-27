@@ -256,7 +256,7 @@ while ($rs_tag = mysqli_fetch_array($resultado_total)) {
                         <?php $i = 0;
                         $API = new ComunicacaoAPI();
 
-                        if (empty($_SESSION['token_api'])) {
+                        if (empty($_SESSION['token_api']) || $_SESSION['token_api'] == 'erro') {
 
                             $API->getToken('http://sistemas.spacearea.com.br/homologacao/ecommerceapi/v1/autenticacao/entrar');
 
