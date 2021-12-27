@@ -7,6 +7,8 @@ include "uteis/bancodados.php";
 include "parametros.php";
 include "funcoes.php";
 
+var_dump($_SESSION['token_api']);
+
 require_once('phpmailer/PHPMailerAutoload.php');
 
 include_once("classes/comunicacao.class.php");
