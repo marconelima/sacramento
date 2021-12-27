@@ -30,11 +30,13 @@ $preco_promocional = 0;
 $estoque = 0;
 $ativo = 0;
 
+var_dump("teste de token");
 var_dump($_SESSION);
 
 
 if (@$_SESSION['cliente'] > 0) {
 
+    var_dump("teste codigo");
     var_dump($rs_produto['codigo']);
 
     if($rs_produto['codigo'] > 0) {
