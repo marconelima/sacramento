@@ -21,7 +21,6 @@ class Carrinho{
 	//public function Carrinho(){}
         //Adiciona um produto
 	public function addProduto(Produto $m){
-        var_dump($m);
 		$this->produto[] = $m;
 	}
         // Recupera um produto pelo id
@@ -246,9 +245,14 @@ if($total < 201) {
         $preco_total_carrinho = 0;
         foreach ($this->produto as $pro) {
 
-            var_dump("teste codigo");
-            var_dump($pro->getCodigo());
+            $sqlProduto = "SELECT p.nome, p.codigo, p.id, p.marca, p.referencia, p.modelo, p.preco_promocional, p.preco, p.data_promocional_inicio, p.data_promocional_fim, p.descricao, p.peso, p.altura, p.comprimento, p.largura, c.titulo as categoria, sc.titulo as subcategoria, f.foto, f.legenda
+					FROM tbproduto p inner join tbprod_subcategoria sc on sc.id = p.subcategoria_id
+					inner join tbprod_categoria c on c.id = sc.categoria_id
+					inner JOIN tbprod_foto f ON f.produto_id = p.id
+					where p.id = ".$pro->getId()." AND f.destaque = 1";
 
+            $resultadoProduto = $conecta->selecionar($conecta->conn, $sqlProduto);
+            $rs_produto = mysqli_fetch_array($resultadoProduto);
             
             $preco_total_produto = 0;
 
@@ -259,10 +263,10 @@ if($total < 201) {
             $unidade = '';
 
             var_dump("teste de porduot");
-            var_dump($pro->getCodigo());
+            var_dump($rs_produto['codigo']);
 
             if ($pro->getCodigo() > 0) {
-                $produtos = $API->getProdutoEstoque($pro->getCodigo());
+                $produtos = $API->getProdutoEstoque($rs_produto['codigo']);
 
                 echo "<pre>";
                 print_r($produtos);

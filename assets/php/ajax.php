@@ -59,15 +59,10 @@ if (isset($_POST['acao']) && @$_POST['acao'] == 'getColocarCarrinho')
         $produto = new Produto($produto1, $nome, $rs_produto['referencia'], $rs_produto['marca'], $rs_produto['modelo'], $preco, $descricao, $rs_produto['foto'], $quantidade, $rs_produto['peso'], $rs_produto['altura'], $rs_produto['comprimento'], $rs_produto['largura'], $complemento, $rs_produto['peso'], $rs_produto['codigo']);
         //Adiciona produto 1
 
-        var_dump($produto);
-
         $carrinhoSessao->addProduto($produto);
         $_SESSION['qtde'] = @$_SESSION['qtde'] + $quantidade;
 
         $_SESSION["carrinho"] = serialize($carrinhoSessao);
     }
-
-    var_dump($_SESSION["carrinho"]);
-     var_dump("teste");
 
 }
