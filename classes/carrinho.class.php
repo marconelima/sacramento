@@ -239,6 +239,8 @@ if($total < 201) {
         }
 
         $i = 0;
+
+        var_dump($this->produto);
         
         $preco_total_carrinho = 0;
         foreach ($this->produto as $pro) {
