@@ -66,7 +66,7 @@ if (isset($_POST['entrar']) && $_POST['entrar'] == "Login") {
 
         $API = new ComunicacaoAPI();
 
-        if (empty($_SESSION['token_api'])) {
+        if (empty($_SESSION['token_api']) || $_SESSION['token_api'] == 'erro') {
 
             $API->getToken('http://sistemas.spacearea.com.br/homologacao/ecommerceapi/v1/autenticacao/entrar');
 
