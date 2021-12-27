@@ -265,7 +265,7 @@ if($total < 201) {
             var_dump("teste de porduot");
             var_dump($rs_produto['codigo']);
 
-            if ($pro->getCodigo() > 0) {
+            if ($rs_produto['codigo'] > 0) {
                 $produtos = $API->getProdutoEstoque($rs_produto['codigo']);
 
                 echo "<pre>";
