@@ -32,8 +32,8 @@ $email = 'testeIV@teste.com';
 
 //BUSCAR UM PRODUTO ESPECIFICO NA API
 $idproduto = 4022;
-//$produto = $API->getProduto($idproduto);
-//var_dump($produto);
+$produto = $API->getProduto($idproduto);
+var_dump($produto);
 
 //BUSCAR UM PRODUTO E ESTOQUE ESPECIFICO NA API
 $idproduto = 4022;
@@ -42,8 +42,8 @@ $idproduto = 4022;
 
 //ENVIAR PEDIDO NA API
 
-$pedido = $API->setPedido();
-var_dump($pedido);
+//$pedido = $API->setPedido();
+//var_dump($pedido);
 
 /*
 $sql_configuracao = "SELECT nome, id FROM tbproduto order by nome asc";

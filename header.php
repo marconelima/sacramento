@@ -97,8 +97,7 @@ if (isset($_POST['enviar']) && $_POST['enviar'] == "Lembrar") {
         $caracteres = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
         $tamanho = 6;
         for ($i = 0; $i < $tamanho; $i++) {
-            $senha .= $caracteres{
-                rand(0, 62)};
+            $senha .= $caracteres{rand(0, 62)};
         }
         $senhadeacesso = $senha;
 
