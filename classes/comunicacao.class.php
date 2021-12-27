@@ -147,6 +147,9 @@ class ComunicacaoAPI
 
     public function getProdutoEstoque($idproduto) {
         $endpoint = 'http://sistemas.spacearea.com.br/homologacao/ecommerceapi/v1/produto/' . $idproduto . '/estoquepreco';
+
+        var_dump($endpoint);
+        
         $header = [
             'Content-Type: application/json',
             'Authorization: Space:' . $this->token,
