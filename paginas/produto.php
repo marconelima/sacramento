@@ -30,18 +30,24 @@ $preco_promocional = 0;
 $estoque = 0;
 $ativo = 0;
 
+var_dump($_SESSION);
+
 
 if (@$_SESSION['cliente'] > 0) {
 
-    $produtos = $API->getProdutoEstoque($rs_produto['codigo']);
-    $produto = json_decode($produtos);
+    var_dump($rs_produto['codigo']);
 
-    $i = 0;
+    if($rs_produto['codigo'] > 0) {
+        $produtos = $API->getProdutoEstoque($rs_produto['codigo']);
+        $produto = json_decode($produtos);
 
-    $preco = $produto->{'produtos'}[$i]->{'preco'};
-    $preco_promocional = $produto->{'produtos'}[$i]->{'precoPromocional'};
-    $estoque = $produto->{'produtos'}[$i]->{'estoque'};
-    $ativo = $produto->{'produtos'}[$i]->{'ativo'};
+        $i = 0;
+
+        $preco = $produto->{'produtos'}[$i]->{'preco'};
+        $preco_promocional = $produto->{'produtos'}[$i]->{'precoPromocional'};
+        $estoque = $produto->{'produtos'}[$i]->{'estoque'};
+        $ativo = $produto->{'produtos'}[$i]->{'ativo'};
+    }
 }
 
 $preco = $preco > 0 ? $preco + $preco * 0.2 : 0;
