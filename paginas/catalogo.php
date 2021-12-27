@@ -271,9 +271,6 @@ while ($rs_tag = mysqli_fetch_array($resultado_total)) {
                                 //echo "<div style='width:100%; float:left; height:10px;'></div>";
                             }
 
-                            
-
-
                             $preco = 0;;
                             $preco_promocional = 0;
                             $estoque = 0;
