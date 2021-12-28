@@ -9,7 +9,7 @@ include "funcoes.php";
 
 require_once('phpmailer/PHPMailerAutoload.php');
 
-//include_once("classes/comunicacao.class.php");
+include_once("classes/comunicacao.class.php");
 
 $conecta = new Recordset;
 $conecta->conexao();
