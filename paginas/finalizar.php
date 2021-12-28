@@ -311,13 +311,13 @@
 
                     $mail->send();
                 } catch (Exception $e) {
-                    echo '<div class="alert alert-danger">Problema ao enviar Orçamento!</div>';
+                    echo '<div class="alert alert-danger">Problema ao enviar Orçamento 1!</div>';
                 }
 
                 //unset($_SESSION['carrinho'], $_SESSION['qtde'], $_SESSION['criar'], $dadospedido, $dadosproduto);
             }
         } catch (Exception $e) {
-            echo '<div class="alert alert-danger">Problema ao enviar Orçamento!</div>';
+            echo '<div class="alert alert-danger">Problema ao enviar Orçamento 2!</div>';
         }
         /*
 			if(mail($rs_configuracao['emailloja'],$assunto,$configuracao_da_mensagem_original,$headers)){
