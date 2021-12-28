@@ -254,7 +254,7 @@ while ($rs_tag = mysqli_fetch_array($resultado_total)) {
                     <!-- Products -->
                     <div class="row">
                         <?php $i = 0;
-                        /*
+                        
                         $API = new ComunicacaoAPI();
 
                         if (empty($_SESSION['token_api']) || $_SESSION['token_api'] == 'erro') {
@@ -264,7 +264,7 @@ while ($rs_tag = mysqli_fetch_array($resultado_total)) {
                             $_SESSION['token_api'] = $API->token;
                         } else {
                             $API->token = $_SESSION['token_api'];
-                        }*/
+                        }
 
                         while ($rs_produto = mysqli_fetch_array($resultado_produto)) {
 
@@ -277,7 +277,7 @@ while ($rs_tag = mysqli_fetch_array($resultado_total)) {
                             $estoque = 0;
                             $ativo = 0;
 
-                            /*
+                            
                             if (@$_SESSION['cliente'] > 0) {
                                 $produtos = $API->getProdutoEstoque($rs_produto['codigo']);
                             
@@ -289,7 +289,7 @@ while ($rs_tag = mysqli_fetch_array($resultado_total)) {
                                 $preco_promocional = $produto->{'produtos'}[$i]->{'precoPromocional'};
                                 $estoque = $produto->{'produtos'}[$i]->{'estoque'};
                                 $ativo = $produto->{'produtos'}[$i]->{'ativo'};
-                            }*/
+                            }
 
                             $preco = $preco > 0 ? $preco + $preco * 0.2 : 0;
                             $preco_promocional = $preco_promocional > 0 ? $preco_promocional + $preco_promocional * 0.2 : 0;
