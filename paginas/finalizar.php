@@ -27,8 +27,6 @@
     }
     $_SESSION["carrinho"] = serialize($carrinhoSessao);
 
-    var_dump($_SESSION['cliente'], $_SESSION['carrinho'], $_SESSION['token_api']);
-
     if (@$_SESSION['cliente'] != '' && isset($_SESSION['carrinho'])) {
         $name = $_SESSION['nome_cliente'];
         $email = $_SESSION['email_cliente'];
@@ -83,9 +81,6 @@
             $itens = array();
             foreach ($carrinhoSessao->getProdutos() as $pro) :
 
-                var_dump("teste teste 1");
-
-
                 $preco_total_produto = 0;
                 $preco = 0;;
                 $preco_promocional = 0;
@@ -101,8 +96,6 @@
 
                 $resultadoProduto1 = $conecta->selecionar($conecta->conn, $sqlProduto1);
                 $rs_produto1 = mysqli_fetch_array($resultadoProduto1);
-
-                var_dump($rs_produto1['codigo']);
 
                 $produtos = $API->getProdutoEstoque($rs_produto1['codigo']);
 
@@ -166,8 +159,6 @@
 
         }else {
 
-            var_dump("asdfa lktesadskl jl teste teste");
-
             // FORMA COMO RECEBERÁ O E-MAIL (FORMULÁRIO)
             $assunto =  "Pedido de Orçamento";
             $cabecalho_da_mensagem_original = "From: " . $rs_configuracao['nomeloja'] . " <" . $rs_configuracao['emailloja'] . ">\n";
@@ -217,9 +208,83 @@
                 Industria Sacramento</a>";
         }
 
+        $data = array();
+
+        $data1 = [
+            "numeroOrigem"=> "222548"
+        ];
+
+        $enderecoEntrega =  [
+                "codigo"=> 0,
+                "logradouro"=> "Rua ingas Entrega II",
+                "numero"=> "127d",
+                "cep"=> "32315120",
+                "bairro"=> "Eldorado",
+                "cidade"=> "Contagem",
+                "ufSigla"=> "MG"
+        ];
+        
+        $enderecoCobranca = [
+                "codigo"=> 0,
+                "logradouro"=> "Rua ingas",
+                "numero"=> "127B",
+                "cep"=> "32315120",
+                "bairro"=> "Eldorado",
+                "cidade"=> "Contagem",
+                "ufSigla"=> "MG"
+        ];
+
+        $cliente = [
+                "codigo"=> 0,
+                "razaoSocial"=> "Teste de Pedido II",
+                "cnpj"=> "81.834.885/0001-26",
+                "inscricaoEstadual"=> "854.824.949/0257",
+                "email"=> "testeIV@teste.com",
+                "tipo"=> "J",
+                "sexo"=> "M",
+                "telefone"=> "(31) 3198-0201",
+                "telefone2"=> "(31) 3198-0201",
+                "celular"=> "(31) 98422-1313"
+        ];
+
+        $enderecosCliente = [
+            "codigo"=> 0,
+            "logradouro"=> "Rua ingas",
+            "numero"=> "127",
+            "cep"=> "32315120",
+            "bairro"=> "Eldorado",
+            "cidade"=> "Contagem",
+            "ufSigla"=> "MG"
+        ];
+
+
+        $data2 = [
+            "valorLiquido"=> 855,
+            "valorFrete"=> 7,
+            "observacao"=> "Entregar a noite",
+            "naturezaOperacao"=> "WEB",
+            "valorDesconto"=> 5.69,
+            "dataEmissao"=> "18/06/2018",
+            "horaEmissao"=> "13=>20=>30",
+            "observacaoFiscal1"=> "Obs fiscal 1"
+        ];
+        
+
+        $pagamentos = [
+            "formaPagamento" => "boleto",
+            "numeroParcelas" => 1,
+            "valorPago" => $preco_total_carrinho 
+        ];
+
+        array_push($data, $data1);
+        $dataX = ["enderecoEntrega" => $enderecoEntrega];
+        array_push($data, $dataX);
+        $datax = ["enderecoCobranca" => $enderecoCobranca];
+        array_push($data, $dataX);
+        array_push($data, $data2);
 
         echo "<pre>";
-        print_r($itens);
+        print_r($data);
         echo "</pre>";
 
         //ENVIO DE MENSAGEM ORIGINAL
