@@ -116,7 +116,7 @@
 
                 $preco_total_carrinho = $preco_total_carrinho + $preco_total_produto;
 
-                $produto = ["produtoCodigo"=> 98,
+                $produto = ["produtoCodigo"=> $rs_produto1['codigo'],
                     "quantidade"=> $pro->getQuantidade(),
                     "valorLiquido"=> ($preco * $pro->getQuantidade()),
                     "valorUnitario"=> $preco,
