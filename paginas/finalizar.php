@@ -143,8 +143,6 @@
                 $dadosproduto['tbpedido_produto']['quantidade'] = $pro->getQuantidade();
                 $dadosproduto['tbpedido_produto']['observacao'] = str_replace("<br/>", "", $pro->getComplemento()) . "<br/><br/>" . str_replace("<br/>", "", $_POST['message' . $i]);
 
-                var_dump($dadosproduto);
-
                 $idPedidoProduto = $conecta->inserir($dadosproduto);
 
                 $i++;
@@ -263,7 +261,7 @@
         ];
 
         $data = [
-            "numeroOrigem" => "222548",
+            "numeroOrigem" => $idPedidoProduto,
             "enderecoEntrega" => $enderecoEntrega,
             "enderecoCobranca" => $enderecoCobranca,
             "cliente" => $cliente,
@@ -285,6 +283,15 @@
         echo "<pre>";
         print_r($data_json);
         echo "</pre>";
+
+        try {
+            $pedido = $API->setPedido($data);
+
+            var_dump($pedido);
+        } catch (Exception $e) {
+            echo $e->getMessage()." ".$e->getCode();
+        }
+        
 
         //ENVIO DE MENSAGEM ORIGINAL
         $headers = "$cabecalho_da_mensagem_original";

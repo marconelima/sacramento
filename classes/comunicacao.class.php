@@ -184,14 +184,14 @@ class ComunicacaoAPI
         return $cliente;
     }
 
-    public function setPedido() {
+    public function setPedido($data) {
         $endpoint = 'http://sistemas.spacearea.com.br/homologacao/ecommerceapi/v1/pedido';
         $header = [
             'Content-Type: application/json',
             'Authorization: Space:' . $this->token,
             'Connection: keep-alive'
         ];
-        $data = '{
+        /*$data = '{
             "numeroOrigem": "222548",
             "enderecoEntrega": {
                 "codigo": 0,
@@ -276,7 +276,7 @@ class ComunicacaoAPI
                     "valorPago": 855
                 }
             ]
-        }';
+        }';*/
 
 
         $pedido = $this->requestAPI($endpoint, 'POST', $data, $header);
