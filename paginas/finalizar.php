@@ -27,6 +27,8 @@
     }
     $_SESSION["carrinho"] = serialize($carrinhoSessao);
 
+    var_dump($_SESSION['cliente'], $_SESSION['carrinho'], $_SESSION['token_api']);
+
     if (@$_SESSION['cliente'] != '' && isset($_SESSION['carrinho'])) {
         $name = $_SESSION['nome_cliente'];
         $email = $_SESSION['email_cliente'];
@@ -81,6 +83,8 @@
             $itens = array();
             foreach ($carrinhoSessao->getProdutos() as $pro) :
 
+                var_dump("teste teste 1");
+
 
                 $preco_total_produto = 0;
                 $preco = 0;;
@@ -97,6 +101,8 @@
 
                 $resultadoProduto1 = $conecta->selecionar($conecta->conn, $sqlProduto1);
                 $rs_produto1 = mysqli_fetch_array($resultadoProduto1);
+
+                var_dump($rs_produto1['codigo']);
 
                 $produtos = $API->getProdutoEstoque($rs_produto1['codigo']);
 
@@ -159,6 +165,9 @@
                 Industria Sacramento</a>";
 
         }else {
+
+            var_dump("asdfa lktesadskl jl teste teste");
+
             // FORMA COMO RECEBERÁ O E-MAIL (FORMULÁRIO)
             $assunto =  "Pedido de Orçamento";
             $cabecalho_da_mensagem_original = "From: " . $rs_configuracao['nomeloja'] . " <" . $rs_configuracao['emailloja'] . ">\n";
