@@ -7,11 +7,12 @@ class Recordset{
 	private $senha 		= "";
 	private $hostname 	= "localhost:3307";
 
+
 	private $banco 		= "industria2017";
 	private $usuario 	= "industria2017";
 	private $senha 		= "G4p2f5D3@";
 	private $hostname 	= "industria2017.mysql.uhserver.com";
-*/
+*/ 
     private $banco         = "industriateste";
     private $usuario     = "industriateste";
     private $senha         = "G4p2f5D3@";
