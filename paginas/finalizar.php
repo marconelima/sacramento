@@ -277,8 +277,11 @@
             "pagamentos"=> $pagamentos
         ];
 
+
+        $data_json = json_encode($data);
+
         echo "<pre>";
-        print_r($data);
+        print_r($data_json);
         echo "</pre>";
 
         //ENVIO DE MENSAGEM ORIGINAL
