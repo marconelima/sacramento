@@ -27,13 +27,10 @@
     }
     $_SESSION["carrinho"] = serialize($carrinhoSessao);
 
-    var_dump($_SESSION['cliente'], $_SESSION['carrinho'], $_SESSION['token_api']);
-
     if (@$_SESSION['cliente'] != '' && isset($_SESSION['carrinho'])) {
         $name = $_SESSION['nome_cliente'];
         $email = $_SESSION['email_cliente'];
         $telefone = $_SESSION['telefone_cliente'];
-
 
         $dadospedido['tbpedido']['cliente_id'] = $_SESSION['cliente'];
         $dadospedido['tbpedido']['data_pedido'] =  date('Y-m-d');
@@ -83,9 +80,6 @@
             $itens = array();
             foreach ($carrinhoSessao->getProdutos() as $pro) :
 
-                var_dump("teste teste 1");
-
-
                 $preco_total_produto = 0;
                 $preco = 0;;
                 $preco_promocional = 0;
@@ -101,8 +95,6 @@
 
                 $resultadoProduto1 = $conecta->selecionar($conecta->conn, $sqlProduto1);
                 $rs_produto1 = mysqli_fetch_array($resultadoProduto1);
-
-                var_dump($rs_produto1['codigo']);
 
                 $produtos = $API->getProdutoEstoque($rs_produto1['codigo']);
 
@@ -166,8 +158,6 @@
 
         }else {
 
-            var_dump("asdfa lktesadskl jl teste teste");
-
             // FORMA COMO RECEBERÁ O E-MAIL (FORMULÁRIO)
             $assunto =  "Pedido de Orçamento";
             $cabecalho_da_mensagem_original = "From: " . $rs_configuracao['nomeloja'] . " <" . $rs_configuracao['emailloja'] . ">\n";
@@ -198,7 +188,6 @@
                     <td>" . $pro->getQuantidade() . "</td>
                     <td>" . $pro->getComplemento() . "<br/><br/>" . $_POST['message' . $i] . "</td>
                 </tr>";
-
 
                 $dadosproduto['tbpedido_produto']['pedido_id'] = $idPedido;
                 $dadosproduto['tbpedido_produto']['produto_id'] = substr($pro->getId(), 0, (stripos($pro->getId(), "_") > 0 ? stripos($pro->getId(), "_") : strlen($pro->getId())));
@@ -276,8 +265,8 @@
 				" . $rs_configuracao['nomeloja'] . "<br>
 				<br>
 				<a href='" . $rs_configuracao['linkloja'] . "'>" . $rs_configuracao['linkloja'] . "</a><br>
-<br>
-Recebido em: $date<br>
+                <br>
+                Recebido em: $date<br>
 				Industria Sacramento";
 
                 //ENVIO DE MENSAGEM RESPOSTA
@@ -311,13 +300,13 @@ Recebido em: $date<br>
 
                     $mail->send();
                 } catch (Exception $e) {
-                    echo '<div class="alert alert-danger">Problema ao enviar Orçamento!</div>';
+                    echo '<div class="alert alert-danger">Problema ao enviar Orçamento 2!</div>';
                 }
 
                 //unset($_SESSION['carrinho'], $_SESSION['qtde'], $_SESSION['criar'], $dadospedido, $dadosproduto);
             }
         } catch (Exception $e) {
-            echo '<div class="alert alert-danger">Problema ao enviar Orçamento!</div>';
+            echo '<div class="alert alert-danger">Problema ao enviar Orçamento 3!</div>';
         }
         /*
 			if(mail($rs_configuracao['emailloja'],$assunto,$configuracao_da_mensagem_original,$headers)){
