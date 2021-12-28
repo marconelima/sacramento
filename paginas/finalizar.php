@@ -282,7 +282,14 @@
         array_push($data, $dataX);
         $datax = ["enderecoCobranca" => $enderecoCobranca];
         array_push($data, $dataX);
+
+        $dataX = ["enderecos" => $enderecosCliente];
+        array_push($cliente, $dataX);
+        array_push($data, $cliente);
         array_push($data, $data2);
+
+        array_push($data, $itens);
+        array_push($data, $pagamentos);
 
         echo "<pre>";
         print_r($data);
