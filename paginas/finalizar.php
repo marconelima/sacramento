@@ -27,10 +27,13 @@
     }
     $_SESSION["carrinho"] = serialize($carrinhoSessao);
 
+    var_dump($_SESSION['cliente'], $_SESSION['carrinho'], $_SESSION['token_api']);
+
     if (@$_SESSION['cliente'] != '' && isset($_SESSION['carrinho'])) {
         $name = $_SESSION['nome_cliente'];
         $email = $_SESSION['email_cliente'];
         $telefone = $_SESSION['telefone_cliente'];
+
 
         $dadospedido['tbpedido']['cliente_id'] = $_SESSION['cliente'];
         $dadospedido['tbpedido']['data_pedido'] =  date('Y-m-d');
@@ -80,6 +83,9 @@
             $itens = array();
             foreach ($carrinhoSessao->getProdutos() as $pro) :
 
+                var_dump("teste teste 1");
+
+
                 $preco_total_produto = 0;
                 $preco = 0;;
                 $preco_promocional = 0;
@@ -95,6 +101,8 @@
 
                 $resultadoProduto1 = $conecta->selecionar($conecta->conn, $sqlProduto1);
                 $rs_produto1 = mysqli_fetch_array($resultadoProduto1);
+
+                var_dump($rs_produto1['codigo']);
 
                 $produtos = $API->getProdutoEstoque($rs_produto1['codigo']);
 
@@ -158,6 +166,8 @@
 
         }else {
 
+            var_dump("asdfa lktesadskl jl teste teste");
+
             // FORMA COMO RECEBERÁ O E-MAIL (FORMULÁRIO)
             $assunto =  "Pedido de Orçamento";
             $cabecalho_da_mensagem_original = "From: " . $rs_configuracao['nomeloja'] . " <" . $rs_configuracao['emailloja'] . ">\n";
@@ -188,6 +198,7 @@
                     <td>" . $pro->getQuantidade() . "</td>
                     <td>" . $pro->getComplemento() . "<br/><br/>" . $_POST['message' . $i] . "</td>
                 </tr>";
+
 
                 $dadosproduto['tbpedido_produto']['pedido_id'] = $idPedido;
                 $dadosproduto['tbpedido_produto']['produto_id'] = substr($pro->getId(), 0, (stripos($pro->getId(), "_") > 0 ? stripos($pro->getId(), "_") : strlen($pro->getId())));
@@ -224,12 +235,12 @@
             //Server settings
             $mail->SMTPDebug = 0;                      //Enable verbose debug output
             $mail->isSMTP();                                            //Send using SMTP
-            $mail->Host       = 'smtps.uhserver.com';                     //Set the SMTP server to send through
+            $mail->Host       = 'smtp.uhserver.com';                     //Set the SMTP server to send through
             $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
             $mail->Username   = 'noreply@industriasacramento.com.br';                     //SMTP username
             $mail->Password   = 'G4p2f5D3@';                               //SMTP password
             $mail->SMTPSecure = '';            //Enable implicit TLS encryption
-            $mail->Port       = 465;                                    //TCP port to connect to; use 465 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+            $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
             //Recipients
             $mail->setFrom($rs_configuracao['emailloja'], utf8_decode($rs_configuracao['nomeloja']));
@@ -282,12 +293,12 @@
                     //Server settings
                     $mail->SMTPDebug = 0;                      //Enable verbose debug output
                     $mail->isSMTP();                                            //Send using SMTP
-                    $mail->Host       = 'smtps.uhserver.com';                     //Set the SMTP server to send through
+                    $mail->Host       = 'smtp.uhserver.com';                     //Set the SMTP server to send through
                     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
                     $mail->Username   = 'noreply@industriasacramento.com.br';                     //SMTP username
                     $mail->Password   = 'G4p2f5D3@';                               //SMTP password
                     $mail->SMTPSecure = '';            //Enable implicit TLS encryption
-                    $mail->Port       = 465;                                    //TCP port to connect to; use 465 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+                    $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
                     //Recipients
                     $mail->setFrom($rs_configuracao['emailloja'], utf8_decode($rs_configuracao['nomeloja']));
@@ -300,13 +311,13 @@
 
                     $mail->send();
                 } catch (Exception $e) {
-                    echo '<div class="alert alert-danger">Problema ao enviar Orçamento 2!</div>';
+                    echo '<div class="alert alert-danger">Problema ao enviar Orçamento!</div>';
                 }
 
                 //unset($_SESSION['carrinho'], $_SESSION['qtde'], $_SESSION['criar'], $dadospedido, $dadosproduto);
             }
         } catch (Exception $e) {
-            echo '<div class="alert alert-danger">Problema ao enviar Orçamento 3!</div>';
+            echo '<div class="alert alert-danger">Problema ao enviar Orçamento!</div>';
         }
         /*
 			if(mail($rs_configuracao['emailloja'],$assunto,$configuracao_da_mensagem_original,$headers)){
