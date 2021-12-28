@@ -210,9 +210,7 @@
 
         $data = array();
 
-        $data1 = [
-            "numeroOrigem"=> "222548"
-        ];
+        
 
 
         $enderecoEntrega =  [
@@ -277,8 +275,11 @@
             "valorPago" => $preco_total_carrinho 
         ];
 
+
+        
+
         array_push($data, $data1);
-        $dataX = ["enderecoEntrega" => $enderecoEntrega];
+        $dataX = [];
         array_push($data, $dataX);
         $datax = ["enderecoCobranca" => $enderecoCobranca];
         array_push($data, $dataX);
@@ -290,6 +291,23 @@
 
         array_push($data, $itens);
         array_push($data, $pagamentos);
+
+        $data = [
+            "numeroOrigem" => "222548",
+            "enderecoEntrega" => $enderecoEntrega,
+            "enderecoCobranca" => $enderecoCobranca,
+            "cliente" => $cliente,
+            "valorLiquido"=> 855,
+            "valorFrete"=> 7,
+            "observacao"=> "Entregar a noite",
+            "naturezaOperacao"=> "WEB",
+            "valorDesconto"=> 5.69,
+            "dataEmissao"=> "18/06/2018",
+            "horaEmissao"=> "13:20:30",
+            "observacaoFiscal1"=> "Obs fiscal 1",
+            "itens" => $itens,
+            "pagamentos"=> $pagamentos
+        ];
 
         echo "<pre>";
         print_r($data);
