@@ -101,11 +101,15 @@ class ComunicacaoAPI
             $resposta = json_decode($response);
 
             if (isset($resposta->status) && $resposta->status === 401) {
+
+                var_dump($_SESSION['token_api']);
                 $this->getToken('http://sistemas.spacearea.com.br/homologacao/ecommerceapi/v1/autenticacao/entrar');
 
                 $_SESSION['token_api'] = $this->token;
 
-                $this->requestAPI($url, $tpRequisicao, $data = false, $cabecalho = array());
+                var_dump($_SESSION['token_api']);
+
+                //$this->requestAPI($url, $tpRequisicao, $data = false, $cabecalho = array());
             } 
 
         } catch (Exception $e) {
