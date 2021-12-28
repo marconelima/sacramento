@@ -62,7 +62,7 @@ if (isset($_POST['entrar']) && $_POST['entrar'] == "Login") {
         $_SESSION['telefone_cliente'] = $rs_valida['celular'];
         $_SESSION['cpf_cliente'] = $rs_valida['cnpj'];
 
-        /*
+        
         $API = new ComunicacaoAPI();
 
         if (empty($_SESSION['token_api']) || $_SESSION['token_api'] == 'erro') {
@@ -73,7 +73,7 @@ if (isset($_POST['entrar']) && $_POST['entrar'] == "Login") {
         } else {
             $API->token = $_SESSION['token_api'];
         }
-        */
+        
 
         echo "<script>alert('Seja bem vindo " . $_SESSION['nome_cliente'] . "!')</script>";
     } else {
