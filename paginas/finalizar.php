@@ -233,6 +233,17 @@
                 "ufSigla"=> "MG"
         ];
 
+        $enderecosCliente = [
+            "codigo" => 0,
+            "logradouro" => "Rua ingas",
+            "numero" => "127",
+            "cep" => "32315120",
+            "bairro" => "Eldorado",
+            "cidade" => "Contagem",
+            "ufSigla" => "MG"
+        ];
+
+
         $cliente = [
                 "codigo"=> 0,
                 "razaoSocial"=> "Teste de Pedido II",
@@ -243,30 +254,10 @@
                 "sexo"=> "M",
                 "telefone"=> "(31) 3198-0201",
                 "telefone2"=> "(31) 3198-0201",
-                "celular"=> "(31) 98422-1313"
+                "celular"=> "(31) 98422-1313",
+                "enderecos" => $enderecosCliente
         ];
 
-        $enderecosCliente = [
-            "codigo"=> 0,
-            "logradouro"=> "Rua ingas",
-            "numero"=> "127",
-            "cep"=> "32315120",
-            "bairro"=> "Eldorado",
-            "cidade"=> "Contagem",
-            "ufSigla"=> "MG"
-        ];
-
-
-        $data2 = [
-            "valorLiquido"=> 855,
-            "valorFrete"=> 7,
-            "observacao"=> "Entregar a noite",
-            "naturezaOperacao"=> "WEB",
-            "valorDesconto"=> 5.69,
-            "dataEmissao"=> "18/06/2018",
-            "horaEmissao"=> "13=>20=>30",
-            "observacaoFiscal1"=> "Obs fiscal 1"
-        ];
         
 
         $pagamentos = [
@@ -278,19 +269,7 @@
 
         
 
-        array_push($data, $data1);
-        $dataX = [];
-        array_push($data, $dataX);
-        $datax = ["enderecoCobranca" => $enderecoCobranca];
-        array_push($data, $dataX);
-
-        $dataX = ["enderecos" => $enderecosCliente];
-        array_push($cliente, $dataX);
-        array_push($data, $cliente);
-        array_push($data, $data2);
-
-        array_push($data, $itens);
-        array_push($data, $pagamentos);
+       
 
         $data = [
             "numeroOrigem" => "222548",
