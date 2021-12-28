@@ -209,10 +209,7 @@
         }
 
         $data = array();
-
         
-
-
         $enderecoEntrega =  [
                 "codigo"=> 0,
                 "logradouro"=> "Rua ingas Entrega II",
@@ -243,7 +240,6 @@
             "ufSigla" => "MG"
         ];
 
-
         $cliente = [
                 "codigo"=> 0,
                 "razaoSocial"=> "Teste de Pedido II",
@@ -258,18 +254,11 @@
                 "enderecos" => $enderecosCliente
         ];
 
-        
-
         $pagamentos = [
             "formaPagamento" => "boleto",
             "numeroParcelas" => 1,
             "valorPago" => $preco_total_carrinho 
         ];
-
-
-        
-
-       
 
         $data = [
             "numeroOrigem" => "222548",
