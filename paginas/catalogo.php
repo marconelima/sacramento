@@ -254,7 +254,8 @@ while ($rs_tag = mysqli_fetch_array($resultado_total)) {
                     <!-- Products -->
                     <div class="row">
                         <?php $i = 0;
-                        /*$API = new ComunicacaoAPI();
+                        /*
+                        $API = new ComunicacaoAPI();
 
                         if (empty($_SESSION['token_api']) || $_SESSION['token_api'] == 'erro') {
 

@@ -50,7 +50,7 @@ class ComunicacaoAPI
 
     public function requestAPI($url, $tpRequisicao, $data = false, $cabecalho = array())
     {
-        a:
+        
         try {
             //Inicializa cURL para uma URL.
             $curl = curl_init($url);
@@ -102,7 +102,7 @@ class ComunicacaoAPI
 
             if (isset($resposta->status) && $resposta->status === 401) {
                 $this->getToken('http://sistemas.spacearea.com.br/homologacao/ecommerceapi/v1/autenticacao/entrar');
-                goto a;  
+                 
                
                 exit;
             } 
