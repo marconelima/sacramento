@@ -89,7 +89,16 @@
                 $ativo = 0;
                 $unidade = '';
 
-                $produtos = $API->getProdutoEstoque($pro->getCodigo());
+                $sqlProduto1 = "SELECT p.nome, p.codigo, p.id, p.marca, p.referencia, p.modelo, p.preco_promocional, p.preco, p.data_promocional_inicio, p.data_promocional_fim, p.descricao, p.peso, p.altura, p.comprimento, p.largura, c.titulo as categoria, sc.titulo as subcategoria, f.foto, f.legenda
+					FROM tbproduto p inner join tbprod_subcategoria sc on sc.id = p.subcategoria_id
+					inner join tbprod_categoria c on c.id = sc.categoria_id
+					inner JOIN tbprod_foto f ON f.produto_id = p.id
+					where p.id = ".$pro->getId()." AND f.destaque = 1";
+
+                $resultadoProduto1 = $conecta->selecionar($conecta->conn, $sqlProduto1);
+                $rs_produto1 = mysqli_fetch_array($resultadoProduto1);
+
+                $produtos = $API->getProdutoEstoque($rs_produto1['codigo']);
 
                 $produto = json_decode($produtos);
 
