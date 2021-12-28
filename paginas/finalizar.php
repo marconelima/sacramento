@@ -141,7 +141,9 @@
                 $dadosproduto['tbpedido_produto']['produto_id'] = substr($pro->getId(), 0, (stripos($pro->getId(), "_") > 0 ? stripos($pro->getId(), "_") : strlen($pro->getId())));
                 $dadosproduto['tbpedido_produto']['cor_tamanho'] = substr($pro->getId(), (stripos($pro->getId(), "_") > 0 ? stripos($pro->getId(), "_") + 1 : strlen($pro->getId())), strlen($pro->getId()));
                 $dadosproduto['tbpedido_produto']['quantidade'] = $pro->getQuantidade();
-                $dadosproduto['tbpedido_produto']['observacao'] = $pro->getComplemento() . "<br/><br/>" . $_POST['message' . $i];
+                $dadosproduto['tbpedido_produto']['observacao'] = str_replace("<br/>", "", $pro->getComplemento()) . "<br/><br/>" . str_replace("<br/>", "", $_POST['message' . $i]);
+
+                var_dump($dadosproduto);
 
                 $idPedidoProduto = $conecta->inserir($dadosproduto);
 
