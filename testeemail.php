@@ -12,9 +12,9 @@ if (isset($_POST['enviar'])) {
  
 $destinatarios = 'marcone.lima@gmail.com';
 /*usuario ou nome completo da conta criada em sua hospedagem, como por exemplo teste@seudominio*/
-$usuario = 'vendas@industriasacramento.com.br';
+$usuario = 'noreply@industriasacramento.com.br';
 /*senha da conta de email acima*/
-$senha = 'G4p2f5d3';
+$senha = 'G4p2f5d3@';
 /*nome do destinatario no qual receberá a mensagem*/
 $nomeDestinatario = 'mensagem do site';
  

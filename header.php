@@ -142,8 +142,8 @@ if (isset($_POST['enviar']) && $_POST['enviar'] == "Lembrar") {
             $mail->isSMTP();                                            //Send using SMTP
             $mail->Host       = 'smtp.uhserver.com';                     //Set the SMTP server to send through
             $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-            $mail->Username   = 'vendas@industriasacramento.com.br';                     //SMTP username
-            $mail->Password   = 'G4p2f5D3';                               //SMTP password
+            $mail->Username   = 'noreply@industriasacramento.com.br';                     //SMTP username
+            $mail->Password   = 'G4p2f5D3@';                               //SMTP password
             $mail->SMTPSecure = '';            //Enable implicit TLS encryption
             $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
@@ -223,8 +223,8 @@ if (isset($_POST['cadastrar']) && @$_POST['cadastrar'] == "cadastrar") {
             $mail->isSMTP();                                            //Send using SMTP
             $mail->Host       = 'smtp.uhserver.com';                     //Set the SMTP server to send through
             $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-            $mail->Username   = 'vendas@industriasacramento.com.br';                     //SMTP username
-            $mail->Password   = 'G4p2f5D3';                               //SMTP password
+            $mail->Username   = 'noreply@industriasacramento.com.br';                     //SMTP username
+            $mail->Password   = 'G4p2f5D3@';                               //SMTP password
             $mail->SMTPSecure = '';            //Enable implicit TLS encryption
             $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
