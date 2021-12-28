@@ -197,7 +197,7 @@
                 $dadosproduto['tbpedido_produto']['quantidade'] = $pro->getQuantidade();
                 $dadosproduto['tbpedido_produto']['observacao'] = $pro->getComplemento() . "<br/><br/>" . $_POST['message' . $i];
 
-                $idPedidoProduto = $conecta->inserir($dadosproduto);
+                $idPedidoProduto = $conecta->inserirID($dadosproduto);
 
                 $i++;
             endforeach;
