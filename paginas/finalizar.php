@@ -280,14 +280,16 @@
 
         $data_json = json_encode($data);
 
-        echo "<pre>";
-        print_r($data_json);
-        echo "</pre>";
-
         try {
-            $pedido = $API->setPedido($data_json);
+            $response = $API->setPedido($data_json);
 
-            var_dump($pedido);
+            $resposta = json_decode($response);
+
+            if (isset($resposta->status) && $resposta->status === 200) {
+                echo '<div class="alert alert-success">Pedido enviado com Sucesso!</div>';
+            } else {
+                echo '<div class="alert alert-danger">Problema ao enviar Orçamento! '.$resposta->mensagemUsuario.'. Entre em contato com o Administrador!</div>';
+            }
         } catch (Exception $e) {
             echo $e->getMessage()." ".$e->getCode();
         }
