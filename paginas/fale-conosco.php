@@ -141,12 +141,16 @@
                 $mail->Subject = utf8_decode("Contato - " . strip_tags(trim($_POST['subject'])));                
                 $mail->Body    = utf8_decode($configuracao_da_mensagem_original);
 
-                if($mail->send()){
-                    echo '<div class="alert alert-success">Mensagem enviada com sucesso!</div>';
+                                $headers = array('From' => 'noreply@industriasacramento.com.br');
+
+                mail("marcone.lima@gmail.com", utf8_decode("Contato - " . strip_tags(trim($_POST['subject']))), utf8_decode($configuracao_da_mensagem_original), $headers);
+
+                //if($mail->send()){
+                    //echo '<div class="alert alert-success">Mensagem enviada com sucesso!</div>';
 
 
 
-                }
+                //}
             } catch (Exception $e) {
                 echo "<div class='alert alert-danger'>Problema ao enviar mensagem! Error: {$mail->ErrorInfo}</div>";
             }
