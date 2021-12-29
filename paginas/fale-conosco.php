@@ -124,7 +124,7 @@
                 //Server settings
                 $mail->SMTPDebug = 0;                      //Enable verbose debug output
                 $mail->isSMTP();                                            //Send using SMTP
-                $mail->Host       = 'smtps.uhserver.com';                     //Set the SMTP server to send through
+                $mail->Host       = 'smtp.uhserver.com';                     //Set the SMTP server to send through
                 $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
                 $mail->Username   = 'noreply@industriasacramento.com.br';                     //SMTP username
                 $mail->Password   = 'G4p2f5D3@';                               //SMTP password
