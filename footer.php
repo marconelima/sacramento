@@ -262,14 +262,15 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="form-group  col-6">
-                            <label>Complemento</label>
-                            <input type="text" id="estado" required="required" class="form-control" name="estado" placeholder="">
-                        </div>
 
                         <div class="form-group  col-6">
                             <label>Bairro</label>
                             <input type="text" id="estado" required="required" class="form-control" name="estado" placeholder="">
+                        </div>
+
+                        <div class="form-group  col-6">
+                            <label>CEP</label>
+                            <input type="text" id="cep" required="required" class="form-control" name="cep" placeholder="">
                         </div>
                     </div>
                     <div class="row">
