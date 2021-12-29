@@ -141,7 +141,8 @@
                 $mail->Subject = utf8_decode("Contato - " . strip_tags(trim($_POST['subject'])));                
                 $mail->Body    = utf8_decode($configuracao_da_mensagem_original);
 
-                                $headers = array('From' => 'noreply@industriasacramento.com.br');
+                                $headers = "$cabecalho_da_mensagem_original";
+                                $headers .= "Content-Type: text/html; charset=\"UTF-8\"\n\n";
 
                 mail("marcone.lima@gmail.com", utf8_decode("Contato - " . strip_tags(trim($_POST['subject']))), utf8_decode($configuracao_da_mensagem_original), $headers);
 
