@@ -236,16 +236,22 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="form-group  col-4">
+                        <div class="form-group  col-6">
                             <label>CPF / CNPJ</label>
                             <input class="form-control" required="required" name="cnpj" id="nucnpj" placeholder="">
                         </div>
-                        <div class="form-group  col-4">
+                        <div class="form-group  col-6">
+                            <label>Inscrição Estadual</label>
+                            <input class="form-control" required="required" name="inscricaoestadual" id="inscricaoestadual" placeholder="">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group  col-6">
                             <label>DDD + Telefone</label>
                             <input class="form-control" required="required" name="regphone" id="phone" placeholder="">
                         </div>
 
-                        <div class="form-group  col-4">
+                        <div class="form-group  col-6">
                             <label>DDD + Celular</label>
                             <input class="form-control" required="required" name="regcellphone" id="cellphone" placeholder="">
                         </div>

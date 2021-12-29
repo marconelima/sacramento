@@ -250,11 +250,11 @@
 
         $cliente = [
                 "codigo"=> 0,
-                "razaoSocial"=> $rs_cliente['nome'],
-                "tipo"=> "J",
+                "razaoSocial"=> $rs_cliente['nome'],                
                 "cnpj"=> $rs_cliente['cnpj'],
-                "inscricaoEstadual"=> "",
-                "email"=> $rs_cliente['email'],                
+                "inscricaoEstadual"=> $rs_cliente['inscricaoestadual'],
+                "email"=> $rs_cliente['email'],
+                "tipo" => "J",               
                 "sexo"=> "",
                 "telefone"=> $rs_cliente['telefone'],
                 "telefone2"=> $rs_cliente['celular'],
@@ -296,6 +296,11 @@ print_r($data_json);
             $response = $API->setPedido($data_json);
 
             $resposta = json_decode($response);
+
+            echo "<pre>";
+            print_r($resposta);
+            echo "</pre>";
+
 
             if (isset($resposta->status) && $resposta->status === 200) {
                 echo '<div class="alert alert-success">Pedido enviado com Sucesso!</div>';

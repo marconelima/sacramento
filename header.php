@@ -184,6 +184,8 @@ if (isset($_POST['cadastrar']) && @$_POST['cadastrar'] == "cadastrar") {
     $dados['tbcliente']['cidade'] = $_POST['regcidade'];
     $dados['tbcliente']['cnpj'] = $_POST['cnpj'];
 
+    $dados['tbcliente']['inscricaoestadual'] = $_POST['inscricaoestadual'];
+
     $dados['tbcliente']['logradouro'] = $_POST['logradouro'];
     $dados['tbcliente']['numero'] = $_POST['numero'];
     $dados['tbcliente']['bairro'] = $_POST['bairro'];
