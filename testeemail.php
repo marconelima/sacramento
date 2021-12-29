@@ -68,7 +68,7 @@ if (isset($_POST['enviarFormulario'])) {
 
     $mail->Charset   = 'utf8_decode()';
 
-    $mail->Host  = 'smtp.uhserver.com';
+    $mail->Host  = 'smtp.industriasacramento.com.br';
 
     $mail->Port  = '587';
 
