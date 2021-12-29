@@ -251,10 +251,10 @@
         $cliente = [
                 "codigo"=> 0,
                 "razaoSocial"=> $rs_cliente['nome'],
+                "tipo"=> "J",
                 "cnpj"=> $rs_cliente['cnpj'],
                 "inscricaoEstadual"=> "",
-                "email"=> $rs_cliente['email'],
-                "tipo"=> "",
+                "email"=> $rs_cliente['email'],                
                 "sexo"=> "",
                 "telefone"=> $rs_cliente['telefone'],
                 "telefone2"=> $rs_cliente['celular'],
