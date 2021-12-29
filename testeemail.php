@@ -53,8 +53,8 @@ if (isset($_POST['enviarFormulario'])) {
 
     /*********************************** A PARTIR DAQUI NAO ALTERAR ************************************/
 
-    require('phpmailer/class.smtp.php');
     require('phpmailer/class.phpmailer.php');
+    require('phpmailer/class.smtp.php');
 
 
     $mail = new PHPMailer();
