@@ -265,15 +265,15 @@
             "enderecoEntrega" => $enderecoEntrega,
             "enderecoCobranca" => $enderecoCobranca,
             "cliente" => $cliente,
-            "valorLiquido"=> 855,
-            "valorFrete"=> 7,
+            "valorLiquido"=> $preco_total_carrinho,
+            "valorFrete"=> 0,
             "observacao"=> "Entregar a noite",
             "naturezaOperacao"=> "WEB",
-            "valorDesconto"=> 5.69,
+            "valorDesconto"=> 0,
             "dataEmissao"=> "18/06/2018",
             "horaEmissao"=> "13:20:30",
             "observacaoFiscal1"=> "Obs fiscal 1",
-            "itens" => $itens,
+            "items" => $itens,
             "pagamentos"=> $pagamentos
         ];
 
