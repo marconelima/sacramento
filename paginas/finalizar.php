@@ -288,6 +288,10 @@
 
         $data_json = json_encode($data);
 
+        echo "<pre>";
+print_r($data_json);
+        echo "</pre>";
+
         try {
             $response = $API->setPedido($data_json);
 
