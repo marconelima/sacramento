@@ -253,19 +253,19 @@
                     <div class="row">
                         <div class="form-group  col-8">
                             <label>Logradouro</label>
-                            <input type="text" id="estado" required="required" class="form-control" name="estado" placeholder="">
+                            <input type="text" id="logradouro" required="required" class="form-control" name="logradouro" placeholder="">
                         </div>
 
                         <div class="form-group  col-4">
                             <label>Número</label>
-                            <input type="text" id="estado" required="required" class="form-control" name="estado" placeholder="">
+                            <input type="text" id="numero" required="required" class="form-control" name="numero" placeholder="">
                         </div>
                     </div>
                     <div class="row">
 
                         <div class="form-group  col-6">
                             <label>Bairro</label>
-                            <input type="text" id="estado" required="required" class="form-control" name="estado" placeholder="">
+                            <input type="text" id="bairro" required="required" class="form-control" name="bairro" placeholder="">
                         </div>
 
                         <div class="form-group  col-6">
