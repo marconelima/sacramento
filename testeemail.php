@@ -62,11 +62,13 @@ if (isset($_POST['enviarFormulario'])) {
 
     $mail->IsSMTP();
 
+    $mail->SMTPDebug = 2;
+
     $mail->SMTPAuth  = true;
 
     $mail->Charset   = 'utf8_decode()';
 
-    $mail->Host  = 'smtp.' . substr(strstr($caixaPostalServidorEmail, '@'), 1);
+    $mail->Host  = 'smtp.uhserver.com';
 
     $mail->Port  = '587';
 
