@@ -331,7 +331,7 @@
             $mail->isHTML(true);                                  //Set email format to HTML
             $mail->Subject = utf8_decode($assunto);
             $mail->Body    = utf8_decode($configuracao_da_mensagem_original);
-/*
+            /*
             if ($mail->send()) {
                 //echo '<div class="alert alert-success">Mensagem enviada com sucesso!</div>';
 
@@ -396,6 +396,7 @@
 
                 //unset($_SESSION['carrinho'], $_SESSION['qtde'], $_SESSION['criar'], $dadospedido, $dadosproduto);
             }*/
+            unset($_SESSION['carrinho'], $_SESSION['qtde'], $_SESSION['criar'], $dadospedido, $dadosproduto);
         } catch (Exception $e) {
             echo '<div class="alert alert-danger">Problema ao enviar Orçamento 2!</div>';
         }
