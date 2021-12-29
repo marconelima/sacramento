@@ -285,22 +285,12 @@
             "pagamentos"=> $pagamentos
         ];
 
-
         $data_json = json_encode($data);
-
-        echo "<pre>";
-print_r($data_json);
-        echo "</pre>";
 
         try {
             $response = $API->setPedido($data_json);
 
             $resposta = json_decode($response);
-
-            echo "<pre>";
-            print_r($resposta);
-            echo "</pre>";
-
 
             if (isset($resposta->status) && $resposta->status === 200) {
                 echo '<div class="alert alert-success">Pedido enviado com Sucesso!</div>';
