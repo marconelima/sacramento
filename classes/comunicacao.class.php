@@ -186,6 +186,7 @@ class ComunicacaoAPI
 
     public function setPedido($data) {
         $endpoint = 'http://sistemas.spacearea.com.br/homologacao/ecommerceapi/v1/pedido';
+                     
         $header = [
             'Content-Type: application/json',
             'Authorization: Space:' . $this->token,

@@ -285,7 +285,7 @@
         echo "</pre>";
 
         try {
-            $pedido = $API->setPedido($data);
+            $pedido = $API->setPedido($data_json);
 
             var_dump($pedido);
         } catch (Exception $e) {
