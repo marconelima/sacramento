@@ -121,7 +121,7 @@
                     "valorUnitario"=> $preco,
                     "valorDesconto"=> 0,
                     "unidade"=> $produto->{'produtos'}[$i]->{'unidade'},
-                    "unidadeQuantidade"=> $pro->getQuantidade()
+                    "unidadeQuantidade"=> $produto->{'produtos'}[$i]->{'unidadeQuantidade'}
                 ];
 
                 array_push($itens, $produto);
