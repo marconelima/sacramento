@@ -28,6 +28,14 @@
     $_SESSION["carrinho"] = serialize($carrinhoSessao);
 
     if (@$_SESSION['cliente'] != '' && isset($_SESSION['carrinho'])) {
+
+         $sqlCliente = "SELECT c.*
+					FROM tbcliente c
+					where c.id = ". $_SESSION['cliente'];
+
+        $resultadoCliente = $conecta->selecionar($conecta->conn, $sqlCliente);
+        $rs_cliente = mysqli_fetch_array($resultadoCliente);
+
         $name = $_SESSION['nome_cliente'];
         $email = $_SESSION['email_cliente'];
         $telefone = $_SESSION['telefone_cliente'];
@@ -211,46 +219,46 @@
         $data = array();
         
         $enderecoEntrega =  [
-                "codigo"=> 0,
-                "logradouro"=> "Rua ingas Entrega II",
-                "numero"=> "127d",
-                "cep"=> "32315120",
-                "bairro"=> "Eldorado",
-                "cidade"=> "Contagem",
-                "ufSigla"=> "MG"
+            "codigo"=> 0,
+            "logradouro"=> $rs_cliente['logradouro'],
+            "numero"=> $rs_cliente['numero'],
+            "cep"=> str_replace("-","", str_replace(".","",$rs_cliente['cep'])),
+            "bairro"=> $rs_cliente['bairro'],
+            "cidade"=> $rs_cliente['cidade'],
+            "ufSigla"=> $rs_cliente['estado']
         ];
         
         $enderecoCobranca = [
-                "codigo"=> 0,
-                "logradouro"=> "Rua ingas",
-                "numero"=> "127B",
-                "cep"=> "32315120",
-                "bairro"=> "Eldorado",
-                "cidade"=> "Contagem",
-                "ufSigla"=> "MG"
+            "codigo"=> 0,
+            "logradouro" => $rs_cliente['logradouro'],
+            "numero" => $rs_cliente['numero'],
+            "cep" => str_replace("-", "", str_replace(".", "", $rs_cliente['cep'])),
+            "bairro" => $rs_cliente['bairro'],
+            "cidade" => $rs_cliente['cidade'],
+            "ufSigla" => $rs_cliente['estado']
         ];
 
         $enderecosCliente = [
             "codigo" => 0,
-            "logradouro" => "Rua ingas",
-            "numero" => "127",
-            "cep" => "32315120",
-            "bairro" => "Eldorado",
-            "cidade" => "Contagem",
-            "ufSigla" => "MG"
+            "logradouro" => $rs_cliente['logradouro'],
+            "numero" => $rs_cliente['numero'],
+            "cep" => str_replace("-", "", str_replace(".", "", $rs_cliente['cep'])),
+            "bairro" => $rs_cliente['bairro'],
+            "cidade" => $rs_cliente['cidade'],
+            "ufSigla" => $rs_cliente['estado']
         ];
 
         $cliente = [
                 "codigo"=> 0,
-                "razaoSocial"=> "Teste de Pedido II",
-                "cnpj"=> "81.834.885/0001-26",
-                "inscricaoEstadual"=> "854.824.949/0257",
-                "email"=> "testeIV@teste.com",
-                "tipo"=> "J",
-                "sexo"=> "M",
-                "telefone"=> "(31) 3198-0201",
-                "telefone2"=> "(31) 3198-0201",
-                "celular"=> "(31) 98422-1313",
+                "razaoSocial"=> $rs_cliente['nome'],
+                "cnpj"=> $rs_cliente['cnpj'],
+                "inscricaoEstadual"=> "",
+                "email"=> $rs_cliente['email'],
+                "tipo"=> "",
+                "sexo"=> "",
+                "telefone"=> $rs_cliente['telefone'],
+                "telefone2"=> $rs_cliente['celular'],
+                "celular"=> $rs_cliente['celular'],
                 "enderecos" => $enderecosCliente
         ];
 
@@ -267,12 +275,12 @@
             "cliente" => $cliente,
             "valorLiquido"=> $preco_total_carrinho,
             "valorFrete"=> 0,
-            "observacao"=> "Entregar a noite",
+            "observacao"=> "",
             "naturezaOperacao"=> "WEB",
             "valorDesconto"=> 0,
-            "dataEmissao"=> "18/06/2018",
-            "horaEmissao"=> "13:20:30",
-            "observacaoFiscal1"=> "Obs fiscal 1",
+            "dataEmissao"=> date('d/m/Y'),
+            "horaEmissao"=> date("H:i:s"),
+            "observacaoFiscal1"=> "",
             "items" => $itens,
             "pagamentos"=> $pagamentos
         ];
