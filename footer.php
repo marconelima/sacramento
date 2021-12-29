@@ -225,30 +225,51 @@
                         <label>Email</label>
                         <input type="email" required="required" id="regEmail" class="form-control" name="regemail" placeholder="">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group col-6">
                         <label>Senha</label>
                         <input type="password" required="required" id="regPassword" class="form-control" name="regpassword" placeholder="" onchange="form.regrepeatpassword.pattern = this.value;">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group col-6">
                         <label>Repetir a Senha</label>
                         <input type="password" required="required" id="regRepeatPassword" class="form-control" name="regrepeatpassword" placeholder="">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group  col-6">
                         <label>CPF / CNPJ</label>
                         <input class="form-control" required="required" name="cnpj" id="nucnpj" placeholder="">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group  col-6">
                         <label>DDD + Telefone</label>
                         <input class="form-control" required="required" name="regphone" id="phone" placeholder="">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group  col-6">
                         <label>DDD + Celular</label>
                         <input class="form-control" required="required" name="regcellphone" id="cellphone" placeholder="">
                     </div>
 
-                    <div class="form-group">
-                        <label>Cidade/Estado</label>
+                    <div class="form-group  col-8">
+                        <label>Logradouro</label>
+                        <input type="text" id="estado" required="required" class="form-control" name="estado" placeholder="">
+                    </div>
+                    <div class="form-group  col-4">
+                        <label>Número</label>
+                        <input type="text" id="estado" required="required" class="form-control" name="estado" placeholder="">
+                    </div>
+                    <div class="form-group  col-6">
+                        <label>Complemento</label>
+                        <input type="text" id="estado" required="required" class="form-control" name="estado" placeholder="">
+                    </div>
+                    <div class="form-group  col-6">
+                        <label>Bairro</label>
+                        <input type="text" id="estado" required="required" class="form-control" name="estado" placeholder="">
+                    </div>
+                    <div class="form-group  col-6">
+                        <label>Cidade</label>
                         <input type="text" id="regCity-Estate" required="required" class="form-control" name="regcidade" placeholder="">
+                    </div>
+
+                    <div class="form-group  col-6">
+                        <label>Estado</label>
+                        <input type="text" id="estado" required="required" class="form-control" name="estado" placeholder="">
                     </div>
 
 
