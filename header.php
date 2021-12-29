@@ -40,7 +40,7 @@ if (@$tela != '') {
 }
 
 $sair = 0;
-if(isset($_POST['sair']) && @$_POST['sair'] == "1"){
+if (isset($_POST['sair']) && @$_POST['sair'] == "1") {
     $sair = 1;
 }
 
@@ -62,7 +62,7 @@ if (isset($_POST['entrar']) && $_POST['entrar'] == "Login") {
         $_SESSION['telefone_cliente'] = $rs_valida['celular'];
         $_SESSION['cpf_cliente'] = $rs_valida['cnpj'];
 
-        
+
         $API = new ComunicacaoAPI();
 
         if (empty($_SESSION['token_api']) || $_SESSION['token_api'] == 'erro') {
@@ -73,7 +73,7 @@ if (isset($_POST['entrar']) && $_POST['entrar'] == "Login") {
         } else {
             $API->token = $_SESSION['token_api'];
         }
-        
+
 
         echo "<script>alert('Seja bem vindo " . $_SESSION['nome_cliente'] . "!')</script>";
     } else {
@@ -99,7 +99,8 @@ if (isset($_POST['enviar']) && $_POST['enviar'] == "Lembrar") {
         $caracteres = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
         $tamanho = 6;
         for ($i = 0; $i < $tamanho; $i++) {
-            $senha .= $caracteres{rand(0, 62)};
+            $senha .= $caracteres{
+                rand(0, 62)};
         }
         $senhadeacesso = $senha;
 
@@ -541,6 +542,13 @@ if (isset($_SESSION["carrinho"])) {
                     <img src="/images/Logo Sacramento.png" class="my-1 mx-2 logo_principal" alt="Insdustria Sacramento">
                 </a>
 
+                <button class="navbar-toggler d-lg-none btcarrinhotopo" type="button">
+                    <a href="#" data-toggle="modal" data-target="<?php if (@$_SESSION['cliente'] > 0) { ?>#ModalArea<?php } else { ?>#ModalLogin<?php } ?>"><img src="/images/user.png" width="25" height="26" alt="Minha área" title="Minha área">
+                        <?php if (@$_SESSION['cliente'] > 0) { ?>
+                            <span class="numeroProdutos" style="height: 10px; width: 10px; padding: 0; background: #069; top: 10px; left: 20px;"></span>
+                        <?php } ?>
+                    </a>
+                </button>
                 <button class="navbar-toggler d-lg-none btcarrinhotopo" type="button">
                     <a href="<?php echo $siteUrl; ?>carrinho/48"><img src="/images/car.png" width="25" height="26" alt="Meu carrinho" title="Meu carrinho">
                         <?php if (@$qtdenocarrinho > 0) { ?>
