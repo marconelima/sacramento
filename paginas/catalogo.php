@@ -328,7 +328,7 @@ while ($rs_tag = mysqli_fetch_array($resultado_total)) {
                                         <p class="desc-produto" style="font-weight: bold;"><a href="<?php echo $siteUrl ?>produto/21/0/<?php echo $rs_produto['id']; ?>"><?php echo $rs_produto['nome'] . " " . $rs_produto['modelo']; ?></a></p>
                                         <p class="valor-de-para">
                                             <?php if ($promocional == 1 && $preco_promocional > 0) { ?>
-                                                <span class="de" style="text-decoration: line-through; color:#FF0000; font-size:16px !important; font-weight:normal;"><?php echo "de R$ " . number_format($rs_produto['preco'], 2, ",", "."); ?></span>
+                                                <span class="de" style="text-decoration: line-through; color:#FF0000; font-size:16px !important; font-weight:normal;"><?php echo "de R$ " . number_format($preco, 2, ",", "."); ?></span>
                                                 <span class="por"><?php echo "por R$ " . number_format($preco_promocional, 2, ",", "."); ?></span>
                                             <?php } else if ($preco > 0) { ?>
                                                 <span class="por" style="color:##000000; font-size:16px !important; font-weight:bold;"><?php echo "R$ " . number_format($preco, 2, ",", "."); ?></span>

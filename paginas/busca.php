@@ -7,7 +7,7 @@ $filtro_marcaLateral = '';
 $fornecedores = [];
 //$fornecedoresSub = [];
 
-if($pag > 1){
+if ($pag > 1) {
     $_POST['filtrox'] = (isset($_SESSION['filtrox']) ? $_SESSION['filtrox'] : '');
     $_POST['ordem'] = (isset($_SESSION['ordem']) ? $_SESSION['ordem'] : '');
 } else {
@@ -160,9 +160,15 @@ while ($rs_tag = mysqli_fetch_array($resultado_total)) {
                                         <p style="width: 58%; float: left; text-align: right; margin-top: 2.5%; line-height: 15px;">Ordenar por: </p>
                                         <select name="ordem" onchange="javascript: document.formOrdem.submit();" style="width: 40%;">
                                             <option value="">Selecione</option>
-                                            <option <?php if($_POST['ordem'] == "p.modificado DESC") { echo "selected"; } ?> value="p.modificado DESC">Mais Recentes</option>
-                                            <option <?php if($_POST['ordem'] == "p.nome ASC") { echo "selected"; } ?> value="p.nome ASC">De A - Z</option>
-                                            <option <?php if($_POST['ordem'] == "p.nome DESC") { echo "selected"; } ?> value="p.nome DESC">De Z - A</option>
+                                            <option <?php if ($_POST['ordem'] == "p.modificado DESC") {
+                                                        echo "selected";
+                                                    } ?> value="p.modificado DESC">Mais Recentes</option>
+                                            <option <?php if ($_POST['ordem'] == "p.nome ASC") {
+                                                        echo "selected";
+                                                    } ?> value="p.nome ASC">De A - Z</option>
+                                            <option <?php if ($_POST['ordem'] == "p.nome DESC") {
+                                                        echo "selected";
+                                                    } ?> value="p.nome DESC">De Z - A</option>
                                         </select>
                                     </form>
                                 </div>
@@ -174,23 +180,67 @@ while ($rs_tag = mysqli_fetch_array($resultado_total)) {
                     <!-- Products -->
                     <div class="row">
                         <?php $i = 0;
+
+                        $API = new ComunicacaoAPI();
+
+                        if (empty($_SESSION['token_api']) || $_SESSION['token_api'] == 'erro') {
+
+                            $API->getToken('http://sacprx.poweredbyclear.com:8080/ecommerceapi/v1/autenticacao/entrar');
+
+                            $_SESSION['token_api'] = $API->token;
+                        } else {
+                            $API->token = $_SESSION['token_api'];
+                        }
+
                         while ($rs_produto = mysqli_fetch_array($resultado_produto)) {
+
+                            if ($i == 0) {
+                                $produtos = $API->getProdutoEstoque($rs_produto['codigo']);
+                            }
 
                             if ($i % 3 == 0) {
                                 //echo "<div style='width:100%; float:left; height:10px;'></div>";
                             }
 
-                            $promocional = 0;
-                            if (strtotime($rs_produto['data_promocional_inicio']) <= strtotime(date('Y-m-d')) && strtotime($rs_produto['data_promocional_fim']) >= strtotime(date('Y-m-d'))) {
+                            $preco = 0;;
+                            $preco_promocional = 0;
+                            $estoque = 0;
+                            $ativo = 0;
+
+
+                            if (@$_SESSION['cliente'] > 0) {
+                                $produtos = $API->getProdutoEstoque($rs_produto['codigo']);
+
+                                $produto = json_decode($produtos);
+
+                                $i = 0;
+
+                                $preco = $produto->{'produtos'}[$i]->{'preco'};
+                                $preco_promocional = $produto->{'produtos'}[$i]->{'precoPromocional'};
+                                $estoque = $produto->{'produtos'}[$i]->{'estoque'};
+                                $ativo = $produto->{'produtos'}[$i]->{'ativo'};
+                            }
+
+                            $preco = $preco > 0 ? $preco + $preco * 0.2 : 0;
+                            $preco_promocional = $preco_promocional > 0 ? $preco_promocional + $preco_promocional * 0.2 : 0;
+
+                            if ($preco_promocional > 0) {
                                 $promocional = 1;
+                            } else {
+                                $promocional = 0;
+                                if (strtotime($rs_produto['data_promocional_inicio']) <= strtotime(date('Y-m-d')) && strtotime($rs_produto['data_promocional_fim']) >= strtotime(date('Y-m-d'))) {
+                                    $promocional = 1;
+                                }
                             }
                         ?>
 
-                            <div class="col-md-4 col-xs-6 col-6  <?php if ($i < 4) { echo "offset-6 offset-xs-6 offset-md-0"; } ?>" style="padding-right:0; margin-top:10px;">
+                            <div class="col-md-4 col-xs-6 col-6  <?php if ($i < 4) {
+                                                                        echo "offset-6 offset-xs-6 offset-md-0";
+                                                                    } ?>" style="padding-right:0; margin-top:10px;">
                                 <div class="view-first box-produtos" style="width:100%;">
                                     <div class="borda-produtos post-wrap" style="border:0; text-align:center;">
                                         <a href="<?php echo $siteUrl ?>produto/21/0/<?php echo $rs_produto['id']; ?>"><img src="<?php echo $siteUrl . "source/Produtos/" . $rs_produto['foto']; ?>" class="img-responsive" style="max-width:100%; width:100%;" /></a>
-                                        <?php if ($promocional == 1 && $rs_produto['preco_promocional'] > 0) { ?>
+                                        <?php if ($promocional == 1 && $preco_promocional > 0) { ?>
                                             <img class="cornerimage" src="<?php echo $siteUrl . "source/Produtos/promocao.png" ?>" alt="" style="border: 0;
 		    position: absolute;
 		    top: 10;
@@ -203,9 +253,11 @@ while ($rs_tag = mysqli_fetch_array($resultado_total)) {
                                         <p class="titulo-produto"><a href="<?php echo $siteUrl ?>catalogo/21/0/0/0/0/0/0/0/<?php echo $rs_produto['marca_id'] ?>"><?php echo $rs_produto['marca']; ?></a></p>
                                         <p class="desc-produto"><a href="<?php echo $siteUrl ?>produto/21/0/<?php echo $rs_produto['id']; ?>"><?php echo $rs_produto['nome'] . " " . $rs_produto['modelo']; ?></a></p>
                                         <p class="valor-de-para">
-                                            <?php if ($promocional == 1 && $rs_produto['preco_promocional'] > 0) { ?>
-                                                <span class="de" style="text-decoration: line-through; color:#FF0000; font-size:16px !important; font-weight:normal;"><?php echo "de R$ " . number_format($rs_produto['preco'], 2, ",", "."); ?></span>
-                                                <span class="por"><?php echo "por R$ " . number_format($rs_produto['preco_promocional'], 2, ",", "."); ?></span>
+                                            <?php if ($promocional == 1 && $preco_promocional > 0) { ?>
+                                                <span class="de" style="text-decoration: line-through; color:#FF0000; font-size:16px !important; font-weight:normal;"><?php echo "de R$ " . number_format($preco, 2, ",", "."); ?></span>
+                                                <span class="por"><?php echo "por R$ " . number_format($preco_promocional, 2, ",", "."); ?></span>
+                                            <?php } else if ($preco > 0) { ?>
+                                                <span class="por" style="color:##000000; font-size:16px !important; font-weight:bold;"><?php echo "R$ " . number_format($preco, 2, ",", "."); ?></span>
                                             <?php } ?>
                                         </p>
                                         <a class="btn info btn-default add-cotacao btn-catalogo detalheProduto" data-idproduto="<?php echo $rs_produto['id']; ?>" data-toggle="modal" data-target="#ModalDetalhe">Detalhe</a>
