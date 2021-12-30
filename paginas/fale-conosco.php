@@ -124,12 +124,12 @@
                 //Server settings
                 $mail->SMTPDebug = 2;                      //Enable verbose debug output
                 $mail->isSMTP();                                            //Send using SMTP
-                $mail->Host       = 'smtp.uhserver.com';                     //Set the SMTP server to send through
+                $mail->Host       = 'smtp.'.substr(strstr($emailcaixa, '@'), 1);                     //Set the SMTP server to send through
                 $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
                 $mail->Username   = 'noreply@industriasacramento.com.br';                     //SMTP username
                 $mail->Password   = 'G4p2f5D3@';                               //SMTP password
-                $mail->SMTPSecure = 'TLS';            //Enable implicit TLS encryption
-                $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+                //$mail->SMTPSecure = 'TLS';            //Enable implicit TLS encryption
+                $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
                 //Recipients
                 $mail->setFrom($rs_configuracao['emailloja'], utf8_decode($rs_configuracao['nomeloja']));
@@ -144,14 +144,14 @@
                                 $headers = "$cabecalho_da_mensagem_original";
                                 $headers .= "Content-Type: text/html; charset=\"UTF-8\"\n\n";
 
-                mail("marcone.lima@gmail.com", utf8_decode("Contato - " . strip_tags(trim($_POST['subject']))), utf8_decode($configuracao_da_mensagem_original), $headers);
+                //mail("marcone.lima@gmail.com", utf8_decode("Contato - " . strip_tags(trim($_POST['subject']))), utf8_decode($configuracao_da_mensagem_original), $headers);
 
-                //if($mail->send()){
-                    //echo '<div class="alert alert-success">Mensagem enviada com sucesso!</div>';
+                if($mail->send()){
+                    echo '<div class="alert alert-success">Mensagem enviada com sucesso!</div>';
 
 
 
-                //}
+                }
             } catch (Exception $e) {
                 echo "<div class='alert alert-danger'>Problema ao enviar mensagem! Error: {$mail->ErrorInfo}</div>";
             }

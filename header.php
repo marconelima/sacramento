@@ -29,8 +29,8 @@ $resultado_configuracao = $conecta->selecionar($conecta->conn, $sql_configuracao
 $rs_configuracao = mysqli_fetch_array($resultado_configuracao);
 
 //$siteUrl = $rs_configuracao['linkloja'];
-//$siteUrl = "http://www.marconesacramento.com.br/";
-$siteUrl = "https://www.industriasacramento.com.br/testenovo/";
+$siteUrl = "http://www.marconesacramento.com.br/";
+//$siteUrl = "https://www.industriasacramento.com.br/testenovo/";
 
 
 if (@$tela != '') {
@@ -76,6 +76,8 @@ if (isset($_POST['entrar']) && $_POST['entrar'] == "Login") {
 
 
         echo "<script>alert('Seja bem vindo " . $_SESSION['nome_cliente'] . "!')</script>";
+
+        echo "<meta HTTP-EQUIV='refresh' CONTENT='0;URL=" . $siteUrl . "cadastro/66'>";
     } else {
         echo "<script>alert('Houve um problema no login tente novamente!')</script>";
     }

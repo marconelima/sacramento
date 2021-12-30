@@ -268,6 +268,10 @@ while ($rs_tag = mysqli_fetch_array($resultado_total)) {
 
                         while ($rs_produto = mysqli_fetch_array($resultado_produto)) {
 
+                            if($i == 0){
+                                $produtos = $API->getProdutoEstoque($rs_produto['codigo']);
+                            }
+
                             if ($i % 3 == 0) {
                                 //echo "<div style='width:100%; float:left; height:10px;'></div>";
                             }
