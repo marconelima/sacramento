@@ -145,8 +145,8 @@ if (isset($_POST['enviar']) && $_POST['enviar'] == "Lembrar") {
             $mail->isSMTP();                                            //Send using SMTP
             $mail->Host       = 'smtp.uhserver.com';                     //Set the SMTP server to send through
             $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-            $mail->Username   = 'noreply@industriasacramento.com.br';                     //SMTP username
-            $mail->Password   = 'G4p2f5D3@';                               //SMTP password
+            $mail->Username   = 'vendas@industriasacramento.com.br';                     //SMTP username
+            $mail->Password   = 'R1a3x1L200';                               //SMTP password
             $mail->SMTPSecure = '';            //Enable implicit TLS encryption
             $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
@@ -203,72 +203,75 @@ if (isset($_POST['alterarcadastrar']) && @$_POST['alterarcadastrar'] == "cadastr
     $dados['tbcliente']['cep'] = $_POST['cep'];
 
     $cliente = $conecta->inserirID($dados);
-    if ($cliente) {
 
-        $date = date('Y-m-d H:i:s');
-        //CONFIGURAÇÕES DA MENSAGEM DE RESPOSTA
-        $assunto_da_mensagem_de_resposta = "Recebemos seu cadastro";
-        $cabecalho_da_mensagem_de_resposta = "From: " . $rs_configuracao['nomeloja'] . " <" . $rs_configuracao['emailloja'] . ">\n";
-        $configuracao_da_mensagem_de_resposta = "Prezado(a) " . $_POST['regname'] . ",<br>
-			Obrigado por se cadastra em " . $rs_configuracao['nomeloja'] . ".<br><br>
-			Seguem os dados de acesso:<br>
-			<br>
-			Usuário: " . $_POST['regemail'] . "<br>
-			Senha: " . $_POST['regpassword'] . "<br>
-			<br>
-			Atenciosamente,<br>
-			" . $rs_configuracao['nomeloja'] . "<br>
-			<br>
-			<a href='" . $rs_configuracao['linkloja'] . "'>" . $rs_configuracao['linkloja'] . "</a><br>
-			<br>
-			Recebido em: $date<br>
-			Industria Sacramento
-			
-			";
+    if ($_POST['regpassword'] != '') {
+        if ($cliente) {
 
-        //ENVIO DE MENSAGEM RESPOSTA
-        $headers = "$cabecalho_da_mensagem_de_resposta";
-        $headers .= "Content-Type: text/html; charset=\"UTF-8\"\n\n";
+            $date = date('Y-m-d H:i:s');
+            //CONFIGURAÇÕES DA MENSAGEM DE RESPOSTA
+            $assunto_da_mensagem_de_resposta = "Recebemos seu cadastro";
+            $cabecalho_da_mensagem_de_resposta = "From: " . $rs_configuracao['nomeloja'] . " <" . $rs_configuracao['emailloja'] . ">\n";
+            $configuracao_da_mensagem_de_resposta = "Prezado(a) " . $_POST['regname'] . ",<br>
+                Obrigado por se cadastra em " . $rs_configuracao['nomeloja'] . ".<br><br>
+                Seguem os dados de acesso:<br>
+                <br>
+                Usuário: " . $_POST['regemail'] . "<br>
+                Senha: " . $_POST['regpassword'] . "<br>
+                <br>
+                Atenciosamente,<br>
+                " . $rs_configuracao['nomeloja'] . "<br>
+                <br>
+                <a href='" . $rs_configuracao['linkloja'] . "'>" . $rs_configuracao['linkloja'] . "</a><br>
+                <br>
+                Recebido em: $date<br>
+                Industria Sacramento
+                
+                ";
 
-        //Create an instance; passing `true` enables exceptions
-        $mail = new PHPMailer(true);
+            //ENVIO DE MENSAGEM RESPOSTA
+            $headers = "$cabecalho_da_mensagem_de_resposta";
+            $headers .= "Content-Type: text/html; charset=\"UTF-8\"\n\n";
 
-        $emailcaixa = 'vendas@industriasacramento.com.br';
+            //Create an instance; passing `true` enables exceptions
+            $mail = new PHPMailer(true);
 
-        try {
-            //Server settings
-            $mail->SMTPDebug = 0;                      //Enable verbose debug output
-            $mail->isSMTP();                                            //Send using SMTP
-            $mail->Host       = 'smtp.uhserver.com';                     //Set the SMTP server to send through
-            $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-            $mail->Username   = 'noreply@industriasacramento.com.br';                     //SMTP username
-            $mail->Password   = 'G4p2f5D3@';                               //SMTP password
-            $mail->SMTPSecure = '';            //Enable implicit TLS encryption
-            $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+            $emailcaixa = 'vendas@industriasacramento.com.br';
 
-            //Recipients
-            $mail->setFrom($rs_configuracao['emailloja'], utf8_decode($rs_configuracao['nomeloja']));
-            //$mail->addAddress($email, $name);     //Add a recipient
-            $mail->addAddress($dados['tbcliente']['email'], utf8_decode($_POST['regname']));
+            try {
+                //Server settings
+                $mail->SMTPDebug = 0;                      //Enable verbose debug output
+                $mail->isSMTP();                                            //Send using SMTP
+                $mail->Host       = 'smtp.uhserver.com';                     //Set the SMTP server to send through
+                $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+                $mail->Username   = 'vendas@industriasacramento.com.br';                     //SMTP username
+                $mail->Password   = 'R1a3x1L200';                               //SMTP password
+                $mail->SMTPSecure = '';            //Enable implicit TLS encryption
+                $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
-            //Content
-            $mail->isHTML(true);                                  //Set email format to HTML
-            $mail->Subject = utf8_decode($assunto_da_mensagem_de_resposta);
-            $mail->Body    = utf8_decode($configuracao_da_mensagem_de_resposta);
+                //Recipients
+                $mail->setFrom($rs_configuracao['emailloja'], utf8_decode($rs_configuracao['nomeloja']));
+                //$mail->addAddress($email, $name);     //Add a recipient
+                $mail->addAddress($dados['tbcliente']['email'], utf8_decode($_POST['regname']));
 
-            if ($mail->send()) {
-                echo '<div class="alert alert-success">Senha enviada para o e-mail cadastrado.</div>';
+                //Content
+                $mail->isHTML(true);                                  //Set email format to HTML
+                $mail->Subject = utf8_decode($assunto_da_mensagem_de_resposta);
+                $mail->Body    = utf8_decode($configuracao_da_mensagem_de_resposta);
+
+                if ($mail->send()) {
+                    echo '<div class="alert alert-success">Senha enviada para o e-mail cadastrado.</div>';
+                }
+            } catch (Exception $e) {
+                echo "<div class='alert alert-danger'>Não foi possível reenviar a senha, tente novamente!</div>";
             }
-        } catch (Exception $e) {
-            echo "<div class='alert alert-danger'>Não foi possível reenviar a senha, tente novamente!</div>";
+
+            //mail($dados['tbcliente']['email'], $assunto_da_mensagem_de_resposta, $configuracao_da_mensagem_de_resposta, $headers);
+
+            $_SESSION['cliente'] = $cliente;
+            $_SESSION['nome_cliente'] = $dados['tbcliente']['nome'];
+            $_SESSION['email_cliente'] = $dados['tbcliente']['email'];
+            $_SESSION['telefone_cliente'] = $dados['tbcliente']['celular'];
         }
-
-        //mail($dados['tbcliente']['email'], $assunto_da_mensagem_de_resposta, $configuracao_da_mensagem_de_resposta, $headers);
-
-        $_SESSION['cliente'] = $cliente;
-        $_SESSION['nome_cliente'] = $dados['tbcliente']['nome'];
-        $_SESSION['email_cliente'] = $dados['tbcliente']['email'];
-        $_SESSION['telefone_cliente'] = $dados['tbcliente']['celular'];
     }
 }
 
@@ -329,8 +332,8 @@ if (isset($_POST['cadastrar']) && @$_POST['cadastrar'] == "cadastrar") {
             $mail->isSMTP();                                            //Send using SMTP
             $mail->Host       = 'smtp.uhserver.com';                     //Set the SMTP server to send through
             $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-            $mail->Username   = 'noreply@industriasacramento.com.br';                     //SMTP username
-            $mail->Password   = 'G4p2f5D3@';                               //SMTP password
+            $mail->Username   = 'vendas@industriasacramento.com.br';                     //SMTP username
+            $mail->Password   = 'R1a3x1L200';                               //SMTP password
             $mail->SMTPSecure = '';            //Enable implicit TLS encryption
             $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
