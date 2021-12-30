@@ -122,7 +122,7 @@
 
             try {
                 //Server settings
-                $mail->SMTPDebug = 2;                      //Enable verbose debug output
+                $mail->SMTPDebug = 0;                      //Enable verbose debug output
                 $mail->isSMTP();                                            //Send using SMTP
                 $mail->Host       = 'smtps.uhserver.com';                     //Set the SMTP server to send through
                 $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
@@ -132,7 +132,7 @@
                 $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
 
-                var_dump($rs_configuracao['emailloja']);
+                //var_dump($rs_configuracao['emailloja']);
 
                 //Recipients // $rs_configuracao['emailloja']
                 $mail->setFrom($rs_configuracao['emailloja'], utf8_decode($rs_configuracao['nomeloja']));

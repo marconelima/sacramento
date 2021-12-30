@@ -10,7 +10,7 @@ class ComunicacaoAPI
 	{
         $json = [
             "login"=> "apiecommerce", 
-            "senha" => "teste"
+            "senha" => "1"
         ];
 
         $data = json_encode($json);
@@ -102,7 +102,7 @@ class ComunicacaoAPI
 
             if (isset($resposta->status) && $resposta->status === 401) {
 
-                $this->getToken('http://sistemas.spacearea.com.br/homologacao/ecommerceapi/v1/autenticacao/entrar');
+                $this->getToken('http://sacprx.poweredbyclear.com:8080/ecommerceapi/v1/autenticacao/entrar');
 
                 $_SESSION['token_api'] = $this->token;
 
@@ -118,7 +118,7 @@ class ComunicacaoAPI
     public function getProdutoTodos() 
     {
 
-        $endpoint = 'http://sistemas.spacearea.com.br/homologacao/ecommerceapi/v1/produto/estoquepreco';
+        $endpoint = 'http://sacprx.poweredbyclear.com:8080/ecommerceapi/v1/produto/estoquepreco';
         $header = [
                 'Content-Type: application/json',
                 'Authorization: Space:' . $this->token,
@@ -134,7 +134,7 @@ class ComunicacaoAPI
     public function getProduto($idproduto) 
     {
 
-        $endpoint = 'http://sistemas.spacearea.com.br/homologacao/ecommerceapi/v1/produto/' . $idproduto;
+        $endpoint = 'http://sacprx.poweredbyclear.com:8080/ecommerceapi/v1/produto/' . $idproduto;
         $header = [
                 'Content-Type: application/json',
                 'Authorization: Space:' . $this->token,
@@ -148,7 +148,7 @@ class ComunicacaoAPI
     }
 
     public function getProdutoEstoque($idproduto) {
-        $endpoint = 'http://sistemas.spacearea.com.br/homologacao/ecommerceapi/v1/produto/' . $idproduto . '/estoquepreco';
+        $endpoint = 'http://sacprx.poweredbyclear.com:8080/ecommerceapi/v1/produto/' . $idproduto . '/estoquepreco';
         
         $header = [
             'Content-Type: application/json',
@@ -167,7 +167,7 @@ class ComunicacaoAPI
         //BUSCAR SITUACAO DO CLIENTE
         $cliente = 'testeIV@teste.com';
 
-        $endpoint = 'http://sistemas.spacearea.com.br/homologacao/ecommerceapi/v1/cliente/' . $cliente . '/situacao';
+        $endpoint = 'http://sacprx.poweredbyclear.com:8080/ecommerceapi/v1/cliente/' . $cliente . '/situacao';
         $header = [
             'Content-Type: application/json',
             'Authorization: Space:' . $this->token,
@@ -182,7 +182,7 @@ class ComunicacaoAPI
     }
 
     public function setPedido($data) {
-        $endpoint = 'http://sistemas.spacearea.com.br/homologacao/ecommerceapi/v1/pedido';
+        $endpoint = 'http://sacprx.poweredbyclear.com:8080/ecommerceapi/v1/pedido';
                      
         $header = [
             'Content-Type: application/json',

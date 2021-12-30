@@ -259,7 +259,7 @@ while ($rs_tag = mysqli_fetch_array($resultado_total)) {
 
                         if (empty($_SESSION['token_api']) || $_SESSION['token_api'] == 'erro') {
 
-                            $API->getToken('http://sistemas.spacearea.com.br/homologacao/ecommerceapi/v1/autenticacao/entrar');
+                            $API->getToken('http://sacprx.poweredbyclear.com:8080/ecommerceapi/v1/autenticacao/entrar');
 
                             $_SESSION['token_api'] = $API->token;
                         } else {
