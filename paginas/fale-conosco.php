@@ -131,10 +131,10 @@
                 //$mail->SMTPSecure = 'TLS';            //Enable implicit TLS encryption
                 $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
-                //Recipients
-                $mail->setFrom($rs_configuracao['emailloja'], utf8_decode($rs_configuracao['nomeloja']));
+                //Recipients // $rs_configuracao['emailloja']
+                $mail->setFrom('noreply@industriasacramento.com.br', utf8_decode($rs_configuracao['nomeloja']));
                 //$mail->addAddress($email, $name);     //Add a recipient
-                $mail->addAddress($rs_configuracao['emailloja'], utf8_decode($rs_configuracao['nomeloja']));
+                $mail->addAddress('noreply@industriasacramento.com.br', utf8_decode($rs_configuracao['nomeloja']));
 
                 //Content
                 $mail->isHTML(true);                                  //Set email format to HTML
