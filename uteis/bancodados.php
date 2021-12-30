@@ -10,12 +10,12 @@ class Recordset{
 
 	private $banco 		= "industria2017";
 	private $usuario 	= "industria2017";
-	private $senha 		= "R1a3x1L200";
+	private $senha 		= "G4p2f5D3@";
 	private $hostname 	= "industria2017.mysql.uhserver.com";
 */ 
     private $banco         = "industriateste";
     private $usuario     = "industriateste";
-    private $senha         = "R1a3x1L200";
+    private $senha         = "G4p2f5D3@";
     private $hostname     = "industriateste.mysql.uhserver.com";
 
 

@@ -118,31 +118,34 @@
             //Create an instance; passing `true` enables exceptions
             $mail = new PHPMailer(true);
 
-            $emailcaixa = 'vendas@industriasacramento.com.br';
+            $emailcaixa = 'noreply@industriasacramento.com.br';
 
             try {
                 //Server settings
-                $mail->SMTPDebug = 0;                      //Enable verbose debug output
+                $mail->SMTPDebug = 2;                      //Enable verbose debug output
                 $mail->isSMTP();                                            //Send using SMTP
                 $mail->Host       = 'smtps.uhserver.com';                     //Set the SMTP server to send through
                 $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-                $mail->Username   = 'vendas@industriasacramento.com.br';                     //SMTP username
-                $mail->Password   = 'R1a3x1L200';                               //SMTP password
-                //$mail->SMTPSecure = 'TLS';            //Enable implicit TLS encryption
+                $mail->Username   = 'noreply@industriasacramento.com.br';                     //SMTP username
+                $mail->Password   = 'G4p2f5D3@';                               //SMTP password
+                $mail->SMTPSecure = 'TLS';            //Enable implicit TLS encryption
                 $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
+
+                var_dump($rs_configuracao['emailloja']);
+
                 //Recipients // $rs_configuracao['emailloja']
-                $mail->setFrom('vendas@industriasacramento.com.br', utf8_decode($rs_configuracao['nomeloja']));
+                $mail->setFrom($rs_configuracao['emailloja'], utf8_decode($rs_configuracao['nomeloja']));
                 //$mail->addAddress($email, $name);     //Add a recipient
-                $mail->addAddress('vendas@industriasacramento.com.br', utf8_decode($rs_configuracao['nomeloja']));
+                $mail->addAddress($rs_configuracao['emailloja'], utf8_decode($rs_configuracao['nomeloja']));
 
                 //Content
                 $mail->isHTML(true);                                  //Set email format to HTML
                 $mail->Subject = utf8_decode("Contato - " . strip_tags(trim($_POST['subject'])));                
                 $mail->Body    = utf8_decode($configuracao_da_mensagem_original);
 
-                                $headers = "$cabecalho_da_mensagem_original";
-                                $headers .= "Content-Type: text/html; charset=\"UTF-8\"\n\n";
+                                //$headers = "$cabecalho_da_mensagem_original";
+                                //$headers .= "Content-Type: text/html; charset=\"UTF-8\"\n\n";
 
                 //mail("marcone.lima@gmail.com", utf8_decode("Contato - " . strip_tags(trim($_POST['subject']))), utf8_decode($configuracao_da_mensagem_original), $headers);
 

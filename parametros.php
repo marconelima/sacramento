@@ -1,6 +1,6 @@
 <?php
 $nomeSite = "Industria Sacramento";
-$emailSite = "vendas@industriasacramento.com.br";
+$emailSite = "noreply@industriasacramento.com.br";
 $linkSite = "https://www.industriasacramento.com.br/testenovo/";
 
 

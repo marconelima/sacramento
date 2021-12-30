@@ -24,7 +24,7 @@
                 <span class="texto_rodape"> (31) 3354-8250 </span>
 
                 <span class="icones_rodape"><i class="fas fa-envelope"></i></span>
-                <span class="texto_rodape">vendas@industriasacramento.com.br</span>
+                <span class="texto_rodape">noreply@industriasacramento.com.br</span>
 
                 <span class="icones_rodape"><i class="fas fa-map-marker-alt"></i></span>
                 <span class="texto_rodape"><a href='<?php echo $siteUrl; ?>fale-conosco/36#localization'>Ver no mapa</a></span>
