@@ -46,11 +46,11 @@ if (isset($_SESSION['cliente']) && @$_SESSION['cliente'] != '') {
                         <div class="row">
                             <div class="form-group col-6">
                                 <label>Senha</label>
-                                <input type="password" required="required" id="regPassword" class="form-control" value="" name="regpassword" placeholder="" onchange="form.regrepeatpassword.pattern = this.value;">
+                                <input type="password" id="regPassword" class="form-control" value="" name="regpassword" placeholder="" onchange="form.regrepeatpassword.pattern = this.value;">
                             </div>
                             <div class="form-group col-6">
                                 <label>Repetir a Senha</label>
-                                <input type="password" required="required" id="regRepeatPassword" class="form-control" value="" name="regrepeatpassword" placeholder="">
+                                <input type="password" id="regRepeatPassword" class="form-control" value="" name="regrepeatpassword" placeholder="">
                             </div>
                         </div>
                         <div class="row">
