@@ -124,12 +124,12 @@
                 //Server settings
                 $mail->SMTPDebug = 2;                      //Enable verbose debug output
                 $mail->isSMTP();                                            //Send using SMTP
-                $mail->Host       = 'smtp.'.substr(strstr($emailcaixa, '@'), 1);                     //Set the SMTP server to send through
+                $mail->Host       = 'smtps.uhserver.com';                     //Set the SMTP server to send through
                 $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
                 $mail->Username   = 'vendas@industriasacramento.com.br';                     //SMTP username
                 $mail->Password   = 'G4p2f5D3@';                               //SMTP password
-                //$mail->SMTPSecure = 'TLS';            //Enable implicit TLS encryption
-                $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+                $mail->SMTPSecure = 'TLS';            //Enable implicit TLS encryption
+                $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
                 //Recipients
                 $mail->setFrom($rs_configuracao['emailloja'], utf8_decode($rs_configuracao['nomeloja']));
