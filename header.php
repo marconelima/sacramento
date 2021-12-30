@@ -137,7 +137,7 @@ if (isset($_POST['enviar']) && $_POST['enviar'] == "Lembrar") {
         //Create an instance; passing `true` enables exceptions
         $mail = new PHPMailer(true);
 
-        $emailcaixa = 'noreply@industriasacramento.com.br';
+        $emailcaixa = 'vendas_site@industriasacramento.com.br';
 
         try {
             //Server settings
@@ -145,7 +145,7 @@ if (isset($_POST['enviar']) && $_POST['enviar'] == "Lembrar") {
             $mail->isSMTP();                                            //Send using SMTP
             $mail->Host       = 'smtp.uhserver.com';                     //Set the SMTP server to send through
             $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-            $mail->Username   = 'noreply@industriasacramento.com.br';                     //SMTP username
+            $mail->Username   = 'vendas_site@industriasacramento.com.br';                     //SMTP username
             $mail->Password   = 'G4p2f5D3@';                               //SMTP password
             $mail->SMTPSecure = '';            //Enable implicit TLS encryption
             $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
@@ -235,7 +235,7 @@ if (isset($_POST['alterarcadastrar']) && @$_POST['alterarcadastrar'] == "cadastr
             //Create an instance; passing `true` enables exceptions
             $mail = new PHPMailer(true);
 
-            $emailcaixa = 'noreply@industriasacramento.com.br';
+            $emailcaixa = 'vendas_site@industriasacramento.com.br';
 
             try {
                 //Server settings
@@ -243,7 +243,7 @@ if (isset($_POST['alterarcadastrar']) && @$_POST['alterarcadastrar'] == "cadastr
                 $mail->isSMTP();                                            //Send using SMTP
                 $mail->Host       = 'smtp.uhserver.com';                     //Set the SMTP server to send through
                 $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-                $mail->Username   = 'noreply@industriasacramento.com.br';                     //SMTP username
+                $mail->Username   = 'vendas_site@industriasacramento.com.br';                     //SMTP username
                 $mail->Password   = 'G4p2f5D3@';                               //SMTP password
                 $mail->SMTPSecure = '';            //Enable implicit TLS encryption
                 $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
@@ -324,7 +324,7 @@ if (isset($_POST['cadastrar']) && @$_POST['cadastrar'] == "cadastrar") {
         //Create an instance; passing `true` enables exceptions
         $mail = new PHPMailer(true);
 
-        $emailcaixa = 'noreply@industriasacramento.com.br';
+        $emailcaixa = 'vendas_site@industriasacramento.com.br';
 
         try {
             //Server settings
@@ -332,7 +332,7 @@ if (isset($_POST['cadastrar']) && @$_POST['cadastrar'] == "cadastrar") {
             $mail->isSMTP();                                            //Send using SMTP
             $mail->Host       = 'smtp.uhserver.com';                     //Set the SMTP server to send through
             $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-            $mail->Username   = 'noreply@industriasacramento.com.br';                     //SMTP username
+            $mail->Username   = 'vendas_site@industriasacramento.com.br';                     //SMTP username
             $mail->Password   = 'G4p2f5D3@';                               //SMTP password
             $mail->SMTPSecure = '';            //Enable implicit TLS encryption
             $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`

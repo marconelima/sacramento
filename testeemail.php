@@ -12,12 +12,12 @@ if (isset($_POST['enviarFormulario'])) {
 
     $enviaFormularioParaNome = 'Nome do destinatário que receberá formulário';
 
-    $enviaFormularioParaEmail = 'noreply@industriasacramento.com.br';
+    $enviaFormularioParaEmail = 'vendas_site@industriasacramento.com.br';
 
 
     $caixaPostalServidorNome = 'WebSite | Formulário';
 
-    $caixaPostalServidorEmail = 'noreply@industriasacramento.com.br';
+    $caixaPostalServidorEmail = 'vendas_site@industriasacramento.com.br';
 
     $caixaPostalServidorSenha = 'G4p2f5D3@';
 
