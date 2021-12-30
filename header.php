@@ -29,8 +29,8 @@ $resultado_configuracao = $conecta->selecionar($conecta->conn, $sql_configuracao
 $rs_configuracao = mysqli_fetch_array($resultado_configuracao);
 
 //$siteUrl = $rs_configuracao['linkloja'];
-$siteUrl = "http://www.marconesacramento.com.br/";
-//$siteUrl = "https://www.industriasacramento.com.br/testenovo/";
+//$siteUrl = "http://www.marconesacramento.com.br/";
+$siteUrl = "https://www.industriasacramento.com.br/testenovo/";
 
 
 if (@$tela != '') {
