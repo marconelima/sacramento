@@ -177,6 +177,101 @@ if (isset($_POST['enviar']) && $_POST['enviar'] == "Lembrar") {
     }
 }
 
+if (isset($_POST['alterarcadastrar']) && @$_POST['alterarcadastrar'] == "cadastrar") {
+
+    $dados['tbcliente']['nome'] = $_POST['regname'];
+    $dados['tbcliente']['email'] = $_POST['regemail'];
+
+    if($_POST['regpassword'] != ''){
+        $dados['tbcliente']['senha'] = md5($_POST['regpassword']);
+    } else {
+        unset($dados['tbcliente']['senha']);
+    }
+
+
+    $dados['tbcliente']['telefone'] = $_POST['regphone'];
+    $dados['tbcliente']['celular'] = $_POST['regcellphone'];
+    $dados['tbcliente']['cidade'] = $_POST['regcidade'];
+    $dados['tbcliente']['cnpj'] = $_POST['cnpj'];
+
+    $dados['tbcliente']['inscricaoestadual'] = $_POST['inscricaoestadual'];
+
+    $dados['tbcliente']['logradouro'] = $_POST['logradouro'];
+    $dados['tbcliente']['numero'] = $_POST['numero'];
+    $dados['tbcliente']['bairro'] = $_POST['bairro'];
+    $dados['tbcliente']['estado'] = $_POST['estado'];
+    $dados['tbcliente']['cep'] = $_POST['cep'];
+
+    $cliente = $conecta->inserirID($dados);
+    if ($cliente) {
+
+        $date = date('Y-m-d H:i:s');
+        //CONFIGURAÇÕES DA MENSAGEM DE RESPOSTA
+        $assunto_da_mensagem_de_resposta = "Recebemos seu cadastro";
+        $cabecalho_da_mensagem_de_resposta = "From: " . $rs_configuracao['nomeloja'] . " <" . $rs_configuracao['emailloja'] . ">\n";
+        $configuracao_da_mensagem_de_resposta = "Prezado(a) " . $_POST['regname'] . ",<br>
+			Obrigado por se cadastra em " . $rs_configuracao['nomeloja'] . ".<br><br>
+			Seguem os dados de acesso:<br>
+			<br>
+			Usuário: " . $_POST['regemail'] . "<br>
+			Senha: " . $_POST['regpassword'] . "<br>
+			<br>
+			Atenciosamente,<br>
+			" . $rs_configuracao['nomeloja'] . "<br>
+			<br>
+			<a href='" . $rs_configuracao['linkloja'] . "'>" . $rs_configuracao['linkloja'] . "</a><br>
+			<br>
+			Recebido em: $date<br>
+			Industria Sacramento
+			
+			";
+
+        //ENVIO DE MENSAGEM RESPOSTA
+        $headers = "$cabecalho_da_mensagem_de_resposta";
+        $headers .= "Content-Type: text/html; charset=\"UTF-8\"\n\n";
+
+        //Create an instance; passing `true` enables exceptions
+        $mail = new PHPMailer(true);
+
+        $emailcaixa = 'vendas@industriasacramento.com.br';
+
+        try {
+            //Server settings
+            $mail->SMTPDebug = 0;                      //Enable verbose debug output
+            $mail->isSMTP();                                            //Send using SMTP
+            $mail->Host       = 'smtp.uhserver.com';                     //Set the SMTP server to send through
+            $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+            $mail->Username   = 'noreply@industriasacramento.com.br';                     //SMTP username
+            $mail->Password   = 'G4p2f5D3@';                               //SMTP password
+            $mail->SMTPSecure = '';            //Enable implicit TLS encryption
+            $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+            //Recipients
+            $mail->setFrom($rs_configuracao['emailloja'], utf8_decode($rs_configuracao['nomeloja']));
+            //$mail->addAddress($email, $name);     //Add a recipient
+            $mail->addAddress($dados['tbcliente']['email'], utf8_decode($_POST['regname']));
+
+            //Content
+            $mail->isHTML(true);                                  //Set email format to HTML
+            $mail->Subject = utf8_decode($assunto_da_mensagem_de_resposta);
+            $mail->Body    = utf8_decode($configuracao_da_mensagem_de_resposta);
+
+            if ($mail->send()) {
+                echo '<div class="alert alert-success">Senha enviada para o e-mail cadastrado.</div>';
+            }
+        } catch (Exception $e) {
+            echo "<div class='alert alert-danger'>Não foi possível reenviar a senha, tente novamente!</div>";
+        }
+
+        //mail($dados['tbcliente']['email'], $assunto_da_mensagem_de_resposta, $configuracao_da_mensagem_de_resposta, $headers);
+
+        $_SESSION['cliente'] = $cliente;
+        $_SESSION['nome_cliente'] = $dados['tbcliente']['nome'];
+        $_SESSION['email_cliente'] = $dados['tbcliente']['email'];
+        $_SESSION['telefone_cliente'] = $dados['tbcliente']['celular'];
+    }
+}
+
 if (isset($_POST['cadastrar']) && @$_POST['cadastrar'] == "cadastrar") {
 
     $dados['tbcliente']['nome'] = $_POST['regname'];

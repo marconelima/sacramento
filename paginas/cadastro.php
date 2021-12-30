@@ -1,6 +1,6 @@
 <?php
-if(isset($_SESSION['cliente']) && @$_SESSION['cliente'] != '') {
-    $sql_cliente = "SELECT * FROM tbcliente WHERE id = ".$_SESSION['cliente'];
+if (isset($_SESSION['cliente']) && @$_SESSION['cliente'] != '') {
+    $sql_cliente = "SELECT * FROM tbcliente WHERE id = " . $_SESSION['cliente'];
     $resultado_cliente = $conecta->selecionar($conecta->conn, $sql_cliente);
     $rs_cliente = mysqli_fetch_array($resultado_cliente);
 }
@@ -37,11 +37,11 @@ if(isset($_SESSION['cliente']) && @$_SESSION['cliente'] != '') {
                     <form action="" method="post" enctype="multipart/form-data">
                         <div class="form-group">
                             <label>Nome</label>
-                            <input type="text" required="required" id="regName" class="form-control" name="regname" value="<?php echo @$rs_cliente['nome'];?>" placeholder="">
+                            <input type="text" required="required" id="regName" class="form-control" name="regname" value="<?php echo @$rs_cliente['nome']; ?>" placeholder="">
                         </div>
                         <div class="form-group">
                             <label>Email</label>
-                            <input type="email" required="required" id="regEmail" class="form-control" value="<?php echo @$rs_cliente['email'];?>" name="regemail" placeholder="">
+                            <input type="email" required="required" id="regEmail" class="form-control" value="<?php echo @$rs_cliente['email']; ?>" name="regemail" placeholder="">
                         </div>
                         <div class="row">
                             <div class="form-group col-6">
@@ -56,56 +56,56 @@ if(isset($_SESSION['cliente']) && @$_SESSION['cliente'] != '') {
                         <div class="row">
                             <div class="form-group  col-6">
                                 <label>CPF / CNPJ</label>
-                                <input class="form-control" required="required" value="<?php echo @$rs_cliente['cnpj'];?>" name="cnpj" id="nucnpj" placeholder="">
+                                <input class="form-control" required="required" value="<?php echo @$rs_cliente['cnpj']; ?>" name="cnpj" id="nucnpj" placeholder="">
                             </div>
                             <div class="form-group  col-6">
                                 <label>Inscrição Estadual</label>
-                                <input class="form-control" required="required" value="<?php echo @$rs_cliente['inscricaoestadual'];?>" name="inscricaoestadual" id="inscricaoestadual" placeholder="">
+                                <input class="form-control" required="required" value="<?php echo @$rs_cliente['inscricaoestadual']; ?>" name="inscricaoestadual" id="inscricaoestadual" placeholder="">
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group  col-6">
                                 <label>DDD + Telefone</label>
-                                <input class="form-control" required="required" value="<?php echo @$rs_cliente['telefone'];?>" name="regphone" id="phone" placeholder="">
+                                <input class="form-control" required="required" value="<?php echo @$rs_cliente['telefone']; ?>" name="regphone" id="phone" placeholder="">
                             </div>
 
                             <div class="form-group  col-6">
                                 <label>DDD + Celular</label>
-                                <input class="form-control" required="required" value="<?php echo @$rs_cliente['celular'];?>" name="regcellphone" id="cellphone" placeholder="">
+                                <input class="form-control" required="required" value="<?php echo @$rs_cliente['celular']; ?>" name="regcellphone" id="cellphone" placeholder="">
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group  col-8">
                                 <label>Logradouro</label>
-                                <input type="text" id="logradouro" required="required" class="form-control" value="<?php echo @$rs_cliente['logradouro'];?>" name="logradouro" placeholder="">
+                                <input type="text" id="logradouro" required="required" class="form-control" value="<?php echo @$rs_cliente['logradouro']; ?>" name="logradouro" placeholder="">
                             </div>
 
                             <div class="form-group  col-4">
                                 <label>Número</label>
-                                <input type="text" id="numero" required="required" class="form-control" value="<?php echo @$rs_cliente['numero'];?>" name="numero" placeholder="">
+                                <input type="text" id="numero" required="required" class="form-control" value="<?php echo @$rs_cliente['numero']; ?>" name="numero" placeholder="">
                             </div>
                         </div>
                         <div class="row">
 
                             <div class="form-group  col-6">
                                 <label>Bairro</label>
-                                <input type="text" id="bairro" required="required" class="form-control" value="<?php echo @$rs_cliente['bairro'];?>" name="bairro" placeholder="">
+                                <input type="text" id="bairro" required="required" class="form-control" value="<?php echo @$rs_cliente['bairro']; ?>" name="bairro" placeholder="">
                             </div>
 
                             <div class="form-group  col-6">
                                 <label>CEP</label>
-                                <input type="text" id="cep" required="required" class="form-control" value="<?php echo @$rs_cliente['cep'];?>" name="cep" placeholder="">
+                                <input type="text" id="cep" required="required" class="form-control" value="<?php echo @$rs_cliente['cep']; ?>" name="cep" placeholder="">
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group  col-6">
                                 <label>Cidade</label>
-                                <input type="text" id="regCity-Estate" required="required" class="form-control" value="<?php echo @$rs_cliente['cidade'];?>" name="regcidade" placeholder="">
+                                <input type="text" id="regCity-Estate" required="required" class="form-control" value="<?php echo @$rs_cliente['cidade']; ?>" name="regcidade" placeholder="">
                             </div>
 
                             <div class="form-group  col-6">
                                 <label>Estado</label>
-                                <input type="text" id="estado" required="required" class="form-control" value="<?php echo @$rs_cliente['estado'];?>" name="estado" placeholder="">
+                                <input type="text" id="estado" required="required" class="form-control" value="<?php echo @$rs_cliente['estado']; ?>" name="estado" placeholder="">
                             </div>
 
                         </div>
@@ -113,7 +113,7 @@ if(isset($_SESSION['cliente']) && @$_SESSION['cliente'] != '') {
                         <div class="row">
                             <div class="col-md-12">
                                 <button type="button" class="fechar btn btn-secondary pull-right" style='border-radius:9rem !important; padding: .175rem 1.75rem !important; float:right;' data-dismiss="modal" aria-hidden="true">Voltar para o login</button>
-                                <button class="btn btn-primary pull-right" style='border-radius:9rem !important; padding: .175rem 1.75rem !important; margin-left:5px!important; float: right;' type="submit" name="cadastrar" value="cadastrar">Cadastrar</button>
+                                <button class="btn btn-primary pull-right" style='border-radius:9rem !important; padding: .175rem 1.75rem !important; margin-left:5px!important; float: right;' type="submit" name="alterarcadastrar" value="cadastrar">Cadastrar</button>
                             </div>
                         </div>
                     </form>
