@@ -236,13 +236,18 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="form-group  col-6">
+                        <div class="form-group  col-12 col-md-4">
+                            <label>Tipo Documento</label>
+                            <input type="radio" name="tipodocumento" class="tipodocumento" id="tipodocumentocpf" value="CPF" />&nbsp;CPF&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" name="tipodocumento" class="tipodocumento" id="tipodocumentocnpj" value="CNPJ" />&nbsp;CNPJ
+                        </div>
+                        <div class="form-group  col-12 col-md-4">
                             <label>CPF / CNPJ</label>
                             <input class="form-control" required="required" name="cnpj" id="nucnpj" placeholder="">
                         </div>
-                        <div class="form-group  col-6">
+                        <div class="form-group col-12 col-md-4" id="inscricaoest" style="display: none;">
                             <label>Inscrição Estadual</label>
-                            <input class="form-control" required="required" name="inscricaoestadual" id="inscricaoestadual" placeholder="">
+                            <input class="form-control" name="inscricaoestadual" id="inscricaoestadual" placeholder="">
                         </div>
                     </div>
                     <div class="row">
@@ -367,6 +372,48 @@
         if (corposite.scrollHeight < menulateral.scrollHeight) {
             corposite.style.height = menulateral.scrollHeight + "px";
         }
+    }
+
+    if (document.querySelector(".tipodocumento")) {
+
+        let botao = document.querySelectorAll(".tipodocumento");
+
+        botao.forEach(function(el) {
+            el.addEventListener("click", e => {
+
+                let insc = document.querySelector("#inscricaoest");
+
+                if (el.id == 'tipodocumentocnpj') {
+                    insc.style.display = 'block';
+                    insc.attr("requerid", true);
+                } else {
+                    insc.style.display = 'none';
+                    insc.attr("requerid", false);
+                }
+            });
+        });
+
+    }
+
+    if (document.querySelector(".tipodocumento2")) {
+
+        let botao = document.querySelectorAll(".tipodocumento2");
+
+        botao.forEach(function(el) {
+            el.addEventListener("click", e => {
+
+                let insc = document.querySelector("#inscricaoest2");
+
+                if (el.id == 'tipodocumentocnpj2') {
+                    insc.style.display = 'block';
+                    insc.attr("requerid", true);
+                } else {
+                    insc.style.display = 'none';
+                    insc.attr("requerid", false);
+                }
+            });
+        });
+
     }
 
     if (document.querySelector(".subirtopo")) {
@@ -823,6 +870,11 @@
         $('#cnpj').mask('99.999.999/9999-99');
 
         $("input[id*='nucnpj']").inputmask({
+            mask: ['999.999.999-99', '99.999.999/9999-99'],
+            keepStatic: true
+        });
+
+        $("input[id*='nucnpj2']").inputmask({
             mask: ['999.999.999-99', '99.999.999/9999-99'],
             keepStatic: true
         });

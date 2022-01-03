@@ -248,19 +248,37 @@
             "ufSigla" => $rs_cliente['estado']
         ];
 
-        $cliente = [
-                "codigo"=> 0,
-                "razaoSocial"=> $rs_cliente['nome'],                
-                "cnpj"=> $rs_cliente['cnpj'],
-                "inscricaoEstadual"=> $rs_cliente['inscricaoestadual'],
-                "email"=> $rs_cliente['email'],
-                "tipo" => "J",               
-                "sexo"=> "",
-                "telefone"=> $rs_cliente['telefone'],
-                "telefone2"=> $rs_cliente['celular'],
-                "celular"=> $rs_cliente['celular'],
+        if($rs_cliente['tipodocumento'] == 'cnpj'){
+            $cliente = [
+                "codigo" => 0,
+                "razaoSocial" => $rs_cliente['nome'],
+                "cnpj" => $rs_cliente['cnpj'],
+                "inscricaoEstadual" => $rs_cliente['inscricaoestadual'],
+                "email" => $rs_cliente['email'],
+                "tipo" => "J",
+                "sexo" => "",
+                "telefone" => $rs_cliente['telefone'],
+                "telefone2" => $rs_cliente['celular'],
+                "celular" => $rs_cliente['celular'],
                 "enderecos" => $enderecosCliente
-        ];
+            ];
+
+        } else if ($rs_cliente['tipodocumento'] == 'cpf') {
+            $cliente = [
+                "codigo" => 0,
+                "razaoSocial" => $rs_cliente['nome'],
+                "cnpj" => $rs_cliente['cnpj'],
+                "email" => $rs_cliente['email'],
+                "tipo" => "F",
+                "sexo" => "",
+                "telefone" => $rs_cliente['telefone'],
+                "telefone2" => $rs_cliente['celular'],
+                "celular" => $rs_cliente['celular'],
+                "enderecos" => $enderecosCliente
+            ];
+        }
+
+        
 
         $pagamentos = [
             "formaPagamento" => "boleto",
@@ -322,7 +340,7 @@
             $mail->Host       = 'smtps.uhserver.com';                     //Set the SMTP server to send through
             $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
             $mail->Username   = 'vendas_site@industriasacramento.com.br';                     //SMTP username
-            $mail->Password   = 'G4p2f5D3@';                               //SMTP password
+            $mail->Password   = 'G4p2f5D3@2';                               //SMTP password
             $mail->SMTPSecure = 'TLS';            //Enable implicit TLS encryption
             $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
@@ -380,7 +398,7 @@
                     $mail->Host       = 'smtps.uhserver.com';                     //Set the SMTP server to send through
                     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
                     $mail->Username   = 'vendas_site@industriasacramento.com.br';                     //SMTP username
-                    $mail->Password   = 'G4p2f5D3@';                               //SMTP password
+                    $mail->Password   = 'G4p2f5D3@2';                               //SMTP password
                     $mail->SMTPSecure = 'TLS';            //Enable implicit TLS encryption
                     $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 

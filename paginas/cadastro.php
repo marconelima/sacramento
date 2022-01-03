@@ -54,13 +54,18 @@ if (isset($_SESSION['cliente']) && @$_SESSION['cliente'] != '') {
                             </div>
                         </div>
                         <div class="row">
-                            <div class="form-group  col-6">
-                                <label>CPF / CNPJ</label>
-                                <input class="form-control" required="required" value="<?php echo @$rs_cliente['cnpj']; ?>" name="cnpj" id="nucnpj" placeholder="">
+                            <div class="form-group  col-12 col-md-4">
+                                <label>Tipo Documento</label>
+                                <input type="radio" name="tipodocumento" class="tipodocumento2" id="tipodocumentocpf2" value="CPF" <?php if(@$rs_cliente['tipodocumento'] == 'cpf'){ echo "checked"; } ?> />&nbsp;CPF&nbsp;&nbsp;&nbsp;&nbsp;
+                                <input type="radio" name="tipodocumento" class="tipodocumento2" id="tipodocumentocnpj2" value="CNPJ" <?php if(@$rs_cliente['tipodocumento'] == 'cnpj'){ echo "checked"; } ?> />&nbsp;CNPJ
                             </div>
-                            <div class="form-group  col-6">
+                            <div class="form-group  col-12 col-md-4">
+                                <label>CPF / CNPJ</label>
+                                <input class="form-control" required="required" name="cnpj" id="nucnpj2" placeholder="">
+                            </div>
+                            <div class="form-group col-12 col-md-4" id="inscricaoest" <?php if(@$rs_cliente['tipodocumento'] == 'cnpj'){ ?>style="display: block;" <?php }  else { ?> style="display: none;" <?php } ?> >
                                 <label>Inscrição Estadual</label>
-                                <input class="form-control" required="required" value="<?php echo @$rs_cliente['inscricaoestadual']; ?>" name="inscricaoestadual" id="inscricaoestadual" placeholder="">
+                                <input class="form-control" name="inscricaoestadual" id="inscricaoestadual2" placeholder="">
                             </div>
                         </div>
                         <div class="row">
