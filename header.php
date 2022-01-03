@@ -28,6 +28,8 @@ $sql_configuracao = "SELECT * FROM tbconfiguracao WHERE id = 1";
 $resultado_configuracao = $conecta->selecionar($conecta->conn, $sql_configuracao);
 $rs_configuracao = mysqli_fetch_array($resultado_configuracao);
 
+$resultadoCadastro = "";
+
 //$siteUrl = $rs_configuracao['linkloja'];
 //$siteUrl = "http://www.marconesacramento.com.br/";
 $siteUrl = "https://www.industriasacramento.com.br/testenovo/";
@@ -77,10 +79,11 @@ if (isset($_POST['entrar']) && $_POST['entrar'] == "Login") {
 
         echo "<script>alert('Seja bem vindo " . $_SESSION['nome_cliente'] . "!')</script>";
 
-        if($rs_valida['tipodocumento'] == 'cnpj' && ($rs_valida['inscricaoestadual'] == '' || $rs_valida['cnpj'] == '')){
-
+        if(($rs_valida['tipodocumento'] == 'cnpj' && ($rs_valida['inscricaoestadual'] == '' || $rs_valida['cnpj'] == '')) || ($rs_valida['tipodocumento'] == 'cpf' && $rs_valida['cnpj'] == '')){
             echo "<meta HTTP-EQUIV='refresh' CONTENT='0;URL=" . $siteUrl . "cadastro/66'>";
-        } 
+        } /*else {
+            echo "<meta HTTP-EQUIV='refresh' CONTENT='0;URL=" . $siteUrl . "catalogo/21'>";
+        }*/
     } else {
         echo "<script>alert('Houve um problema no login tente novamente!')</script>";
     }
@@ -208,9 +211,7 @@ if (isset($_POST['alterarcadastrar']) && @$_POST['alterarcadastrar'] == "cadastr
 
     $string = " id = ".$_SESSION['cliente'];
 
-    $resultado = $conecta->alterar($dados, $string);
-
-    echo $resultado;
+    $resultadoCadastro = $conecta->alterar($dados, $string);
 
     if ($_POST['regpassword'] != '') {
         if ($cliente) {

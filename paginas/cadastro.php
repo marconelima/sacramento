@@ -8,9 +8,9 @@ if (isset($_SESSION['cliente']) && @$_SESSION['cliente'] != '') {
 ?>
 
 <!-- Header and Breadcrumbs  -->
-<section class="page-section breadcrumbs">
+<section class="page-section breadcrumbs" style="margin-top:120px;">
     <div class="container">
-        <h2 class="section-title"><?php echo $rs_tela['nome']; ?> - Complete seu cadastro pra sincronização com nosso API de vendas</h2>
+        <h2 class="section-title">Complete seu cadastro pra sincronização com nosso API de vendas</h2>
         <!-- Breadcrumbs 
 		<ul class="breadcrumb">
 			<li><a href="<?php echo $siteUrl; ?>">Home</a></li>
@@ -32,6 +32,7 @@ if (isset($_SESSION['cliente']) && @$_SESSION['cliente'] != '') {
 
                 <div class="side_busca col-12 menubusca" style="float:left;">
 
+                    <?php echo $resultadoCadastro;?>
 
 
                     <form action="" method="post" enctype="multipart/form-data">
@@ -118,7 +119,7 @@ if (isset($_SESSION['cliente']) && @$_SESSION['cliente'] != '') {
                         <div class="row">
                             <div class="col-md-12">
                                 <button type="button" class="fechar btn btn-secondary pull-right" style='border-radius:9rem !important; padding: .175rem 1.75rem !important; float:right;' data-dismiss="modal" aria-hidden="true">Voltar para o login</button>
-                                <button class="btn btn-primary pull-right" style='border-radius:9rem !important; padding: .175rem 1.75rem !important; margin-left:5px!important; float: right;' type="submit" name="alterarcadastrar" value="cadastrar">Cadastrar</button>
+                                <button class="btn btn-primary pull-right" style='border-radius:9rem !important; padding: .175rem 1.75rem !important; margin-left:5px!important; float: right;' type="submit" name="alterarcadastrar" value="cadastrar">Finalizar Cadastro</button>
                             </div>
                         </div>
                     </form>
