@@ -420,7 +420,7 @@
                 }
 
             } else {
-                echo '<div class="alert alert-danger">Problema ao enviar Orçamento! '. utf8_decode($mensagemUsuario) . '. Entre em contato com o Administrador!</div>';
+                echo '<div class="alert alert-danger">Problema ao enviar Orçamento! '. $mensagemUsuario . ' Entre em contato com o Administrador!</div>';
                 //exit;
             }
         } catch (Exception $e) {

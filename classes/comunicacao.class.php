@@ -112,7 +112,7 @@ class ComunicacaoAPI
         } catch (Exception $e) {
             return $e->getMessage();
         }
-        return $response;
+        return uft8_encode($response);
     }
 
     public function getProdutoTodos() 
