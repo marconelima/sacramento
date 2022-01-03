@@ -313,7 +313,7 @@
             $strposm = strpos($response, "mensagemUsuario");
             
             $strpos = strpos($response, "status");
-            $mensagemUsuario = substr($response, $strposm + 18, ($strpos-3)-($strposm+15));
+            $mensagemUsuario = substr($response, $strposm + 18, ($strpos-3)-($strposm+18));
             $status = substr($response, $strpos+8,3);
 
             if (isset($status) && $status == 200) {
