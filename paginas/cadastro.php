@@ -61,11 +61,11 @@ if (isset($_SESSION['cliente']) && @$_SESSION['cliente'] != '') {
                             </div>
                             <div class="form-group  col-12 col-md-4">
                                 <label>CPF / CNPJ</label>
-                                <input class="form-control" required="required" name="cnpj" id="nucnpj2" placeholder="">
+                                <input class="form-control" required="required" name="cnpj" id="nucnpj2" value="?php echo @$rs_cliente['cnpj']; ?>" placeholder="">
                             </div>
                             <div class="form-group col-12 col-md-4" id="inscricaoest" <?php if(@$rs_cliente['tipodocumento'] == 'cnpj'){ ?>style="display: block;" <?php }  else { ?> style="display: none;" <?php } ?> >
                                 <label>Inscrição Estadual</label>
-                                <input class="form-control" name="inscricaoestadual" id="inscricaoestadual2" placeholder="">
+                                <input class="form-control" name="inscricaoestadual" id="inscricaoestadual2" value="?php echo @$rs_cliente['inscricaoestadual']; ?>" placeholder="">
                             </div>
                         </div>
                         <div class="row">
