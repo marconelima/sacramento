@@ -207,7 +207,7 @@ if (isset($_POST['alterarcadastrar']) && @$_POST['alterarcadastrar'] == "cadastr
 
     $resultado = $conecta->alterar($dados, $string);
 
-    var_dump($resultado);
+    echo $resultado;
 
     if ($_POST['regpassword'] != '') {
         if ($cliente) {
