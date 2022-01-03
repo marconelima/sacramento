@@ -56,8 +56,8 @@ if (isset($_SESSION['cliente']) && @$_SESSION['cliente'] != '') {
                         <div class="row">
                             <div class="form-group  col-12 col-md-4">
                                 <label>Tipo Documento</label>
-                                <input type="radio" name="tipodocumento2" class="tipodocumento2" id="tipodocumentocpf2" value="CPF" <?php if(@$rs_cliente['tipodocumento'] == 'cpf'){ echo "selected"; } ?> />&nbsp;CPF&nbsp;&nbsp;&nbsp;&nbsp;
-                                <input type="radio" name="tipodocumento2" class="tipodocumento2" id="tipodocumentocnpj2" value="CNPJ" <?php if(@$rs_cliente['tipodocumento'] == 'cnpj'){ echo "selected"; } ?> />&nbsp;CNPJ
+                                <input type="radio" name="tipodocumento2" class="tipodocumento2" id="tipodocumentocpf2" value="CPF" <?php if(@$rs_cliente['tipodocumento'] == 'cpf'){ echo "CHECKED"; } ?> />&nbsp;CPF&nbsp;&nbsp;&nbsp;&nbsp;
+                                <input type="radio" name="tipodocumento2" class="tipodocumento2" id="tipodocumentocnpj2" value="CNPJ" <?php if(@$rs_cliente['tipodocumento'] == 'cnpj'){ echo "CHECKED"; } ?> />&nbsp;CNPJ
                             </div>
                             <div class="form-group  col-12 col-md-4">
                                 <label>CPF / CNPJ</label>
