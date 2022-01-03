@@ -292,6 +292,10 @@
 
             $resposta = json_decode($response);
 
+            echo '<pre>';
+            print_r($resposta);
+            echo '</pre>';
+
             if (isset($resposta->status) && $resposta->status === 200) {
                 echo '<div class="alert alert-success">Pedido enviado com Sucesso!</div>';
             } else {
@@ -313,7 +317,7 @@
 
         try {
             //Server settings
-            $mail->SMTPDebug = 0;                      //Enable verbose debug output
+            $mail->SMTPDebug = 2;                      //Enable verbose debug output
             $mail->isSMTP();                                            //Send using SMTP
             $mail->Host       = 'smtps.uhserver.com';                     //Set the SMTP server to send through
             $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
@@ -371,14 +375,14 @@
 
                 try {
                     //Server settings
-                    $mail->SMTPDebug = 0;                      //Enable verbose debug output
+                    $mail->SMTPDebug = 2;                      //Enable verbose debug output
                     $mail->isSMTP();                                            //Send using SMTP
                     $mail->Host       = 'smtps.uhserver.com';                     //Set the SMTP server to send through
                     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
                     $mail->Username   = 'vendas_site@industriasacramento.com.br';                     //SMTP username
                     $mail->Password   = 'G4p2f5D3@';                               //SMTP password
-                    $mail->SMTPSecure = '';            //Enable implicit TLS encryption
-                    $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+                    $mail->SMTPSecure = 'TLS';            //Enable implicit TLS encryption
+                    $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
                     //Recipients
                     $mail->setFrom($rs_configuracao['emailloja'], utf8_decode($rs_configuracao['nomeloja']));
