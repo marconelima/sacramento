@@ -282,6 +282,8 @@ if (isset($_POST['alterarcadastrar']) && @$_POST['alterarcadastrar'] == "cadastr
             $_SESSION['telefone_cliente'] = $dados['tbcliente']['celular'];
         }
     }
+
+    echo "<meta HTTP-EQUIV='refresh' CONTENT='0;URL=" . $siteUrl . "catalogo/21'>";
 }
 
 if (isset($_POST['cadastrar']) && @$_POST['cadastrar'] == "cadastrar") {
