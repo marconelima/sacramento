@@ -203,7 +203,11 @@ if (isset($_POST['alterarcadastrar']) && @$_POST['alterarcadastrar'] == "cadastr
     $dados['tbcliente']['estado'] = $_POST['estado'];
     $dados['tbcliente']['cep'] = $_POST['cep'];
 
-    $cliente = $conecta->inserirID($dados);
+    $string = " id = ".$_SESSION['cliente'];
+
+    $resultado = $conecta->alterar($dados, $string);
+
+    var_dump($resultado);
 
     if ($_POST['regpassword'] != '') {
         if ($cliente) {
