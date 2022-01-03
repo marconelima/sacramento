@@ -309,14 +309,14 @@
             $response = $API->setPedido($data_json);
 
             $resposta = json_decode($response);
+            $respostas = json_encode($response);
 
             echo '<pre>';
             print_r($response);
             echo '</pre>';
 
-            echo '<pre>';
-            print_r($resposta);
-            echo '</pre>';
+            var_dump($resposta);
+            var_dump($resposta2);
 
             if (isset($resposta->status) && $resposta->status === 200) {
                 echo '<div class="alert alert-success">Pedido enviado com Sucesso!</div>';
