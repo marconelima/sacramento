@@ -318,82 +318,16 @@
 
             if (isset($status) && $status == 200) {
                 echo '<div class="alert alert-success">Pedido enviado com Sucesso!</div>';
-            } else {
-                echo '<div class="alert alert-danger">Problema ao enviar Orçamento! '. utf8_decode($mensagemUsuario) . '. Entre em contato com o Administrador!</div>';
-                exit;
-            }
-        } catch (Exception $e) {
-            echo $e->getMessage()." ".$e->getCode();
-        }
-        
 
-        //ENVIO DE MENSAGEM ORIGINAL
-        $headers = "$cabecalho_da_mensagem_original";
-        $headers .= "Content-Type: text/html; charset=\"UTF-8\"\n\n";
-
-        //Create an instance; passing `true` enables exceptions
-        $mail = new PHPMailer(true);
-
-        $emailcaixa = 'vendas_site@industriasacramento.com.br';
-
-
-        try {
-            //Server settings
-            $mail->SMTPDebug = 0;                      //Enable verbose debug output
-            $mail->isSMTP();                                            //Send using SMTP
-            $mail->Host       = 'smtps.uhserver.com';                     //Set the SMTP server to send through
-            $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-            $mail->Username   = 'vendas_site@industriasacramento.com.br';                     //SMTP username
-            $mail->Password   = 'G4p2f5D3@2';                               //SMTP password
-            $mail->SMTPSecure = 'TLS';            //Enable implicit TLS encryption
-            $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-
-            //Recipients
-            $mail->setFrom($rs_configuracao['emailloja'], utf8_decode($rs_configuracao['nomeloja']));
-            //$mail->addAddress($email, $name);     //Add a recipient
-            $mail->addAddress($rs_configuracao['emailloja'], utf8_decode($rs_configuracao['nomeloja']));
-
-            //Content
-            $mail->isHTML(true);                                  //Set email format to HTML
-            $mail->Subject = utf8_decode($assunto);
-            $mail->Body    = utf8_decode($configuracao_da_mensagem_original);
-            
-            if ($mail->send()) {
-                //echo '<div class="alert alert-success">Mensagem enviada com sucesso!</div>';
-
-                echo '<!-- Pedido recebido com sucesso -->
-					<section class="page-section" style="padding-top: 40px">
-						<div class="container">
-							<h1><b>Sue pedido foi recebido com sucesso!</b><br/><br/>Em breve iremos entrar em contato para lhe enviar a sua Orçamento!</h1>
-							<p>Obrigado por escolher a ' . $rs_configuracao['nomeloja'] . '!</p>
-						</div>
-					</section>
-
-		<!-- /Pedido Recebido com sucesso -->';
-
-                //CONFIGURAÇÕES DA MENSAGEM DE RESPOSTA
-                $assunto_da_mensagem_de_resposta = "Recebemos seu pedido de Orçamento";
-                $cabecalho_da_mensagem_de_resposta = "From: " . $rs_configuracao['nomeloja'] . " <" . $rs_configuracao['emailloja'] . ">\n";
-                $configuracao_da_mensagem_de_resposta = "Prezado(a) " . $name . ",<br>
-				Obrigado por entrar em contato, sue pedido de Orçamento foi enviada para " . $rs_configuracao['nomeloja'] . ".<br>
-				Em breve lhe responderemos.<br>
-				<br>
-				Atenciosamente,<br>
-				" . $rs_configuracao['nomeloja'] . "<br>
-				<br>
-				<a href='" . $rs_configuracao['linkloja'] . "'>" . $rs_configuracao['linkloja'] . "</a><br>
-                <br>
-                Recebido em: $date<br>
-				Industria Sacramento";
-
-                //ENVIO DE MENSAGEM RESPOSTA
-                $headers = "$cabecalho_da_mensagem_de_resposta";
+                //ENVIO DE MENSAGEM ORIGINAL
+                $headers = "$cabecalho_da_mensagem_original";
                 $headers .= "Content-Type: text/html; charset=\"UTF-8\"\n\n";
 
                 //Create an instance; passing `true` enables exceptions
                 $mail = new PHPMailer(true);
 
                 $emailcaixa = 'vendas_site@industriasacramento.com.br';
+
 
                 try {
                     //Server settings
@@ -408,24 +342,93 @@
 
                     //Recipients
                     $mail->setFrom($rs_configuracao['emailloja'], utf8_decode($rs_configuracao['nomeloja']));
-                    $mail->addAddress($email, $name);     //Add a recipient
+                    //$mail->addAddress($email, $name);     //Add a recipient
+                    $mail->addAddress($rs_configuracao['emailloja'], utf8_decode($rs_configuracao['nomeloja']));
 
                     //Content
                     $mail->isHTML(true);                                  //Set email format to HTML
-                    $mail->Subject = utf8_decode($assunto_da_mensagem_de_resposta);
-                    $mail->Body    = utf8_decode($configuracao_da_mensagem_de_resposta);
+                    $mail->Subject = utf8_decode($assunto);
+                    $mail->Body    = utf8_decode($configuracao_da_mensagem_original);
 
-                    $mail->send();
+                    if ($mail->send()) {
+                        //echo '<div class="alert alert-success">Mensagem enviada com sucesso!</div>';
+
+                        echo '<!-- Pedido recebido com sucesso -->
+					<section class="page-section" style="padding-top: 40px">
+						<div class="container">
+							<h1><b>Sue pedido foi recebido com sucesso!</b><br/><br/>Em breve iremos entrar em contato para lhe enviar a sua Orçamento!</h1>
+							<p>Obrigado por escolher a ' . $rs_configuracao['nomeloja'] . '!</p>
+						</div>
+					</section>
+
+		<!-- /Pedido Recebido com sucesso -->';
+
+                        //CONFIGURAÇÕES DA MENSAGEM DE RESPOSTA
+                        $assunto_da_mensagem_de_resposta = "Recebemos seu pedido de Orçamento";
+                        $cabecalho_da_mensagem_de_resposta = "From: " . $rs_configuracao['nomeloja'] . " <" . $rs_configuracao['emailloja'] . ">\n";
+                        $configuracao_da_mensagem_de_resposta = "Prezado(a) " . $name . ",<br>
+				Obrigado por entrar em contato, sue pedido de Orçamento foi enviada para " . $rs_configuracao['nomeloja'] . ".<br>
+				Em breve lhe responderemos.<br>
+				<br>
+				Atenciosamente,<br>
+				" . $rs_configuracao['nomeloja'] . "<br>
+				<br>
+				<a href='" . $rs_configuracao['linkloja'] . "'>" . $rs_configuracao['linkloja'] . "</a><br>
+                <br>
+                Recebido em: $date<br>
+				Industria Sacramento";
+
+                        //ENVIO DE MENSAGEM RESPOSTA
+                        $headers = "$cabecalho_da_mensagem_de_resposta";
+                        $headers .= "Content-Type: text/html; charset=\"UTF-8\"\n\n";
+
+                        //Create an instance; passing `true` enables exceptions
+                        $mail = new PHPMailer(true);
+
+                        $emailcaixa = 'vendas_site@industriasacramento.com.br';
+
+                        try {
+                            //Server settings
+                            $mail->SMTPDebug = 0;                      //Enable verbose debug output
+                            $mail->isSMTP();                                            //Send using SMTP
+                            $mail->Host       = 'smtps.uhserver.com';                     //Set the SMTP server to send through
+                            $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+                            $mail->Username   = 'vendas_site@industriasacramento.com.br';                     //SMTP username
+                            $mail->Password   = 'G4p2f5D3@2';                               //SMTP password
+                            $mail->SMTPSecure = 'TLS';            //Enable implicit TLS encryption
+                            $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+                            //Recipients
+                            $mail->setFrom($rs_configuracao['emailloja'], utf8_decode($rs_configuracao['nomeloja']));
+                            $mail->addAddress($email, $name);     //Add a recipient
+
+                            //Content
+                            $mail->isHTML(true);                                  //Set email format to HTML
+                            $mail->Subject = utf8_decode($assunto_da_mensagem_de_resposta);
+                            $mail->Body    = utf8_decode($configuracao_da_mensagem_de_resposta);
+
+                            $mail->send();
+                        } catch (Exception $e) {
+                            echo '<div class="alert alert-danger">Problema ao enviar Orçamento 1!</div>';
+                        }
+
+                        //unset($_SESSION['carrinho'], $_SESSION['qtde'], $_SESSION['criar'], $dadospedido, $dadosproduto);
+                    }
+                    unset($_SESSION['carrinho'], $_SESSION['qtde'], $_SESSION['criar'], $dadospedido, $dadosproduto);
                 } catch (Exception $e) {
-                    echo '<div class="alert alert-danger">Problema ao enviar Orçamento 1!</div>';
+                    echo '<div class="alert alert-danger">Problema ao enviar Orçamento 2!</div>';
                 }
-
-                //unset($_SESSION['carrinho'], $_SESSION['qtde'], $_SESSION['criar'], $dadospedido, $dadosproduto);
+                
+            } else {
+                echo '<div class="alert alert-danger">Problema ao enviar Orçamento! '. utf8_decode($mensagemUsuario) . '. Entre em contato com o Administrador!</div>';
+                exit;
             }
-            unset($_SESSION['carrinho'], $_SESSION['qtde'], $_SESSION['criar'], $dadospedido, $dadosproduto);
         } catch (Exception $e) {
-            echo '<div class="alert alert-danger">Problema ao enviar Orçamento 2!</div>';
+            echo $e->getMessage()." ".$e->getCode();
         }
+        
+
+        
         /*
 			if(mail($rs_configuracao['emailloja'],$assunto,$configuracao_da_mensagem_original,$headers)){
 
