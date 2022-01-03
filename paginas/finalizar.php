@@ -308,13 +308,13 @@
         try {
             $response = $API->setPedido($data_json);
 
-            $resposta = json_decode($response, true);
+            $resposta33 = json_decode($response, true);
 
             echo '<pre>';
             print_r($response);
             echo '</pre>';
 
-            var_dump($resposta);
+            var_dump($resposta33);
 
             if (isset($resposta['status']) && $resposta['status'] == 200) {
                 echo '<div class="alert alert-success">Pedido enviado com Sucesso!</div>';
@@ -335,6 +335,7 @@
         $mail = new PHPMailer(true);
 
         $emailcaixa = 'vendas_site@industriasacramento.com.br';
+
 
         try {
             //Server settings
