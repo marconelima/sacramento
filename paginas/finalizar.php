@@ -308,7 +308,7 @@
         try {
             $response = $API->setPedido($data_json);
 
-            $resposta33 = json_decode($response, true);
+            $resposta33 = json_decode($response, JSON_UNESCAPED_UNICODE);
 
             echo '<pre>';
             print_r($response);
