@@ -10,7 +10,7 @@ if (isset($_SESSION['cliente']) && @$_SESSION['cliente'] != '') {
 <!-- Header and Breadcrumbs  -->
 <section class="page-section breadcrumbs">
     <div class="container">
-        <h2 class="section-title"><?php echo $rs_tela['nome']; ?></h2>
+        <h2 class="section-title"><?php echo $rs_tela['nome']; ?> - Complete seu cadastro pra sincronização com nosso API de vendas</h2>
         <!-- Breadcrumbs 
 		<ul class="breadcrumb">
 			<li><a href="<?php echo $siteUrl; ?>">Home</a></li>
