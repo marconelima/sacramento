@@ -312,10 +312,14 @@
 
             echo '<pre>';
             print_r($response);
-            print_r($response->{'mensagemUsuario'});
-            print_r($response->{'status'});
-            print_r($response->{'sucesso'});
+            print_r($resposta33);
             echo '</pre>';
+
+            $strpos = strpos($response, "status");
+            $status = substr($response, $strpos+8,3);
+
+            var_dump($status);
+
 
             echo '<pre>';
             print_r($resposta33->{'mensagemUsuario'});
