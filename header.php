@@ -188,6 +188,7 @@ if (isset($_POST['alterarcadastrar']) && @$_POST['alterarcadastrar'] == "cadastr
         unset($dados['tbcliente']['senha']);
     }
 
+    $dados['tbcliente']['tipodocumento'] = $_POST['tipodocumento2'];
 
     $dados['tbcliente']['telefone'] = $_POST['regphone'];
     $dados['tbcliente']['celular'] = $_POST['regcellphone'];
@@ -286,6 +287,8 @@ if (isset($_POST['cadastrar']) && @$_POST['cadastrar'] == "cadastrar") {
     $dados['tbcliente']['cnpj'] = $_POST['cnpj'];
 
     $dados['tbcliente']['inscricaoestadual'] = $_POST['inscricaoestadual'];
+
+    $dados['tbcliente']['tipodocumento'] = $_POST['tipodocumento'];
 
     $dados['tbcliente']['logradouro'] = $_POST['logradouro'];
     $dados['tbcliente']['numero'] = $_POST['numero'];
