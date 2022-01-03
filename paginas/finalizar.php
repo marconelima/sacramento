@@ -399,7 +399,7 @@
                             $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
                             //Recipients
-                            $mail->setFrom($rs_configuracao['emailloja'], utf8_decode($rs_configuracao['nomeloja']));
+                            $mail->setFrom($rs_configuracao['emailloja'], utf8_encode($rs_configuracao['nomeloja']));
                             $mail->addAddress($email, $name);     //Add a recipient
 
                             //Content
@@ -418,7 +418,7 @@
                 } catch (Exception $e) {
                     echo '<div class="alert alert-danger">Problema ao enviar Orçamento 2!</div>';
                 }
-                
+
             } else {
                 echo '<div class="alert alert-danger">Problema ao enviar Orçamento! '. utf8_decode($mensagemUsuario) . '. Entre em contato com o Administrador!</div>';
                 exit;
