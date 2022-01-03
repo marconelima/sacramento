@@ -77,7 +77,10 @@ if (isset($_POST['entrar']) && $_POST['entrar'] == "Login") {
 
         echo "<script>alert('Seja bem vindo " . $_SESSION['nome_cliente'] . "!')</script>";
 
-        echo "<meta HTTP-EQUIV='refresh' CONTENT='0;URL=" . $siteUrl . "cadastro/66'>";
+        if($rs_valida['tipodocumento'] == 'cnpj' && ($rs_valida['inscricaoestadual'] == '' || $rs_valida['cnpj'] == '')){
+
+            echo "<meta HTTP-EQUIV='refresh' CONTENT='0;URL=" . $siteUrl . "cadastro/66'>";
+        } 
     } else {
         echo "<script>alert('Houve um problema no login tente novamente!')</script>";
     }
