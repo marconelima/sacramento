@@ -319,7 +319,7 @@
             
 
             $strpos = strpos($response, "status");
-            $mensagemUsuario = substr($response, $strposm + 15, $strposm-($strpos - 3));
+            $mensagemUsuario = substr($response, $strposm + 15, ($strpos-3)-($strposm+15));
             $status = substr($response, $strpos+8,3);
 
             var_dump($status, $mensagemUsuario);
