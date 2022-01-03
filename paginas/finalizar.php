@@ -315,13 +315,11 @@
             print_r($response);
             echo '</pre>';
 
-            var_dump($resposta);
-            var_dump($resposta2);
-
-            if (isset($resposta->status) && $resposta->status === 200) {
+            if (isset($resposta->{'status'}) && $resposta->{'status'} == 200) {
                 echo '<div class="alert alert-success">Pedido enviado com Sucesso!</div>';
             } else {
                 echo '<div class="alert alert-danger">Problema ao enviar Orçamento! '.$resposta->mensagemUsuario.'. Entre em contato com o Administrador!</div>';
+                exit;
             }
         } catch (Exception $e) {
             echo $e->getMessage()." ".$e->getCode();
