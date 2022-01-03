@@ -314,6 +314,10 @@
             print_r($response);
             echo '</pre>';
 
+            echo '<pre>';
+            print_r($resposta33);
+            echo '</pre>';
+
             var_dump($resposta33);
 
             if (isset($resposta['status']) && $resposta['status'] == 200) {

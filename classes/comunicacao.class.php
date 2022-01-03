@@ -98,7 +98,11 @@ class ComunicacaoAPI
             //Fecha a conexão
             curl_close($curl);
 
+            var_dump($response);
+
             $resposta = json_decode($response);
+
+            var_dump($resposta);
 
             if (isset($resposta->status) && $resposta->status === 401) {
 
