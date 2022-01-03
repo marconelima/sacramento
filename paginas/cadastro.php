@@ -30,7 +30,7 @@ if (isset($_SESSION['cliente']) && @$_SESSION['cliente'] != '') {
         <div class="container" style="padding:0;">
             <div class="row rowteste">
 
-                <div class="side_busca col-12 menubusca" style="float:left; margin-top:20px;">
+                <div class="side_busca col-12 menubusca" style="float:left; padding-top:20px;">
 
                     <?php echo $resultadoCadastro;?>
 
