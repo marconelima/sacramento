@@ -312,13 +312,17 @@
 
             echo '<pre>';
             print_r($response);
+            print_r($response->{'mensagemUsuario'});
+            print_r($response->{'status'});
+            print_r($response->{'sucesso'});
             echo '</pre>';
 
             echo '<pre>';
-            print_r($resposta33);
+            print_r($resposta33->{'mensagemUsuario'});
+            print_r($resposta33->{'status'});
+            print_r($resposta33->{'sucesso'});
             echo '</pre>';
 
-            var_dump($resposta33);
 
             if (isset($resposta['status']) && $resposta['status'] == 200) {
                 echo '<div class="alert alert-success">Pedido enviado com Sucesso!</div>';
