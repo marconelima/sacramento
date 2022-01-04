@@ -52,6 +52,9 @@ if ($i == 0) {
 }
 
 $prodArray = json_decode($produtosArray, true);
+
+var_dump($prodArray);
+
 $produtosUnidade = $prodArray['produtos'];
 
 foreach($produtosUnidade  as $prodUnid){
