@@ -96,7 +96,7 @@ $(() => {
         let produto = el.getAttribute("data-idproduto");
 
         el.addEventListener("click", e => {
-            let quantidade = document.querySelector("#prod_"+produto);
+            let quantidade = parseInt(document.querySelector("#prod_"+produto).value);
 
             let quant = quantidade - 1;
 
@@ -114,7 +114,7 @@ $(() => {
      let produto = el.getAttribute("data-idproduto");
 
      el.addEventListener("click", (e) => {
-       let quantidade = document.querySelector("#prod_" + produto);
+       let quantidade = parseInt(document.querySelector("#prod_"+produto).value);
 
        let quant = quantidade + 1;
 
