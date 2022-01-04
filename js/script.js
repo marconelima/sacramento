@@ -110,13 +110,13 @@ if (document.querySelector(".menosproduto")) {
                     console.log("quantidade de produto atualizada!");
 
                     let preco = document.querySelector("#prod_preco_"+produto);
-                    let preco2 = parseInt(document.querySelector("#prod_preco_"+produto).innerHTML);
-                    let preco3 = parseInt(document.querySelector("#prod_preco_"+produto).innerText);
+                    let preco2 = parseInt(preco.getAttribute("data-preco"));
+                    //let preco3 = parseInt(preco.getAttribute("data-precototal"));
                     
 
                     console.log(preco);
                     console.log(preco2);
-                    console.log(preco3);
+                    //console.log(preco3);
                     console.log(quantidade);
 
                     let preconovo = preco * quantidade;
@@ -148,26 +148,22 @@ if (document.querySelector(".maisproduto")) {
                 url: 'https://www.industriasacramento.com.br/testenovo/php/ajax.php',
                 data: "acao=getQuantidadeProdutoCarrinho&id=" + produto + "&quantidade=" + quant,
                 success: function (formulario) {
-                    console.log("quantidade de produto atualizada!");
+                     console.log("quantidade de produto atualizada!");
 
-let preco = document.querySelector("#prod_preco_" + produto);
-let preco2 = parseInt(document.querySelector("#prod_preco_" + produto).text);
-let preco3 = parseInt(
-  document.querySelector("#prod_preco_" + produto).innerText
-);
-let preco4 = parseInt(preco.text);
-let preco5 = parseInt(preco.innerText);
+                     let preco = document.querySelector(
+                       "#prod_preco_" + produto
+                     );
+                     let preco2 = parseInt(preco.getAttribute("data-preco"));
+                     //let preco3 = parseInt(preco.getAttribute("data-precototal"));
 
-console.log(preco);
-console.log(preco2);
-console.log(preco3);
-console.log(preco4);
-console.log(preco5);
-console.log(quantidade);
+                     console.log(preco);
+                     console.log(preco2);
+                     //console.log(preco3);
+                     console.log(quantidade);
 
-                    let preconovo = preco * quantidade;
+                     let preconovo = preco * quantidade;
 
-                    console.log(preconovo);
+                     console.log(preconovo);
                 }
             });
 
