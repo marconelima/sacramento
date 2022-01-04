@@ -326,7 +326,7 @@ if($total < 201) {
 					<div class="col-sm-4 col-md-1 centrar-carrinho" style="text-align:center;">
 						<h6 style="text-align:center;">Excluir</h6>
 
-						<a href="' . $siteUrl . 'carrinho/48/0/0/0/0/0/0/0/0/0/' . $pro->getId() . '" style="text-align:center;"><img src="' . $siteUrl . 'assets/img/x_mark_red.jpg" width="20" id="remover" style="width:20px !important; margin:20px 0 0 0px;" /></a>
+						<a href="' . $siteUrl . 'carrinho/48/0/0/0/0/0/0/0/0/0/' . $pro->getId() . '" style="text-align:center;"><i class="fas fa-times" font-size:16px; style="color:red;"></i></a>
 
 					</div>
                     <div class="col-sm-6 col-md-2 centrar-carrinho">
@@ -335,7 +335,7 @@ if($total < 201) {
                     </div>
                     <div class="col-sm-6 col-md-2 centrar-carrinho">
                         <h6>Total</h6>
-                        <span id="prod_precototal_' . $pro->getId() . '" data-precototal="'. $preco_total_produt. '"> R$' . number_format($preco_total_produto, 2, ",", ".") . '</span>
+                        <span id="prod_precototal_' . $pro->getId() . '" data-precototal="'. $preco_total_produto. '"> R$' . number_format($preco_total_produto, 2, ",", ".") . '</span>
                     </div>
 				</div>';
 
@@ -346,7 +346,7 @@ if($total < 201) {
 		<div class="container">
 			<div class="row send-quotation">
                 <div style="width:50%; float:left; height:auto; text-align:left; font-weight:bold;">Total Carrinho</div>
-                <div style="width:50%; float:left; height:auto; text-align:right; font-weight:bold;">R$ ' . number_format($preco_total_carrinho, 2, ",", ".") . '</div>
+                <div style="width:50%; float:left; height:auto; text-align:right; font-weight:bold;" id="prod_total" data-total="'. $preco_total_carrinho.'">R$ ' . number_format($preco_total_carrinho, 2, ",", ".") . '</div>
 			</div>
 		</div>
 	</section>';
