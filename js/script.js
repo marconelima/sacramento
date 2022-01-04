@@ -119,9 +119,7 @@ if (document.querySelector(".menosproduto")) {
 
                     let qtde = document.querySelector("#prod_" + produto).value;
 
-                    console.log(precototal3, preco3);
-
-                    let total = parseFloat(precototal3) + parseFloat(preco3);
+                    let total = parseFloat(precototal3) - parseFloat(preco3);
 
                     let preconovo = parseFloat(preco3) * parseInt(qtde);
 
@@ -168,8 +166,6 @@ if (document.querySelector(".maisproduto")) {
                     let precototal3 = precototal2.toFixed(2);
 
                     let qtde = document.querySelector("#prod_" + produto).value;
-
-                    console.log(precototal3, preco3);
 
                     let total = parseFloat(precototal3) + parseFloat(preco3);
 
