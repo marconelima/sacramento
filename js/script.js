@@ -109,7 +109,7 @@ if (document.querySelector(".menosproduto")) {
                 success: function (formulario) {
                     console.log("quantidade de produto atualizada!");
 
-                    let preco = parseInt(document.querySelector("#prod_preco_"+produto));
+                    let preco = document.querySelector("#prod_preco_"+produto);
                     let preco2 = parseInt(document.querySelector("#prod_preco_"+produto).text);
                     let preco3 = parseInt(document.querySelector("#prod_preco_"+produto).innerText);
                     let preco4 = parseInt(preco.text);
@@ -153,7 +153,7 @@ if (document.querySelector(".maisproduto")) {
                 success: function (formulario) {
                     console.log("quantidade de produto atualizada!");
 
-let preco = parseInt(document.querySelector("#prod_preco_" + produto));
+let preco = document.querySelector("#prod_preco_" + produto);
 let preco2 = parseInt(document.querySelector("#prod_preco_" + produto).text);
 let preco3 = parseInt(
   document.querySelector("#prod_preco_" + produto).innerText
