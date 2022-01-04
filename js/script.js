@@ -112,8 +112,11 @@ if (document.querySelector(".menosproduto")) {
                      let preco = document.querySelector("#prod_preco_" + produto);
                      let preco2 = parseFloat(preco.getAttribute("data-preco"));
                      let preco3 = preco2.toFixed(2); 
+                     let qtde = document.querySelector("#prod_" + produto).value;
 
-                     let preconovo = parseFloat(preco3) * parseInt(quantidade);
+                     console.log(qtde);
+
+                     let preconovo = parseFloat(preco3) * parseInt(qtde);
 
                      preco.setAttribute("data-precototal", preconovo);
 
@@ -152,8 +155,11 @@ if (document.querySelector(".maisproduto")) {
                      let preco = document.querySelector("#prod_preco_" + produto);
                      let preco2 = parseFloat(preco.getAttribute("data-preco"));
                      let preco3 = preco2.toFixed(2); 
+                     let qtde = document.querySelector("#prod_" + produto).value;
 
-                     let preconovo = parseFloat(preco3) * parseInt(quant);
+                     console.log(qtde);
+
+                     let preconovo = parseFloat(preco3) * parseInt(qtde);
 
                      preco.setAttribute("data-precototal", preconovo);
 
