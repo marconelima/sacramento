@@ -107,19 +107,19 @@ if (document.querySelector(".menosproduto")) {
                 url: 'https://www.industriasacramento.com.br/testenovo/php/ajax.php',
                 data: "acao=getQuantidadeProdutoCarrinho&id=" + produto + "&quantidade=" + quant,
                 success: function (formulario) {
-                    console.log("quantidade de produto atualizada!");
+                      console.log("quantidade de produto atualizada!");
 
-                    let preco = document.querySelector("#prod_preco_" + produto);
-                    let preco2 = parseFloat(preco.getAttribute("data-preco"));
-                    let preco3 = preco2.toFixed(2);
-                    console.log(preco);
-                    console.log(preco2);
-                    console.log(preco3);
-                    console.log(quantidade);
+                     let preco = document.querySelector("#prod_preco_" + produto);
+                     let preco2 = parseFloat(preco.getAttribute("data-preco"));
+                     let preco3 = preco2.toFixed(2); 
 
-                    let preconovo = preco * quantidade;
+                     let preconovo = parseFloat(preco3) * parseInt(quantidade);
 
-                    console.log(preconovo);
+                     preco.setAttribute("data-precototal", preconovo);
+
+                    document.querySelector("#prod_precototal_" + produto).innerHTML = (parseFloat(preconovo)).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+                     console.log(preconovo);
 
                 }
             });
@@ -155,9 +155,9 @@ if (document.querySelector(".maisproduto")) {
 
                      let preconovo = parseFloat(preco3) * parseInt(quantidade);
 
-                     preco.setAttribute("data-preco", preconovo);
+                     preco.setAttribute("data-precototal", preconovo);
 
-                    document.querySelector("#prod_preco_" + produto).innerHTML = (parseFloat(preconovo)).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                    document.querySelector("#prod_precototal_" + produto).innerHTML = (parseFloat(preconovo)).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
                      console.log(preconovo);
                 }
