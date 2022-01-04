@@ -153,8 +153,6 @@ if (document.querySelector(".maisproduto")) {
                 success: function (formulario) {
                     console.log("quantidade de produto atualizada!");
 
-                    let preco = parseInt(document.querySelector("#prod_preco_"+produto).text);
-
 let preco = parseInt(document.querySelector("#prod_preco_" + produto));
 let preco2 = parseInt(document.querySelector("#prod_preco_" + produto).text);
 let preco3 = parseInt(
