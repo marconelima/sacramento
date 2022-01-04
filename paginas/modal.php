@@ -51,7 +51,13 @@ if ($i == 0) {
     $produtosArray = $API->getProdutoEstoque($rs_produto['codigo']);
 }
 
-var_dump(json_decode($produtosArray, true));
+$prodArray = json_decode($produtosArray, true);
+$produtosUnidade = $prodArray['produtos'];
+
+foreach($produtosUnidade  as $prodUnid){
+    var_dump($prodUnid);
+    var_dump("teste");
+}
 
 $preco = 0;;
 $preco_promocional = 0;
