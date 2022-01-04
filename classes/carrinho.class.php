@@ -310,7 +310,7 @@ if($total < 201) {
 					<div class="col-sm-4 col-md-1">
 						<img src="' . $siteUrl . 'source/Produtos/' . $pro->getFoto() . '" alt="" style="width:100%;"/>
 					</div>
-					<div class="col-sm-4 col-md-3">
+					<div class="col-sm-4 col-md-4">
 						<h6>' . $pro->getNome() . '</h6>
 						<p>' . $compemento_cortamanho . '</p>
 					</div>
@@ -329,11 +329,11 @@ if($total < 201) {
 						<a href="' . $siteUrl . 'carrinho/48/0/0/0/0/0/0/0/0/0/' . $pro->getId() . '" style="text-align:center;"><img src="' . $siteUrl . 'assets/img/x_mark_red.jpg" width="20" id="remover" style="width:20px !important; margin:20px 0 0 0px;" /></a>
 
 					</div>
-                    <div class="col-sm-6 col-md-1 centrar-carrinho">
+                    <div class="col-sm-6 col-md-2 centrar-carrinho">
                         <h6>Preço</h6>
                         R$ ' . number_format($preco, 2, ",", ".") . '
                     </div>
-                    <div class="col-sm-6 col-md-1 centrar-carrinho">
+                    <div class="col-sm-6 col-md-2 centrar-carrinho">
                         <h6>Total</h6>
                         R$ ' . number_format($preco_total_produto, 2, ",", ".") . '
                     </div>
