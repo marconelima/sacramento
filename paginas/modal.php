@@ -57,6 +57,8 @@ var_dump($prodArray);
 
 $produtosUnidade = $prodArray['produtos'];
 
+var_dump($produtosUnidade);
+
 foreach($produtosUnidade  as $prodUnid){
     var_dump($prodUnid);
     var_dump("teste");
