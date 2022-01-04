@@ -18,10 +18,18 @@ if (isset($_POST['acao']) && @$_POST['acao'] == 'getQuantidadeProdutoCarrinho') 
 
     $carrinhoSessao = unserialize($_SESSION["carrinho"]);
 
-    var_dump($carrinhoSessao->getQuantidade());
-    $carrinhoSessao->setQuantidade($quantidade);
-    var_dump($carrinhoSessao->getQuantidade());
+    var_dump($carrinhoSessao);
 
+    $pro = $carrinhoSessao->getProduto($produto);
+
+    var_dump($pro);
+
+    /*$carrinhoSessao2 = unserialize($_SESSION["carrinho"]);
+
+    var_dump($carrinhoSessao->getQtdeProdutos());
+    $carrinhoSessao->setQtdeProdutos($quantidade);
+    var_dump($carrinhoSessao->getQtdeProdutos());
+*/
     
 
 }
