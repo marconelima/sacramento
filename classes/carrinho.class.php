@@ -314,11 +314,11 @@ if($total < 201) {
 						<h6>' . $pro->getNome() . '</h6>
 						<p>' . $compemento_cortamanho . '</p>
 					</div>
-					<div class="col-sm-4 col-md-1" style="text-align: center;">
-						<h6>Quant.</h6>
-						<i class="fas fa-plus"></i>&nbsp;<input type="text" name="qtde_prod' . $i . '" class="quantity" style="text-align:center; border-radius:5px; padding:2% 1%; height:30px;" value="' . $pro->getQuantidade() . '" size="3" />&nbsp;<i class="fas fa-plus"></i>
+					<div class="col-sm-4 col-md-2" style="text-align: center;">
+						<h6>Quant.</h6><br>
+						<i class="fas fa-minus menosproduto" data-idproduto="' . $pro->getId() . '" style="float:left; font-size: 12px; margin-top: 10px;"></i>&nbsp;<input type="text" name="qtde_prod' . $i . '" class="quantity" style="text-align:center; border-radius:5px; padding:2% 1%; height:30px; float:left; width:70%;" value="' . $pro->getQuantidade() . '" size="3" />&nbsp;<i class="fas fa-plus maisproduto" data-idproduto="' . $pro->getId() . '" style="float:left; font-size: 12px; margin-top: 10px;"></i>
 					</div>
-					<div class="col-sm-4 col-md-2 centrar-carrinho">
+					<div class="col-sm-4 col-md-1 centrar-carrinho">
 						<h6 style="text-align:center;">Unidade</h6>
 						<p style="text-align:center;">'. $unidadeDescricao.'</p>
 					</div>
