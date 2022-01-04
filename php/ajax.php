@@ -13,9 +13,11 @@ $conecta->conexao();
 
 if (isset($_POST['acao']) && @$_POST['acao'] == 'getQuantidadeProdutoCarrinho') {
     
-    $produto = $_POST['produto'];
+    $produto = $_POST['id'];
     $quantidade = $_POST['quantidade'];
 
-    var_dump($_SESSION['carrinho']);
+    $carrinhoSessao = unserialize($_SESSION["carrinho"]);
+
+    var_dump($carrinhoSessao);
 
 }
