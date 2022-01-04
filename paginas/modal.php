@@ -14,7 +14,7 @@ $sql_configuracao = "SELECT * FROM tbconfiguracao WHERE id = 1";
 $resultado_configuracao = $conecta->selecionar($conecta->conn, $sql_configuracao);
 $rs_configuracao = mysqli_fetch_array($resultado_configuracao);
 
-include_once("classes/comunicacao.class.php");
+include_once("/testenovo/classes/comunicacao.class.php");
 
 $siteUrl = $rs_configuracao['linkloja'];
 //$siteUrl = "http://www.marconesacramento.com.br/";
