@@ -117,6 +117,8 @@ if (document.querySelector(".menosproduto")) {
                     let precototal2 = parseFloat(precototal.getAttribute("data-total"));
                     let precototal3 = precototal2.toFixed(2);
 
+                    console.log(precototal3, preco3);
+
                     let qtde = document.querySelector("#prod_" + produto).value;
 
                     let total = parseFloat(precototal3) - parseFloat(preco3);
@@ -166,6 +168,8 @@ if (document.querySelector(".maisproduto")) {
                     let precototal3 = precototal2.toFixed(2);
 
                     let qtde = document.querySelector("#prod_" + produto).value;
+
+                    console.log(precototal3, preco3);
 
                     let total = parseFloat(precototal3) + parseFloat(preco3);
 
