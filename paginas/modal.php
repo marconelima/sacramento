@@ -70,7 +70,7 @@ if (@$_SESSION['cliente'] > 0) {
     $ativo = $produto->{'produtos'}[$i]->{'ativo'};
     $unidade = $produto->{'produtos'}[$i]->{'unidade'};
 
-    $prodArray = json_decode($produto, true);
+    $prodArray = json_decode($produtos, true);
 
     $produtosUnidade = $prodArray['produtos'];
 
