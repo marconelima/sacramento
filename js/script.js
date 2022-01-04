@@ -157,6 +157,8 @@ if (document.querySelector(".maisproduto")) {
 
                      preco.setAttribute("data-preco", preconovo);
 
+                    document.querySelector("#prod_preco_" + produto).innerHTML = (parseFloat(preconovo)).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
                      console.log(preconovo);
                 }
             });
