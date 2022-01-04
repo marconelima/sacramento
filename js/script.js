@@ -88,7 +88,6 @@ $(() => {
  }
 
  if (document.querySelector(".menosproduto")){
-    let campo = document.querySelector("");
 
     let menos = document.querySelectorAll(".menosproduto");
 
