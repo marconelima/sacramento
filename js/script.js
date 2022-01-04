@@ -108,7 +108,6 @@ $(() => {
  }
 
  if (document.querySelector(".maisproduto")) {
-   let campo = document.querySelector("");
 
    let mais = document.querySelectorAll(".maisproduto");
 
