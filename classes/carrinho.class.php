@@ -335,7 +335,7 @@ if($total < 201) {
                     </div>
                     <div class="col-sm-6 col-md-2 centrar-carrinho">
                         <h6>Total</h6>
-                        R$ <span id="prod_precototal_' . $pro->getId() . '" data-precototal="'. $preco_total_produt.'">' . number_format($preco_total_produto, 2, ",", ".") . '</span>
+                        <span id="prod_precototal_' . $pro->getId() . '" data-precototal="'. $preco_total_produt. '"> R$' . number_format($preco_total_produto, 2, ",", ".") . '</span>
                     </div>
 				</div>';
 

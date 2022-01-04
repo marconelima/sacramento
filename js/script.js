@@ -153,7 +153,7 @@ if (document.querySelector(".maisproduto")) {
                      let preco2 = parseFloat(preco.getAttribute("data-preco"));
                      let preco3 = preco2.toFixed(2); 
 
-                     let preconovo = parseFloat(preco3) * parseInt(quantidade);
+                     let preconovo = parseFloat(preco3) * parseInt(quant);
 
                      preco.setAttribute("data-precototal", preconovo);
 
