@@ -101,7 +101,7 @@ if(document.querySelector(".detalheProduto")){
             $.ajax({
                 type: 'POST',
                 //Caminho do arquivo do seu modal
-                url: 'https://www.industriasacramento.com.br/paginas/modal.php?produto='+idproduto,
+                url: 'https://www.industriasacramento.com.br/testenovo/paginas/modal.php?produto='+idproduto,
                 success: function(data){              
                     $('.modal-teste').html(data);
                 }

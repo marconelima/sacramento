@@ -293,6 +293,7 @@ while ($rs_tag = mysqli_fetch_array($resultado_total)) {
                                 $preco_promocional = $produto->{'produtos'}[$i]->{'precoPromocional'};
                                 $estoque = $produto->{'produtos'}[$i]->{'estoque'};
                                 $ativo = $produto->{'produtos'}[$i]->{'ativo'};
+                                $unidade = $produto->{'produtos'}[$i]->{'unidade'};
                             }
 
                             $preco = $preco > 0 ? $preco + $preco * 0.2 : 0;
