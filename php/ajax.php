@@ -25,6 +25,12 @@ if (isset($_POST['acao']) && @$_POST['acao'] == 'getQuantidadeProdutoCarrinho') 
 
     var_dump($pro);
 
+    $pro->setQuantidade($quantidade);
+
+    var_dump($pro);
+
+    var_dump($pro->getQuantidade());
+
     /*$carrinhoSessao2 = unserialize($_SESSION["carrinho"]);
 
     var_dump($carrinhoSessao->getQtdeProdutos());
