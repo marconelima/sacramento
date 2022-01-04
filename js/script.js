@@ -109,7 +109,7 @@ if (document.querySelector(".menosproduto")) {
                 success: function (formulario) {
                     console.log("quantidade de produto atualizada!");
 
-                    let preco = parseInt(document.querySelector("#prod_preco_"+produto));
+                    let preco = document.querySelector("#prod_preco_"+produto);
 
                     console.log(preco);
                     console.log(quantidade);
@@ -143,7 +143,16 @@ if (document.querySelector(".maisproduto")) {
                 url: 'https://www.industriasacramento.com.br/testenovo/php/ajax.php',
                 data: "acao=getQuantidadeProdutoCarrinho&id=" + produto + "&quantidade=" + quant,
                 success: function (formulario) {
-                    console.log(formulario);
+                    console.log("quantidade de produto atualizada!");
+
+                    let preco = document.querySelector("#prod_preco_" + produto);
+
+                    console.log(preco);
+                    console.log(quantidade);
+
+                    let preconovo = preco * quantidade;
+
+                    console.log(preconovo);
                 }
             });
 
