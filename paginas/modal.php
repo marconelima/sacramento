@@ -75,7 +75,7 @@ if (@$_SESSION['cliente'] > 0) {
     $produtosUnidade = $prodArray['produtos'];
 
     foreach ($produtosUnidade  as $prodUnid) {
-        var_dump($prodUnid['unidadeDescricao'], $produto['unidade']);
+        var_dump($prodUnid['unidadeDescricao'], $prodUnid['unidade']);
         var_dump("teste");
     }
 
