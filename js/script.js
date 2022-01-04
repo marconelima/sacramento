@@ -155,9 +155,20 @@ if (document.querySelector(".maisproduto")) {
 
                     let preco = parseInt(document.querySelector("#prod_preco_"+produto).text);
 
+let preco = parseInt(document.querySelector("#prod_preco_" + produto));
+let preco2 = parseInt(document.querySelector("#prod_preco_" + produto).text);
+let preco3 = parseInt(
+  document.querySelector("#prod_preco_" + produto).innerText
+);
+let preco4 = parseInt(preco.text);
+let preco5 = parseInt(preco.innerText);
 
-                    console.log(preco);
-                    console.log(quantidade);
+console.log(preco);
+console.log(preco2);
+console.log(preco3);
+console.log(preco4);
+console.log(preco5);
+console.log(quantidade);
 
                     let preconovo = preco * quantidade;
 
