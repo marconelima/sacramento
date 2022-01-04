@@ -19,24 +19,17 @@ if (isset($_POST['acao']) && @$_POST['acao'] == 'getQuantidadeProdutoCarrinho') 
     $produto = $_POST['id'];
     $quantidade = $_POST['quantidade'];
 
+    var_dump($_SESSION["carrinho"]);  
+
     $carrinhoSessao = unserialize($_SESSION["carrinho"]);
 
     $pro = $carrinhoSessao->getProduto($produto);
 
-    var_dump($pro);
-
     $pro->setQuantidade($quantidade);
 
-    var_dump($pro);
 
-    var_dump($pro->getQuantidade());
+    $_SESSION["carrinho"] = serialize($carrinhoSessao);
 
-    /*$carrinhoSessao2 = unserialize($_SESSION["carrinho"]);
-
-    var_dump($carrinhoSessao->getQtdeProdutos());
-    $carrinhoSessao->setQtdeProdutos($quantidade);
-    var_dump($carrinhoSessao->getQtdeProdutos());
-*/
-    
+    var_dump($_SESSION["carrinho"]);    
 
 }
