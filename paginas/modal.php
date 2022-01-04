@@ -74,11 +74,6 @@ if (@$_SESSION['cliente'] > 0) {
 
     $produtosUnidade = $prodArray['produtos'];
 
-    foreach ($produtosUnidade  as $prodUnid) {
-        var_dump($prodUnid['unidadeDescricao'], $prodUnid['unidade']);
-        var_dump("teste");
-    }
-
 }
 
 $preco = $preco > 0 ? $preco + $preco * 0.2 : 0;
@@ -253,8 +248,8 @@ $resultado_campo_longo = $conecta->selecionar($conecta->conn, $sql_campo_longo);
 
                                         <select name="kilo_grama" class="form-control" style="width:50%; margin-top:10px; border:0; padding:1%;">
                                             <option value="">Unidade</option>
-                                            <?php foreach ($produto as $prod) { ?>
-                                                <option value="<?php echo $prod->{'unidade'}; ?>"><?php echo $prod->{'unidadeDescricao'}; ?></option>
+                                            <?php foreach ($produtosUnidade  as $prodUnid) { ?>
+                                                <option value="<?php echo $prodUnid['unidade']; ?>"><?php echo $prodUnid['unidadeDescricao']; ?></option>
                                             <?php } ?>
                                         </select>
 
