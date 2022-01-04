@@ -152,12 +152,10 @@ if (document.querySelector(".maisproduto")) {
                      let preco = document.querySelector("#prod_preco_" + produto);
                      let preco2 = parseFloat(preco.getAttribute("data-preco"));
                      let preco3 = preco2.toFixed(2); 
-                     console.log(preco);
-                     console.log(preco2);
-                     console.log(preco3);
-                     console.log(quantidade);
 
-                     let preconovo = preco * quantidade;
+                     let preconovo = parseFloat(preco3) * parseInt(quantidade);
+
+                     preco.setAttribute("data-preco", preconovo);
 
                      console.log(preconovo);
                 }
