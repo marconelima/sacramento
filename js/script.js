@@ -124,7 +124,7 @@ if (document.querySelector(".menosproduto")) {
                     let preconovo = parseFloat(preco3) * parseInt(qtde);
 
                     preco.setAttribute("data-precototal", preconovo);
-                    preco.setAttribute("data-total", precototal);
+                    precototal.setAttribute("data-total", precototal);
 
                     document.querySelector("#prod_precototal_" + produto).innerHTML = (parseFloat(preconovo)).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
                     document.querySelector("#prod_total").innerHTML = (parseFloat(total)).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
@@ -172,7 +172,7 @@ if (document.querySelector(".maisproduto")) {
                     let preconovo = parseFloat(preco3) * parseInt(qtde);
 
                     preco.setAttribute("data-precototal", preconovo);
-                    preco.setAttribute("data-total", precototal);
+                    precototal.setAttribute("data-total", precototal);
 
                     document.querySelector("#prod_precototal_" + produto).innerHTML = (parseFloat(preconovo)).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
                     document.querySelector("#prod_total").innerHTML = (parseFloat(total)).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
