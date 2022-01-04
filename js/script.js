@@ -107,7 +107,13 @@ if (document.querySelector(".menosproduto")) {
                 url: 'https://www.industriasacramento.com.br/testenovo/php/ajax.php',
                 data: "acao=getQuantidadeProdutoCarrinho&id=" + produto + "&quantidade=" + quant,
                 success: function (formulario) {
-                    console.log(formulario);
+                    console.log("quantidade de produto atualizada!");
+
+                    let preco = parseInt(document.querySelector("#prod_preco_"+produto));
+
+                    let preconovo = preco * quantidade;
+
+                    console.log(preconovo);
                 }
             });
 

@@ -27,4 +27,6 @@ if (isset($_POST['acao']) && @$_POST['acao'] == 'getQuantidadeProdutoCarrinho') 
 
     $_SESSION["carrinho"] = serialize($carrinhoSessao);
 
+    echo "9,99";
+
 }
