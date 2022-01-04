@@ -127,7 +127,7 @@ $(() => {
 
        $.ajax({
           type: 'POST',
-          url: '/textonovo/php/ajax.php',
+          url: 'https://www.industriasacramento.com.br/testenovo/php/ajax.php',
           data: "acao=getQuantidadeProdutoCarrinho&id="+produto+"&quantidade="+quant,
           success: function(formulario) {
             console.log(formulario);
