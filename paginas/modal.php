@@ -51,19 +51,6 @@ if ($i == 0) {
     $produtosArray = $API->getProdutoEstoque($rs_produto['codigo']);
 }
 
-$prodArray = json_decode($produtosArray, true);
-
-var_dump($prodArray);
-
-$produtosUnidade = $prodArray['produtos'];
-
-var_dump($produtosUnidade);
-
-foreach($produtosUnidade  as $prodUnid){
-    var_dump($prodUnid);
-    var_dump("teste");
-}
-
 $preco = 0;;
 $preco_promocional = 0;
 $estoque = 0;
@@ -82,6 +69,16 @@ if (@$_SESSION['cliente'] > 0) {
     $estoque = $produto->{'produtos'}[$i]->{'estoque'};
     $ativo = $produto->{'produtos'}[$i]->{'ativo'};
     $unidade = $produto->{'produtos'}[$i]->{'unidade'};
+
+    $prodArray = json_decode($produto, true);
+
+    $produtosUnidade = $prodArray['produtos'];
+
+    foreach ($produtosUnidade  as $prodUnid) {
+        var_dump($prodUnid['unidadeDescricao'], $produto['unidade']);
+        var_dump("teste");
+    }
+
 }
 
 $preco = $preco > 0 ? $preco + $preco * 0.2 : 0;
