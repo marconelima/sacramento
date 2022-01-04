@@ -100,7 +100,7 @@ $(() => {
 
             let quant = quantidade - 1;
 
-            quantidade.value = quant;
+            document.querySelector("#prod_" + produto).value = quant;
 
         });
     });
@@ -116,9 +116,13 @@ $(() => {
      el.addEventListener("click", (e) => {
        let quantidade = parseInt(document.querySelector("#prod_"+produto).value);
 
+       console.log(quantidade);
+
        let quant = quantidade + 1;
 
-       quantidade.value = quant;
+       console.log(quant);
+
+       document.querySelector("#prod_" + produto).value = quant;
      });
    });
  }
