@@ -306,15 +306,18 @@
         $data_json = json_encode($data);
 
         try {
-            $response = $API->setPedido($data_json);
+            //$response = $API->setPedido($data_json);
 
-            $resposta33 = json_decode($response, JSON_UNESCAPED_UNICODE);
+            // $resposta33 = json_decode($response, JSON_UNESCAPED_UNICODE);
 
-            $strposm = strpos($response, "mensagemUsuario");
-            
-            $strpos = strpos($response, "status");
-            $mensagemUsuario = substr($response, $strposm + 18, ($strpos-3)-($strposm+18));
-            $status = substr($response, $strpos+8,3);
+            //$strposm = strpos($response, "mensagemUsuario");
+
+            // $strpos = strpos($response, "status");
+            // $mensagemUsuario = substr($response, $strposm + 18, ($strpos-3)-($strposm+18));
+            //$status = substr($response, $strpos+8,3);
+
+            $mensagemUsuario  = "ERROR";
+            $status = 200;
 
             if (isset($status) && $status == 200) {
                 echo '<div class="alert alert-success">Pedido enviado com Sucesso!</div>';

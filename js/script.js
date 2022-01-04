@@ -119,7 +119,7 @@ if (document.querySelector(".menosproduto")) {
 
                     let qtde = document.querySelector("#prod_" + produto).value;
 
-                    let precototal = parseFloat(precototal3) - parseFloat(preco3);
+                    let total = parseFloat(precototal3) - parseFloat(preco3);
 
                     let preconovo = parseFloat(preco3) * parseInt(qtde);
 
@@ -127,7 +127,7 @@ if (document.querySelector(".menosproduto")) {
                     preco.setAttribute("data-total", precototal);
 
                     document.querySelector("#prod_precototal_" + produto).innerHTML = (parseFloat(preconovo)).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-                    document.querySelector("#prod_total" + produto).innerHTML = (parseFloat(precototal)).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                    document.querySelector("#prod_total" + produto).innerHTML = (parseFloat(total)).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
                 }
             });
@@ -167,7 +167,7 @@ if (document.querySelector(".maisproduto")) {
 
                     let qtde = document.querySelector("#prod_" + produto).value;
 
-                    let precototal = parseFloat(precototal3) + parseFloat(preco3);
+                    let total = parseFloat(precototal3) + parseFloat(preco3);
 
                     let preconovo = parseFloat(preco3) * parseInt(qtde);
 
@@ -175,7 +175,7 @@ if (document.querySelector(".maisproduto")) {
                     preco.setAttribute("data-total", precototal);
 
                     document.querySelector("#prod_precototal_" + produto).innerHTML = (parseFloat(preconovo)).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-                    document.querySelector("#prod_total" + produto).innerHTML = (parseFloat(precototal)).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                    document.querySelector("#prod_total" + produto).innerHTML = (parseFloat(total)).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
                 }
             });
 
