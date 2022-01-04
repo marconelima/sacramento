@@ -272,6 +272,7 @@ if($total < 201) {
                 $estoque = $produto->{'produtos'}[$i]->{'estoque'};
                 $ativo = $produto->{'produtos'}[$i]->{'ativo'};
                 $unidade = $produto->{'produtos'}[$i]->{'unidade'};
+                $unidadeDescricao = $produto->{'produtos'}[$i]->{'unidadeDescricao'};
             }
 
 
@@ -319,12 +320,9 @@ if($total < 201) {
 					</div>
 					<div class="col-sm-4 col-md-1 centrar-carrinho">
 						<h6 style="text-align:center;">Unidade</h6>
-						<p style="text-align:center;">'. $unidade.'</p>
+						<p style="text-align:center;">'. $unidadeDescricao.'</p>
 					</div>
-					<div class="col-sm-4 col-md-3 dnone-descricao" style="padding-left: 2%;">
-						<h6>Observações sobre o produto</h6>
-						<textarea name="message' . $i . '" rows="3" id="input-message" style="border-radius:5px; padding:2% 1%; max-width: 100%;" rows="5" placeholder="Digite sua mensagem" class="placeholder">' . str_replace("<br/>","",$pro->getComplemento()) . '</textarea>
-					</div>
+					
 					<div class="col-sm-4 col-md-1 centrar-carrinho" style="text-align:center;">
 						<h6 style="text-align:center;">Excluir</h6>
 
