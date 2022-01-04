@@ -87,56 +87,60 @@ $(() => {
 
  }
 
- if (document.querySelector(".menosproduto")){
+if (document.querySelector(".menosproduto")) {
 
     let menos = document.querySelectorAll(".menosproduto");
 
-    menos.forEach(function (el){
+    menos.forEach(function (el) {
 
         let produto = el.getAttribute("data-idproduto");
 
         el.addEventListener("click", e => {
-            let quantidade = parseInt(document.querySelector("#prod_"+produto).value);
+            let quantidade = parseInt(document.querySelector("#prod_" + produto).value);
 
             let quant = quantidade - 1;
 
             document.querySelector("#prod_" + produto).value = quant;
 
+            $.ajax({
+                type: 'POST',
+                url: 'https://www.industriasacramento.com.br/testenovo/php/ajax.php',
+                data: "acao=getQuantidadeProdutoCarrinho&id=" + produto + "&quantidade=" + quant,
+                success: function (formulario) {
+                    console.log(formulario);
+                }
+            });
+
         });
     });
- }
+}
 
- if (document.querySelector(".maisproduto")) {
+if (document.querySelector(".maisproduto")) {
 
-   let mais = document.querySelectorAll(".maisproduto");
+    let mais = document.querySelectorAll(".maisproduto");
 
-   mais.forEach(function (el) {
-     let produto = el.getAttribute("data-idproduto");
+    mais.forEach(function (el) {
+        let produto = el.getAttribute("data-idproduto");
 
-     el.addEventListener("click", (e) => {
-       let quantidade = parseInt(document.querySelector("#prod_"+produto).value);
+        el.addEventListener("click", (e) => {
+            let quantidade = parseInt(document.querySelector("#prod_" + produto).value);
 
-       console.log(quantidade);
+            let quant = quantidade + 1;
 
-       let quant = quantidade + 1;
+            document.querySelector("#prod_" + produto).value = quant;
 
-       console.log(quant);
+            $.ajax({
+                type: 'POST',
+                url: 'https://www.industriasacramento.com.br/testenovo/php/ajax.php',
+                data: "acao=getQuantidadeProdutoCarrinho&id=" + produto + "&quantidade=" + quant,
+                success: function (formulario) {
+                    console.log(formulario);
+                }
+            });
 
-       document.querySelector("#prod_" + produto).value = quant;
-
-
-       $.ajax({
-          type: 'POST',
-          url: 'https://www.industriasacramento.com.br/testenovo/php/ajax.php',
-          data: "acao=getQuantidadeProdutoCarrinho&id="+produto+"&quantidade="+quant,
-          success: function(formulario) {
-            console.log(formulario);
-          }
         });
-
-     });
-   });
- }
+    });
+}
 
  if (document.querySelector(".detalheProduto")) {
     let produto = document.querySelectorAll(".detalheProduto");
