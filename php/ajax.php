@@ -7,6 +7,9 @@ include "../uteis/bancodados.php";
 include "../parametros.php";
 include "../funcoes.php";
 
+include_once("../classes/produto.class.php");
+include_once("../classes/carrinho.class.php");
+
 $conecta = new Recordset;
 $conecta->conexao();
 
