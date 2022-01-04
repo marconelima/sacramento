@@ -117,16 +117,16 @@ if (document.querySelector(".menosproduto")) {
                     let precototal2 = parseFloat(precototal.getAttribute("data-total"));
                     let precototal3 = precototal2.toFixed(2);
 
-                    console.log(precototal3, preco3);
-
                     let qtde = document.querySelector("#prod_" + produto).value;
 
-                    let total = parseFloat(precototal3) - parseFloat(preco3);
+                    console.log(precototal3, preco3);
+
+                    let total = parseFloat(precototal3) + parseFloat(preco3);
 
                     let preconovo = parseFloat(preco3) * parseInt(qtde);
 
                     preco.setAttribute("data-precototal", preconovo);
-                    precototal.setAttribute("data-total", precototal);
+                    precototal.setAttribute("data-total", total);
 
                     document.querySelector("#prod_precototal_" + produto).innerHTML = (parseFloat(preconovo)).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
                     document.querySelector("#prod_total").innerHTML = (parseFloat(total)).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
