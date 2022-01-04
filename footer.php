@@ -446,10 +446,10 @@
     }
 </script>
 
-<script src="/js/jquery.min.js"></script>
-<script src="/js/jquery-migrate-3.2.2.js"></script>
-<script src="/js/bootstrap.bundle.min.js"></script>
-<script src="/js/script.js"></script>
+<script src="/testenovo/js/jquery.min.js"></script>
+<script src="/testenovo/js/jquery-migrate-3.2.2.js"></script>
+<script src="/testenovo/js/bootstrap.bundle.min.js"></script>
+<script src="/testenovo/js/script.js"></script>
 
 <script>
     function getRandomIntInclusive(min, max) {
