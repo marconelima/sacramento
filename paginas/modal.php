@@ -48,10 +48,10 @@ $resultado_produto = $conecta->selecionar($conecta->conn, $sql_produto);
 $rs_produto = mysqli_fetch_array($resultado_produto);
 
 if ($i == 0) {
-    $produtosArray = $API->getProdutoEstoque($rs_produto['codigo'], true);
+    $produtosArray = $API->getProdutoEstoque($rs_produto['codigo']);
 }
 
-var_dump($produtosArray);
+var_dump(json_decode($produtosArray, true));
 
 $preco = 0;;
 $preco_promocional = 0;
