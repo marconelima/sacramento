@@ -315,7 +315,7 @@ if($total < 201) {
 						<p>' . $compemento_cortamanho . '</p>
 					</div>
 					<div class="col-sm-4 col-md-2" style="text-align: center;">
-						<h6>Quant.</h6><br>
+						<h6>Quant.</h6>
 						<i class="fas fa-minus menosproduto" data-idproduto="' . $pro->getId() . '" style="font-size: 12px; cursor:pointer; margin-top: 10px;"></i>&nbsp;<input type="text" name="qtde_prod' . $i . '" class="quantity" id="prod_' . $pro->getId() . '" style="text-align:center; border-radius:5px; padding:2% 1%; height:30px; width:40%;" value="' . $pro->getQuantidade() . '" size="3" />&nbsp;<i class="fas fa-plus maisproduto" data-idproduto="' . $pro->getId() . '" style="font-size: 12px;  cursor:pointer; margin-top: 10px;"></i>
 					</div>
 					<div class="col-sm-4 col-md-1 centrar-carrinho">

@@ -123,6 +123,17 @@ $(() => {
        console.log(quant);
 
        document.querySelector("#prod_" + produto).value = quant;
+
+
+       $.ajax({
+          type: 'POST',
+          url: '/textonovo/php/ajax.php',
+          data: "acao=getQuantidadeProdutoCarrinho&id="+produto+"&quantidade="+quant,
+          success: function(formulario) {
+            console.log(formulario);
+          }
+        });
+
      });
    });
  }
