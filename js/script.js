@@ -111,6 +111,9 @@ if (document.querySelector(".menosproduto")) {
 
                     let preco = parseInt(document.querySelector("#prod_preco_"+produto));
 
+                    console.log(preco);
+                    console.log(quantidade);
+
                     let preconovo = preco * quantidade;
 
                     console.log(preconovo);
