@@ -1,3 +1,6 @@
+<?php
+@include('mpdf/mpdf.php');
+?>
 <!-- Header and Breadcrumbs  -->
 <section class="page-section breadcrumbs">
     <div class="container">
