@@ -151,7 +151,7 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
     $mpdf = new mPDF('pt', 'A4', 3, '', 10, 10, 2, 10, 9, 9, 'P');
 
     $mpdf->WriteHTML($html_pdf);
-    $mpdf->Output("../../orcamentos/pedido_" . $rs['id'] . "_" . $rs_cliente['nome'] . ".pdf", "F");
+    $mpdf->Output("../orcamentos/pedido_" . $rs['id'] . "_" . $rs_cliente['nome'] . ".pdf", "F");
     exit();
 } else if (isset($_GET['alterar']) && $_GET['alterar'] != "") {
 
