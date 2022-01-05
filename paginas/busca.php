@@ -262,8 +262,8 @@ while ($rs_tag = mysqli_fetch_array($resultado_total)) {
                                                 <span class="por" style="color:##000000; font-size:16px !important; font-weight:bold;"><?php echo "R$ " . number_format($preco, 2, ",", "."); ?></span>
                                             <?php } ?>
                                         </p>
-                                        <a class="btn info btn-default add-cotacao btn-catalogo detalheProduto" data-idproduto="<?php echo $rs_produto['id']; ?>" data-toggle="modal" data-target="#ModalDetalhe">Detalhe</a>
-                                        <a class="btn info btn-default add-cotacao btn-catalogo colocarCarrinho" data-idproduto="<?php echo $rs_produto['id']; ?>" data-quantidade="1">Adicionar Orçamento</a>
+
+                                        <a class="btn info btn-default add-cotacao btn-catalogo colocarCarrinho" data-idproduto="<?php echo $rs_produto['id']; ?>" data-quantidade="1"><i class="fas fa-cart-plus" style="font-size:1.6em;"></i></a>
                                     </div>
                                 </div>
                             </div>
