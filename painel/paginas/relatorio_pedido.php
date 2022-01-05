@@ -43,7 +43,7 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
     $html_pdf = '<div class="table-responsive">
         <table border="0" width="100%" style="font:15px arial;" cellpadding="3" cellspacing="3">
 			<tr>
-				<td rowspan="2"><img src="../../source/vassouras_sacramento.png" class="logo_painel" height="70" /></td>
+				<td rowspan="2"><img src="../../source/vassouras_sacramento.png" class="logo_painel" height="50" /></td>
 				<td colspan="5">' . $dados['nomeloja'] . '</td>
 			</tr>
 			<tr>
@@ -151,7 +151,7 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
     $mpdf = new mPDF('pt', 'A4', 3, '', 10, 10, 2, 10, 9, 9, 'P');
 
     $mpdf->WriteHTML($html_pdf);
-    $mpdf->Output("pedido_" . $rs['id'] . "_" . $rs_cliente['nome'] . ".pdf", "D");
+    $mpdf->Output("../../orcamentos/pedido_" . $rs['id'] . "_" . $rs_cliente['nome'] . ".pdf", "F");
     exit();
 } else if (isset($_GET['alterar']) && $_GET['alterar'] != "") {
 
