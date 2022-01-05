@@ -16,9 +16,6 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
 
     include_once("../../classes/comunicacao.class.php");
 
-    
-
-
     $sql = "SELECT * FROM tbconfiguracao where tela_id = 22";
     $resultado = $conecta->selecionar($conecta->conn, $sql);
     $dados = mysqli_fetch_array($resultado);
@@ -235,6 +232,9 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
             <?php
             $API = new ComunicacaoAPI();
 
+            var_dump("token existe");
+            var_dump($_SESSION);
+
             if (empty($_SESSION['token_api']) || $_SESSION['token_api'] == 'erro') {
 
                 $API->getToken('http://sacprx.poweredbyclear.com:8080/ecommerceapi/v1/autenticacao/entrar');
@@ -243,6 +243,9 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
             } else {
                 $API->token = $_SESSION['token_api'];
             }
+
+            var_dump('Apos token');
+            var_dump($_SESSION);
             
             while ($rs_pedido_produto = mysqli_fetch_array($resultado_pedido_produto)) {
                 $preco_total_produto = 0;
