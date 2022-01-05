@@ -317,7 +317,7 @@ while ($rs_tag = mysqli_fetch_array($resultado_total)) {
                                                                 } ?>" style="padding-right:0; margin-top:10px;">
                                 <div class="view-first box-produtos" style="width:100%;">
                                     <div class="borda-produtos post-wrap" style="border:0; text-align:center; overflow: hidden;">
-                                        <a class="detalheProduto" data-idproduto="<?php echo $rs_produto['id']; ?>" data-toggle="modal" data-target="#ModalDetalhe" style="float: left; width: 100%; position: relative;">
+                                        <a class="detalheProduto" data-idproduto="<?php echo $rs_produto['id']; ?>" data-toggle="modal" data-target="#ModalDetalhe" style="float: left; width: 100%; position: relative; cursor:pointer;">
                                             <img src="<?php echo $siteUrl . "/source/Produtos/" . $rs_produto['foto']; ?>" class="img-responsive" style="max-width:100%; width:100%;" alt="<?php echo $rs_produto['nome'] . " " . $rs_produto['modelo']; ?>" title="<?php echo $rs_produto['nome'] . " " . $rs_produto['modelo']; ?>" />
                                             <?php if ($promocional == 1 && $preco_promocional > 0) { ?>
                                                 <span style="width:60px; height:60px; float:left; padding:10px 0; position:absolute; top:0; left:0; background:url('../images/tagpromocao.png') no-repeat; opacity:0.8; color:#FFFFFF; font-size:16px; font-weight:bold; "><?php echo $desconto; ?>%</span>
@@ -339,7 +339,7 @@ while ($rs_tag = mysqli_fetch_array($resultado_total)) {
                                                 <span class="por" style="color:##000000; font-size:16px !important; font-weight:bold;"><?php echo "R$ " . number_format($preco, 2, ",", "."); ?></span>
                                             <?php } ?>
                                         </p>
-                                        <a class="btn info btn-default add-cotacao btn-catalogo colocarCarrinho" data-idproduto="<?php echo $rs_produto['id']; ?>" data-quantidade="1"><i class="fas fa-cart-plus"></i></a>
+                                        <a class="btn info btn-default add-cotacao btn-catalogo colocarCarrinho" data-idproduto="<?php echo $rs_produto['id']; ?>" data-quantidade="1"><i class="fas fa-cart-plus" style="font-size:1.6em;"></i></a>
                                     </div>
                                 </div>
                             </div>
