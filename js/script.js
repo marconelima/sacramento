@@ -62,10 +62,12 @@ $(() => {
  if(document.querySelector(".colocarCarrinho")){
 
     if(document.querySelector("#clientelogado")) {
-        let clientelog = document.querySelector("#clientelogado");
+        var clientelog = document.querySelector("#clientelogado");
     } else {
         window.location.href = "https://www.industriasacramento.com.br/testenovo/finalizar/49";
     }
+
+    console.log(clientelog);
 
     if(clientelog > 0){
 
