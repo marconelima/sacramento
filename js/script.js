@@ -61,29 +61,38 @@ $(() => {
 
  if(document.querySelector(".colocarCarrinho")){
 
-    
+    if(document.querySelector("#clientelogado")) {
+        let clientelog = document.querySelector("#clientelogado");
+    } else {
+        window.location.href = "https://www.industriasacramento.com.br/testenovo/finalizar/49";
+    }
 
-    let produto = document.querySelectorAll(".colocarCarrinho");
+    if(clientelog > 0){
 
-    produto.forEach(function(el){
+        let produto = document.querySelectorAll(".colocarCarrinho");
 
-        el.addEventListener("click", e => {
+        produto.forEach(function(el){
 
-            let idproduto = el.getAttribute("data-idproduto");
-            let quantidade = el.getAttribute("data-quantidade");
+            el.addEventListener("click", e => {
 
-            $.ajax({
-                type: 'POST',
-                url: '/assets/php/ajax.php',
-                data: "acao=getColocarCarrinho&produto="+idproduto+"&qtde="+quantidade,
-                success: function(formulario) {
-                    alert("Produto adicionado no carrinho!");
-                    //location.reload();
-                }
+                let idproduto = el.getAttribute("data-idproduto");
+                let quantidade = el.getAttribute("data-quantidade");
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/assets/php/ajax.php',
+                    data: "acao=getColocarCarrinho&produto="+idproduto+"&qtde="+quantidade,
+                    success: function(formulario) {
+                        alert("Produto adicionado no carrinho!");
+                        //location.reload();
+                    }
+                });
+
             });
-
         });
-    });
+    } else {
+        window.location.href = "https://www.industriasacramento.com.br/testenovo/finalizar/49";
+    }
 
  }
 
