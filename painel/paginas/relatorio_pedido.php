@@ -2,6 +2,7 @@
 ini_set("display_errors", 1);
 
 
+
 if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF") {
 
     @include "../../parametros.php";
@@ -153,6 +154,8 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
     $mpdf->Output("pedido_" . $rs['id'] . "_" . $rs_cliente['nome'] . ".pdf", "D");
     exit();
 } else if (isset($_GET['alterar']) && $_GET['alterar'] != "") {
+
+    include_once("../classes/comunicacao.class.php");
 
     if (isset($_GET['vw'])) {
         $vw = $_GET["vw"];
