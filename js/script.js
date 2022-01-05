@@ -61,15 +61,7 @@ $(() => {
 
  if(document.querySelector(".colocarCarrinho")){
 
-    if(document.querySelector("#clientelogado")) {
-        var clientelog = document.querySelector("#clientelogado");
-    } else {
-        window.location.href = "https://www.industriasacramento.com.br/testenovo/finalizar/49";
-    }
-
-    console.log(clientelog);
-
-    if(clientelog > 0){
+    
 
         let produto = document.querySelectorAll(".colocarCarrinho");
 
@@ -77,24 +69,31 @@ $(() => {
 
             el.addEventListener("click", e => {
 
-                let idproduto = el.getAttribute("data-idproduto");
-                let quantidade = el.getAttribute("data-quantidade");
+                if(document.querySelector("#clientelogado")) {
+                    var clientelog = document.querySelector("#clientelogado");
+                } 
+                
+                if (clientelog > 0) {        
 
-                $.ajax({
-                    type: 'POST',
-                    url: '/assets/php/ajax.php',
-                    data: "acao=getColocarCarrinho&produto="+idproduto+"&qtde="+quantidade,
-                    success: function(formulario) {
-                        alert("Produto adicionado no carrinho!");
-                        //location.reload();
-                    }
-                });
+                    let idproduto = el.getAttribute("data-idproduto");
+                    let quantidade = el.getAttribute("data-quantidade");
+
+                    $.ajax({
+                        type: 'POST',
+                        url: '/assets/php/ajax.php',
+                        data: "acao=getColocarCarrinho&produto="+idproduto+"&qtde="+quantidade,
+                        success: function(formulario) {
+                            alert("Produto adicionado no carrinho!");
+                            //location.reload();
+                        }
+                    });
+                } else {
+                    window.location.href = "https://www.industriasacramento.com.br/testenovo/finalizar/49";
+                }
 
             });
         });
-    } else {
-        window.location.href = "https://www.industriasacramento.com.br/testenovo/finalizar/49";
-    }
+   
 
  }
 
