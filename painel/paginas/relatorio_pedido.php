@@ -1,16 +1,6 @@
 <?php error_reporting(0);
 ini_set("display_errors", 0);
 
-$API = new ComunicacaoAPI();
-
-if (empty($_SESSION['token_api']) || $_SESSION['token_api'] == 'erro') {
-
-    $API->getToken('http://sacprx.poweredbyclear.com:8080/ecommerceapi/v1/autenticacao/entrar');
-
-    $_SESSION['token_api'] = $API->token;
-} else {
-    $API->token = $_SESSION['token_api'];
-}
 
 if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF") {
 
@@ -100,6 +90,18 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
 						<td>' . substr($rs['data_pedido'], 8, 2) . '/' . substr($rs['data_pedido'], 5, 2) . '/' . substr($rs['data_pedido'], 0, 4) . '</td>
 						<td colspan="2"><strong>' . $status_pedido[$rs['status_pedido']] . '</strong></td>
 					</tr>';
+
+    $API = new ComunicacaoAPI();
+
+    if (empty($_SESSION['token_api']) || $_SESSION['token_api'] == 'erro') {
+
+        $API->getToken('http://sacprx.poweredbyclear.com:8080/ecommerceapi/v1/autenticacao/entrar');
+
+        $_SESSION['token_api'] = $API->token;
+    } else {
+        $API->token = $_SESSION['token_api'];
+    }
+
     while ($rs_pedido_produto = mysqli_fetch_array($resultado_pedido_produto)) {
 
         $preco_total_produto = 0;
@@ -230,7 +232,19 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
                 <td><?php echo substr($rs['data_pedido'], 8, 2) . "/" . substr($rs['data_pedido'], 5, 2) . "/" . substr($rs['data_pedido'], 0, 4); ?></td>
                 <td colspan="2"><strong><?php echo $status_pedido[$rs['status_pedido']]; ?></strong></td>
             </tr>
-            <?php while ($rs_pedido_produto = mysqli_fetch_array($resultado_pedido_produto)) {
+            <?php
+            $API = new ComunicacaoAPI();
+
+            if (empty($_SESSION['token_api']) || $_SESSION['token_api'] == 'erro') {
+
+                $API->getToken('http://sacprx.poweredbyclear.com:8080/ecommerceapi/v1/autenticacao/entrar');
+
+                $_SESSION['token_api'] = $API->token;
+            } else {
+                $API->token = $_SESSION['token_api'];
+            }
+            
+            while ($rs_pedido_produto = mysqli_fetch_array($resultado_pedido_produto)) {
                 $preco_total_produto = 0;
                 $preco = 0;;
                 $preco_promocional = 0;
