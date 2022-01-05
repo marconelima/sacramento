@@ -189,7 +189,7 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
     $resultado_cliente = $conecta->selecionar($conecta->conn, $sql_cliente);
     $rs_cliente = mysqli_fetch_array($resultado_cliente);
 
-    $sql_pedido_produto = "SELECT pp.*, p.nome, p.id as produto, pp.cor_tamanho as cte, ptc.cor, ptc.tamanho FROM tbpedido_produto pp INNER JOIN tbproduto p ON p.id = pp.produto_id LEFT JOIN tbprod_tamanhocor ptc ON ptc.id = pp.cor_tamanho WHERE pedido_id = " . $rs['id'];
+    $sql_pedido_produto = "SELECT pp.*, p.nome, p.codigo, p.id as produto, pp.cor_tamanho as cte, ptc.cor, ptc.tamanho FROM tbpedido_produto pp INNER JOIN tbproduto p ON p.id = pp.produto_id LEFT JOIN tbprod_tamanhocor ptc ON ptc.id = pp.cor_tamanho WHERE pedido_id = " . $rs['id'];
     $resultado_pedido_produto = $conecta->selecionar($conecta->conn, $sql_pedido_produto);
 }
 ?>
