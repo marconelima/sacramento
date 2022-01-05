@@ -157,7 +157,7 @@
                 $i++;
             endforeach;
             $configuracao_da_mensagem_original .= "<tr>
-                    <td colspan='6'>Total do Carrinho</td>
+                    <td colspan='5'>Total do Carrinho</td>
                     <td>" . $preco_total_carrinho . "</td>
                 </tr>
                 </table><br>
