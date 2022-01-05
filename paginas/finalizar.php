@@ -19,22 +19,23 @@
 <!-- /Header -->
 
 <div class="content-area content content_corpo">
-    <?php
-    if ($_POST) {
-        for ($i = 0; $i < (count($_POST) / 3); $i++) {
-            if ($pro = $carrinhoSessao->getProduto($_POST['prodid' . $i])) {
-                $pro->setQuantidade($_POST['qtde_prod' . $i]);
-                $pro->setComplemento($_POST['message' . $i] . "<br/><br/>" . $pro->getComplemento());
-            }
-        }
-    }
-    $_SESSION["carrinho"] = serialize($carrinhoSessao);
+    <?php    
 
     if (@$_SESSION['cliente'] != '' && isset($_SESSION['carrinho'])) {
 
-         $sqlCliente = "SELECT c.*
+        if ($_POST) {
+            for ($i = 0; $i < (count($_POST) / 3); $i++) {
+                if ($pro = $carrinhoSessao->getProduto($_POST['prodid' . $i])) {
+                    $pro->setQuantidade($_POST['qtde_prod' . $i]);
+                    $pro->setComplemento($_POST['message' . $i] . "<br/><br/>" . $pro->getComplemento());
+                }
+            }
+        }
+        $_SESSION["carrinho"] = serialize($carrinhoSessao);
+
+        $sqlCliente = "SELECT c.*
 					FROM tbcliente c
-					where c.id = ". $_SESSION['cliente'];
+					where c.id = " . $_SESSION['cliente'];
 
         $resultadoCliente = $conecta->selecionar($conecta->conn, $sqlCliente);
         $rs_cliente = mysqli_fetch_array($resultadoCliente);
@@ -103,7 +104,7 @@
 					FROM tbproduto p inner join tbprod_subcategoria sc on sc.id = p.subcategoria_id
 					inner join tbprod_categoria c on c.id = sc.categoria_id
 					inner JOIN tbprod_foto f ON f.produto_id = p.id
-					where p.id = ".$pro->getId()." AND f.destaque = 1";
+					where p.id = " . $pro->getId() . " AND f.destaque = 1";
 
                 $resultadoProduto1 = $conecta->selecionar($conecta->conn, $sqlProduto1);
                 $rs_produto1 = mysqli_fetch_array($resultadoProduto1);
@@ -129,13 +130,14 @@
 
                 $preco_total_carrinho = $preco_total_carrinho + $preco_total_produto;
 
-                $produto = ["produtoCodigo"=> $rs_produto1['codigo'],
-                    "quantidade"=> $pro->getQuantidade(),
-                    "valorLiquido"=> ($preco * $pro->getQuantidade()),
-                    "valorUnitario"=> $preco,
-                    "valorDesconto"=> 0,
-                    "unidade"=> $produto->{'produtos'}[$i]->{'unidade'},
-                    "unidadeQuantidade"=> $produto->{'produtos'}[$i]->{'unidadeQuantidade'}
+                $produto = [
+                    "produtoCodigo" => $rs_produto1['codigo'],
+                    "quantidade" => $pro->getQuantidade(),
+                    "valorLiquido" => ($preco * $pro->getQuantidade()),
+                    "valorUnitario" => $preco,
+                    "valorDesconto" => 0,
+                    "unidade" => $produto->{'produtos'}[$i]->{'unidade'},
+                    "unidadeQuantidade" => $produto->{'produtos'}[$i]->{'unidadeQuantidade'}
                 ];
 
                 array_push($itens, $produto);
@@ -169,8 +171,7 @@
                 Enviada em $date por:<br>
                 <br>
                 Industria Sacramento</a>";
-
-        }else {
+        } else {
 
             // FORMA COMO RECEBERÁ O E-MAIL (FORMULÁRIO)
             $assunto =  "Pedido de Orçamento";
@@ -343,22 +344,22 @@
         $arquivoOrcamento = $_SERVER['DOCUMENT_ROOT'] . "/testenovo/orcamentos/pedido_" . $rs['id'] . "_" . $rs_cliente['nome'] . ".pdf";
 
         $mpdf->Output($_SERVER['DOCUMENT_ROOT'] . "/testenovo/orcamentos/pedido_" . $rs['id'] . "_" . $rs_cliente['nome'] . ".pdf", "F");
-//#################################################################################################################################################################       
+        //#################################################################################################################################################################       
 
         $data = array();
-        
+
         $enderecoEntrega =  [
-            "codigo"=> 0,
-            "logradouro"=> $rs_cliente['logradouro'],
-            "numero"=> $rs_cliente['numero'],
-            "cep"=> str_replace("-","", str_replace(".","",$rs_cliente['cep'])),
-            "bairro"=> $rs_cliente['bairro'],
-            "cidade"=> $rs_cliente['cidade'],
-            "ufSigla"=> $rs_cliente['estado']
+            "codigo" => 0,
+            "logradouro" => $rs_cliente['logradouro'],
+            "numero" => $rs_cliente['numero'],
+            "cep" => str_replace("-", "", str_replace(".", "", $rs_cliente['cep'])),
+            "bairro" => $rs_cliente['bairro'],
+            "cidade" => $rs_cliente['cidade'],
+            "ufSigla" => $rs_cliente['estado']
         ];
-        
+
         $enderecoCobranca = [
-            "codigo"=> 0,
+            "codigo" => 0,
             "logradouro" => $rs_cliente['logradouro'],
             "numero" => $rs_cliente['numero'],
             "cep" => str_replace("-", "", str_replace(".", "", $rs_cliente['cep'])),
@@ -377,7 +378,7 @@
             "ufSigla" => $rs_cliente['estado']
         ];
 
-        if($rs_cliente['tipodocumento'] == 'cnpj'){
+        if ($rs_cliente['tipodocumento'] == 'cnpj') {
             $cliente = [
                 "codigo" => 0,
                 "razaoSocial" => $rs_cliente['nome'],
@@ -391,7 +392,6 @@
                 "celular" => $rs_cliente['celular'],
                 "enderecos" => $enderecosCliente
             ];
-
         } else if ($rs_cliente['tipodocumento'] == 'cpf') {
             $cliente = [
                 "codigo" => 0,
@@ -407,12 +407,12 @@
             ];
         }
 
-        
+
 
         $pagamentos = [
             "formaPagamento" => "boleto",
             "numeroParcelas" => 1,
-            "valorPago" => $preco_total_carrinho 
+            "valorPago" => $preco_total_carrinho
         ];
 
         $data = [
@@ -420,16 +420,16 @@
             "enderecoEntrega" => $enderecoEntrega,
             "enderecoCobranca" => $enderecoCobranca,
             "cliente" => $cliente,
-            "valorLiquido"=> $preco_total_carrinho,
-            "valorFrete"=> 0,
-            "observacao"=> "",
-            "naturezaOperacao"=> "WEB",
-            "valorDesconto"=> 0,
-            "dataEmissao"=> date('d/m/Y'),
-            "horaEmissao"=> date("H:i:s"),
-            "observacaoFiscal1"=> "",
+            "valorLiquido" => $preco_total_carrinho,
+            "valorFrete" => 0,
+            "observacao" => "",
+            "naturezaOperacao" => "WEB",
+            "valorDesconto" => 0,
+            "dataEmissao" => date('d/m/Y'),
+            "horaEmissao" => date("H:i:s"),
+            "observacaoFiscal1" => "",
             "items" => $itens,
-            "pagamentos"=> $pagamentos
+            "pagamentos" => $pagamentos
         ];
 
         $data_json = json_encode($data);
@@ -482,7 +482,7 @@
                     $mail->Subject = utf8_decode($assunto);
                     $mail->Body    = utf8_decode($configuracao_da_mensagem_original);
 
-                    $mail->addAttachment($arquivoOrcamento); 
+                    $mail->addAttachment($arquivoOrcamento);
 
                     if ($mail->send()) {
                         //echo '<div class="alert alert-success">Mensagem enviada com sucesso!</div>';
@@ -541,7 +541,7 @@
                             $mail->Subject = utf8_decode($assunto_da_mensagem_de_resposta);
                             $mail->Body    = utf8_decode($configuracao_da_mensagem_de_resposta);
 
-                            $mail->addAttachment($arquivoOrcamento); 
+                            $mail->addAttachment($arquivoOrcamento);
 
                             $mail->send();
                         } catch (Exception $e) {
@@ -554,17 +554,16 @@
                 } catch (Exception $e) {
                     echo '<div class="alert alert-danger">Problema ao enviar Orçamento 2!</div>';
                 }
-
             } else {
-                echo '<div class="alert alert-danger">Problema ao enviar Orçamento! '. $mensagemUsuario . ' Entre em contato com o Administrador!</div>';
+                echo '<div class="alert alert-danger">Problema ao enviar Orçamento! ' . $mensagemUsuario . ' Entre em contato com o Administrador!</div>';
                 //exit;
             }
         } catch (Exception $e) {
-            echo $e->getMessage()." ".$e->getCode();
+            echo $e->getMessage() . " " . $e->getCode();
         }
-        
 
-        
+
+
         /*
 			if(mail($rs_configuracao['emailloja'],$assunto,$configuracao_da_mensagem_original,$headers)){
 
@@ -589,8 +588,8 @@
 				".$rs_configuracao['nomeloja']."<br>
 				<br>
 				<a href='".$rs_configuracao['linkloja']."'>".$rs_configuracao['linkloja']."</a><br>
-<br>
-Recebido em: $date<br>
+                <br>
+                Recebido em: $date<br>
 				Industria Sacramento";
 
 				//ENVIO DE MENSAGEM RESPOSTA
