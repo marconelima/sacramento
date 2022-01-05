@@ -321,7 +321,7 @@
             $status = 200;
 
             if (isset($status) && $status == 200) {
-                echo '<div class="alert alert-success">Pedido enviado com Sucesso!</div>';
+                //echo '<div class="alert alert-success">Pedido enviado com Sucesso!</div>';
 
                 //ENVIO DE MENSAGEM ORIGINAL
                 $headers = "$cabecalho_da_mensagem_original";
