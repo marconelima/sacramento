@@ -3,7 +3,7 @@ ob_start();
 date_default_timezone_set("Brazil/East");
 set_time_limit(0);
 
-unset($carrinhoSessao2);
+unset($carrinhoSessao2, $_SESSION["carrinho"]);
 
 include "uteis/bancodados.php";
 include "parametros.php";
