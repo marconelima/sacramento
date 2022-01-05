@@ -81,7 +81,6 @@
                     <td>Código</td>
                     <td>Nome</td>
                     <td>Quantidade</td>
-                    <td>Observação</td>
                     <td>Preço</td>
                     <td>Total</td>
                 </tr>";
@@ -117,6 +116,9 @@
                 $ativo = $produto->{'produtos'}[$i]->{'ativo'};
                 $unidade = $produto->{'produtos'}[$i]->{'unidade'};
 
+                $preco = $preco > 0 ? $preco + $preco * 0.2 : 0;
+                $preco_promocional = $preco_promocional > 0 ? $preco_promocional + $preco_promocional * 0.2 : 0;
+
                 $preco = $preco_promocional > 0 ? $preco_promocional : $preco;
 
                 $preco_total_produto = $preco_total_produto + ($preco * $pro->getQuantidade());
@@ -139,7 +141,6 @@
                     <td>" . $pro->getReferencia() . "</td>
                     <td>" . $pro->getNome() . "</td>
                     <td>" . $pro->getQuantidade() . "</td>
-                    <td>" . $pro->getComplemento() . "<br/><br/>" . $_POST['message' . $i] . "</td>
                     <td>" . $preco . "</td>
                     <td>" . $preco_total_produto . "</td>
                 </tr>";
@@ -169,7 +170,7 @@
 
             // FORMA COMO RECEBERÁ O E-MAIL (FORMULÁRIO)
             $assunto =  "Pedido de Orçamento";
-            $cabecalho_da_mensagem_original = "From: " . $rs_configuracao['nomeloja'] . " <" . $rs_configuracao['emailloja'] . ">\n";
+            $cabecalho_da_mensagem_original = "From: " . utf8_decode($rs_configuracao['nomeloja']) . " <" . $rs_configuracao['emailloja'] . ">\n";
             $configuracao_da_mensagem_original = "<strong>Orçamento " . $rs_configuracao['nomeloja'] . ":</strong><br>
                 <br>
                 De: " . $name . "<br>
@@ -344,7 +345,7 @@
                     $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
                     //Recipients
-                    $mail->setFrom($rs_configuracao['emailloja'], $rs_configuracao['nomeloja']);
+                    $mail->setFrom($rs_configuracao['emailloja'], utf8_decode($rs_configuracao['nomeloja']));
                     //$mail->addAddress($email, $name);     //Add a recipient
                     $mail->addAddress($rs_configuracao['emailloja'], utf8_decode($rs_configuracao['nomeloja']));
 
@@ -402,8 +403,8 @@
                             $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
                             //Recipients
-                            $mail->setFrom($rs_configuracao['emailloja'], utf8_encode($rs_configuracao['nomeloja']));
-                            $mail->addAddress($email, $name);     //Add a recipient
+                            $mail->setFrom($rs_configuracao['emailloja'], utf8_decode($rs_configuracao['nomeloja']));
+                            $mail->addAddress($email, utf8_decode($name));     //Add a recipient
 
                             //Content
                             $mail->isHTML(true);                                  //Set email format to HTML

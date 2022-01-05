@@ -677,6 +677,15 @@ h3 {
   height: 100%;
 }
 
+.por {
+    display: block;
+    font-weight: bold;
+    font-size: 18pt;
+}
+.de {
+    color: #FF0000;
+}
+
 .box_foto_insta {
   height: auto;
 }
