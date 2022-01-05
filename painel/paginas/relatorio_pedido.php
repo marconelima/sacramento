@@ -1,5 +1,5 @@
-<?php error_reporting(0);
-ini_set("display_errors", 0);
+<?php error_reporting(1);
+ini_set("display_errors", 1);
 
 
 if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF") {
