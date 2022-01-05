@@ -126,7 +126,7 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
 
         $preco = $preco_promocional > 0 ? $preco_promocional : $preco;
 
-        $preco_total_produto = $preco_total_produto + ($preco * $pro->getQuantidade());
+        $preco_total_produto = $preco_total_produto + ($preco * $rs_pedido_produto['quantidade']);
 
         $preco_total_carrinho = $preco_total_carrinho + $preco_total_produto;
 
@@ -275,7 +275,7 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
 
                 $preco = $preco_promocional > 0 ? $preco_promocional : $preco;
 
-                $preco_total_produto = $preco_total_produto + ($preco * $pro->getQuantidade());
+                $preco_total_produto = $preco_total_produto + ($preco * $rs_pedido_produto['quantidade']);
 
                 $preco_total_carrinho = $preco_total_carrinho + $preco_total_produto;
             ?>
