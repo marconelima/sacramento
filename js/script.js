@@ -70,7 +70,7 @@ $(() => {
             el.addEventListener("click", e => {
 
                 if(document.querySelector("#clientelogado")) {
-                    var clientelog = document.querySelector("#clientelogado");
+                    var clientelog = parseInt(document.querySelector("#clientelogado").value);
                 } 
                 
                 if (clientelog > 0) {        
