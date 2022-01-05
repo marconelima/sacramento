@@ -258,11 +258,18 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
                 $ativo = 0;
                 $unidade = '';
 
+
+                var_dump($rs_pedido_produto['codigo']);
+
                 $produtos = $API->getProdutoEstoque($rs_pedido_produto['codigo']);
 
                 $produto = json_decode($produtos);
 
+                var_dump($produto);
+
                 $i = 0;
+
+                var_dump($produto->{'produtos'}[$i]->{'preco'});
 
                 $preco = $produto->{'produtos'}[$i]->{'preco'};
                 $preco_promocional = $produto->{'produtos'}[$i]->{'precoPromocional'};
