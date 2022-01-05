@@ -1,5 +1,5 @@
-<?php error_reporting(1);
-ini_set("display_errors", 1);
+<?php error_reporting(0);
+ini_set("display_errors", 0);
 
 
 
@@ -141,8 +141,8 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
     }
 
     $html_pdf .= '<tr>
-						<td colspan="4">Total orçamento</td>						
-                        <td>' . number_format($preco_total_carrinho, 2, ",", ".") . '</td>
+						<td colspan="4"><strong>Total orçamento</strong></td>						
+                        <td><strong>' . number_format($preco_total_carrinho, 2, ",", ".") . '</strong></td>
 					</tr>                
                 </table>
 				</div>';
@@ -243,7 +243,7 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
             } else {
                 $API->token = $_SESSION['token_api'];
             }
-            
+
             while ($rs_pedido_produto = mysqli_fetch_array($resultado_pedido_produto)) {
                 $preco_total_produto = 0;
                 $preco = 0;;
@@ -252,19 +252,11 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
                 $ativo = 0;
                 $unidade = '';
 
-                var_dump("teste ");
-                var_dump($rs_pedido_produto['codigo']);
-                var_dump("teste ");
-
                 $produtos = $API->getProdutoEstoque($rs_pedido_produto['codigo']);
 
                 $produto = json_decode($produtos);
 
-                var_dump($produto);
-
                 $i = 0;
-
-                var_dump($produto->{'produtos'}[$i]->{'preco'});
 
                 $preco = $produto->{'produtos'}[$i]->{'preco'};
                 $preco_promocional = $produto->{'produtos'}[$i]->{'precoPromocional'};
@@ -291,8 +283,8 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
             <?php } ?>
 
             <tr>
-                <td colspan="4">Total orçamento</td>
-                <td><?php echo number_format($preco_total_carrinho, 2, ",", "."); ?></td>
+                <td colspan="4"><strong>Total orçamento</strong></td>
+                <td><strong><?php echo number_format($preco_total_carrinho, 2, ",", "."); ?></strong></td>
             </tr>
         </table>
     </div>
