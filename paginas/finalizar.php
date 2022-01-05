@@ -64,132 +64,6 @@
                 $API->token = $_SESSION['token_api'];
             }
 
-            //#################################################################################################################################################################       
-             $preco_total_carrinho = 0;
-
-            $sql = "SELECT * FROM tbpedido WHERE id = $idPedido";
-            $resultado = $conecta->selecionar($conecta->conn, $sql);
-            $rs = mysqli_fetch_array($resultado);
-
-            var_dump($rs);
-
-            $sql_cliente = "SELECT * FROM tbcliente WHERE id = " . $rs['cliente_id'];
-            $resultado_cliente = $conecta->selecionar($conecta->conn, $sql_cliente);
-            $rs_cliente = mysqli_fetch_array($resultado_cliente);
-
-            var_dump($resultado_cliente);
-
-            $sql_pedido_produto = "SELECT pp.*, p.nome, p.codigo, p.id as produto, pp.cor_tamanho as cte, ptc.cor, ptc.tamanho FROM tbpedido_produto pp INNER JOIN tbproduto p ON p.id = pp.produto_id LEFT JOIN tbprod_tamanhocor ptc ON ptc.id = pp.cor_tamanho WHERE pedido_id = " . $rs['id'];
-            $resultado_pedido_produto = $conecta->selecionar($conecta->conn, $sql_pedido_produto);
-
-            $html_pdf = '<div class="table-responsive">
-        <table border="0" width="100%" style="font:15px arial;" cellpadding="3" cellspacing="3">
-			<tr>
-				<td rowspan="2"><img src="source/vassouras_sacramento.png" class="logo_painel" height="50" /></td>
-				<td colspan="5">' . $dados['nomeloja'] . '</td>
-			</tr>
-			<tr>
-				
-				<td colspan="5">' . str_replace("<br />", "", $dados['enderecoloja']) . ' - ' . $dados['emailloja'] . ' | ' . $dados['telefoneloja'] . '</td>
-			</tr>
-			<tr>
-				<td style="height:5px; width:100%; float:left;" colspan="6"></td>
-			</tr>
-			<tr>
-				<td style="height:5px; width:100%; float:left; background:#eaeaea;" colspan="6"></td>
-			</tr>
-            ';
-            $html_pdf .= '</table>
-      </div>';
-
-            $html_pdf .= '<div class="table-responsive">
-				<table class="table table-hover tabela_ficha" width="100%" style="font:13px arial;" cellpadding="3" cellspacing="3">
-					<tr>
-						<td colspan="4" align="center"><strong>CLIENTE</strong></td>
-					</tr>
-					<tr>
-						<td colspan="4">' . $rs_cliente['id'] . ' - ' . $rs_cliente['nome'] . '</td>
-					</tr>
-					<tr>
-						<td>' . $rs_cliente['email'] . '</td>
-						<td>' . $rs_cliente['telefone'] . '</td>
-						<td>' . $rs_cliente['celular'] . '</td>
-						<td>' . $rs_cliente['cidade'] . '</td>
-					</tr>
-				</table>
-				
-				</div>
-				
-				<div class="table-responsive">
-				<table class="table table-hover tabela_ficha" width="100%" style="font:13px arial;" cellpadding="3" cellspacing="3">
-					<tr>
-						<td colspan="4" align="center"><strong>ORÇAMENTO</strong></td>
-					</tr>
-					<tr>
-						
-						<td>' . substr($rs['data_pedido'], 8, 2) . '/' . substr($rs['data_pedido'], 5, 2) . '/' . substr($rs['data_pedido'], 0, 4) . '</td>
-						<td colspan="2"><strong>' . $status_pedido[$rs['status_pedido']] . '</strong></td>
-					</tr>';
-
-
-            while ($rs_pedido_produto = mysqli_fetch_array($resultado_pedido_produto)) {
-
-                var_dump($rs_pedido_produto);
-
-                $preco_total_produto = 0;
-                $preco = 0;;
-                $preco_promocional = 0;
-                $estoque = 0;
-                $ativo = 0;
-                $unidade = '';
-
-                $produtos = $API->getProdutoEstoque($rs_pedido_produto['codigo']);
-
-                $produto = json_decode($produtos);
-
-                $i = 0;
-
-                $preco = $produto->{'produtos'}[$i]->{'preco'};
-                $preco_promocional = $produto->{'produtos'}[$i]->{'precoPromocional'};
-                $estoque = $produto->{'produtos'}[$i]->{'estoque'};
-                $ativo = $produto->{'produtos'}[$i]->{'ativo'};
-                $unidade = $produto->{'produtos'}[$i]->{'unidade'};
-
-                $preco = $preco > 0 ? $preco + $preco * 0.2 : 0;
-                $preco_promocional = $preco_promocional > 0 ? $preco_promocional + $preco_promocional * 0.2 : 0;
-
-                $preco = $preco_promocional > 0 ? $preco_promocional : $preco;
-
-                $preco_total_produto = $preco_total_produto + ($preco * $rs_pedido_produto['quantidade']);
-
-                $preco_total_carrinho = $preco_total_carrinho + $preco_total_produto;
-
-
-                $html_pdf .= '<tr>
-						<td width="30%">' . $rs_pedido_produto['nome'] . '</td>
-						<td width="15%" align="center">' . $rs_pedido_produto['quantidade'] . "x" . '</td>
-						<td width="25%">' . ($rs_pedido_produto['cor'] != '' ? $rs_pedido_produto['cor'] : '') . (($rs_pedido_produto['cor'] != '' && $rs_pedido_produto['tamanho'] != '') ? ' | ' : '') . ($rs_pedido_produto['tamanho'] != '' ? $rs_pedido_produto['tamanho'] :  '') . '</td>
-						<td width="15%">' . number_format($preco, 2, ",", ".") . '</td>
-                        <td width="15%">' . number_format($preco_total_produto, 2, ",", ".") . '</td>
-					</tr>';
-            }
-
-            $html_pdf .= '<tr>
-						<td colspan="4"><strong>Total orçamento</strong></td>						
-                        <td><strong>' . number_format($preco_total_carrinho, 2, ",", ".") . '</strong></td>
-					</tr>                
-                </table>
-				</div>';
-
-
-            $mpdf = new mPDF('pt', 'A4', 3, '', 10, 10, 2, 10, 9, 9, 'P');
-
-            $mpdf->WriteHTML($html_pdf);
-
-            $arquivoOrcamento = $_SERVER['DOCUMENT_ROOT'] . "/testenovo/orcamentos/pedido_" . $rs['id'] . "_" . $rs_cliente['nome'] . ".pdf";
-
-            $mpdf->Output($_SERVER['DOCUMENT_ROOT'] . "/testenovo/orcamentos/pedido_" . $rs['id'] . "_" . $rs_cliente['nome'] . ".pdf", "F");
-//#################################################################################################################################################################            
 
             $preco_total_carrinho = 0;
 
@@ -346,6 +220,127 @@
                 <br>
                 Industria Sacramento</a>";
         }
+
+        //#################################################################################################################################################################       
+        $preco_total_carrinho = 0;
+
+        $sql = "SELECT * FROM tbpedido WHERE id = $idPedido";
+        $resultado = $conecta->selecionar($conecta->conn, $sql);
+        $rs = mysqli_fetch_array($resultado);
+
+        $sql_cliente = "SELECT * FROM tbcliente WHERE id = " . $rs['cliente_id'];
+        $resultado_cliente = $conecta->selecionar($conecta->conn, $sql_cliente);
+        $rs_cliente = mysqli_fetch_array($resultado_cliente);
+
+        $sql_pedido_produto = "SELECT pp.*, p.nome, p.codigo, p.id as produto, pp.cor_tamanho as cte, ptc.cor, ptc.tamanho FROM tbpedido_produto pp INNER JOIN tbproduto p ON p.id = pp.produto_id LEFT JOIN tbprod_tamanhocor ptc ON ptc.id = pp.cor_tamanho WHERE pedido_id = " . $rs['id'];
+        $resultado_pedido_produto = $conecta->selecionar($conecta->conn, $sql_pedido_produto);
+
+        $html_pdf = '<div class="table-responsive">
+        <table border="0" width="100%" style="font:15px arial;" cellpadding="3" cellspacing="3">
+			<tr>
+				<td rowspan="2"><img src="source/vassouras_sacramento.png" class="logo_painel" height="50" /></td>
+				<td colspan="5">' . $dados['nomeloja'] . '</td>
+			</tr>
+			<tr>
+				
+				<td colspan="5">' . str_replace("<br />", "", $dados['enderecoloja']) . ' - ' . $dados['emailloja'] . ' | ' . $dados['telefoneloja'] . '</td>
+			</tr>
+			<tr>
+				<td style="height:5px; width:100%; float:left;" colspan="6"></td>
+			</tr>
+			<tr>
+				<td style="height:5px; width:100%; float:left; background:#eaeaea;" colspan="6"></td>
+			</tr>
+            ';
+        $html_pdf .= '</table>
+      </div>';
+
+        $html_pdf .= '<div class="table-responsive">
+				<table class="table table-hover tabela_ficha" width="100%" style="font:13px arial;" cellpadding="3" cellspacing="3">
+					<tr>
+						<td colspan="4" align="center"><strong>CLIENTE</strong></td>
+					</tr>
+					<tr>
+						<td colspan="4">' . $rs_cliente['id'] . ' - ' . $rs_cliente['nome'] . '</td>
+					</tr>
+					<tr>
+						<td>' . $rs_cliente['email'] . '</td>
+						<td>' . $rs_cliente['telefone'] . '</td>
+						<td>' . $rs_cliente['celular'] . '</td>
+						<td>' . $rs_cliente['cidade'] . '</td>
+					</tr>
+				</table>
+				
+				</div>
+				
+				<div class="table-responsive">
+				<table class="table table-hover tabela_ficha" width="100%" style="font:13px arial;" cellpadding="3" cellspacing="3">
+					<tr>
+						<td colspan="4" align="center"><strong>ORÇAMENTO</strong></td>
+					</tr>
+					<tr>
+						
+						<td>' . substr($rs['data_pedido'], 8, 2) . '/' . substr($rs['data_pedido'], 5, 2) . '/' . substr($rs['data_pedido'], 0, 4) . '</td>
+						<td colspan="2"><strong>' . $status_pedido[$rs['status_pedido']] . '</strong></td>
+					</tr>';
+
+
+        while ($rs_pedido_produto = mysqli_fetch_array($resultado_pedido_produto)) {
+
+            $preco_total_produto = 0;
+            $preco = 0;;
+            $preco_promocional = 0;
+            $estoque = 0;
+            $ativo = 0;
+            $unidade = '';
+
+            $produtos = $API->getProdutoEstoque($rs_pedido_produto['codigo']);
+
+            $produto = json_decode($produtos);
+
+            $i = 0;
+
+            $preco = $produto->{'produtos'}[$i]->{'preco'};
+            $preco_promocional = $produto->{'produtos'}[$i]->{'precoPromocional'};
+            $estoque = $produto->{'produtos'}[$i]->{'estoque'};
+            $ativo = $produto->{'produtos'}[$i]->{'ativo'};
+            $unidade = $produto->{'produtos'}[$i]->{'unidade'};
+
+            $preco = $preco > 0 ? $preco + $preco * 0.2 : 0;
+            $preco_promocional = $preco_promocional > 0 ? $preco_promocional + $preco_promocional * 0.2 : 0;
+
+            $preco = $preco_promocional > 0 ? $preco_promocional : $preco;
+
+            $preco_total_produto = $preco_total_produto + ($preco * $rs_pedido_produto['quantidade']);
+
+            $preco_total_carrinho = $preco_total_carrinho + $preco_total_produto;
+
+
+            $html_pdf .= '<tr>
+						<td width="30%">' . $rs_pedido_produto['nome'] . '</td>
+						<td width="15%" align="center">' . $rs_pedido_produto['quantidade'] . "x" . '</td>
+						<td width="25%">' . ($rs_pedido_produto['cor'] != '' ? $rs_pedido_produto['cor'] : '') . (($rs_pedido_produto['cor'] != '' && $rs_pedido_produto['tamanho'] != '') ? ' | ' : '') . ($rs_pedido_produto['tamanho'] != '' ? $rs_pedido_produto['tamanho'] :  '') . '</td>
+						<td width="15%">' . number_format($preco, 2, ",", ".") . '</td>
+                        <td width="15%">' . number_format($preco_total_produto, 2, ",", ".") . '</td>
+					</tr>';
+        }
+
+        $html_pdf .= '<tr>
+						<td colspan="4"><strong>Total orçamento</strong></td>						
+                        <td><strong>' . number_format($preco_total_carrinho, 2, ",", ".") . '</strong></td>
+					</tr>                
+                </table>
+				</div>';
+
+
+        $mpdf = new mPDF('pt', 'A4', 3, '', 10, 10, 2, 10, 9, 9, 'P');
+
+        $mpdf->WriteHTML($html_pdf);
+
+        $arquivoOrcamento = $_SERVER['DOCUMENT_ROOT'] . "/testenovo/orcamentos/pedido_" . $rs['id'] . "_" . $rs_cliente['nome'] . ".pdf";
+
+        $mpdf->Output($_SERVER['DOCUMENT_ROOT'] . "/testenovo/orcamentos/pedido_" . $rs['id'] . "_" . $rs_cliente['nome'] . ".pdf", "F");
+//#################################################################################################################################################################       
 
         $data = array();
         
