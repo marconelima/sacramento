@@ -329,8 +329,8 @@ while ($rs_tag = mysqli_fetch_array($resultado_total)) {
                                         <div class="mask">
                                             <!--<a href="<?php echo $siteUrl ?>produto/21/0/<?php echo $rs_produto['id']; ?>"><button type="button" class="btn btn-default olhadinha"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> VER DETALHES</button></a>-->
                                         </div>
-                                        <p class="titulo-produto"><a class="detalheProduto"><?php echo $rs_produto['marca']; ?></a></p>
-                                        <p class="desc-produto" style="font-weight: bold;"><a class="detalheProduto"><?php echo $rs_produto['nome'] . " " . $rs_produto['modelo']; ?></a></p>
+                                        <p class="titulo-produto"><a class="detalheProduto" data-idproduto="<?php echo $rs_produto['id']; ?>" data-toggle="modal" data-target="#ModalDetalhe"><?php echo $rs_produto['marca']; ?></a></p>
+                                        <p class="desc-produto" style="font-weight: bold;"><a class="detalheProduto" data-idproduto="<?php echo $rs_produto['id']; ?>" data-toggle="modal" data-target="#ModalDetalhe"><?php echo $rs_produto['nome'] . " " . $rs_produto['modelo']; ?></a></p>
                                         <p class="valor-de-para">
                                             <?php if ($promocional == 1 && $preco_promocional > 0) { ?>
                                                 <span class="de" style="text-decoration: line-through; color:#FF0000; font-size:16px !important; font-weight:normal;"><?php echo "de R$ " . number_format($preco, 2, ",", "."); ?></span>
@@ -339,7 +339,6 @@ while ($rs_tag = mysqli_fetch_array($resultado_total)) {
                                                 <span class="por" style="color:##000000; font-size:16px !important; font-weight:bold;"><?php echo "R$ " . number_format($preco, 2, ",", "."); ?></span>
                                             <?php } ?>
                                         </p>
-                                        <a class="btn info btn-default add-cotacao btn-catalogo detalheProduto" data-idproduto="<?php echo $rs_produto['id']; ?>" data-toggle="modal" data-target="#ModalDetalhe">Detalhe</a>
                                         <a class="btn info btn-default add-cotacao btn-catalogo colocarCarrinho" data-idproduto="<?php echo $rs_produto['id']; ?>" data-quantidade="1"><i class="fas fa-cart-plus"></i></a>
                                     </div>
                                 </div>
