@@ -618,7 +618,7 @@
                 <div class="modal-body">
                     <div class="secaoE">
                         <p class="titulo_cadastro">Já Sou Cadastrado</p>
-                        <form action="" method="post" enctype="multipart/form-data">
+                        <form action="<?php echo $siteUrl;?>/catalogo/21" method="post" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label>Email</label>
                                 <input id="txtEmail" class="form-control" name="email" required="required" type="email" placeholder="">
