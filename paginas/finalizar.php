@@ -141,8 +141,8 @@
                     <td>" . $pro->getReferencia() . "</td>
                     <td>" . $pro->getNome() . "</td>
                     <td>" . $pro->getQuantidade() . "</td>
-                    <td>" . $preco . "</td>
-                    <td>" . $preco_total_produto . "</td>
+                    <td>" . number_format($preco, 2, ",", ".") . "</td>
+                    <td>" . number_format($preco_total_produto, 2, ",", ".") . "</td>
                 </tr>";
 
 
@@ -158,7 +158,7 @@
             endforeach;
             $configuracao_da_mensagem_original .= "<tr>
                     <td colspan='5'>Total do Carrinho</td>
-                    <td>" . $preco_total_carrinho . "</td>
+                    <td>" . number_format($preco_total_carrinho, 2, ",", ".") . "</td>
                 </tr>
                 </table><br>
                 <br>
