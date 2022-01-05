@@ -1,5 +1,17 @@
 <?php error_reporting(0);
 ini_set("display_errors", 0);
+
+$API = new ComunicacaoAPI();
+
+if (empty($_SESSION['token_api']) || $_SESSION['token_api'] == 'erro') {
+
+    $API->getToken('http://sacprx.poweredbyclear.com:8080/ecommerceapi/v1/autenticacao/entrar');
+
+    $_SESSION['token_api'] = $API->token;
+} else {
+    $API->token = $_SESSION['token_api'];
+}
+
 if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF") {
 
     @include "../../parametros.php";
@@ -14,16 +26,7 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
 
     include_once("../../classes/comunicacao.class.php");
 
-    $API = new ComunicacaoAPI();
-
-    if (empty($_SESSION['token_api']) || $_SESSION['token_api'] == 'erro') {
-
-        $API->getToken('http://sacprx.poweredbyclear.com:8080/ecommerceapi/v1/autenticacao/entrar');
-
-        $_SESSION['token_api'] = $API->token;
-    } else {
-        $API->token = $_SESSION['token_api'];
-    }
+    
 
 
     $sql = "SELECT * FROM tbconfiguracao where tela_id = 22";
