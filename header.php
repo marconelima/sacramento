@@ -48,6 +48,8 @@ if (isset($_POST['sair']) && @$_POST['sair'] == "1") {
 
 if (isset($sair) && $sair == 1) {
     unset($_SESSION['cliente'], $_SESSION['nome_cliente'], $_SESSION['email_cliente'], $_SESSION['cpf_cliente'], $_SESSION['telefone_cliente']);
+
+    header("Location: /");
 }
 
 if (isset($_POST['entrar']) && $_POST['entrar'] == "Login") {
