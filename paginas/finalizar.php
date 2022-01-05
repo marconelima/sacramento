@@ -71,9 +71,13 @@
             $resultado = $conecta->selecionar($conecta->conn, $sql);
             $rs = mysqli_fetch_array($resultado);
 
+            var_dump($rs);
+
             $sql_cliente = "SELECT * FROM tbcliente WHERE id = " . $rs['cliente_id'];
             $resultado_cliente = $conecta->selecionar($conecta->conn, $sql_cliente);
             $rs_cliente = mysqli_fetch_array($resultado_cliente);
+
+            var_dump($resultado_cliente);
 
             $sql_pedido_produto = "SELECT pp.*, p.nome, p.codigo, p.id as produto, pp.cor_tamanho as cte, ptc.cor, ptc.tamanho FROM tbpedido_produto pp INNER JOIN tbproduto p ON p.id = pp.produto_id LEFT JOIN tbprod_tamanhocor ptc ON ptc.id = pp.cor_tamanho WHERE pedido_id = " . $rs['id'];
             $resultado_pedido_produto = $conecta->selecionar($conecta->conn, $sql_pedido_produto);
@@ -81,7 +85,7 @@
             $html_pdf = '<div class="table-responsive">
         <table border="0" width="100%" style="font:15px arial;" cellpadding="3" cellspacing="3">
 			<tr>
-				<td rowspan="2"><img src="../../source/vassouras_sacramento.png" class="logo_painel" height="50" /></td>
+				<td rowspan="2"><img src="source/vassouras_sacramento.png" class="logo_painel" height="50" /></td>
 				<td colspan="5">' . $dados['nomeloja'] . '</td>
 			</tr>
 			<tr>
@@ -129,6 +133,8 @@
 
 
             while ($rs_pedido_produto = mysqli_fetch_array($resultado_pedido_produto)) {
+
+                var_dump($rs_pedido_produto);
 
                 $preco_total_produto = 0;
                 $preco = 0;;
