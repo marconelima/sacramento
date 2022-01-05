@@ -239,11 +239,11 @@
         <table border="0" width="100%" style="font:15px arial;" cellpadding="3" cellspacing="3">
 			<tr>
 				<td rowspan="2"><img src="source/vassouras_sacramento.png" class="logo_painel" height="50" /></td>
-				<td colspan="5">' . $dados['nomeloja'] . '</td>
+				<td colspan="5">' . $rs_configuracao['nomeloja'] . '</td>
 			</tr>
 			<tr>
 				
-				<td colspan="5">' . str_replace("<br />", "", $dados['enderecoloja']) . ' - ' . $dados['emailloja'] . ' | ' . $dados['telefoneloja'] . '</td>
+				<td colspan="5">' . str_replace("<br />", "", $rs_configuracao['enderecoloja']) . ' - ' . $rs_configuracao['emailloja'] . ' | ' . $rs_configuracao['telefoneloja'] . '</td>
 			</tr>
 			<tr>
 				<td style="height:5px; width:100%; float:left;" colspan="6"></td>
@@ -276,11 +276,14 @@
 				<div class="table-responsive">
 				<table class="table table-hover tabela_ficha" width="100%" style="font:13px arial;" cellpadding="3" cellspacing="3">
 					<tr>
-						<td colspan="4" align="center"><strong>ORÇAMENTO</strong></td>
+						<td colspan="5" align="center">&nbsp;</td>
+					</tr>
+                    <tr>
+						<td colspan="5" align="center"><strong>ORÇAMENTO</strong></td>
 					</tr>
 					<tr>
 						
-						<td>' . substr($rs['data_pedido'], 8, 2) . '/' . substr($rs['data_pedido'], 5, 2) . '/' . substr($rs['data_pedido'], 0, 4) . '</td>
+						<td colspan="3">' . substr($rs['data_pedido'], 8, 2) . '/' . substr($rs['data_pedido'], 5, 2) . '/' . substr($rs['data_pedido'], 0, 4) . '</td>
 						<td colspan="2"><strong>' . $status_pedido[$rs['status_pedido']] . '</strong></td>
 					</tr>';
 
