@@ -339,12 +339,12 @@
                     $mail->Host       = 'smtps.uhserver.com';                     //Set the SMTP server to send through
                     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
                     $mail->Username   = 'vendas_site@industriasacramento.com.br';                     //SMTP username
-                    $mail->Password   = 'G4p2f5D3@2';                               //SMTP password
+                    $mail->Password   = '';                               //SMTP password
                     $mail->SMTPSecure = 'TLS';            //Enable implicit TLS encryption
                     $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
                     //Recipients
-                    $mail->setFrom($rs_configuracao['emailloja'], utf8_decode($rs_configuracao['nomeloja']));
+                    $mail->setFrom($rs_configuracao['emailloja'], $rs_configuracao['nomeloja']);
                     //$mail->addAddress($email, $name);     //Add a recipient
                     $mail->addAddress($rs_configuracao['emailloja'], utf8_decode($rs_configuracao['nomeloja']));
 
@@ -379,7 +379,7 @@
 				<a href='" . $rs_configuracao['linkloja'] . "'>" . $rs_configuracao['linkloja'] . "</a><br>
                 <br>
                 Recebido em: $date<br>
-				Industria Sacramento";
+				Indústria Sacramento";
 
                         //ENVIO DE MENSAGEM RESPOSTA
                         $headers = "$cabecalho_da_mensagem_de_resposta";
@@ -397,7 +397,7 @@
                             $mail->Host       = 'smtps.uhserver.com';                     //Set the SMTP server to send through
                             $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
                             $mail->Username   = 'vendas_site@industriasacramento.com.br';                     //SMTP username
-                            $mail->Password   = 'G4p2f5D3@2';                               //SMTP password
+                            $mail->Password   = '';                               //SMTP password
                             $mail->SMTPSecure = 'TLS';            //Enable implicit TLS encryption
                             $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 

@@ -171,31 +171,28 @@ if($total < 201) {
 			if($pro->getMedida() == 'unidades') { $marcadoselg = "selected";}
 			if($pro->getMedida() == 'duzias') { $marcadoselk = "selected";}
 
-			echo '<input type="hidden" name="prodid'.$i.'" value="'.$pro->getId().'" />
+			echo '<input type="hidden" name="prodid'.$i.'" value="'.$pro->getId(). '" />
 				<div class="row kart-iten d-flex align-items-center" style="border: 1px solid #000;  padding: 10px; margin:5px 0;">
-					<div class="col-sm-2">
-						<img src="'.$siteUrl.'source/Produtos/'.$pro->getFoto().'" alt="" style="width:100%;"/>
+					<div class="col-sm-6 col-md-2">
+						<img src="'.$siteUrl.'source/Produtos/'.$pro->getFoto(). '" alt="" style="width:100%;"/>
 					</div>
-					<div class="col-sm-3">
+					<div class="col-sm-6 col-md-5">
 						<h4>'.$pro->getNome().'</h4>
-						<p>'.$compemento_cortamanho.'</p>
+						<p>'.$compemento_cortamanho. '</p>
 					</div>
-					<div class="col-sm-2" style="text-align: center;">
+					<div class="col-sm-6 col-md-2" style="text-align: center;">
 						<h6>Quantidade</h6>
 						<input type="text" name="qtde_prod'.$i.'" class="quantity" style="text-align:center; border-radius:10px;" value="'.$pro->getQuantidade(). '" size="3" />
 					</div>
-					<div class="col-sm-3 col-md-1 centrar-carrinho">
+					<div class="col-sm-3 col-md-2 centrar-carrinho">
 						<h5>Unidade</h5>
-						<p>'. $pro->getMedida().'</p>
+						<p>'. $pro->getMedida(). '</p>
 					</div>
-					<div class="col-sm-3 dnone-descricao" style="padding-left: 2%;">
-						<h5>Observações sobre o produto</h5>
-						<textarea name="message'.$i.'" id="input-message" style="border-radius:10px;" rows="5" placeholder="Digite sua mensagem" class="placeholder">'.$pro->getComplemento(). '</textarea>
-					</div>
-					<div class="col-sm-2 col-md-1 centrar-carrinho">
+					
+					<div class="col-sm-3 col-md-1 centrar-carrinho">
 						<h5>Excluir</h5>
 
-						<a href="'.$siteUrl.'carrinho/48/0/0/0/0/0/0/0/0/0/'.$pro->getId().'"><img src="'.$siteUrl.'assets/img/x_mark_red.jpg" width="20" id="remover" style="width:20px !important; margin:20px 0 0 0px;" /></a>
+						<a href="' . $siteUrl . 'carrinho/48/0/0/0/0/0/0/0/0/0/' . $pro->getId() . '" style="text-align:center;"><i class="fas fa-times" font-size:16px; style="color:red;"></i></a>
 
 					</div>
 				</div>';
@@ -322,13 +319,6 @@ if($total < 201) {
 						<h6 style="text-align:center;">Unidade</h6>
 						<p style="text-align:center;">'. $unidadeDescricao.'</p>
 					</div>
-					
-					<div class="col-sm-4 col-md-1 centrar-carrinho" style="text-align:center;">
-						<h6 style="text-align:center;">Excluir</h6>
-
-						<a href="' . $siteUrl . 'carrinho/48/0/0/0/0/0/0/0/0/0/' . $pro->getId() . '" style="text-align:center;"><i class="fas fa-times" font-size:16px; style="color:red;"></i></a>
-
-					</div>
                     <div class="col-sm-6 col-md-2 centrar-carrinho">
                         <h6>Preço</h6>
                         R$ <span id="prod_preco_' . $pro->getId() . '" data-preco="'. $preco.'">' . number_format($preco, 2, ",", ".") . '</span>
@@ -337,6 +327,12 @@ if($total < 201) {
                         <h6>Total</h6>
                         <span id="prod_precototal_' . $pro->getId() . '" data-precototal="'. $preco_total_produto. '"> R$' . number_format($preco_total_produto, 2, ",", ".") . '</span>
                     </div>
+                    <div class="col-sm-4 col-md-1 centrar-carrinho" style="text-align:center;">
+						<h6 style="text-align:center;">Excluir</h6>
+
+						<a href="' . $siteUrl . 'carrinho/48/0/0/0/0/0/0/0/0/0/' . $pro->getId() . '" style="text-align:center;"><i class="fas fa-times" font-size:16px; style="color:red;"></i></a>
+
+					</div>
 				</div>';
 
             $i++;

@@ -127,7 +127,7 @@
                 $mail->Host       = 'smtps.uhserver.com';                     //Set the SMTP server to send through
                 $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
                 $mail->Username   = 'vendas_site@industriasacramento.com.br';                     //SMTP username
-                $mail->Password   = 'G4p2f5D3@2';                               //SMTP password
+                $mail->Password   = '';                               //SMTP password
                 $mail->SMTPSecure = 'TLS';            //Enable implicit TLS encryption
                 $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
@@ -151,9 +151,6 @@
 
                 if($mail->send()){
                     echo '<div class="alert alert-success">Mensagem enviada com sucesso!</div>';
-
-
-
                 }
             } catch (Exception $e) {
                 echo "<div class='alert alert-danger'>Problema ao enviar mensagem! Error: {$mail->ErrorInfo}</div>";

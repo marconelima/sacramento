@@ -254,7 +254,7 @@ while ($rs_tag = mysqli_fetch_array($resultado_total)) {
                     <!-- Products -->
                     <div class="row">
                         <?php $i = 0;
-                        
+
                         $API = new ComunicacaoAPI();
 
                         if (empty($_SESSION['token_api']) || $_SESSION['token_api'] == 'erro') {
@@ -268,7 +268,7 @@ while ($rs_tag = mysqli_fetch_array($resultado_total)) {
 
                         while ($rs_produto = mysqli_fetch_array($resultado_produto)) {
 
-                            if($i == 0){
+                            if ($i == 0) {
                                 $produtos = $API->getProdutoEstoque($rs_produto['codigo']);
                             }
 
@@ -281,10 +281,10 @@ while ($rs_tag = mysqli_fetch_array($resultado_total)) {
                             $estoque = 0;
                             $ativo = 0;
 
-                            
+
                             if (@$_SESSION['cliente'] > 0) {
                                 $produtos = $API->getProdutoEstoque($rs_produto['codigo']);
-                            
+
                                 $produto = json_decode($produtos);
 
                                 $i = 0;
@@ -301,6 +301,10 @@ while ($rs_tag = mysqli_fetch_array($resultado_total)) {
 
                             if ($preco_promocional > 0) {
                                 $promocional = 1;
+
+                                $diferenca = ($preco_promocional*100) / $preco;
+                                $desconto = round(100 - $diferenca);
+
                             } else {
                                 $promocional = 0;
                                 if (strtotime($rs_produto['data_promocional_inicio']) <= strtotime(date('Y-m-d')) && strtotime($rs_produto['data_promocional_fim']) >= strtotime(date('Y-m-d'))) {
@@ -313,15 +317,16 @@ while ($rs_tag = mysqli_fetch_array($resultado_total)) {
                                                                     echo "offset-6 offset-sm-0 offset-md-0";
                                                                 } ?>" style="padding-right:0; margin-top:10px;">
                                 <div class="view-first box-produtos" style="width:100%;">
-                                    <div class="borda-produtos post-wrap" style="border:0; text-align:center;">
-                                        <a href="<?php echo $siteUrl ?>produto/21/0/<?php echo $rs_produto['id']; ?>"><img src="<?php echo $siteUrl . "/source/Produtos/" . $rs_produto['foto']; ?>" class="img-responsive" style="max-width:100%; width:100%;" alt="<?php echo $rs_produto['nome'] . " " . $rs_produto['modelo']; ?>" title="<?php echo $rs_produto['nome'] . " " . $rs_produto['modelo']; ?>" /></a>
-                                        <?php if ($promocional == 1 && $preco_promocional > 0) { ?>
-                                            <img class="cornerimage" src="<?php echo $siteUrl . "/source/Produtos/promocao.png" ?>" alt="" style="border: 0;
-		    position: absolute;
-		    top: 10;
-		    right: 167; margin: 0;
-		    width: 100px;">
-                                        <?php } ?>
+                                    <div class="borda-produtos post-wrap" style="border:0; text-align:center; overflow: hidden;">
+                                        <a href="<?php echo $siteUrl ?>produto/21/0/<?php echo $rs_produto['id']; ?>" style="float: left; width: 100%; position: relative;">
+                                            <img src="<?php echo $siteUrl . "/source/Produtos/" . $rs_produto['foto']; ?>" class="img-responsive" style="max-width:100%; width:100%;" alt="<?php echo $rs_produto['nome'] . " " . $rs_produto['modelo']; ?>" title="<?php echo $rs_produto['nome'] . " " . $rs_produto['modelo']; ?>" />
+                                            <?php if ($promocional == 1 && $preco_promocional > 0) { ?>
+                                                <span style="width:60px; height:60px; float:left; padding:10px 0; position:absolute; top:0; left:0; background:url('../images/tagpromocao.png') no-repeat; opacity:0.8; color:#FFFFFF; font-size:16px; font-weight:bold; "><?php echo $desconto; ?>%</span>
+                                           <?php } ?>
+                                        </a>
+
+                                   
+
                                         <div class="mask">
                                             <!--<a href="<?php echo $siteUrl ?>produto/21/0/<?php echo $rs_produto['id']; ?>"><button type="button" class="btn btn-default olhadinha"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> VER DETALHES</button></a>-->
                                         </div>
