@@ -239,7 +239,7 @@
         $html_pdf = '<div class="table-responsive">
         <table border="0" width="100%" style="font:15px arial;" cellpadding="3" cellspacing="3">
 			<tr>
-				<td rowspan="2"><img src="../../images/sacramento_pdf.jpeg" class="logo_painel" height="80" /></td>
+				<td rowspan="2"><img src="images/sacramento_pdf.jpeg" class="logo_painel" height="80" /></td>
 				<td colspan="2" align="center"><strong>Pedido</strong></td>
                 <td colspan="2" align="right">' . substr($rs['data_pedido'], 8, 2) . '/' . substr($rs['data_pedido'], 5, 2) . '/' . substr($rs['data_pedido'], 0, 4) . '</td>
 			</tr>
