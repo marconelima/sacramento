@@ -509,8 +509,15 @@
         mais.addEventListener('click', function(e) {
 
             let qtde = document.querySelector("#qtde_prod");
+            let estoque = parseInt(qtde.getAttribute('data-estoque-pop'));
 
-            document.querySelector("#qtde_prod").value = parseInt(qtde.value) + 1;
+            let qtdenova = parseInt(qtde.value) + 1;
+
+            if (qtdenova <= estoque) {
+                document.querySelector("#qtde_prod").value = qtdenova;
+            } else {
+                alert("Limite de estoque alcançado!");
+            }
 
         });
     }

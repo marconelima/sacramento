@@ -49,7 +49,7 @@ if (document.querySelector(".quantidademenoscatalogo")) {
 
             let novaquantidade = qtdeatual - 1;
 
-            if (novaquantidade >= 0){
+            if (novaquantidade > 0){
                 document.querySelector("#quantidadecatalogo_" + produto).value = novaquantidade; 
                 
                 campocarrinho.setAttribute("data-quantidade", novaquantidade);
@@ -157,37 +157,40 @@ if (document.querySelector(".menosproduto")) {
 
             let quant = quantidade - 1;
 
-            document.querySelector("#prod_" + produto).value = quant;
+            if (quant > 0){
 
-            $.ajax({
-                type: 'POST',
-                url: 'https://www.industriasacramento.com.br/testenovo/php/ajax.php',
-                data: "acao=getQuantidadeProdutoCarrinho&id=" + produto + "&quantidade=" + quant,
-                success: function (formulario) {
-                    console.log("quantidade de produto atualizada!");
+                document.querySelector("#prod_" + produto).value = quant;
 
-                    let preco = document.querySelector("#prod_preco_" + produto);
-                    let preco2 = parseFloat(preco.getAttribute("data-preco"));
-                    let preco3 = preco2.toFixed(2);
+                $.ajax({
+                    type: 'POST',
+                    url: 'https://www.industriasacramento.com.br/testenovo/php/ajax.php',
+                    data: "acao=getQuantidadeProdutoCarrinho&id=" + produto + "&quantidade=" + quant,
+                    success: function (formulario) {
+                        console.log("quantidade de produto atualizada!");
 
-                    let precototal = document.querySelector("#prod_total");
-                    let precototal2 = parseFloat(precototal.getAttribute("data-total"));
-                    let precototal3 = precototal2.toFixed(2);
+                        let preco = document.querySelector("#prod_preco_" + produto);
+                        let preco2 = parseFloat(preco.getAttribute("data-preco"));
+                        let preco3 = preco2.toFixed(2);
 
-                    let qtde = document.querySelector("#prod_" + produto).value;
+                        let precototal = document.querySelector("#prod_total");
+                        let precototal2 = parseFloat(precototal.getAttribute("data-total"));
+                        let precototal3 = precototal2.toFixed(2);
 
-                    let total = parseFloat(precototal3) - parseFloat(preco3);
+                        let qtde = document.querySelector("#prod_" + produto).value;
 
-                    let preconovo = parseFloat(preco3) * parseInt(qtde);
+                        let total = parseFloat(precototal3) - parseFloat(preco3);
 
-                    preco.setAttribute("data-precototal", preconovo);
-                    precototal.setAttribute("data-total", total);
+                        let preconovo = parseFloat(preco3) * parseInt(qtde);
 
-                    document.querySelector("#prod_precototal_" + produto).innerHTML = (parseFloat(preconovo)).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-                    document.querySelector("#prod_total").innerHTML = (parseFloat(total)).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                        preco.setAttribute("data-precototal", preconovo);
+                        precototal.setAttribute("data-total", total);
 
-                }
-            });
+                        document.querySelector("#prod_precototal_" + produto).innerHTML = (parseFloat(preconovo)).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                        document.querySelector("#prod_total").innerHTML = (parseFloat(total)).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+                    }
+                });
+            }
 
         });
     });
@@ -203,38 +206,44 @@ if (document.querySelector(".maisproduto")) {
         el.addEventListener("click", (e) => {
             let quantidade = parseInt(document.querySelector("#prod_" + produto).value);
 
+            let campoqtde = document.querySelector("#prod_" + produto);
+            let estoque = parseInt(campoqtde.getAttribute('data-estoque-car'));
+
             let quant = quantidade + 1;
 
-            document.querySelector("#prod_" + produto).value = quant;
+            if (quant <= estoque){
 
-            $.ajax({
-                type: 'POST',
-                url: 'https://www.industriasacramento.com.br/testenovo/php/ajax.php',
-                data: "acao=getQuantidadeProdutoCarrinho&id=" + produto + "&quantidade=" + quant,
-                success: function (formulario) {
-                    console.log("quantidade de produto atualizada!");
+                document.querySelector("#prod_" + produto).value = quant;
 
-                    let preco = document.querySelector("#prod_preco_" + produto);
-                    let preco2 = parseFloat(preco.getAttribute("data-preco"));
-                    let preco3 = preco2.toFixed(2);
+                $.ajax({
+                    type: 'POST',
+                    url: 'https://www.industriasacramento.com.br/testenovo/php/ajax.php',
+                    data: "acao=getQuantidadeProdutoCarrinho&id=" + produto + "&quantidade=" + quant,
+                    success: function (formulario) {
+                        console.log("quantidade de produto atualizada!");
 
-                    let precototal = document.querySelector("#prod_total");
-                    let precototal2 = parseFloat(precototal.getAttribute("data-total"));
-                    let precototal3 = precototal2.toFixed(2);
+                        let preco = document.querySelector("#prod_preco_" + produto);
+                        let preco2 = parseFloat(preco.getAttribute("data-preco"));
+                        let preco3 = preco2.toFixed(2);
 
-                    let qtde = document.querySelector("#prod_" + produto).value;
+                        let precototal = document.querySelector("#prod_total");
+                        let precototal2 = parseFloat(precototal.getAttribute("data-total"));
+                        let precototal3 = precototal2.toFixed(2);
 
-                    let total = parseFloat(precototal3) + parseFloat(preco3);
+                        let qtde = document.querySelector("#prod_" + produto).value;
 
-                    let preconovo = parseFloat(preco3) * parseInt(qtde);
+                        let total = parseFloat(precototal3) + parseFloat(preco3);
 
-                    preco.setAttribute("data-precototal", preconovo);
-                    precototal.setAttribute("data-total", total);
+                        let preconovo = parseFloat(preco3) * parseInt(qtde);
 
-                    document.querySelector("#prod_precototal_" + produto).innerHTML = (parseFloat(preconovo)).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-                    document.querySelector("#prod_total").innerHTML = (parseFloat(total)).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-                }
-            });
+                        preco.setAttribute("data-precototal", preconovo);
+                        precototal.setAttribute("data-total", total);
+
+                        document.querySelector("#prod_precototal_" + produto).innerHTML = (parseFloat(preconovo)).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                        document.querySelector("#prod_total").innerHTML = (parseFloat(total)).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                    }
+                });
+            }
 
         });
     });
