@@ -281,7 +281,7 @@ while ($rs_tag = mysqli_fetch_array($resultado_produto)) {
                                                 <h5>Quantidade:</h5>
                                                 <div class="form-group" style="width:50%; background:#FFFFFF; border-radius:10px; padding:2%; height: 60px;">
                                                     <input class="qty-minus" type="button" id="minus" value="-" style="float:left; width:20%;background:#FFFFFF; font-weight:bold; border: 0; font-weight: bold; font-size: 1.5em;">
-                                                    <input class="form-control" type="text" name="qtde_prod" id="qtde_prod" value="1" max="<?php echo $estoque; ?>" placeholder="1" style="float:left; width:40%; border-left:1px solid #eaeaea; margin:0 10%; border-right:1px solid #eaeaea; border-top: 0; border-bottom: 0; border-radius: 0; text-align: center;">
+                                                    <input class="form-control" type="text" name="qtde_prod" data-estoque-pop="<?php echo $estoque; ?> id=" qtde_prod" value="1" max="<?php echo $estoque; ?>" placeholder="1" style="float:left; width:40%; border-left:1px solid #eaeaea; margin:0 10%; border-right:1px solid #eaeaea; border-top: 0; border-bottom: 0; border-radius: 0; text-align: center;">
                                                     <input class="qty-plus" type="button" id="plus" value="+" style="float:left; width:20%; background:#FFFFFF; font-weight:bold; border: 0; font-weight: bold; font-size: 1.5em;">
                                                 </div>
                                             </div>
