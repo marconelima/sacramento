@@ -239,12 +239,11 @@
         $html_pdf = '<div class="table-responsive">
         <table border="0" width="100%" style="font:15px arial;" cellpadding="3" cellspacing="3">
 			<tr>
-				<td rowspan="2"><img src="source/vassouras_sacramento.png" class="logo_painel" height="50" /></td>
-				<td colspan="5">' . $rs_configuracao['nomeloja'] . '</td>
+				<td colspan="7" align="center"><img src="source/vassouras_sacramento.png" class="logo_painel" height="50" /></td>
 			</tr>
 			<tr>
 				
-				<td colspan="5">' . str_replace("<br />", "", $rs_configuracao['enderecoloja']) . ' - ' . $rs_configuracao['emailloja'] . ' | ' . $rs_configuracao['telefoneloja'] . '</td>
+				<td colspan="5">' . str_replace("<br />", "", $rs_configuracao['enderecoloja']) . ' <br/> ' . $rs_configuracao['emailloja'] . ' | ' . $rs_configuracao['telefoneloja'] . '</td>
 			</tr>
 			<tr>
 				<td style="height:5px; width:100%; float:left;" colspan="6"></td>
@@ -262,13 +261,12 @@
 						<td colspan="4" align="center"><strong>CLIENTE</strong></td>
 					</tr>
 					<tr>
-						<td colspan="4">' . $rs_cliente['id'] . ' - ' . $rs_cliente['nome'] . '</td>
+						<td colspan="4">' . $rs_cliente['id'] . ' - ' . $rs_cliente['nome'] . ' - ' . $rs_cliente['cnpj'] . '</td>
 					</tr>
 					<tr>
 						<td>' . $rs_cliente['email'] . '</td>
-						<td>' . $rs_cliente['telefone'] . '</td>
-						<td>' . $rs_cliente['celular'] . '</td>
-						<td>' . $rs_cliente['cidade'] . '</td>
+						<td>' . $rs_cliente['logradouro'] . ', '. $rs_cliente['numero'] . ' - ' . $rs_cliente['bairro'] . '<br/>' . $rs_cliente['cidade'] . ' / '. $rs_cliente['estado'] . ' - ' . $rs_cliente['cep'] . '</td>
+						<td colspan="2">' . $rs_cliente['telefone'] . '<br/>' . $rs_cliente['celular'] . '<br/>' . $rs_cliente['whatsapp'] . '</td>
 					</tr>
 				</table>
 				
@@ -309,6 +307,7 @@
             $estoque = $produto->{'produtos'}[$i]->{'estoque'};
             $ativo = $produto->{'produtos'}[$i]->{'ativo'};
             $unidade = $produto->{'produtos'}[$i]->{'unidade'};
+            $unidadeDescricao = $produto->{'produtos'}[$i]->{'unidadeDescricao'};
 
             $preco = $preco > 0 ? $preco + $preco * 0.2 : 0;
             $preco_promocional = $preco_promocional > 0 ? $preco_promocional + $preco_promocional * 0.2 : 0;
@@ -323,7 +322,8 @@
             $html_pdf .= '<tr>
 						<td width="30%">' . $rs_pedido_produto['nome'] . '</td>
 						<td width="15%" align="center">' . $rs_pedido_produto['quantidade'] . "x" . '</td>
-						<td width="25%">' . ($rs_pedido_produto['cor'] != '' ? $rs_pedido_produto['cor'] : '') . (($rs_pedido_produto['cor'] != '' && $rs_pedido_produto['tamanho'] != '') ? ' | ' : '') . ($rs_pedido_produto['tamanho'] != '' ? $rs_pedido_produto['tamanho'] :  '') . '</td>
+                        <td width="10%" align="center">' . $unidadeDescricao . '</td>
+						<td width="15%">' . ($rs_pedido_produto['cor'] != '' ? $rs_pedido_produto['cor'] : '') . (($rs_pedido_produto['cor'] != '' && $rs_pedido_produto['tamanho'] != '') ? ' | ' : '') . ($rs_pedido_produto['tamanho'] != '' ? $rs_pedido_produto['tamanho'] :  '') . '</td>
 						<td width="15%">' . number_format($preco, 2, ",", ".") . '</td>
                         <td width="15%">' . number_format($preco_total_produto, 2, ",", ".") . '</td>
 					</tr>';
