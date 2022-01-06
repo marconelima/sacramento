@@ -291,16 +291,16 @@
 					<tr>
 						<td colspan="6" align="center"><strong>PEDIDO</strong></td>
 					</tr>
-                    <tr><td colspan="6"><table class="table table-hover tabela_ficha" width="100%" border="0" cellpadding="0" cellspacing="0" style="font:13px arial;">';
+                    <tr><td colspan="6"><table class="table table-hover tabela_ficha" width="100%" border="1" cellpadding="0" cellspacing="0" style="font:13px arial;">';
 
         $html_pdf .= '<tr>
-						<td width="30%"><strong>Produto</strong></td>
-						<td width="15%" align="center"><strong>Quantidade</strong></td>
-                        <td width="10%" align="center"><strong>Unidade</strong></td>
-						<td width="15%"></td>
-						<td width="15%"><strong>Preço</strong></td>
-                        <td width="15%"><strong>Subtotal</strong></td>
-					</tr>';
+                    <td width="10%" align="center"><strong>Qtde.</strong></td>
+                    <td width="10%" align="center"><strong>Unidade</strong></td>
+                    <td width="10%">Código</td>
+                    <td width="40%"><strong>Descrição</strong></td>
+                    <td width="15%"><strong>Preço Unit.</strong></td>
+                    <td width="15%"><strong>Subtotal</strong></td>
+                </tr>';
 
         while ($rs_pedido_produto = mysqli_fetch_array($resultado_pedido_produto)) {
 
