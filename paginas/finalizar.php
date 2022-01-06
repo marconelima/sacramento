@@ -286,6 +286,14 @@
 						<td colspan="2"><strong>' . $status_pedido[$rs['status_pedido']] . '</strong></td>
 					</tr>';
 
+        $html_pdf .= '<tr>
+						<td width="30%"><strong>Produto</strong></td>
+						<td width="15%" align="center"><strong>Quantidade</strong></td>
+                        <td width="10%" align="center"><strong>Unidade</strong></td>
+						<td width="15%"></td>
+						<td width="15%"><strong>Preço</strong></td>
+                        <td width="15%"><strong>Subtotal</strong></td>
+					</tr>';
 
         while ($rs_pedido_produto = mysqli_fetch_array($resultado_pedido_produto)) {
 
@@ -295,6 +303,7 @@
             $estoque = 0;
             $ativo = 0;
             $unidade = '';
+            $unidadeDescricao = '';
 
             $produtos = $API->getProdutoEstoque($rs_pedido_produto['codigo']);
 
@@ -330,7 +339,7 @@
         }
 
         $html_pdf .= '<tr>
-						<td colspan="4"><strong>Total orçamento</strong></td>						
+						<td colspan="5"><strong>Total orçamento</strong></td>						
                         <td><strong>' . number_format($preco_total_carrinho, 2, ",", ".") . '</strong></td>
 					</tr>                
                 </table>

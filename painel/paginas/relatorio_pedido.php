@@ -103,12 +103,12 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
     }
 
     $html_pdf .= '<tr>
-						<td width="30%">Produto</td>
-						<td width="15%" align="center">Quantidade</td>
-                        <td width="10%" align="center">Unidade</td>
+						<td width="30%"><strong>Produto</strong></td>
+						<td width="15%" align="center"><strong>Quantidade</strong></td>
+                        <td width="10%" align="center"><strong>Unidade</strong></td>
 						<td width="15%"></td>
-						<td width="15%">Preço</td>
-                        <td width="15%">Subtotal</td>
+						<td width="15%"><strong>Preço</strong></td>
+                        <td width="15%"><strong>Subtotal</strong></td>
 					</tr>';
 
     while ($rs_pedido_produto = mysqli_fetch_array($resultado_pedido_produto)) {
@@ -119,6 +119,7 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
         $estoque = 0;
         $ativo = 0;
         $unidade = '';
+        $unidadeDescricao = '';
 
         $produtos = $API->getProdutoEstoque($rs_pedido_produto['codigo']);
 
@@ -131,6 +132,7 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
         $estoque = $produto->{'produtos'}[$i]->{'estoque'};
         $ativo = $produto->{'produtos'}[$i]->{'ativo'};
         $unidade = $produto->{'produtos'}[$i]->{'unidade'};
+        $unidadeDescricao = $produto->{'produtos'}[$i]->{'unidadeDescricao'};
 
         $preco = $preco > 0 ? $preco + $preco * 0.2 : 0;
         $preco_promocional = $preco_promocional > 0 ? $preco_promocional + $preco_promocional * 0.2 : 0;
@@ -245,12 +247,12 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
             </tr>
 
             <tr>
-                <td width="30%">Produto</td>
-                <td width="15%" align="center">Quantidade</td>
-                <td width="10%" align="center">Unidade</td>
+                <td width="30%"><strong>Produto</strong></td>
+                <td width="15%" align="center"><strong>Quantidade</strong></td>
+                <td width="10%" align="center"><strong>Unidade</strong></td>
                 <td width="25%"></td>
-                <td width="15%">Preço</td>
-                <td width="15%">Subtotal</td>
+                <td width="15%"><strong>Preço</strong></td>
+                <td width="15%"><strong>Subtotal</strong></td>
             </tr>
             <?php
             $API = new ComunicacaoAPI();
@@ -272,6 +274,7 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
                 $estoque = 0;
                 $ativo = 0;
                 $unidade = '';
+                $unidadeDescricao = '';
 
                 $produtos = $API->getProdutoEstoque($rs_pedido_produto['codigo']);
 
@@ -284,6 +287,7 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
                 $estoque = $produto->{'produtos'}[$i]->{'estoque'};
                 $ativo = $produto->{'produtos'}[$i]->{'ativo'};
                 $unidade = $produto->{'produtos'}[$i]->{'unidade'};
+                $unidadeDescricao = $produto->{'produtos'}[$i]->{'unidadeDescricao'};
 
                 $preco = $preco > 0 ? $preco + $preco * 0.2 : 0;
                 $preco_promocional = $preco_promocional > 0 ? $preco_promocional + $preco_promocional * 0.2 : 0;
@@ -305,7 +309,7 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
             <?php } ?>
 
             <tr>
-                <td colspan="4"><strong>Total orçamento</strong></td>
+                <td colspan="5"><strong>Total orçamento</strong></td>
                 <td><strong><?php echo number_format($preco_total_carrinho, 2, ",", "."); ?></strong></td>
             </tr>
         </table>
