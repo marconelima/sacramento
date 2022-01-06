@@ -77,7 +77,7 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
 					</tr>
 					<tr>
 						<td colspan="3"><strong>E-mail:</strong> ' . $rs_cliente['email'] . '</td>
-                        <td colspan="3"><strong>Whatsapp-mail:</strong> ' . $rs_cliente['whatsapp'] . '</td>						
+                        <td colspan="1"><strong>Whatsapp-mail:</strong> ' . $rs_cliente['whatsapp'] . '</td>						
 					</tr>
 				</table>
 				
@@ -86,13 +86,13 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
 				<div class="table-responsive">
 				<table class="table table-hover tabela_ficha" width="100%" border="0" cellpadding="0" cellspacing="0" style="font:13px arial;">
                     <tr>
-						<td colspan="6" align="center">&nbsp;</td>
+						<td colspan="2" align="center">&nbsp;</td>
 					</tr>
 					<tr>
-						<td colspan="6" align="center"><strong>PEDIDO</strong></td>
+						<td colspan="2" align="center"><strong>PEDIDO</strong></td>
 					</tr>
                     <tr>
-                        <td colspan="6">
+                        <td colspan="2">
                         <table class="table table-hover tabela_ficha" width="100%" border="1" style="font:13px arial; border-spacing: 0px!important; ">';
 
     $API = new ComunicacaoAPI();
@@ -162,8 +162,8 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
                     </tr>
                     </table>
                     <tr>
-						<td colspan="5"><strong>Total pedido</strong></td>						
-                        <td><strong>' . number_format($preco_total_carrinho, 2, ",", ".") . '</strong></td>
+						<td width="90%"><strong>Total pedido</strong></td>						
+                        <td width:10% align="right"><strong>' . number_format($preco_total_carrinho, 2, ",", ".") . '</strong></td>
 					</tr>                
                 </table>
 				</div>';

@@ -239,19 +239,14 @@
         $html_pdf = '<div class="table-responsive">
         <table border="0" width="100%" style="font:15px arial;" cellpadding="3" cellspacing="3">
 			<tr>
-				<td colspan="5" align="center"><img src="images/sacramento_pdf.jpeg" class="logo_painel" height="50" /></td>
+				<td rowspan="2"><img src="../../images/sacramento_pdf.jpeg" class="logo_painel" height="80" /></td>
+				<td colspan="2" align="center"><strong>Pedido</strong></td>
+                <td colspan="2" align="right">' . substr($rs['data_pedido'], 8, 2) . '/' . substr($rs['data_pedido'], 5, 2) . '/' . substr($rs['data_pedido'], 0, 4) . '</td>
 			</tr>
 			<tr>
 				
-				<td colspan="5">' . str_replace("<br />", "", $rs_configuracao['enderecoloja']) . ' <br/> ' . $rs_configuracao['emailloja'] . ' | ' . $rs_configuracao['telefoneloja'] . '</td>
-			</tr>
-			<tr>
-				<td style="height:5px; width:100%; float:left;" colspan="6"></td>
-			</tr>
-			<tr>
-				<td style="height:5px; width:100%; float:left; background:#eaeaea;" colspan="6"></td>
-			</tr>
-            ';
+				<td colspan="5" align="right">' . $rs_configuracao['emailloja']  . '</td>
+			</tr>';
         $html_pdf .= '</table>
       </div>';
 
@@ -277,7 +272,7 @@
 					</tr>
 					<tr>
 						<td colspan="3"><strong>E-mail:</strong> ' . $rs_cliente['email'] . '</td>
-                        <td colspan="3"><strong>Whatsapp-mail:</strong> ' . $rs_cliente['whatsapp'] . '</td>						
+                        <td colspan="1"><strong>Whatsapp-mail:</strong> ' . $rs_cliente['whatsapp'] . '</td>						
 					</tr>
 				</table>
 				
@@ -286,20 +281,22 @@
 				<div class="table-responsive">
 				<table class="table table-hover tabela_ficha" width="100%" border="0" cellpadding="0" cellspacing="0" style="font:13px arial;">
                     <tr>
-						<td colspan="6" align="center">&nbsp;</td>
+						<td colspan="2" align="center">&nbsp;</td>
 					</tr>
 					<tr>
-						<td colspan="6" align="center"><strong>PEDIDO</strong></td>
+						<td colspan="2" align="center"><strong>PEDIDO</strong></td>
 					</tr>
-                    <tr><td colspan="6"><table class="table table-hover tabela_ficha" width="100%" border="1" cellpadding="0" cellspacing="0" style="font:13px arial;">';
+                    <tr>
+                        <td colspan="2">
+                        <table class="table table-hover tabela_ficha" width="100%" border="1" style="font:13px arial; border-spacing: 0px!important; ">';
 
         $html_pdf .= '<tr>
-                    <td width="10%" align="center"><strong>Qtde.</strong></td>
-                    <td width="10%" align="center"><strong>Unidade</strong></td>
-                    <td width="10%"><strong>Código</strong></td>
-                    <td width="50%"><strong>Descrição</strong></td>
-                    <td width="10%"><strong>Preço Unit.</strong></td>
-                    <td width="10%"><strong>Subtotal</strong></td>
+                    <td width="7%" align="center"><strong>Qtde.</strong></td>
+                    <td width="8%" align="center"><strong>Unid.</strong></td>
+                    <td width="8%"  align="center"><strong>Cód.</strong></td>
+                    <td width="62%"><strong>Descrição</strong></td>
+                    <td width="7%"><strong>Preço</strong></td>
+                    <td width="8%" ><strong>Subtotal</strong></td>
                 </tr>';
 
         while ($rs_pedido_produto = mysqli_fetch_array($resultado_pedido_produto)) {
@@ -336,21 +333,21 @@
 
 
             $html_pdf .= '<tr>
-                        <td width="10%" align="center" style="font-weight:bold;">' . $rs_pedido_produto['quantidade'] . '</td>
-                        <td width="10%" align="center">' . $unidadeDescricao . '</td>
-                        <td width="10%" align="center">' . $rs_pedido_produto['codigo'] . '</td>
-						<td width="50%">' . $rs_pedido_produto['nome'] . '</td>
-						<td width="10%">' . number_format($preco, 2, ",", ".") . '</td>
-                        <td width="10%">' . number_format($preco_total_produto, 2, ",", ".") . '</td>
+                        <td width="7%" align="center" style="font-weight:bold;">' . $rs_pedido_produto['quantidade'] . '</td>
+                        <td width="8%" align="center">' . $unidadeDescricao . '</td>
+                        <td width="8%" align="center">' . $rs_pedido_produto['codigo'] . '</td>
+						<td width="62%">' . $rs_pedido_produto['nome'] . '</td>
+						<td width="7%">' . number_format($preco, 2, ",", ".") . '</td>
+                        <td width="8%">' . number_format($preco_total_produto, 2, ",", ".") . '</td>
 					</tr>';
         }
 
         $html_pdf .= '</td>
                     </tr>
-                    </table><tr>
-						<td colspan="5"><strong>Total pedido</strong></td>						
-                        <td><strong>' . number_format($preco_total_carrinho, 2, ",", ".") . '</strong></td>
-					</tr>                
+                    </table> <tr>
+						<td width="90%"><strong>Total pedido</strong></td>						
+                        <td width:10% align="right"><strong>' . number_format($preco_total_carrinho, 2, ",", ".") . '</strong></td>
+					</tr>              
                 </table>
 				</div>';
 
