@@ -45,8 +45,13 @@ if (document.querySelector(".quantidademenoscatalogo")) {
         el.addEventListener("click", e => {
 
             let qtdeatual = parseInt(document.querySelector("#quantidadecatalogo_"+produto).value);
+            let campocarrinho = document.querySelector("#botaocartcatalogo_" + produto);
 
             let novaquantidade = qtdeatual - 1;
+
+            document.querySelector("#quantidadecatalogo_" + produto).value = novaquantidade; 
+            
+            campocarrinho.setAttribute("data-quantidade", novaquantidade);
 
             console.log(qtdeatual, novaquantidade);
 
@@ -66,8 +71,13 @@ if (document.querySelector(".quantidademaiscatalogo")) {
         el.addEventListener("click", e => {
 
             let qtdeatual = parseInt(document.querySelector("#quantidadecatalogo_"+produto).value);
+            let campocarrinho = document.querySelector("#botaocartcatalogo_" + produto);
 
-            let novaquantidade = qtdeatual - 1;
+            let novaquantidade = qtdeatual + 1;
+
+            document.querySelector("#quantidadecatalogo_" + produto).value = novaquantidade; 
+            
+            campocarrinho.setAttribute("data-quantidade", novaquantidade);
 
             console.log(qtdeatual, novaquantidade);
 
