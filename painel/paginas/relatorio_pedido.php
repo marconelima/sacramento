@@ -93,7 +93,7 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
 					</tr>
                     <tr>
                         <td colspan="6">
-                        <table class="table table-hover tabela_ficha" width="100%" border="1" style="font:13px arial; border-spacing: 10px!important; ">';
+                        <table class="table table-hover tabela_ficha" width="100%" border="1" style="font:13px arial; border-spacing: 0px!important; ">';
 
     $API = new ComunicacaoAPI();
 
