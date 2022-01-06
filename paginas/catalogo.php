@@ -315,7 +315,7 @@ while ($rs_tag = mysqli_fetch_array($resultado_total)) {
                             <div class="col-md-4 col-sm-6 col-6 <?php if ($i < 4) {
                                                                     echo "offset-6 offset-sm-0 offset-md-0";
                                                                 } ?>" style="padding-right:0; margin-top:10px;">
-                                <div class="view-first box-produtos" style="width:100%;">
+                                <div class="view-first box-produtos" style="width:100%; border:1px solid #eaeaea;">
                                     <div class="borda-produtos post-wrap" style="border:0; text-align:center; overflow: hidden;">
                                         <a class="detalheProduto" data-idproduto="<?php echo $rs_produto['id']; ?>" data-toggle="modal" data-target="#ModalDetalhe" style="float: left; width: 100%; position: relative; cursor:pointer;">
                                             <img src="<?php echo $siteUrl . "/source/Produtos/" . $rs_produto['foto']; ?>" class="img-responsive" style="max-width:100%; width:100%;" alt="<?php echo $rs_produto['nome'] . " " . $rs_produto['modelo']; ?>" title="<?php echo $rs_produto['nome'] . " " . $rs_produto['modelo']; ?>" />
@@ -339,7 +339,14 @@ while ($rs_tag = mysqli_fetch_array($resultado_total)) {
                                                 <span class="por" style="color:##000000; font-size:16px !important; font-weight:bold;"><?php echo "R$ " . number_format($preco, 2, ",", "."); ?></span>
                                             <?php } ?>
                                         </p>
-                                        <a class="btn info btn-default add-cotacao btn-catalogo colocarCarrinho" data-idproduto="<?php echo $rs_produto['id']; ?>" data-quantidade="1"><i class="fas fa-cart-plus" style="font-size:1.6em;"></i></a>
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <div class="d-flex align-items-center" style="width:50px; float:left; padding:0 10px;">
+                                                <i class="fas fa-minus quantidademenoscatalogo" id="quantidademenoscatalogo_<?php echo $rs_produto['id']; ?>" style="float:left; "></i>
+                                                <input type="text" value="1" name="quantidade" class="quantidadescatalogo" id="quantidadecatalogo_<?php echo $rs_produto['id']; ?>" style="float:left; text-align:center; width:50px; margin:0 2%;">
+                                                <i class="fas fa-plus quantidademaiscatalogo" id="quantidademaiscatalogo_<?php echo $rs_produto['id']; ?>" style="float:left; "></i>
+                                            </div>
+                                            <a class="btn info btn-default add-cotacao btn-catalogo colocarCarrinho" id="botaocartcatalogo_<?php echo $rs_produto['id']; ?>" style=" float: right; background:initial; color:#069;" data-idproduto="<?php echo $rs_produto['id']; ?>" data-quantidade="1"><i class="fas fa-cart-plus" style="font-size:1.6em;"></i></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

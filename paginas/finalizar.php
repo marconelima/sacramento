@@ -239,7 +239,7 @@
         $html_pdf = '<div class="table-responsive">
         <table border="0" width="100%" style="font:15px arial;" cellpadding="3" cellspacing="3">
 			<tr>
-				<td colspan="7" align="center"><img src="source/vassouras_sacramento.png" class="logo_painel" height="50" /></td>
+				<td colspan="5" align="center"><img src="images/sacramento_pdf.jpeg" class="logo_painel" height="50" /></td>
 			</tr>
 			<tr>
 				

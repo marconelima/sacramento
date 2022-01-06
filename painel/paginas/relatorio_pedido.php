@@ -43,35 +43,46 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
     $html_pdf = '<div class="table-responsive">
         <table border="0" width="100%" style="font:15px arial;" cellpadding="3" cellspacing="3">
 			<tr>
-				<td rowspan="2"><img src="../../source/vassouras_sacramento.png" class="logo_painel" height="50" /></td>
-				<td colspan="5">' . $dados['nomeloja'] . '</td>
+				<td rowspan="2"><img src="../../images/sacramento_pdf.jpeg" class="logo_painel" height="50" /></td>
+				<td colspan="2" align="center"><strong>Pedido</strong></td>
+                <td colspan="2" align="right">' . substr($rs['data_pedido'], 8, 2) . '/' . substr($rs['data_pedido'], 5, 2) . '/' . substr($rs['data_pedido'], 0, 4) . '</td>
 			</tr>
 			<tr>
 				
-				<td colspan="5">' . str_replace("<br />", "", $dados['enderecoloja']) . ' <br/> ' . $dados['emailloja'] . ' | ' . $dados['telefoneloja'] . '</td>
-			</tr>
-			<tr>
-				<td style="height:5px; width:100%; float:left;" colspan="6"></td>
-			</tr>
-			<tr>
-				<td style="height:5px; width:100%; float:left; background:#eaeaea;" colspan="6"></td>
+				<td colspan="5" align="right">' . $dados['emailloja']  . '</td>
 			</tr>
             ';
     $html_pdf .= '</table>
       </div>';
 
-    $html_pdf .= '<div class="table-responsive">
-				<table class="table table-hover tabela_ficha" width="100%" style="font:13px arial;" cellpadding="3" cellspacing="3">
-					<tr>
-						<td colspan="4" align="center"><strong>CLIENTE</strong></td>
+    $html_pdf .= '<div class="table-responsive" style="border:2px solid #000;">
+				<table class="table table-hover tabela_ficha" width="100%" border="1" cellspacing="0" cellpadding="0" style="font:13px arial;" cellpadding="3" cellspacing="3">
+                    <tr>
+						<td width="25%">&nbsp;</td>
+                        <td width="25%">&nbsp;</td>
+                        <td width="25%">&nbsp;</td>
+                        <td width="25%">&nbsp;</td>
 					</tr>
 					<tr>
-						<td colspan="4">' . $rs_cliente['id'] . ' - ' . $rs_cliente['nome'] . ' - ' . $rs_cliente['cnpj'] . '</td>
+						<td colspan="2"><strong>Cliente:</strong> ' . $rs_cliente['nome'] . '</td>
+                        <td ><strong>Telefone:</strong> ' . $rs_cliente['telefone'] . ' ' . $rs_cliente['celular'] . '</td>
+                        <td ><strong>Whatsapp:</strong> ' . $rs_cliente['whatsapp'] . '</td>
+					</tr>
+                    <tr>
+						<td colspan="3"><strong>Endereço:</strong> ' . $rs_cliente['logradouro'] . ', ' . $rs_cliente['numero'] . '</td>
+                        <td ><strong>CEP:</strong> ' . $rs_cliente['cep'] . '</td>
+					</tr>
+                    <tr>
+						<td > <strong>Bairro:</strong> ' . $rs_cliente['bairro'] . '</td>
+                        <td colspan="2"><strong>Cidade:</strong> ' . $rs_cliente['cidade'] . '</td>
+                        <td ><strong>UF:</strong> ' . $rs_cliente['estado'] . '</td>
+					</tr>
+                    <tr>
+						<td colspan="2"><strong>CNPJ:</strong> ' . $rs_cliente['cnpj'] . '</td>
+                        <td colspan="2"><strong>Cidade:</strong> ' . ($rs_cliente['inscricaoestadual'] != '' ? $rs_cliente['inscricaoestadual'] : '') . '</td>
 					</tr>
 					<tr>
-						<td>' . $rs_cliente['email'] . '</td>
-						<td colspan="2">' . $rs_cliente['logradouro'] . ', ' . $rs_cliente['numero'] . ' - ' . $rs_cliente['bairro'] . '<br/>' . $rs_cliente['cidade'] . ' / ' . $rs_cliente['estado'] . ' - ' . $rs_cliente['cep'] . '</td>
-						<td >' . $rs_cliente['telefone'] . '<br/>' . $rs_cliente['celular'] . '<br/>' . $rs_cliente['whatsapp'] . '</td>
+						<td colspan="4"><strong>E-mail:</strong> ' . $rs_cliente['email'] . '</td>						
 					</tr>
 				</table>
 				
@@ -87,7 +98,7 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
 					</tr>
 					<tr>
 						
-						<td colspan="4">' . substr($rs['data_pedido'], 8, 2) . '/' . substr($rs['data_pedido'], 5, 2) . '/' . substr($rs['data_pedido'], 0, 4) . '</td>
+						<td colspan="4"></td>
 						<td colspan="2"><strong>' . $status_pedido[$rs['status_pedido']] . '</strong></td>
 					</tr>';
 
@@ -103,13 +114,13 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
     }
 
     $html_pdf .= '<tr>
-						<td width="30%"><strong>Produto</strong></td>
-						<td width="15%" align="center"><strong>Quantidade</strong></td>
-                        <td width="10%" align="center"><strong>Unidade</strong></td>
-						<td width="15%"></td>
-						<td width="15%"><strong>Preço</strong></td>
-                        <td width="15%"><strong>Subtotal</strong></td>
-					</tr>';
+                    <td width="10%" align="center"><strong>Qtde.</strong></td>
+                    <td width="10%" align="center"><strong>Unidade</strong></td>
+                    <td width="10%">Código</td>
+                    <td width="40%"><strong>Descrição</strong></td>
+                    <td width="15%"><strong>Preço Unit.</strong></td>
+                    <td width="15%"><strong>Subtotal</strong></td>
+                </tr>';
 
     while ($rs_pedido_produto = mysqli_fetch_array($resultado_pedido_produto)) {
 
@@ -145,10 +156,10 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
 
 
         $html_pdf .= '<tr>
-						<td width="30%">' . $rs_pedido_produto['nome'] . '</td>
-						<td width="15%" align="center">' . $rs_pedido_produto['quantidade'] . "x" . '</td>
+                        <td width="10%" align="center" style="font-weight:bold;">' . $rs_pedido_produto['quantidade'] . '</td>
                         <td width="10%" align="center">' . $unidadeDescricao . '</td>
-						<td width="15%">' . ($rs_pedido_produto['cor'] != '' ? $rs_pedido_produto['cor'] : '') . (($rs_pedido_produto['cor'] != '' && $rs_pedido_produto['tamanho'] != '') ? ' | ' : '') . ($rs_pedido_produto['tamanho'] != '' ? $rs_pedido_produto['tamanho'] :  '') . '</td>
+                        <td width="10%" align="center">' . $rs_pedido_produto['codigo'] . '</td>
+						<td width="40%">' . $rs_pedido_produto['nome'] . '</td>
 						<td width="15%">' . number_format($preco, 2, ",", ".") . '</td>
                         <td width="15%">' . number_format($preco_total_produto, 2, ",", ".") . '</td>
 					</tr>';
@@ -224,12 +235,31 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
                 <td colspan="4" align="center"><strong>CLIENTE</strong></td>
             </tr>
             <tr>
-                <td colspan="4"><?php echo $rs_cliente['id'] . " - " . $rs_cliente['nome']; ?></td>
+                <td width="25%">&nbsp;</td>
+                <td width="25%">&nbsp;</td>
+                <td width="25%">&nbsp;</td>
+                <td width="25%">&nbsp;</td>
             </tr>
             <tr>
-                <td><?php echo $rs_cliente['email']; ?></td>
-                <td colspan="2"><?php echo ($rs_cliente['logradouro'] != '' ? $rs_cliente['logradouro'] : ''); ?> <?php echo ($rs_cliente['numero'] != '' ? ", " . $rs_cliente['numero'] : ''); ?> <?php echo ($rs_cliente['bairro'] != '' ? " - " . $rs_cliente['bairro'] : ''); ?><br /> <?php echo ($rs_cliente['cidade'] != '' ? $rs_cliente['cidade'] : ''); ?> <?php echo ($rs_cliente['bairro'] != '' ? " / " . $rs_cliente['bairro'] : ''); ?> <?php echo ($rs_cliente['cep'] != '' ? " - " . $rs_cliente['cep'] : ''); ?></td>
-                <td><?php echo ($rs_cliente['celular'] != '' ? $rs_cliente['celular'] : '') ?> <?php echo ($rs_cliente['telefone'] != '' ? " - " . $rs_cliente['telefone'] : ''); ?> <?php echo ($rs_cliente['whatsapp'] != '' ? " - " . $rs_cliente['whatsapp'] :  ''); ?></td>
+                <td colspan="2"><strong>Cliente:</strong> <?php echo $rs_cliente['nome'] ;?></td>
+                <td><strong>Telefone:</strong> <?php echo $rs_cliente['telefone'] ;?> <?php echo $rs_cliente['celular'] ;?></td>
+                <td><strong>Whatsapp:</strong> <?php echo $rs_cliente['whatsapp'] ;?></td>
+            </tr>
+            <tr>
+                <td colspan="3"><strong>Endereço:</strong> <?php echo $rs_cliente['logradouro'] ;?>, <?php echo $rs_cliente['numero'] ;?></td>
+                <td><strong>CEP:</strong> <?php echo $rs_cliente['cep'] ;?></td>
+            </tr>
+            <tr>
+                <td> <strong>Bairro:</strong> <?php echo $rs_cliente['bairro'] ;?></td>
+                <td colspan="2"><strong>Cidade:</strong> <?php echo $rs_cliente['cidade'] ;?></td>
+                <td><strong>UF:</strong> <?php echo $rs_cliente['estado'] ;?></td>
+            </tr>
+            <tr>
+                <td colspan="2"><strong>CNPJ:</strong> <?php echo $rs_cliente['cnpj'] ;?></td>
+                <td colspan="2"><strong>Cidade:</strong> <?php echo ($rs_cliente['inscricaoestadual'] != '' ? $rs_cliente['inscricaoestadual'] : '') ;?></td>
+            </tr>
+            <tr>
+                <td colspan="4"><strong>E-mail:</strong> <?php echo $rs_cliente['email'] ;?></td>
             </tr>
         </table>
 
@@ -247,11 +277,11 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
             </tr>
 
             <tr>
-                <td width="30%"><strong>Produto</strong></td>
-                <td width="15%" align="center"><strong>Quantidade</strong></td>
+                <td width="10%" align="center"><strong>Qtde.</strong></td>
                 <td width="10%" align="center"><strong>Unidade</strong></td>
-                <td width="25%"></td>
-                <td width="15%"><strong>Preço</strong></td>
+                <td width="10%">Código</td>
+                <td width="40%"><strong>Descrição</strong></td>
+                <td width="15%"><strong>Preço Unit.</strong></td>
                 <td width="15%"><strong>Subtotal</strong></td>
             </tr>
             <?php
@@ -299,10 +329,10 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
                 $preco_total_carrinho = $preco_total_carrinho + $preco_total_produto;
             ?>
                 <tr>
-                    <td width="30%"><?php echo $rs_pedido_produto['nome']; ?></td>
-                    <td width="15%" align="center"><?php echo $rs_pedido_produto['quantidade'] . "x"; ?></td>
+                    <td width="10%" align="center" style="font-weight:bold;"><?php echo $rs_pedido_produto['quantidade']; ?></td>
                     <td width="10%" align="center"><?php echo $unidadeDescricao; ?></td>
-                    <td width="15%"><?php echo ($rs_pedido_produto['cor'] != '' ? $rs_pedido_produto['cor'] : '') . (($rs_pedido_produto['cor'] != '' && $rs_pedido_produto['tamanho'] != '') ? ' | ' : '') . ($rs_pedido_produto['tamanho'] != '' ? $rs_pedido_produto['tamanho'] :  ''); ?></td>
+                    <td width="10%" align="center"><?php echo $rs_pedido_produto['codigo']; ?></td>
+                    <td width="40%"><?php echo $rs_pedido_produto['nome']; ?></td>
                     <td width="15%"><?php echo number_format($preco, 2, ",", "."); ?></td>
                     <td width="15%"><?php echo number_format($preco_total_produto, 2, ",", "."); ?></td>
                 </tr>
