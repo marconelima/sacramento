@@ -4,12 +4,12 @@
 <!-- Header and Breadcrumbs  -->
 <section class="page-section breadcrumbs">
     <div class="container">
-        <h2 class="section-title">Produtos para Orçamento</h2>
+        <h2 class="section-title">Produtos para Pedido</h2>
         <!-- Breadcrumbs 
 		<ul class="breadcrumb">
 			<li><a href="<?php echo $siteUrl; ?>">Home</a></li>
 			<li class="active">Produtos</li>
-			<li class="active">Orçamento</li>
+			<li class="active">Pedido</li>
 		</ul><!-- /.breadcrumb -->
         <!-- /Breadcrumbs -->
     </div>
@@ -71,7 +71,7 @@
             // FORMA COMO RECEBERÁ O E-MAIL (FORMULÁRIO)
             $assunto =  "Pedido de Orçamento";
             $cabecalho_da_mensagem_original = "From: " . $rs_configuracao['nomeloja'] . " <" . $rs_configuracao['emailloja'] . ">\n";
-            $configuracao_da_mensagem_original = "<strong>Orçamento " . $rs_configuracao['nomeloja'] . ":</strong><br>
+            $configuracao_da_mensagem_original = "<strong>Pedido " . $rs_configuracao['nomeloja'] . ":</strong><br>
                 <br>
                 De: " . $name . "<br>
                 Responder para: " . $email . "<br>
@@ -176,7 +176,7 @@
             // FORMA COMO RECEBERÁ O E-MAIL (FORMULÁRIO)
             $assunto =  "Pedido de Orçamento";
             $cabecalho_da_mensagem_original = "From: " . utf8_decode($rs_configuracao['nomeloja']) . " <" . $rs_configuracao['emailloja'] . ">\n";
-            $configuracao_da_mensagem_original = "<strong>Orçamento " . $rs_configuracao['nomeloja'] . ":</strong><br>
+            $configuracao_da_mensagem_original = "<strong>Pedido " . $rs_configuracao['nomeloja'] . ":</strong><br>
                 <br>
                 De: " . $name . "<br>
                 Responder para: " . $email . "<br>
@@ -239,13 +239,12 @@
         $html_pdf = '<div class="table-responsive">
         <table border="0" width="100%" style="font:15px arial;" cellpadding="3" cellspacing="3">
 			<tr>
-				<td rowspan="2"><img src="images/sacramento_pdf.jpeg" class="logo_painel" height="80" /></td>
-				<td colspan="2" align="center"><strong>Pedido</strong></td>
-                <td colspan="2" align="right">' . substr($rs['data_pedido'], 8, 2) . '/' . substr($rs['data_pedido'], 5, 2) . '/' . substr($rs['data_pedido'], 0, 4) . '</td>
+				<td width="33%" rowspan="2"><img src="images/sacramento_pdf.jpeg" class="logo_painel" height="80" /></td>
+				<td width="34%" align="center"><strong>Pedido</strong></td>
+                <td width="33%" align="right">' . substr($rs['data_pedido'], 8, 2) . '/' . substr($rs['data_pedido'], 5, 2) . '/' . substr($rs['data_pedido'], 0, 4) . '</td>
 			</tr>
-			<tr>
-				
-				<td colspan="5" align="right">' . $rs_configuracao['emailloja']  . '</td>
+			<tr>				
+				<td colspan="3" align="right">' . $rs_configuracao['emailloja']  . '</td>
 			</tr>';
         $html_pdf .= '</table>
       </div>';
@@ -271,8 +270,7 @@
                         <td colspan="2"><strong>Inscrição estadual:</strong> ' . ($rs_cliente['inscricaoestadual'] != '' ? $rs_cliente['inscricaoestadual'] : '') . '</td>
 					</tr>
 					<tr>
-						<td colspan="3"><strong>E-mail:</strong> ' . $rs_cliente['email'] . '</td>
-                        <td colspan="1"><strong>Whatsapp-mail:</strong> ' . $rs_cliente['whatsapp'] . '</td>						
+						<td colspan="4"><strong>E-mail:</strong> ' . $rs_cliente['email'] . '</td>					
 					</tr>
 				</table>
 				
@@ -505,7 +503,7 @@
                         echo '<!-- Pedido recebido com sucesso -->
 					<section class="page-section" style="padding-top: 40px">
 						<div class="container">
-							<h1><b>Sue pedido foi recebido com sucesso!</b><br/><br/>Em breve iremos entrar em contato para lhe enviar a sua Orçamento!</h1>
+							<h1><b>Em breve entraremos em contato para concluirmos o pagamento e a entrega!!</h1>
 							<p>Obrigado por escolher a ' . $rs_configuracao['nomeloja'] . '!</p>
 						</div>
 					</section>
@@ -516,8 +514,8 @@
                         $assunto_da_mensagem_de_resposta = "Recebemos seu pedido de Orçamento";
                         $cabecalho_da_mensagem_de_resposta = "From: " . $rs_configuracao['nomeloja'] . " <" . $rs_configuracao['emailloja'] . ">\n";
                         $configuracao_da_mensagem_de_resposta = "Prezado(a) " . $name . ",<br>
-				Obrigado por entrar em contato, sue pedido de Orçamento foi enviada para " . $rs_configuracao['nomeloja'] . ".<br>
-				Em breve lhe responderemos.<br>
+				Obrigado por entrar em contato, seu pedido foi enviado para " . $rs_configuracao['nomeloja'] . ".<br>
+				Em breve entraremos em contato para concluirmos pagamento e a entrega!<br>
 				<br>
 				Atenciosamente,<br>
 				" . $rs_configuracao['nomeloja'] . "<br>
@@ -560,17 +558,17 @@
 
                             $mail->send();
                         } catch (Exception $e) {
-                            echo '<div class="alert alert-danger">Problema ao enviar Orçamento 1!</div>';
+                            echo '<div class="alert alert-danger">Problema ao enviar Pedido 1!</div>';
                         }
 
                         //unset($_SESSION['carrinho'], $_SESSION['qtde'], $_SESSION['criar'], $dadospedido, $dadosproduto);
                     }
                     unset($_SESSION['carrinho'], $_SESSION['qtde'], $_SESSION['criar'], $dadospedido, $dadosproduto);
                 } catch (Exception $e) {
-                    echo '<div class="alert alert-danger">Problema ao enviar Orçamento 2!</div>';
+                    echo '<div class="alert alert-danger">Problema ao enviar Pedido 2!</div>';
                 }
             } else {
-                echo '<div class="alert alert-danger">Problema ao enviar Orçamento! ' . $mensagemUsuario . ' Entre em contato com o Administrador!</div>';
+                echo '<div class="alert alert-danger">Problema ao enviar Pedido! ' . $mensagemUsuario . ' Entre em contato com o Administrador!</div>';
                 //exit;
             }
         } catch (Exception $e) {
@@ -585,7 +583,7 @@
 				echo '<!-- Pedido recebido com sucesso -->
 					<section class="page-section" style="padding-top: 40px">
 						<div class="container">
-							<h1><b>Sue pedido foi recebido com sucesso!</b><br/><br/>Em breve iremos entrar em contato para lhe enviar a sua Orçamento!</h1>
+							<h1><b>Sue pedido foi recebido com sucesso!</b><br/><br/>Em breve iremos entrar em contato para lhe enviar a sua Pedido!</h1>
 							<p>Obrigado por escolher a '.$rs_configuracao['nomeloja'].'!</p>
 						</div>
 					</section>
@@ -593,10 +591,10 @@
 		<!-- /Pedido Recebido com sucesso -->';
 
 				//CONFIGURAÇÕES DA MENSAGEM DE RESPOSTA
-				$assunto_da_mensagem_de_resposta = "Recebemos seu pedido de Orçamento";
+				$assunto_da_mensagem_de_resposta = "Recebemos seu pedido de Pedido";
 				$cabecalho_da_mensagem_de_resposta = "From: ".$rs_configuracao['nomeloja']." <".$rs_configuracao['emailloja'].">\n";
 				$configuracao_da_mensagem_de_resposta="Prezado(a) ".$name.",<br>
-				Obrigado por entrar em contato, sue pedido de Orçamento foi enviada para ".$rs_configuracao['nomeloja'].".<br>
+				Obrigado por entrar em contato, sue pedido de Pedido foi enviada para ".$rs_configuracao['nomeloja'].".<br>
 				Em breve lhe responderemos.<br>
 				<br>
 				Atenciosamente,<br>
@@ -618,7 +616,7 @@
 
 
 			} else {
-				echo '<div class="alert alert-danger">Problema ao enviar Orçamento!</div>';
+				echo '<div class="alert alert-danger">Problema ao enviar Pedido!</div>';
 			}*/
     } else {
     ?>
@@ -658,7 +656,7 @@
                             <strong>Benefícios de ser cadastrado</strong><br>
                             <span> - Receba promoções e ofertas exclusivas</span><br>
                             <span> - Salve seus dados e facilite pedidos futuros</span><br>
-                            <span> - Orçamentos mais ágeis</span>
+                            <span> - Pedidos mais ágeis</span>
 
                         </p>
                         <p><a class="btn btn-success " href="#" data-toggle="modal" data-target="#ModalRegister">Cadastra-se</a></p>

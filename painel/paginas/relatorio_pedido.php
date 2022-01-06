@@ -43,13 +43,13 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
     $html_pdf = '<div class="table-responsive">
         <table border="0" width="100%" style="font:15px arial;" cellpadding="3" cellspacing="3">
 			<tr>
-				<td rowspan="2"><img src="../../images/sacramento_pdf.jpeg" class="logo_painel" height="80" /></td>
-				<td colspan="2" align="center"><strong>Pedido</strong></td>
-                <td colspan="2" align="right">' . substr($rs['data_pedido'], 8, 2) . '/' . substr($rs['data_pedido'], 5, 2) . '/' . substr($rs['data_pedido'], 0, 4) . '</td>
+				<td width="33%" rowspan="2"><img src="../../images/sacramento_pdf.jpeg" class="logo_painel" height="80" /></td>
+				<td width="34%" align="center"><strong>Pedido</strong></td>
+                <td width="33%" align="right">' . substr($rs['data_pedido'], 8, 2) . '/' . substr($rs['data_pedido'], 5, 2) . '/' . substr($rs['data_pedido'], 0, 4) . '</td>
 			</tr>
 			<tr>
 				
-				<td colspan="5" align="right">' . $dados['emailloja']  . '</td>
+				<td colspan="3" align="right">' . $dados['emailloja']  . '</td>
 			</tr>
             ';
     $html_pdf .= '</table>
@@ -76,8 +76,7 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
                         <td colspan="2"><strong>Inscrição estadual:</strong> ' . ($rs_cliente['inscricaoestadual'] != '' ? $rs_cliente['inscricaoestadual'] : '') . '</td>
 					</tr>
 					<tr>
-						<td colspan="3"><strong>E-mail:</strong> ' . $rs_cliente['email'] . '</td>
-                        <td colspan="1"><strong>Whatsapp-mail:</strong> ' . $rs_cliente['whatsapp'] . '</td>						
+						<td colspan="4"><strong>E-mail:</strong> ' . $rs_cliente['email'] . '</td>						
 					</tr>
 				</table>
 				
@@ -238,8 +237,8 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
             </tr>
             <tr>
                 <td colspan="2"><strong>Cliente:</strong> <?php echo $rs_cliente['nome'] ;?></td>
-                <td><strong>Telefone:</strong> <?php echo $rs_cliente['telefone'] ;?> <?php echo $rs_cliente['celular'] ;?></td>
-                <td><strong>Whatsapp:</strong> <?php echo $rs_cliente['whatsapp'] ;?></td>
+                <td><strong>Telefone:</strong> <?php echo $rs_cliente['telefone'] ;?></td>
+                <td><strong>Whatsapp:</strong> <?php echo $rs_cliente['celular'] ;?></td>
             </tr>
             <tr>
                 <td colspan="3"><strong>Endereço:</strong> <?php echo $rs_cliente['logradouro'] ;?>, <?php echo $rs_cliente['numero'] ;?></td>
