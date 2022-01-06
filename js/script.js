@@ -157,6 +157,8 @@ if (document.querySelector(".menosproduto")) {
 
             let quant = quantidade - 1;
 
+            console.log(quantidade);
+
             if (quant > 0){
 
                 document.querySelector("#prod_" + produto).value = quant;
@@ -207,9 +209,11 @@ if (document.querySelector(".maisproduto")) {
             let quantidade = parseInt(document.querySelector("#prod_" + produto).value);
 
             let campoqtde = document.querySelector("#prod_" + produto);
-            let estoque = parseInt(campoqtde.getAttribute('data-estoque-car'));
+            let estoque = parseInt(campoqtde.getAttribute('data-estoque-car'));            
 
             let quant = quantidade + 1;
+
+            console.log(quantidade, estoque);
 
             if (quant <= estoque){
 
