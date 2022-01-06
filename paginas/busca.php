@@ -266,8 +266,8 @@ while ($rs_tag = mysqli_fetch_array($resultado_total)) {
                                         <div class="d-flex align-items-center justify-content-between">
                                             <div class="d-flex align-items-center" style="width:50px; float:left; padding:0 10px;">
                                                 <i class="fas fa-minus quantidademenoscatalogo" data-prodmenosid="<?php echo $rs_produto['id']; ?>" style="float:left; cursor:pointer;"></i>
-                                                <input type="text" value="1" name="quantidade" readonly class="quantidadescatalogo" id="quantidadecatalogo_<?php echo $rs_produto['id']; ?>" style="float:left; text-align:center; width:50px; margin:0 2%;">
-                                                <i class="fas fa-plus quantidademaiscatalogo" data-estoque="<?php echo $estoque; ?> data-prodmaisid=" <?php echo $rs_produto['id']; ?>" style="float:left; cursor:pointer;"></i>
+                                                <input type="text" value="1" name="quantidade" readonly data-estoque="<?php echo $estoque; ?> class=" quantidadescatalogo" id="quantidadecatalogo_<?php echo $rs_produto['id']; ?>" style="float:left; text-align:center; width:50px; margin:0 2%;">
+                                                <i class="fas fa-plus quantidademaiscatalogo" data-prodmaisid=" <?php echo $rs_produto['id']; ?>" style="float:left; cursor:pointer;"></i>
                                             </div>
                                             <a class="btn info btn-default add-cotacao btn-catalogo colocarCarrinho" id="botaocartcatalogo_<?php echo $rs_produto['id']; ?>" style=" float: right; background:initial; color:#069;" data-idproduto="<?php echo $rs_produto['id']; ?>" data-quantidade="1"><i class="fas fa-cart-plus" style="font-size:1.6em;"></i></a>
                                         </div>
