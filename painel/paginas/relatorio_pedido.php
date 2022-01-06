@@ -109,10 +109,10 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
     $html_pdf .= '<tr>
                     <td width="10%" align="center"><strong>Qtde.</strong></td>
                     <td width="10%" align="center"><strong>Unidade</strong></td>
-                    <td width="10%">Código</td>
-                    <td width="40%"><strong>Descrição</strong></td>
-                    <td width="15%"><strong>Preço Unit.</strong></td>
-                    <td width="15%"><strong>Subtotal</strong></td>
+                    <td width="10%"><strong>Código</strong></td>
+                    <td width="50%"><strong>Descrição</strong></td>
+                    <td width="10%"><strong>Preço Unit.</strong></td>
+                    <td width="10%"><strong>Subtotal</strong></td>
                 </tr>';
 
     while ($rs_pedido_produto = mysqli_fetch_array($resultado_pedido_produto)) {

@@ -296,10 +296,10 @@
         $html_pdf .= '<tr>
                     <td width="10%" align="center"><strong>Qtde.</strong></td>
                     <td width="10%" align="center"><strong>Unidade</strong></td>
-                    <td width="10%">Código</td>
-                    <td width="40%"><strong>Descrição</strong></td>
-                    <td width="15%"><strong>Preço Unit.</strong></td>
-                    <td width="15%"><strong>Subtotal</strong></td>
+                    <td width="10%"><strong>Código</strong></td>
+                    <td width="50%"><strong>Descrição</strong></td>
+                    <td width="10%"><strong>Preço Unit.</strong></td>
+                    <td width="10%"><strong>Subtotal</strong></td>
                 </tr>';
 
         while ($rs_pedido_produto = mysqli_fetch_array($resultado_pedido_produto)) {
@@ -336,12 +336,12 @@
 
 
             $html_pdf .= '<tr>
-						<td width="30%">' . $rs_pedido_produto['nome'] . '</td>
-						<td width="15%" align="center">' . $rs_pedido_produto['quantidade'] . "x" . '</td>
+                        <td width="10%" align="center" style="font-weight:bold;">' . $rs_pedido_produto['quantidade'] . '</td>
                         <td width="10%" align="center">' . $unidadeDescricao . '</td>
-						<td width="15%">' . ($rs_pedido_produto['cor'] != '' ? $rs_pedido_produto['cor'] : '') . (($rs_pedido_produto['cor'] != '' && $rs_pedido_produto['tamanho'] != '') ? ' | ' : '') . ($rs_pedido_produto['tamanho'] != '' ? $rs_pedido_produto['tamanho'] :  '') . '</td>
-						<td width="15%">' . number_format($preco, 2, ",", ".") . '</td>
-                        <td width="15%">' . number_format($preco_total_produto, 2, ",", ".") . '</td>
+                        <td width="10%" align="center">' . $rs_pedido_produto['codigo'] . '</td>
+						<td width="50%">' . $rs_pedido_produto['nome'] . '</td>
+						<td width="10%">' . number_format($preco, 2, ",", ".") . '</td>
+                        <td width="10%">' . number_format($preco_total_produto, 2, ",", ".") . '</td>
 					</tr>';
         }
 
