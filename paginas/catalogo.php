@@ -310,6 +310,8 @@ while ($rs_tag = mysqli_fetch_array($resultado_total)) {
                                     $promocional = 1;
                                 }
                             }
+
+                            if($estoque > 0){
                         ?>
 
                             <div class="col-md-4 col-sm-6 col-6 <?php if ($i < 4) {
@@ -352,7 +354,9 @@ while ($rs_tag = mysqli_fetch_array($resultado_total)) {
                             </div>
 
 
-                        <?php $i++;
+                        <?php 
+                            }
+                            $i++;
                         } ?>
 
                         <div class="clearfix"></div>
