@@ -91,7 +91,7 @@ if (substr_count($atual, '/') > 0) {
 
 }
 
-//$siteUrl = "https://www.industriasacramento.com.br/testenovo/";
+//$siteUrl = "https://www.industriasacramento.com.br/";
 
 //com o uso de URL amigáveis se torna necessário que arquivos sejam chamados
 //com o seu caminho completo, isso porque as imagens levam em consideração a URL

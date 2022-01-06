@@ -30,9 +30,9 @@ $rs_configuracao = mysqli_fetch_array($resultado_configuracao);
 
 $resultadoCadastro = "";
 
-//$siteUrl = $rs_configuracao['linkloja'];
+$siteUrl = $rs_configuracao['linkloja'];
 //$siteUrl = "http://www.marconesacramento.com.br/";
-$siteUrl = "https://www.industriasacramento.com.br/testenovo/";
+//$siteUrl = "https://www.industriasacramento.com.br/";
 
 
 if (@$tela != '') {

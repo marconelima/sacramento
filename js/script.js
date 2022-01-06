@@ -135,7 +135,7 @@ if (document.querySelector(".btnfiltro")) {
                         }
                     });
                 } else {
-                    window.location.href = "https://www.industriasacramento.com.br/testenovo/finalizar/49";
+                    window.location.href = "https://www.industriasacramento.com.br/finalizar/49";
                 }
 
             });
@@ -165,7 +165,7 @@ if (document.querySelector(".menosproduto")) {
 
                 $.ajax({
                     type: 'POST',
-                    url: 'https://www.industriasacramento.com.br/testenovo/php/ajax.php',
+                    url: 'https://www.industriasacramento.com.br/php/ajax.php',
                     data: "acao=getQuantidadeProdutoCarrinho&id=" + produto + "&quantidade=" + quant,
                     success: function (formulario) {
                         console.log("quantidade de produto atualizada!");
@@ -221,7 +221,7 @@ if (document.querySelector(".maisproduto")) {
 
                 $.ajax({
                     type: 'POST',
-                    url: 'https://www.industriasacramento.com.br/testenovo/php/ajax.php',
+                    url: 'https://www.industriasacramento.com.br/php/ajax.php',
                     data: "acao=getQuantidadeProdutoCarrinho&id=" + produto + "&quantidade=" + quant,
                     success: function (formulario) {
                         console.log("quantidade de produto atualizada!");
@@ -264,7 +264,7 @@ if (document.querySelector(".maisproduto")) {
         type: "POST",
         //Caminho do arquivo do seu modal
         url:
-            "https://www.industriasacramento.com.br/testenovo/paginas/modal.php?produto=" +
+            "https://www.industriasacramento.com.br/paginas/modal.php?produto=" +
             idproduto,
         success: function (data) {
             $(".modal-teste").html(data);

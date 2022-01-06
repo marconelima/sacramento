@@ -354,9 +354,9 @@
 
         $mpdf->WriteHTML($html_pdf);
 
-        $arquivoOrcamento = $_SERVER['DOCUMENT_ROOT'] . "/testenovo/orcamentos/pedido_" . $rs['id'] . "_" . $rs_cliente['nome'] . ".pdf";
+        $arquivoOrcamento = $_SERVER['DOCUMENT_ROOT'] . "/orcamentos/pedido_" . $rs['id'] . "_" . $rs_cliente['nome'] . ".pdf";
 
-        $mpdf->Output($_SERVER['DOCUMENT_ROOT'] . "/testenovo/orcamentos/pedido_" . $rs['id'] . "_" . $rs_cliente['nome'] . ".pdf", "F");
+        $mpdf->Output($_SERVER['DOCUMENT_ROOT'] . "/orcamentos/pedido_" . $rs['id'] . "_" . $rs_cliente['nome'] . ".pdf", "F");
         //#################################################################################################################################################################       
 
         $data = array();
@@ -514,7 +514,7 @@
                         $assunto_da_mensagem_de_resposta = "Recebemos seu pedido de Orçamento";
                         $cabecalho_da_mensagem_de_resposta = "From: " . $rs_configuracao['nomeloja'] . " <" . $rs_configuracao['emailloja'] . ">\n";
                         $configuracao_da_mensagem_de_resposta = "Prezado(a) " . $name . ",<br>
-				Obrigado, seu pedido foi enviado para " . $rs_configuracao['nomeloja'] . ".<br>
+				Obrigado! Seu pedido foi enviado para " . $rs_configuracao['nomeloja'] . ".<br>
 				Em breve entraremos em contato para concluirmos pagamento e a entrega!<br>
 				<br>
 				Atenciosamente,<br>
