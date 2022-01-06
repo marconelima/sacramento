@@ -43,7 +43,7 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
     $html_pdf = '<div class="table-responsive">
         <table border="0" width="100%" style="font:15px arial;" cellpadding="3" cellspacing="3">
 			<tr>
-				<td rowspan="2"><img src="../../images/sacramento_pdf.jpeg" class="logo_painel" height="50" /></td>
+				<td rowspan="2"><img src="../../images/sacramento_pdf.jpeg" class="logo_painel" height="80" /></td>
 				<td colspan="2" align="center"><strong>Pedido</strong></td>
                 <td colspan="2" align="right">' . substr($rs['data_pedido'], 8, 2) . '/' . substr($rs['data_pedido'], 5, 2) . '/' . substr($rs['data_pedido'], 0, 4) . '</td>
 			</tr>
@@ -57,25 +57,19 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
 
     $html_pdf .= '<div class="table-responsive" style="border:2px solid #000;">
 				<table class="table table-hover tabela_ficha" width="100%" cellspacing="0" cellpadding="0" style="font:13px arial;">
-                    <tr>
-						<td width="25%">&nbsp;</td>
-                        <td width="25%">&nbsp;</td>
-                        <td width="25%">&nbsp;</td>
-                        <td width="25%">&nbsp;</td>
-					</tr>
 					<tr>
 						<td colspan="2"><strong>Cliente:</strong> ' . $rs_cliente['nome'] . '</td>
-                        <td ><strong>Telefone:</strong> ' . $rs_cliente['telefone'] . '</td>
+                        <td width="25%"><strong>Telefone:</strong> ' . $rs_cliente['telefone'] . '</td>
                         <td ><strong>Celular:</strong> ' . $rs_cliente['celular'] . '</td>
 					</tr>
                     <tr>
 						<td colspan="3"><strong>Endereço:</strong> ' . $rs_cliente['logradouro'] . ', ' . $rs_cliente['numero'] . '</td>
-                        <td ><strong>CEP:</strong> ' . $rs_cliente['cep'] . '</td>
+                        <td width="25%"><strong>CEP:</strong> ' . $rs_cliente['cep'] . '</td>
 					</tr>
                     <tr>
-						<td > <strong>Bairro:</strong> ' . $rs_cliente['bairro'] . '</td>
+						<td width="25%"> <strong>Bairro:</strong> ' . $rs_cliente['bairro'] . '</td>
                         <td colspan="2"><strong>Cidade:</strong> ' . $rs_cliente['cidade'] . '</td>
-                        <td ><strong>UF:</strong> ' . $rs_cliente['estado'] . '</td>
+                        <td width="25%"><strong>UF:</strong> ' . $rs_cliente['estado'] . '</td>
 					</tr>
                     <tr>
 						<td colspan="2"><strong>CNPJ:</strong> ' . $rs_cliente['cnpj'] . '</td>
@@ -96,7 +90,10 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
 					</tr>
 					<tr>
 						<td colspan="6" align="center"><strong>PEDIDO</strong></td>
-					</tr><tr><td colspan="6"><table class="table table-hover tabela_ficha" width="100%" border="0" cellpadding="0" cellspacing="0" style="font:13px arial;">';
+					</tr>
+                    <tr>
+                        <td colspan="6">
+                        <table class="table table-hover tabela_ficha" width="100%" border="0" cellpadding="0" cellspacing="0" style="font:13px arial;">';
 
     $API = new ComunicacaoAPI();
 
@@ -161,7 +158,10 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
 					</tr>';
     }
 
-    $html_pdf .= '</td></tr><tr>
+    $html_pdf .= '</td>
+                    </tr>
+                    </table>
+                    <tr>
 						<td colspan="5"><strong>Total pedido</strong></td>						
                         <td><strong>' . number_format($preco_total_carrinho, 2, ",", ".") . '</strong></td>
 					</tr>                

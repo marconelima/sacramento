@@ -258,24 +258,18 @@
         $html_pdf .= '<div class="table-responsive" style="border:2px solid #000;">
 				<table class="table table-hover tabela_ficha" width="100%" cellspacing="0" cellpadding="0" style="font:13px arial;">
                     <tr>
-						<td width="25%">&nbsp;</td>
-                        <td width="25%">&nbsp;</td>
-                        <td width="25%">&nbsp;</td>
-                        <td width="25%">&nbsp;</td>
-					</tr>
-					<tr>
 						<td colspan="2"><strong>Cliente:</strong> ' . $rs_cliente['nome'] . '</td>
-                        <td ><strong>Telefone:</strong> ' . $rs_cliente['telefone'] . '</td>
+                        <td width="25%"><strong>Telefone:</strong> ' . $rs_cliente['telefone'] . '</td>
                         <td ><strong>Celular:</strong> ' . $rs_cliente['celular'] . '</td>
 					</tr>
                     <tr>
 						<td colspan="3"><strong>Endereço:</strong> ' . $rs_cliente['logradouro'] . ', ' . $rs_cliente['numero'] . '</td>
-                        <td ><strong>CEP:</strong> ' . $rs_cliente['cep'] . '</td>
+                        <td width="25%"><strong>CEP:</strong> ' . $rs_cliente['cep'] . '</td>
 					</tr>
                     <tr>
-						<td > <strong>Bairro:</strong> ' . $rs_cliente['bairro'] . '</td>
+						<td width="25%"> <strong>Bairro:</strong> ' . $rs_cliente['bairro'] . '</td>
                         <td colspan="2"><strong>Cidade:</strong> ' . $rs_cliente['cidade'] . '</td>
-                        <td ><strong>UF:</strong> ' . $rs_cliente['estado'] . '</td>
+                        <td width="25%"><strong>UF:</strong> ' . $rs_cliente['estado'] . '</td>
 					</tr>
                     <tr>
 						<td colspan="2"><strong>CNPJ:</strong> ' . $rs_cliente['cnpj'] . '</td>
@@ -351,7 +345,9 @@
 					</tr>';
         }
 
-        $html_pdf .= '</td></tr><tr>
+        $html_pdf .= '</td>
+                    </tr>
+                    </table><tr>
 						<td colspan="5"><strong>Total pedido</strong></td>						
                         <td><strong>' . number_format($preco_total_carrinho, 2, ",", ".") . '</strong></td>
 					</tr>                
