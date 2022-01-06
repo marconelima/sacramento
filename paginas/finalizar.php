@@ -24,7 +24,7 @@
     if (@$_SESSION['cliente'] != '' && isset($_SESSION['carrinho'])) {
 
         if ($_POST) {
-            for ($i = 0; $i <td (count($_POST) / 3); $i++) {
+            for ($i = 0; $i < (count($_POST) / 3); $i++) {
                 if ($pro = $carrinhoSessao->getProduto($_POST['prodid' . $i])) {
                     $pro->setQuantidade($_POST['qtde_prod' . $i]);
                     $pro->setComplemento($_POST['message' . $i] . "<br/><br/>" . $pro->getComplemento());
