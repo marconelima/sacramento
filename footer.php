@@ -513,7 +513,7 @@
 
             let qtdenova = parseInt(qtde.value) + 1;
 
-            console.log(qtdenova, estoque);
+            console.log(estoque);
 
             if (qtdenova <= estoque) {
                 document.querySelector("#qtde_prod").value = qtdenova;
