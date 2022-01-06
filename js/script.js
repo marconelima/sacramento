@@ -34,34 +34,67 @@ $(() => {
  
  });
 
+if (document.querySelector(".quantidademenoscatalogo")) {
 
- if(document.querySelector(".btnfiltro")){
+    let menos = document.querySelectorAll(".quantidademenoscatalogo");
 
-    let btn = document.querySelectorAll(".btnfiltro");
+    menos.forEach(function (el) {
 
-    btn.forEach(function(el){
-        
+        let produto = el.getAttribute("data-prodmenosid");
+
         el.addEventListener("click", e => {
 
-            btn.forEach(function(el2){
-                if(el2.id == el.id && el.checked == false){
+            let qtdeatual = parseInt(document.querySelector("#quantidadecatalogo_"+produto).value);
 
-                    el2.checked = false;
-                }
-            });
+            let novaquantidade = qtdeatual - 1;
 
-            let form = document.querySelector("#formFiltro");
-
-            form.submit();
+            console.log(qtdeatual, novaquantidade);
 
         });
-    });
 
- }
+    });
+}
+
+if (document.querySelector(".quantidademaiscatalogo")) {
+
+    let mais = document.querySelectorAll(".quantidademaiscatalogo");
+
+    mais.forEach(function (el) {
+
+        let produto = el.getAttribute("data-prodmaisid");
+
+        el.addEventListener("click", e => {
+
+            let qtdeatual = parseInt(document.querySelector("#quantidadecatalogo_"+produto).value);
+
+            let novaquantidade = qtdeatual - 1;
+
+            console.log(qtdeatual, novaquantidade);
+
+        });
+
+    });
+}
+
+if (document.querySelector(".btnfiltro")) {
+    let btn = document.querySelectorAll(".btnfiltro");
+
+    btn.forEach(function (el) {
+    el.addEventListener("click", (e) => {
+        btn.forEach(function (el2) {
+        if (el2.id == el.id && el.checked == false) {
+            el2.checked = false;
+        }
+        });
+
+        let form = document.querySelector("#formFiltro");
+
+        form.submit();
+    });
+    });
+}
 
  if(document.querySelector(".colocarCarrinho")){
-
-    
 
         let produto = document.querySelectorAll(".colocarCarrinho");
 

@@ -73,7 +73,7 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
 					</tr>
                     <tr>
 						<td colspan="2"><strong>CNPJ:</strong> ' . $rs_cliente['cnpj'] . '</td>
-                        <td colspan="2"><strong>Cidade:</strong> ' . ($rs_cliente['inscricaoestadual'] != '' ? $rs_cliente['inscricaoestadual'] : '') . '</td>
+                        <td colspan="2"><strong>Inscrição estadual:</strong> ' . ($rs_cliente['inscricaoestadual'] != '' ? $rs_cliente['inscricaoestadual'] : '') . '</td>
 					</tr>
 					<tr>
 						<td colspan="3"><strong>E-mail:</strong> ' . $rs_cliente['email'] . '</td>
