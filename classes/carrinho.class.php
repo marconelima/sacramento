@@ -203,9 +203,9 @@ if($total < 201) {
       echo '<section class="page-section" style="padding-top: 30px;">
 		<div class="container">
 			<div class="row send-quotation">
-				<a href="javascript:submitform()" class="btn btn-default btn-lg btn-product btn-empresa" style="padding: 1% 2%; margin: 0 2% 2% 0;">Enviar Orçamento</a>
-				<a href="'.$siteUrl. 'catalogo/21" class="btn btn-default btn-lg btn-product btn-empresa" style="padding: 1% 2%; margin: 0 2% 2% 0;">Continuar Orçamento</a>
-                <a href="' . $siteUrl . 'limpar/21" class="btn btn-default btn-lg btn-product btn-empresa" style="padding: 1% 2%; margin: 0 2% 2% 0;">Limpar Orçamento</a>
+				<a href="javascript:submitform()" class="btn btn-default btn-lg btn-product btn-empresa" style="padding: 1% 2%; margin: 0 2% 2% 0;">Enviar Pedido</a>
+				<a href="'.$siteUrl. 'catalogo/21" class="btn btn-default btn-lg btn-product btn-empresa" style="padding: 1% 2%; margin: 0 2% 2% 0;">Continuar Pedido</a>
+                <a href="' . $siteUrl . 'limpar/21" class="btn btn-default btn-lg btn-product btn-empresa" style="padding: 1% 2%; margin: 0 2% 2% 0;">Limpar Pedido</a>
 			</div>
 		</div>
 	</section>';
@@ -350,9 +350,9 @@ if($total < 201) {
         echo '<section class="page-section" style="padding-top: 30px;">
 		<div class="container">
 			<div class="row send-quotation">
-				<a href="javascript:submitform()" class="btn btn-default btn-lg btn-product btn-empresa" style="padding: 1% 2%; margin: 0 2% 2% 0;">Enviar Orçamento</a>
-				<a href="' . $siteUrl . 'catalogo/21" class="btn btn-default btn-lg btn-product btn-empresa" style="padding: 1% 2%; margin: 0 2% 2% 0;">Continuar Orçamento</a>
-                <a href="' . $siteUrl . 'limpar/21" class="btn btn-default btn-lg btn-product btn-empresa" style="padding: 1% 2%; margin: 0 2% 2% 0;">Limpar Orçamento</a>
+				<a href="javascript:submitform()" class="btn btn-default btn-lg btn-product btn-empresa" style="padding: 1% 2%; margin: 0 2% 2% 0;">Enviar Pedido</a>
+				<a href="' . $siteUrl . 'catalogo/21" class="btn btn-default btn-lg btn-product btn-empresa" style="padding: 1% 2%; margin: 0 2% 2% 0;">Continuar Pedido</a>
+                <a href="' . $siteUrl . 'limpar/21" class="btn btn-default btn-lg btn-product btn-empresa" style="padding: 1% 2%; margin: 0 2% 2% 0;">Limpar Pedido</a>
 			</div>
 		</div>
 	</section>';
