@@ -514,7 +514,7 @@
                         $assunto_da_mensagem_de_resposta = "Recebemos seu pedido de Orçamento";
                         $cabecalho_da_mensagem_de_resposta = "From: " . $rs_configuracao['nomeloja'] . " <" . $rs_configuracao['emailloja'] . ">\n";
                         $configuracao_da_mensagem_de_resposta = "Prezado(a) " . $name . ",<br>
-				Obrigado por entrar em contato, seu pedido foi enviado para " . $rs_configuracao['nomeloja'] . ".<br>
+				Obrigado, seu pedido foi enviado para " . $rs_configuracao['nomeloja'] . ".<br>
 				Em breve entraremos em contato para concluirmos pagamento e a entrega!<br>
 				<br>
 				Atenciosamente,<br>
