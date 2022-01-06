@@ -277,13 +277,20 @@ $resultado_campo_longo = $conecta->selecionar($conecta->conn, $sql_campo_longo);
                 mais.addEventListener('click', function(e) {
 
                     let qtde = document.querySelector("#qtde_prod");
+                    let estoque = parseInt(qtde.getAttribute('data-estoque-pop'));
 
-                    document.querySelector("#qtde_prod").value = parseInt(qtde.value) + 1;
+                    let qtdenova = parseInt(qtde.value) + 1;
 
-                    let botao = document.querySelector(".btncolocamodal");
-                    console.log(qtde.value, botao);
+                    if (qtdenova <= estoque) {
+                        document.querySelector("#qtde_prod").value = qtdenova;
+                        let botao = document.querySelector(".btncolocamodal");
+                        botao.setAttribute('data-quantidade', qtde.value);
+                    } else {
+                        alert("Limite de estoque alcançado!");
+                    }
 
-                    botao.setAttribute('data-quantidade', qtde.value);
+
+
 
                 });
 
