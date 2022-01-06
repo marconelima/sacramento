@@ -24,7 +24,7 @@
     if (@$_SESSION['cliente'] != '' && isset($_SESSION['carrinho'])) {
 
         if ($_POST) {
-            for ($i = 0; $i < (count($_POST) / 3); $i++) {
+            for ($i = 0; $i <td (count($_POST) / 3); $i++) {
                 if ($pro = $carrinhoSessao->getProduto($_POST['prodid' . $i])) {
                     $pro->setQuantidade($_POST['qtde_prod' . $i]);
                     $pro->setComplemento($_POST['message' . $i] . "<br/><br/>" . $pro->getComplemento());
@@ -290,13 +290,14 @@
 				</div>
 				
 				<div class="table-responsive">
-				<table class="table table-hover tabela_ficha" width="100%" border="1" cellpadding="0" cellspacing="0" style="font:13px arial;">
+				<table class="table table-hover tabela_ficha" width="100%" border="0" cellpadding="0" cellspacing="0" style="font:13px arial;">
                     <tr>
 						<td colspan="6" align="center">&nbsp;</td>
 					</tr>
 					<tr>
 						<td colspan="6" align="center"><strong>PEDIDO</strong></td>
-					</tr>';
+					</tr>
+                    <tr><td colspan="6"><table class="table table-hover tabela_ficha" width="100%" border="0" cellpadding="0" cellspacing="0" style="font:13px arial;">';
 
         $html_pdf .= '<tr>
 						<td width="30%"><strong>Produto</strong></td>
@@ -350,7 +351,7 @@
 					</tr>';
         }
 
-        $html_pdf .= '<tr>
+        $html_pdf .= '</td></tr><tr>
 						<td colspan="5"><strong>Total pedido</strong></td>						
                         <td><strong>' . number_format($preco_total_carrinho, 2, ",", ".") . '</strong></td>
 					</tr>                

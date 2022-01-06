@@ -90,13 +90,13 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
 				</div>
 				
 				<div class="table-responsive">
-				<table class="table table-hover tabela_ficha" width="100%" border="1" cellpadding="0" cellspacing="0" style="font:13px arial;">
+				<table class="table table-hover tabela_ficha" width="100%" border="0" cellpadding="0" cellspacing="0" style="font:13px arial;">
                     <tr>
 						<td colspan="6" align="center">&nbsp;</td>
 					</tr>
 					<tr>
 						<td colspan="6" align="center"><strong>PEDIDO</strong></td>
-					</tr>';
+					</tr><tr><td colspan="6"><table class="table table-hover tabela_ficha" width="100%" border="0" cellpadding="0" cellspacing="0" style="font:13px arial;">';
 
     $API = new ComunicacaoAPI();
 
@@ -161,7 +161,7 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
 					</tr>';
     }
 
-    $html_pdf .= '<tr>
+    $html_pdf .= '</td></tr><tr>
 						<td colspan="5"><strong>Total pedido</strong></td>						
                         <td><strong>' . number_format($preco_total_carrinho, 2, ",", ".") . '</strong></td>
 					</tr>                
