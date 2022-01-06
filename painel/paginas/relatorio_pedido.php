@@ -93,7 +93,7 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
 					</tr>
                     <tr>
                         <td colspan="6">
-                        <table class="table table-hover tabela_ficha" width="100%" border="1" cellpadding="0" cellspacing="0" style="font:13px arial;">';
+                        <table class="table table-hover tabela_ficha" width="100%" border="1" cellspacing="0" cellpadding="0" style="font:13px arial;">';
 
     $API = new ComunicacaoAPI();
 
@@ -107,12 +107,12 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
     }
 
     $html_pdf .= '<tr>
-                    <td width="10%" align="center"><strong>Qtde.</strong></td>
-                    <td width="10%" align="center"><strong>Unidade</strong></td>
-                    <td width="10%"><strong>Código</strong></td>
-                    <td width="50%"><strong>Descrição</strong></td>
-                    <td width="10%"><strong>Preço Unit.</strong></td>
-                    <td width="10%"><strong>Subtotal</strong></td>
+                    <td width="7%" align="center"><strong>Qtde.</strong></td>
+                    <td width="8%" align="center"><strong>Unid.</strong></td>
+                    <td width="8%"><strong>Cód.</strong></td>
+                    <td width="62%"><strong>Descrição</strong></td>
+                    <td width="7%"><strong>Preço</strong></td>
+                    <td width="8%"><strong>Subtotal</strong></td>
                 </tr>';
 
     while ($rs_pedido_produto = mysqli_fetch_array($resultado_pedido_produto)) {
@@ -149,12 +149,12 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
 
 
         $html_pdf .= '<tr>
-                        <td width="10%" align="center" style="font-weight:bold;">' . $rs_pedido_produto['quantidade'] . '</td>
-                        <td width="10%" align="center">' . $unidadeDescricao . '</td>
-                        <td width="10%" align="center">' . $rs_pedido_produto['codigo'] . '</td>
-						<td width="50%">' . $rs_pedido_produto['nome'] . '</td>
-						<td width="10%">' . number_format($preco, 2, ",", ".") . '</td>
-                        <td width="10%">' . number_format($preco_total_produto, 2, ",", ".") . '</td>
+                        <td width="7%" align="center" style="font-weight:bold;">' . $rs_pedido_produto['quantidade'] . '</td>
+                        <td width="8%" align="center">' . $unidadeDescricao . '</td>
+                        <td width="8%" align="center">' . $rs_pedido_produto['codigo'] . '</td>
+						<td width="62%">' . $rs_pedido_produto['nome'] . '</td>
+						<td width="7%">' . number_format($preco, 2, ",", ".") . '</td>
+                        <td width="8%">' . number_format($preco_total_produto, 2, ",", ".") . '</td>
 					</tr>';
     }
 
