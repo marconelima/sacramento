@@ -56,7 +56,7 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
       </div>';
 
     $html_pdf .= '<div class="table-responsive" style="border:2px solid #000;">
-				<table class="table table-hover tabela_ficha" width="100%" border="1" cellspacing="0" cellpadding="0" style="font:13px arial;" cellpadding="3" cellspacing="3">
+				<table class="table table-hover tabela_ficha" width="100%" cellspacing="0" cellpadding="0" style="font:13px arial;">
                     <tr>
 						<td width="25%">&nbsp;</td>
                         <td width="25%">&nbsp;</td>
@@ -65,8 +65,8 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
 					</tr>
 					<tr>
 						<td colspan="2"><strong>Cliente:</strong> ' . $rs_cliente['nome'] . '</td>
-                        <td ><strong>Telefone:</strong> ' . $rs_cliente['telefone'] . ' ' . $rs_cliente['celular'] . '</td>
-                        <td ><strong>Whatsapp:</strong> ' . $rs_cliente['whatsapp'] . '</td>
+                        <td ><strong>Telefone:</strong> ' . $rs_cliente['telefone'] . '</td>
+                        <td ><strong>Celular:</strong> ' . $rs_cliente['celular'] . '</td>
 					</tr>
                     <tr>
 						<td colspan="3"><strong>Endereço:</strong> ' . $rs_cliente['logradouro'] . ', ' . $rs_cliente['numero'] . '</td>
@@ -82,24 +82,20 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
                         <td colspan="2"><strong>Cidade:</strong> ' . ($rs_cliente['inscricaoestadual'] != '' ? $rs_cliente['inscricaoestadual'] : '') . '</td>
 					</tr>
 					<tr>
-						<td colspan="4"><strong>E-mail:</strong> ' . $rs_cliente['email'] . '</td>						
+						<td colspan="3"><strong>E-mail:</strong> ' . $rs_cliente['email'] . '</td>
+                        <td colspan="3"><strong>Whatsapp-mail:</strong> ' . $rs_cliente['whatsapp'] . '</td>						
 					</tr>
 				</table>
 				
 				</div>
 				
 				<div class="table-responsive">
-				<table class="table table-hover tabela_ficha" width="100%" style="font:13px arial;" cellpadding="3" cellspacing="3">
+				<table class="table table-hover tabela_ficha" width="100%" border="1" cellpadding="0" cellspacing="0" style="font:13px arial;">
                     <tr>
 						<td colspan="6" align="center">&nbsp;</td>
 					</tr>
 					<tr>
-						<td colspan="6" align="center"><strong>ORÇAMENTO</strong></td>
-					</tr>
-					<tr>
-						
-						<td colspan="4"></td>
-						<td colspan="2"><strong>' . $status_pedido[$rs['status_pedido']] . '</strong></td>
+						<td colspan="6" align="center"><strong>PEDIDO</strong></td>
 					</tr>';
 
     $API = new ComunicacaoAPI();
@@ -166,7 +162,7 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
     }
 
     $html_pdf .= '<tr>
-						<td colspan="5"><strong>Total orçamento</strong></td>						
+						<td colspan="5"><strong>Total pedido</strong></td>						
                         <td><strong>' . number_format($preco_total_carrinho, 2, ",", ".") . '</strong></td>
 					</tr>                
                 </table>
@@ -339,7 +335,7 @@ if (isset($_POST['relatorio_geral']) && $_POST['relatorio_geral'] == "Gerar PDF"
             <?php } ?>
 
             <tr>
-                <td colspan="5"><strong>Total orçamento</strong></td>
+                <td colspan="5"><strong>Total pedido</strong></td>
                 <td><strong><?php echo number_format($preco_total_carrinho, 2, ",", "."); ?></strong></td>
             </tr>
         </table>

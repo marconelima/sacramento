@@ -255,35 +255,47 @@
         $html_pdf .= '</table>
       </div>';
 
-        $html_pdf .= '<div class="table-responsive">
-				<table class="table table-hover tabela_ficha" width="100%" style="font:13px arial;" cellpadding="3" cellspacing="3">
-					<tr>
-						<td colspan="4" align="center"><strong>CLIENTE</strong></td>
+        $html_pdf .= '<div class="table-responsive" style="border:2px solid #000;">
+				<table class="table table-hover tabela_ficha" width="100%" cellspacing="0" cellpadding="0" style="font:13px arial;">
+                    <tr>
+						<td width="25%">&nbsp;</td>
+                        <td width="25%">&nbsp;</td>
+                        <td width="25%">&nbsp;</td>
+                        <td width="25%">&nbsp;</td>
 					</tr>
 					<tr>
-						<td colspan="4">' . $rs_cliente['id'] . ' - ' . $rs_cliente['nome'] . ' - ' . $rs_cliente['cnpj'] . '</td>
+						<td colspan="2"><strong>Cliente:</strong> ' . $rs_cliente['nome'] . '</td>
+                        <td ><strong>Telefone:</strong> ' . $rs_cliente['telefone'] . '</td>
+                        <td ><strong>Celular:</strong> ' . $rs_cliente['celular'] . '</td>
+					</tr>
+                    <tr>
+						<td colspan="3"><strong>Endereço:</strong> ' . $rs_cliente['logradouro'] . ', ' . $rs_cliente['numero'] . '</td>
+                        <td ><strong>CEP:</strong> ' . $rs_cliente['cep'] . '</td>
+					</tr>
+                    <tr>
+						<td > <strong>Bairro:</strong> ' . $rs_cliente['bairro'] . '</td>
+                        <td colspan="2"><strong>Cidade:</strong> ' . $rs_cliente['cidade'] . '</td>
+                        <td ><strong>UF:</strong> ' . $rs_cliente['estado'] . '</td>
+					</tr>
+                    <tr>
+						<td colspan="2"><strong>CNPJ:</strong> ' . $rs_cliente['cnpj'] . '</td>
+                        <td colspan="2"><strong>Cidade:</strong> ' . ($rs_cliente['inscricaoestadual'] != '' ? $rs_cliente['inscricaoestadual'] : '') . '</td>
 					</tr>
 					<tr>
-						<td>' . $rs_cliente['email'] . '</td>
-						<td>' . $rs_cliente['logradouro'] . ', '. $rs_cliente['numero'] . ' - ' . $rs_cliente['bairro'] . '<br/>' . $rs_cliente['cidade'] . ' / '. $rs_cliente['estado'] . ' - ' . $rs_cliente['cep'] . '</td>
-						<td colspan="2">' . $rs_cliente['telefone'] . '<br/>' . $rs_cliente['celular'] . '<br/>' . $rs_cliente['whatsapp'] . '</td>
+						<td colspan="3"><strong>E-mail:</strong> ' . $rs_cliente['email'] . '</td>
+                        <td colspan="3"><strong>Whatsapp-mail:</strong> ' . $rs_cliente['whatsapp'] . '</td>						
 					</tr>
 				</table>
 				
 				</div>
 				
 				<div class="table-responsive">
-				<table class="table table-hover tabela_ficha" width="100%" style="font:13px arial;" cellpadding="3" cellspacing="3">
-					<tr>
-						<td colspan="5" align="center">&nbsp;</td>
-					</tr>
+				<table class="table table-hover tabela_ficha" width="100%" border="1" cellpadding="0" cellspacing="0" style="font:13px arial;">
                     <tr>
-						<td colspan="5" align="center"><strong>ORÇAMENTO</strong></td>
+						<td colspan="6" align="center">&nbsp;</td>
 					</tr>
 					<tr>
-						
-						<td colspan="3">' . substr($rs['data_pedido'], 8, 2) . '/' . substr($rs['data_pedido'], 5, 2) . '/' . substr($rs['data_pedido'], 0, 4) . '</td>
-						<td colspan="2"><strong>' . $status_pedido[$rs['status_pedido']] . '</strong></td>
+						<td colspan="6" align="center"><strong>PEDIDO</strong></td>
 					</tr>';
 
         $html_pdf .= '<tr>
@@ -339,7 +351,7 @@
         }
 
         $html_pdf .= '<tr>
-						<td colspan="5"><strong>Total orçamento</strong></td>						
+						<td colspan="5"><strong>Total pedido</strong></td>						
                         <td><strong>' . number_format($preco_total_carrinho, 2, ",", ".") . '</strong></td>
 					</tr>                
                 </table>
@@ -651,7 +663,7 @@
                         <p>
                             <strong>Benefícios de ser cadastrado</strong><br>
                             <span> - Receba promoções e ofertas exclusivas</span><br>
-                            <span> - Salve seus dados e facilite orçamentos futuros</span><br>
+                            <span> - Salve seus dados e facilite pedidos futuros</span><br>
                             <span> - Orçamentos mais ágeis</span>
 
                         </p>
