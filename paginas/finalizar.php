@@ -557,15 +557,19 @@
                             $mail->addAttachment($arquivoOrcamento);
 
                             $mail->send();
+                        } catch (phpmailerException $e) {
+                            echo '<div class="alert alert-danger">Problema ao enviar Pedido! '. $e->errorMessage().'</div>';
                         } catch (Exception $e) {
-                            echo '<div class="alert alert-danger">Problema ao enviar Pedido 1!</div>';
+                            echo '<div class="alert alert-danger">Problema ao enviar Pedido! '. $e->getMessage().'</div>';
                         }
-
+                        
                         //unset($_SESSION['carrinho'], $_SESSION['qtde'], $_SESSION['criar'], $dadospedido, $dadosproduto);
                     }
                     unset($_SESSION['carrinho'], $_SESSION['qtde'], $_SESSION['criar'], $dadospedido, $dadosproduto);
+                } catch (phpmailerException $e) {
+                    echo '<div class="alert alert-danger">Problema ao enviar Pedido! '. $e->errorMessage().'</div>';
                 } catch (Exception $e) {
-                    echo '<div class="alert alert-danger">Problema ao enviar Pedido 2!</div>';
+                    echo '<div class="alert alert-danger">Problema ao enviar Pedido! '. $e->getMessage().'</div>';
                 }
             } else {
                 echo '<div class="alert alert-danger">Problema ao enviar Pedido! ' . $mensagemUsuario . ' Entre em contato com o Administrador!</div>';

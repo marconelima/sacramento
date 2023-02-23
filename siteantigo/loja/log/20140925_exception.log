@@ -1,0 +1,6 @@
+*ERROR* 	2014/09/25 - 00:31:05: Unknown column 'w.default' in 'field list'<br /><br /><pre>
+			SELECT w.`id_wishlist`, w.`name`, w.`token`, w.`date_add`, w.`date_upd`, w.`counter`, w.`default`
+			FROM `ps_wishlist` w
+			WHERE `id_customer` = 1
+			AND id_shop = 1
+			ORDER BY w.`name` ASC</pre> at line 635 in file classes/db/Db.php

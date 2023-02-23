@@ -1,0 +1,50 @@
+a:1:{i:0;a:5:{s:12:"id_ps_advice";s:3:"513";s:8:"selector";s:10:".dash_news";s:8:"location";s:5:"after";s:4:"html";s:3675:"<div id="wrap_id_advice_513" >
+	<section id="0_hipay" class="panel " style="display:none">
+		<header class="panel-heading">
+			<span class="icon-lightbulb"></span> Tips of the day</header>
+		<div class="panel-body" style="padding:0">
+			<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-hipay.png" style="float:right; margin-left: 5px;">
+			<img src="https://gamification.prestashop.com/api/getAdviceImg/513.png"/>
+			<p><b>Desenvolva a sua atividade no mercado internacional!</b></p>
+			<p>Devido a cada país ter os seus próprios métodos de pagamento, o Hipay propõe mais do que as simples soluções tradicionais internacionais. Este serviço fornece uma vasta gama de soluções de pagamento locais em cada País: Transferências entre contas Hipay, pagamento em dinheiro, pagamentos recorrentes…</p>
+			<span class="text-right" style="float:right">
+				<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=513&url=http%3A%2F%2Faddons.prestashop.com%2Fpt%2Fmodulos-prestashop-de-pagamento%2F1746-hipay.html%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dpartenariats%26utm_content%3Dhipay">Mais informações?</a>
+			</span>
+		</div>
+	</section>
+	<section id="1_hipay" class="panel " style="display:none">
+		<header class="panel-heading">
+			<span class="icon-lightbulb"></span> Tips of the day</header>
+		<div class="panel-body" style="padding:0">
+			<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-hipay.png" style="float:right; margin-left: 5px;">
+			<img src="https://gamification.prestashop.com/api/getAdviceImg/513.png"/>
+			<p><b>Beneficie de um acompanhamento à medida!</b></p>
+			<p>A nossa equipa está à sua disposição 6 dos 7 dias da semana para responder às suas perguntas. <strong>Objectivo da equipa:</strong> responder rapidamente às suas questões, entender as suas preocupações e estabelecer uma relação de confiança.</p>
+			<span class="text-right" style="float:right">
+				<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=513&url=http%3A%2F%2Faddons.prestashop.com%2Fpt%2Fmodulos-prestashop-de-pagamento%2F1746-hipay.html%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dpartenariats%26utm_content%3Dhipay">Mais informações?</a>
+			</span>
+		</div>
+	</section>
+	<section id="2_hipay" class="panel " style="display:none">
+		<header class="panel-heading">
+			<span class="icon-lightbulb"></span> Tips of the day</header>
+		<div class="panel-body" style="padding:0">
+			<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-hipay.png" style="float:right; margin-left: 5px;">
+			<img src="https://gamification.prestashop.com/api/getAdviceImg/513.png"/>
+			<p><b>Pretende dispor dos seus fundos imediatamente?</b></p>
+			<p>Os fundos são armazenados na sua conta HiPay e estão disponíveis em qualquer momento, na moeda da sua escolha.</p>
+			<span class="text-right" style="float:right">
+				<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=513&url=http%3A%2F%2Faddons.prestashop.com%2Fpt%2Fmodulos-prestashop-de-pagamento%2F1746-hipay.html%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dpartenariats%26utm_content%3Dhipay">Mais informações?</a>
+			</span>
+		</div>
+	</section>
+	<script>
+	$(document).ready( function () {
+		$('#'+rand(2)+'_hipay').show();
+	});
+	
+	function rand(nbr){
+	   return Math.floor(Math.random()*(nbr+1));
+	}
+	</script>
+	</div>";s:6:"weight";s:1:"1";}}

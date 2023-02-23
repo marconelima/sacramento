@@ -1,0 +1,8 @@
+# robots.txt gerado em 
+# marketingdebusca.com.br/robots-txt/
+User-agent: *
+Disallow: 
+Disallow: /painel
+Disallow: /antigo
+Disallow: /documentos
+Disallow: /site

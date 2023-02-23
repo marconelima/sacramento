@@ -1,0 +1,1 @@
+*ERROR* 	2014/10/30 - 18:19:30: Link to database cannot be established: Access denied for user 'root'@'localhost' (using password: NO) at line 47 in file classes/db/DbMySQLi.php

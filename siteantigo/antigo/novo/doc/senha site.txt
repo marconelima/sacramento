@@ -1,0 +1,9 @@
+ 
+http://helm.iwi.com.br
+Usuário: SACRAMENTO
+Senha: MOMENTO
+
+ 
+ftp: ftp.industriasacramento.com.br
+usuário: SACRAMENTO
+senha: glauber

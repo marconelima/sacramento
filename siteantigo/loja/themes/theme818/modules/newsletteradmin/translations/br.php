@@ -1,0 +1,35 @@
+<?php
+
+global $_MODULE;
+$_MODULE = array();
+$_MODULE['<{newsletteradmin}theme818>newsletteradmin_c1ea7f919fcfb631e821ccb951795454'] = 'Excluir o módulo Boletim?';
+$_MODULE['<{newsletteradmin}theme818>newsletteradmin_bead43e5d303d484475e288412ffdab9'] = 'Boletim informativo para Prestashop';
+$_MODULE['<{newsletteradmin}theme818>newsletteradmin_d285017a46b8393fd809a720a494cea3'] = 'Envio de boletim informativo do Back-Office';
+$_MODULE['<{newsletteradmin}theme818>newsletteradmin_8072faeb67a3c9b1a9383e56243de81b'] = 'Enviar um boletim informativo';
+$_MODULE['<{newsletteradmin}theme818>newsletteradmin_cb4a85835cdfe3a175a7b51d6e10a66c'] = 'Nova versão estável disponível';
+$_MODULE['<{newsletteradmin}theme818>newsletteradmin_5c1b6a4f7b977e2df04204f054771e95'] = 'Atualize agora';
+$_MODULE['<{newsletteradmin}theme818>newsletteradmin_78c5d2be5e568ebc18a845b89e3a5823'] = 'Desculpe, não há informação de nova versão disponível';
+$_MODULE['<{newsletteradmin}theme818>newsletteradmin_be81ce3661286cb30cccd275b0520a79'] = 'Sua versão está atualizada';
+$_MODULE['<{newsletteradmin}theme818>newsletteradmin_6e659c47c94d1e1dc7121859f43fb2b0'] = 'E-mail inválido';
+$_MODULE['<{newsletteradmin}theme818>newsletteradmin_33217295899dcc338d9bdff492edd55d'] = 'Este endereço de e-mail';
+$_MODULE['<{newsletteradmin}theme818>newsletteradmin_c45b618f1beb13def21670904681b44d'] = 'não está registrado em nosso banco de dados';
+$_MODULE['<{newsletteradmin}theme818>newsletteradmin_29003419c075963848f1907174bdc224'] = 'Erro durante cancelamente de assinatura';
+$_MODULE['<{newsletteradmin}theme818>newsletteradmin_e05d23e3a1907a7e26d1d764ae61144d'] = 'Cancelar nossa Newsletter';
+$_MODULE['<{newsletteradmin}theme818>newsletteradmin_cd9cd6204f14638f3a83eca3d7cb756d'] = 'Você está agora não subscritas da nossa lista de e-mail';
+$_MODULE['<{newsletteradmin}theme818>newsletteradmin_625f93a63da35ee7150341160460f31e'] = 'Seu e-mail';
+$_MODULE['<{newsletteradmin}theme818>newsletteradmin_60de16a5ae43d34d561ac2495bd1ff40'] = 'foi removido da sua base de dados';
+$_MODULE['<{newsletteradmin}theme818>newsletteradmin_d7769e6609cc4528f9b92e76f1685dbd'] = 'Um e-mail de confirmação foi enviado';
+$_MODULE['<{newsletteradmin}theme818>newsletteradmin_ffaecc5cd189edd5410c9cc82de79744'] = 'já está registrado';
+$_MODULE['<{newsletteradmin}theme818>newsletteradmin_b7d9eb38dd2e375648ab08e224e22e43'] = 'Erro durante a assinatura';
+$_MODULE['<{newsletteradmin}theme818>newsletteradmin_d21123465c4c3184992d81f628cff391'] = 'Assine a nossa Newsletter';
+$_MODULE['<{newsletteradmin}theme818>newsletteradmin_7b947a5b86f6cfc423957cd9ce6f4775'] = 'Você já está inscrito na nossa lista de e-mail';
+$_MODULE['<{newsletteradmin}theme818>newsletteradmin_f2f3751007b30960cf6a7176f2640dcc'] = 'foi adicionado ao nosso banco de dados';
+$_MODULE['<{newsletteradmin}theme818>adminnewsletter_3f3e336e2f1fa10375efd923fca18b55'] = 'Cuidado:';
+$_MODULE['<{newsletteradmin}theme818>adminnewsletter_a877a7684d2f6572be78dfa2903e8440'] = 'O Módulo AdminNewsletter não está configurado!';
+$_MODULE['<{newsletteradmin}theme818>adminnewsletter_ba45cde77de8660092fe1382cb2f9cb2'] = 'Por favor configurar o módulo';
+$_MODULE['<{newsletteradmin}theme818>adminnewsletter_558f28628ba8ab4cb8420949524832d3'] = 'Copiar arquivos';
+$_MODULE['<{newsletteradmin}theme818>adminnewsletter_f4c23c036210cc2bf4709f902b948a63'] = 'Você tem que selecionar uma loja antes de enviar uma newsletter!';
+$_MODULE['<{newsletteradmin}theme818>adminnewsletter_e5d62b4c0af77c278b7cc515371c7457'] = 'Ajuda sobre este módulo';
+$_MODULE['<{newsletteradmin}theme818>adminnewsletter_1311e5ddedf25a4f6cd6059cbf04c21e'] = 'gerir traduções';
+$_MODULE['<{newsletteradmin}theme818>adminnewsletter_e3cea3514542ab837ac56a05add2102e'] = 'anexos de tradução';
+$_MODULE['<{newsletteradmin}theme818>adminnewsletter_ab6340c9c3cff00bd1d580ba07cb8283'] = 'módulo de reposição';

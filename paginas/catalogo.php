@@ -278,7 +278,7 @@ while ($rs_tag = mysqli_fetch_array($resultado_total)) {
 
                             $preco = 0;;
                             $preco_promocional = 0;
-                            $estoque = 0;
+                            $estoque = 1;
                             $ativo = 0;
 
 
@@ -311,50 +311,65 @@ while ($rs_tag = mysqli_fetch_array($resultado_total)) {
                                 }
                             }
 
-                            if($estoque > 0){
+                            if ($estoque > 0) {
+
+                                $preco = round($preco, 2);
+                                $posicaovirgula = strpos($preco, ".");
+                                $inteiro = substr($preco, 0, $posicaovirgula);
+                                $centavos = (int)substr($preco, $posicaovirgula + 1);
+                                $preco_promocional = round($preco_promocional, 2);
+                                $posicaovirgulapromo = strpos($preco_promocional, ".");
+                                $inteiropromo = substr($preco_promocional, 0, $posicaovirgula);
+                                $centavospromo = (int)substr($preco_promocional, $posicaovirgula + 1);
+
+                                //var_dump($posicaovirgula, $inteiro, $centavos);
+
+
+
                         ?>
 
-                            <div class="col-md-4 col-sm-6 col-6 <?php if ($i < 4) {
-                                                                    echo "offset-6 offset-sm-0 offset-md-0";
-                                                                } ?>" style="padding-right:0; margin-top:10px;">
-                                <div class="view-first box-produtos" style="width:100%; border:1px solid #eaeaea;">
-                                    <div class="borda-produtos post-wrap" style="border:0; text-align:center; overflow: hidden;">
-                                        <a class="detalheProduto" data-idproduto="<?php echo $rs_produto['id']; ?>" data-toggle="modal" data-target="#ModalDetalhe" style="float: left; width: 100%; position: relative; cursor:pointer;">
-                                            <img src="<?php echo $siteUrl . "/source/Produtos/" . $rs_produto['foto']; ?>" class="img-responsive" style="max-width:100%; width:100%;" alt="<?php echo $rs_produto['nome'] . " " . $rs_produto['modelo']; ?>" title="<?php echo $rs_produto['nome'] . " " . $rs_produto['modelo']; ?>" />
-                                            <?php if ($promocional == 1 && $preco_promocional > 0) { ?>
-                                                <span style="width:60px; height:60px; float:left; padding:10px 0; position:absolute; top:0; left:0; background:url('../images/tagpromocao.png') no-repeat; opacity:0.8; color:#FFFFFF; font-size:16px; font-weight:bold; "><?php echo $desconto; ?>%</span>
-                                            <?php } ?>
-                                        </a>
+                                <div class="col-md-4 col-sm-6 col-6 <?php if ($i < 4) {
+                                                                        echo "offset-6 offset-sm-0 offset-md-0";
+                                                                    } ?>" style="padding-right:0; margin-top:10px;">
+                                    <div class="view-first box-produtos" style="width:100%; border:1px solid #eaeaea;">
+                                        <div class="borda-produtos post-wrap" style="border:0; text-align:center; overflow: hidden;">
+                                            <a class="detalheProduto" data-idproduto="<?php echo $rs_produto['id']; ?>" data-toggle="modal" data-target="#ModalDetalhe" style="float: left; width: 100%; position: relative; cursor:pointer;">
+                                                <img src="<?php echo $siteUrl . "/source/Produtos/" . $rs_produto['foto']; ?>" class="img-responsive" style="max-width:100%; width:100%;" alt="<?php echo $rs_produto['nome'] . " " . $rs_produto['modelo']; ?>" title="<?php echo $rs_produto['nome'] . " " . $rs_produto['modelo']; ?>" />
+                                                <?php if ($promocional == 1 && $preco_promocional > 0) { ?>
+                                                    <span style="width:60px; height:60px; float:left; padding:10px 0; position:absolute; top:0; left:0; background:url('../images/tagpromocao.png') no-repeat; opacity:0.8; color:#FFFFFF; font-size:16px; font-weight:bold; "><?php echo $desconto; ?>%</span>
+                                                <?php } ?>
+                                            </a>
 
 
 
-                                        <div class="mask">
-                                            <!--<a href="<?php echo $siteUrl ?>produto/21/0/<?php echo $rs_produto['id']; ?>"><button type="button" class="btn btn-default olhadinha"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> VER DETALHES</button></a>-->
-                                        </div>
-                                        <p class="titulo-produto"><a class="detalheProduto" data-idproduto="<?php echo $rs_produto['id']; ?>" data-toggle="modal" data-target="#ModalDetalhe"><?php echo $rs_produto['marca']; ?></a></p>
-                                        <p class="desc-produto" style="font-weight: bold;"><a class="detalheProduto" data-idproduto="<?php echo $rs_produto['id']; ?>" data-toggle="modal" data-target="#ModalDetalhe"><?php echo $rs_produto['nome'] . " " . $rs_produto['modelo']; ?></a></p>
-                                        <p class="valor-de-para">
-                                            <?php if ($promocional == 1 && $preco_promocional > 0) { ?>
-                                                <span class="de" style="text-decoration: line-through; color:#FF0000; font-size:16px !important; font-weight:normal;"><?php echo "de R$ " . number_format($preco, 2, ",", "."); ?></span>
-                                                <span class="por"><?php echo "por R$ " . number_format($preco_promocional, 2, ",", "."); ?></span>
-                                            <?php } else if ($preco > 0) { ?>
-                                                <span class="por" style="color:##000000; font-size:16px !important; font-weight:bold;"><?php echo "R$ " . number_format($preco, 2, ",", "."); ?></span>
-                                            <?php } ?>
-                                        </p>
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            <div class="d-flex align-items-center" style="width:50px; float:left; padding:0 10px;">
-                                                <i class="fas fa-minus quantidademenoscatalogo" data-prodmenosid="<?php echo $rs_produto['id']; ?>" style="float:left; cursor:pointer;"></i>
-                                                <input type="text" value="1" name="quantidade" data-estoque="<?php echo $estoque; ?>" readonly class="quantidadescatalogo" id="quantidadecatalogo_<?php echo $rs_produto['id']; ?>" style="float:left; text-align:center; width:50px; margin:0 2%;">
-                                                <i class="fas fa-plus quantidademaiscatalogo" data-prodmaisid="<?php echo $rs_produto['id']; ?>" style="float:left; cursor:pointer;"></i>
+                                            <div class="mask">
+                                                <!--<a href="<?php echo $siteUrl ?>produto/21/0/<?php echo $rs_produto['id']; ?>"><button type="button" class="btn btn-default olhadinha"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> VER DETALHES</button></a>-->
                                             </div>
-                                            <a class="btn info btn-default add-cotacao btn-catalogo colocarCarrinho" id="botaocartcatalogo_<?php echo $rs_produto['id']; ?>" style=" float: right; background:initial; color:#069;" data-idproduto="<?php echo $rs_produto['id']; ?>" data-quantidade="1"><i class="fas fa-cart-plus" style="font-size:1.6em;"></i></a>
+                                            <p class="titulo-produto"><a class="detalheProduto" data-idproduto="<?php echo $rs_produto['id']; ?>" data-toggle="modal" data-target="#ModalDetalhe"><?php echo $rs_produto['marca']; ?></a></p>
+                                            <p class="desc-produto" style="font-weight: bold;"><a class="detalheProduto" data-idproduto="<?php echo $rs_produto['id']; ?>" data-toggle="modal" data-target="#ModalDetalhe"><?php echo $rs_produto['nome'] . " " . $rs_produto['modelo']; ?></a></p>
+                                            <p class="valor-de-para">
+                                                <?php if ($promocional == 1 && $preco_promocional > 0) { ?>
+                                                    <span class="de" style="text-decoration: line-through; color:#FF0000; font-weight:normal;">de R$ <span style="font-size:1.4em;"><?php echo $inteiro; ?></span>,<span style="font-size:1em;"><?php echo str_pad($centavos, 2, "0", STR_PAD_RIGHT); ?></span></span>
+                                                    <span class="por">por R$ <span style="font-size:1.4em;"><?php echo $inteiropromo; ?></span>,<span style="font-size:1em;"><?php echo str_pad($centavospromo, 2, "0", STR_PAD_RIGHT); ?></span></span>
+                                                <?php } else if ($preco > 0) { ?>
+                                                    <span class="por" style="color:##000000; font-size:16px !important; font-weight:bold;">R$ <span style="font-size:1.4em;"><?php echo $inteiro; ?></span>,<span style="font-size:1em;"><?php echo str_pad($centavos, 2, "0", STR_PAD_RIGHT); ?></span></span>
+                                                <?php } ?>
+                                            </p><?php //echo "R$ " . number_format($preco, 2, ",", "."); 
+                                                ?>
+                                            <div class="d-flex align-items-center justify-content-center">
+                                                <div class="d-flex align-items-center" style="width:90px; float:left; padding:0 10px;">
+                                                    <i class="fas fa-minus quantidademenoscatalogo" data-prodmenosid="<?php echo $rs_produto['id']; ?>" style="float:left; cursor:pointer;"></i>
+                                                    <input type="text" value="1" name="quantidade" data-estoque="<?php echo $estoque; ?>" readonly class="quantidadescatalogo" id="quantidadecatalogo_<?php echo $rs_produto['id']; ?>" style="float:left; text-align:center; width:50px; margin:0 2%;">
+                                                    <i class="fas fa-plus quantidademaiscatalogo" data-prodmaisid="<?php echo $rs_produto['id']; ?>" style="float:left; cursor:pointer;"></i>
+                                                </div>
+                                                <a class="btn info btn-default add-cotacao btn-catalogo colocarCarrinho" id="botaocartcatalogo_<?php echo $rs_produto['id']; ?>" style=" float: right; background:initial; color:#069;" data-idproduto="<?php echo $rs_produto['id']; ?>" data-quantidade="1"><i class="fas fa-cart-plus" style="font-size:1.6em;"></i></a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
 
-                        <?php 
+                        <?php
                             }
                             $i++;
                         } ?>

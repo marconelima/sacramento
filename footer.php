@@ -59,7 +59,7 @@
 
                 <span class="col-4 text-left" style="padding-left:0;"><?php if ($rs_configuracao['instagram'] != '') { ?><a href="<?php echo $rs_configuracao['instagram']; ?>" target="_blank"><img src="/images/instagram2.png"></a><?php } ?></span>
                 <span class="col-4 text-left" style="padding-left:0;"><?php if ($rs_configuracao['facebook'] != '') { ?><a href="<?php echo $rs_configuracao['facebook']; ?>" target="_blank"><img src="/images/facebook2.png"></a><?php } ?></span>
-                <span class="col-4 text-left" style="padding-left:0;"><?php if ($rs_configuracao['whatsapp'] != '') { ?><a href="https://api.whatsapp.com/send?phone=5531985848250&text=Ol%C3%A1,%20Ind%C3%BAstria%20Sacramento!%20Pode%20me%20ajudar%3F" target="_blank"><img src="/images/whatsapp.png"></a><?php } ?></span>
+                <span class="col-4 text-left" style="padding-left:0;"><?php if ($rs_configuracao['whatsapp'] != '') { ?><a href="https://api.whatsapp.com/send?phone=5531985848250&text=Falar%20com%20Grupo%20Sacramento" target="_blank"><img src="/images/whatsapp.png"></a><?php } ?></span>
             </div>
 
             <div class="col-12 col-lg-4">
@@ -203,7 +203,7 @@
     </div>
 </div>
 
-<div class="modal modal-log-reg fade" id="ModalRegister" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal modal-log-reg fade modal-cadastro" id="ModalRegister" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header" style="border: 0; padding-bottom: 0;">
@@ -299,7 +299,7 @@
 
                     <div class="row">
                         <div class="col-md-12">
-                            <button type="button" class="fechar btn btn-secondary pull-right" style='border-radius:9rem !important; padding: .175rem 1.75rem !important; float:right;' data-dismiss="modal" aria-hidden="true">Voltar para o login</button>
+                            <a href="#" data-toggle="modal" data-dismiss="modal" aria-hidden="true" data-target="#ModalLogin"><button type="button" class="fechar btn btn-secondary pull-right" style='border-radius:9rem !important; padding: .175rem 1.75rem !important; float:right;' aria-hidden="true">Voltar para o login</button></a>
                             <button class="btn btn-primary pull-right" style='border-radius:9rem !important; padding: .175rem 1.75rem !important; margin-left:5px!important; float: right;' type="submit" name="cadastrar" value="cadastrar">Cadastrar</button>
                         </div>
                     </div>
@@ -360,7 +360,7 @@
 
 <a href="#top"><i class="fas fa-chevron-up subirtopo"></i></a>
 
-<?php if ($rs_configuracao['whatsapp'] != '') { ?><a href="https://api.whatsapp.com/send?phone=5531985848250&text=Ol%C3%A1,%20Ind%C3%BAstria%20Sacramento!%20Pode%20me%20ajudar%3F" target="_blank"><img src="/images/whatsapp_icon.png" class="whatsapp"></a><?php } ?>
+<?php if ($rs_configuracao['whatsapp'] != '') { ?><a href="https://api.whatsapp.com/send?phone=5531985848250&text=Falar%20com%20Grupo%20Sacramento" target="_blank"><img src="/images/whatsapp_icon.png" class="whatsapp"></a><?php } ?>
 
 
 
@@ -461,7 +461,15 @@
     $(function() {
         let REF = this;
         //defina aqui o token gerado após clicar em  "Generate Token"
-        const token = "IGQVJWTEtFZA3I4YkhuSTdtSDcwS093VTBzdXRLYjlPYlZAmSnVuVURYRzRDMjdiUDZA5YXlrVnRQT0JOLTNDZA2poYUJGT0dlM3pHczIwZAV9MaFhmTy16MU5pODgtandRNHJjLW9mV09WTkZAGNk5jSVFKNQZDZD";
+        const token = "IGQVJVWEpZAZAlAzcGtIZADJrdUNxSXU0LWlEZAzJkNkRZAa2NEbk4tZAjZAiUmZAWZAWJQVWFWaHhjS2MzcFlsWG94MnB4ZAkQycXdyaGU4cVN1SUU0WHV4Tmk2WkhVaUlic0Y1dzNQTm9KZA1lB";
+
+        var urlrevalidar = "https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=" + token;
+
+        $.get(urlrevalidar).then(function(response2) {
+
+            console.log(response2.data)
+
+        });
 
         const url = 'https://graph.instagram.com/me/media?access_token=' + token + '&fields=media_url,media_type,caption,permalink,children{media_url,thumbnail_url}';
         //percorremos as imagens recebidas
@@ -936,7 +944,15 @@
 </script>
 
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-220302972-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'UA-220302972-1');
+</script>
 </body>
 
 </html>

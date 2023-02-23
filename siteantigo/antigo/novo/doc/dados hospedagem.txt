@@ -1,0 +1,140 @@
+De: suporte@iwire.com.br [mailto:suporte@iwire.com.br] 
+Enviada em: quinta-feira, 9 de setembro de 2010 11:31
+Para: industriasacramento@uol.com.br
+Cc: ophicina.ideias@gmail.com
+Assunto: Detalhes da sua nova conta de hospedagem
+
+ 
+
+
+
+
+
+Bem-vindo(a) Gerson! 
+
+Obrigado por utilizar um Plano de Hospedagem Iwire Internet Hosting!
+
+Após a leitura deste e-mail, você estará apto a: 
+- Configurar seu domínio no Painel de Controle e alterar os endereços DNS junto à entidade registradora; 
+- Criar contas de FTP; 
+- Fazer o upload dos arquivos de seu site; 
+- Ativar a URL temporária; 
+- Criar e configurar contas de e-mail POP3; 
+- Acompanhar e gerenciar suas finanças; 
+- Obter suporte. 
+
+Guarde esta mensagem e consulte-a sempre que preciso.
+
+Acessando o Painel de Controle 
+
+Através do Painel de Controle, você poderá configurar e gerenciar todas as informações relativas à sua conta, como configurar seu domínio, criar contas de e-mail POP3, criar contas de FTP, habilitar e acompanhar as estatísticas de seu site, criar e configurar bases de dados e usuários de Bancos de Dados, definir linguagens de programação e acompanhar suas finanças, entre outros. 
+
+Para acessar o Painel de Controle, visite: http://helm.iwi.com.br
+
+Suas credenciais de acesso são as seguintes:
+
+Usuário: SACRAMENTO
+
+Senha: MOMENTO
+
+No seu primeiro acesso ao Painel de Controle, a senha deverá ser modificada para uma seqüência que lhe seja familiar e segura. Recomendamos que a senha possua, no mínimo, 6 caracteres e que seja formada misturando-se letras, números e caracteres especiais. Esta ação é muito importante, pois todo o conteúdo de seu site, bem como suas informações pessoais, pode ser gerenciado através do Painel de Controle. 
+
+Configurando seu domínio no Painel de Controle 
+
+
+Importante: Caso você tenha solicitado o registro de um domínio no momento da assinatura de seu plano de hospedagem, não é necessário se preocupar com os detalhes de configuração de domínio explicados abaixo. Ao registrarmos seu domínio, iremos configurá-lo para você! 
+
+
+O primeiro passo para hospedar seu site na Iwire Internet Hosting é configurar seu domínio no Painel de Controle. Você deverá configurar seu domínio antes de alterar os endereços DNS na sua Entidade Registradora. 
+
+Para configurar seu domínio, siga os seguintes passos: 
+- Autentique-se no Painel de Controle Helm com as credenciais de acesso informadas neste e-mail; 
+- Clique no ícone "Domínios"; 
+- Clique no botão "Adicionar Novo"; 
+- Na tela que se abre, selecione a opção "Sem necessidade de registro ou transferência"; 
+- Digite o domínio a ser configurado e clique em "Salvar"; 
+- Aguarde enquanto o sistema processa o registro de seu domínio. 
+
+Caso seu plano suporte mais de um domínio, repita o processo para configurar todos os domínios relativos à conta. 
+
+Pronto! Seu domínio foi configurado e agora já é possível alterar os endereços DNS na Entidade Registradora. 
+
+A Entidade Registradora responsável pelos domínios nacionais (.br) é o Registro.br. Para alterar os endereços DNS nessa Entidade, proceda da seguinte forma: 
+- Acesse a página do Registro.br através da URL http://www.registro.br; 
+- Clique na opção "Registro" no topo da página; 
+- Autentique-se com seu ID e senha; 
+- Na tela principal, clique no domínio que você deseja configurar; 
+- Em "Delegações DNS", preencha os seguintes dados: 
+
+Servidor Master: 
+Nome: ns1.iwi.com.br
+Endereço IP: 174.123.29.140 
+
+Servidor Slave: 
+Nome: ns2.iwi.com.br 
+Endereço IP: 174.123.29.155 
+
+Após esta alteração, seu domínio estará funcionando plenamente nos servidores da Iwire a partir da próxima propagação de endereços DNS do Registro.br. Estas propagações ocorrem todos os dias às 5 horas da manhã, 13 horas e 21 horas. É importante notar que, em alguns casos, pode-se levar até 24 horas para que os servidores de DNS de seu provedor de acesso a Internet sejam atualizados, permitindo que você acesse seu site normalmente através do seu browser. Porém, enquanto o endereço DNS não é totalmente propagado, você pode acessar seus dados através de uma URL temporária. 
+
+Enviando arquivos para seu site 
+
+Agora que seu domínio está configurado, você já pode fazer o upload de seus arquivos para o servidor. Para isso, você precisa de um cliente de FTP como o FlashFXP, WS-FTP, FileZilla, SmartFTP. Você também tem a opção de fazer o upload dos seus arquivos através de um browser que tenha suporte ao protocolo FTP, como o Internet Explorer 6 ou superior. 
+
+Depois que seu domínio for publicado, você poderá conectar-se ao servidor de FTP associando o prefixo FTP (sem o http://www) ao nome de seu domínio, como por exemplo: ftp.meudominio.com.br. Ressaltamos que isto só é possível depois que o endereço DNS de seu domínio tenha sido propagado pela rede. Antes disso, você pode se conectar ao servidor de FTP através do endereço ftp://ftp.iwi.com.br. 
+
+Para conectar-se ao servidor de FTP, você precisa de uma credencial de acesso, um nome de usuário e senha. Estes dados não são os mesmos que você utiliza para autenticar-se ao Painel de Controle. Por padrão, no momento que você configura seu domínio, uma conta de FTP é criada automaticamente pelo Painel de Controle. Para criar ou alterar uma conta de FTP, visite nossa Base de Conhecimento clicando aqui. 
+
+O envio de seus arquivos deve ser feito para a pasta wwwroot. Todos os arquivos que serão visíveis na Internet precisam ficar nesta pasta. 
+
+Acessando seu domínio antes que ele seja publicado na Internet 
+
+Você pode visualizar os arquivos de seu site que estão no servidor antes mesmo da publicação de seu domínio. Isso faz com que você possa ver como seu site ficará "on-line" antes que o endereço DNS seja totalmente propagado. Para isso, basta que você ative a URL temporária como explicado na nossa Base de Conhecimento, neste link. 
+
+Criando e configurando contas de e-mail POP3
+
+Depois que os endereços DNS de seu domínio estiverem totalmente propagados, você poderá criar contas de e-mail POP3. Todas as contas criadas terão a seguinte configuração: nomedesejado@meudominio.com.br. Para criar ou alterar contas de e-mail POP3, acesse nossa Base de Conhecimento, através deste link. 
+
+Você pode acessar suas contas de e-mail através do nosso Webmail, utilizando um endereço da forma webmail.meudominio.com.br (sem o http://www), ou configurar um cliente de e-mail para tal, como o Outlook Express, Outlook XP/2003, Incredimail Xe, Mozilla Thunderbird, etc. 
+
+Acompanhando suas finanças e efetuando o pagamento
+
+Você pode acompanhar todas as suas finanças através do Painel de Controle. Para isso, proceda da seguinte forma: 
+- Autentique-se no Painel de Controle Helm com suas credenciais de acesso; 
+- Clique no ícone "Cobranças". 
+Abrir-se-á, então, um novo menu de Cobranças com três opções: "Efetuar Pagamento", "Extrato de Cobranças" e "Transações Recorrentes". 
+
+No menu "Efetuar Pagamento", você poderá gerar o boleto de cobrança ou efetuar o pagamento por Cartão de Crédito. Se decidir por realizar o pagamento semestral ou anual, você receberá um desconto (para maiores informações a respeito, clique aqui).
+
+Caso o pagamento tenha sido efetuado por cartão de crédito, ele será automaticamente processado e você receberá em seu e-mail um recibo. Se tiver optado por boleto bancário, você receberá o recibo por e-mail em até 48 horas. Note que, caso você tenha pedido o registro de um domínio no momento de sua solicitação de assinatura, o mesmo somente será realizado quando o pagamento da taxa de registro for processado por nossos sistemas. 
+
+Através do menu "Extrato de Cobranças", você poderá acompanhar todos as mensalidades já lançadas em seu plano, bem como os pagamentos efetuados e os créditos por ventura recebidos. Note que o Painel de Controle lança suas cobranças sempre 7 (sete) dias antes do vencimento da mensalidade. 
+
+O menu "Transações Recorrentes" lhe dá as informações de todos os pacotes e recursos extras que estão contratados para sua conta, com informações como valor, data de início e última ocorrência. 
+
+Importante: A data de vencimento impressa no seu boleto não é atrelada à data de vencimento de sua mensalidade. Toda vez que um boleto é gerado, a data de vencimento é impressa para 7 dias após a geração. Esta é apenas uma facilidade que procuramos oferecer aos nossos clientes, já que agências do Banco Santander não estão presentes em todas as localidades do Brasil. Nas situações em que o boleto vence e não há uma agência Santander nas proximidades, basta que você gere um novo boleto com data de vencimento para 7 dias após e efetue o pagamento do mesmo em qualquer agência bancária. Porém, isso não o exime do tempo de inadimplência gerado por essa ação. 
+
+Caso possua alguma dúvida relativa a cobranças e pagamentos, envie um e-mail para o Departamento Financeiro através do endereço eletrônico financeiro@iwire.com.br . 
+
+Obtendo Suporte
+
+Há vários meios de obter suporte na Iwire: 
+
+- Contamos com uma vasta e completa Base de Conhecimento onde são catalogadas as dúvidas mais freqüentes dos usuários, bem como exemplos de diversos códigos. Estamos trabalhando para que nossa Base de Conhecimento fique cada vez maior e melhor. Caso não tenha encontrado algum artigo, ajude-nos a enriquecê-la enviando o tema não encontrado para o e-mail suporte@iwire.com.br . 
+
+- A forma mais usual, rápida e cômoda de solicitar suporte é abrir um "Ticket de Suporte". Para isso, basta enviar um e-mail com sua dúvida ou problema para suporte@iwire.com.br. Nossa equipe de suporte está sempre mobilizada para resolver esse tipo de solicitação de suporte o mais breve possível. 
+
+- Você também pode entrar em contato conosco pelo telefone (31) 3224-8415, de segunda a sexta, em horário comercial (9:00 hrs as 18:00 hrs). Nossas atendentes ficarão felizes em poder ajudá-lo, e caso não consigam resolver seu problema imediatamente, um ticket de suporte será aberto reportando sua dúvida diretamente para os especialistas do tema em questão. 
+
+- É possível conversar em tempo real com um dos técnicos da Equipe de Suporte. Porém, esta é apenas uma maneira informal de contactar nossa Equipe, uma vez que toda ela fica mobilizada para resolver os tickets abertos via e-mail. Caso nosso técnico disponível no MSN não consiga respondê-lo de forma satisfatória, ele abrirá um ticket com seu problema para que o mesmo seja analisado pelos profissionais especializados no tema em questão. O e-mail utilizado para o MSN é suporte@iwire.com.br. 
+
+- Caso você note algo seriamente errado quanto à estabilidade de seu website ou em algum sistema da Iwire, você pode entrar em contato com um dos técnicos de plantão, 24 horas por dia, 7 dias por semana. Para isso, basta enviar uma mensagem para emergencia@iwire.com.br. Esta mensagem chegará diretamente no celular de um dos técnicos e uma resposta será enviada, normalmente, em até 10 minutos. Note que este recurso está disponível apenas para mensagens que envolvam a estabilidade do sistema. Por favor, utilize-o com prudência. Caso a questão não seja considerada emergencial pelo técnico de plantão, a mensagem será encaminhada para o Suporte e isso poderá atrasar o tempo de resposta. 
+
+Mais uma vez lhe damos Boas Vindas e nos colocamos à disposição para sempre auxiliá-lo no que for necessário.
+
+Atenciosamente,
+
+Equipe Iwire Internet Hosting 
+suporte@iwire.com.br 
+www.iwi.com.br 
+(31) 3324-8415 
+

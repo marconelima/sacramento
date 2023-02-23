@@ -1,0 +1,741 @@
+{2014/09/25 08:48:20} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc27',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - begin 
+{2014/09/25 08:48:21} [Error] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc27',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - error [HTTP 401] - UNAUTHORIZED  
+{2014/09/25 08:55:06} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc28',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - begin 
+{2014/09/25 08:55:07} [Error] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc28',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - error [HTTP 401] - UNAUTHORIZED  
+{2014/09/25 08:56:57} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc29',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - begin 
+{2014/09/25 08:56:59} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc29',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - end {1}E373F2421E1EFD2FF4A46F8D0EBB151A 
+{2014/09/25 08:57:13} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: Property Order->installmentcounts is empty ') - end 
+{2014/09/25 09:03:14} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc30',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - begin 
+{2014/09/25 09:03:15} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc30',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - end {1}A289E8596D6DCDE334611FB4BC74D925 
+{2014/09/25 09:03:32} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: Property Order->id_transaction is empty ') - end 
+{2014/09/25 09:12:11} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc31',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - begin 
+{2014/09/25 09:12:12} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc31',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - end {1}D2B47074F4F4FB4EE4545FBE145D3152 
+{2014/09/25 09:19:42} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc32',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - begin 
+{2014/09/25 09:19:44} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc32',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - end {1}B6E20C88F7F78CFCC4BEAFA3D1FFC70D 
+{2014/09/25 09:24:11} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc33',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - begin 
+{2014/09/25 09:24:13} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc33',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - end {1}D167EF6DDFDF6DBEE4AACFA7AAE1B946 
+{2014/09/25 09:33:15} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc34',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - begin 
+{2014/09/25 09:33:16} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc34',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - end {1}1CC54CAF8A8AFB3004094FAFE4285FFC 
+{2014/09/25 09:36:07} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc35',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - begin 
+{2014/09/25 09:36:08} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc35',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - end {1}BBFA4AD011112F5FF43A8FA75EA35AB0 
+{2014/09/25 12:15:27} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc36',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - begin 
+{2014/09/25 12:15:28} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc36',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - end {1}9CA377727272A0C224374F9A96D7B2E9 
+{2014/09/25 12:18:44} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc37',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - begin 
+{2014/09/25 12:18:45} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc37',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - end {1}9D5D48510E0E7B2114881FAEFB9F99BD 
+{2014/09/26 10:30:41} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc40',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - begin 
+{2014/09/26 10:30:44} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc40',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - end {1}13B82978ADAD2E86644D6FBA38EFF6E1 
+{2014/09/26 11:02:56} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc41',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - begin 
+{2014/09/26 11:02:58} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc41',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - end {1}964C9DE32C2C10EFF4D78FBC47665897 
+{2014/09/26 11:07:48} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc42',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - begin 
+{2014/09/26 11:07:49} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc42',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - end {1}093A1E358686277664739FB79CA18CAC 
+{2014/09/26 11:09:36} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc43',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - begin 
+{2014/09/26 11:09:38} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc43',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - end {1}B09FE2525E5E442BB4610F89C766D362 
+{2014/09/26 16:21:34} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc44',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - begin 
+{2014/09/26 16:21:36} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc44',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - end {1}4DE128000404B9C664C76FAF6D995BCF 
+{2014/09/26 16:28:03} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc45',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - begin 
+{2014/09/26 16:28:05} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc45',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - end {1}3E5F422F020274B444CBDF91E5FB214B 
+{2014/09/26 16:35:22} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc46',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - begin 
+{2014/09/26 16:35:23} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc46',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - end {1}EF225B21A8A8592994F14FBAFF74956D 
+{2014/09/26 17:08:02} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc47',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - begin 
+{2014/09/26 17:08:04} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc47',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - end {1}D9C90B2B3F3F03F884C64FAAB2E42C9D 
+{2014/09/26 17:25:16} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc48',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - begin 
+{2014/09/26 17:25:17} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc48',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - end {1}9EE04A7D3131073DD457BF994F29E5C4 
+{2014/09/26 17:43:23} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc49',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - begin 
+{2014/09/26 17:43:24} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc49',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - end {1}34456FF7C3C3B3B0046F3F8619A04A63 
+{2014/09/26 17:49:26} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc50',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - begin 
+{2014/09/26 17:49:27} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc50',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - end {1}BDE1D95D1A1A0C6FF467AFB31572BFDF 
+{2014/09/26 17:55:01} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc51',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - begin 
+{2014/09/26 17:55:02} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc51',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - end {1}DA5A68448B8BAF0994A3DFBA12C4E7D0 
+{2014/09/28 17:25:48} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc54',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - begin 
+{2014/09/28 17:25:49} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc54',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - end {1}D39D1E50818188D994818F9901CAA7ED 
+{2014/09/29 11:52:29} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc55',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - begin 
+{2014/09/29 11:52:32} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc55',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - end {1}0B463FD64444ACF004DFCFA736159DD2 
+{2014/09/29 13:44:57} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc56',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - begin 
+{2014/09/29 13:44:59} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc56',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - end {1}FFF58799EAEA30E8842C8F838118D5A6 
+{2014/09/29 13:51:46} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc57',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - begin 
+{2014/09/29 13:51:48} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc57',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - end {1}3CFEFAA28585536774378FB81AA66728 
+{2014/09/29 14:19:06} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc58',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - begin 
+{2014/09/29 14:19:08} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc58',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - end {1}43EA46059595AD48844FAFBD2681B8F2 
+{2014/09/29 14:22:31} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc59',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - begin 
+{2014/09/29 14:22:32} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc59',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - end {1}6209B9B69999AAABB42DAF997C167648 
+{2014/09/29 14:30:01} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc60',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - begin 
+{2014/09/29 14:30:03} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc60',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - end {1}40943B3A1B1B577DD4F17F94E7A24F56 
+{2014/09/29 14:37:33} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc61',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - begin 
+{2014/09/29 14:37:34} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc61',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - end {1}246FBEE49C9CC5C224F80FAFAF359CE1 
+{2014/09/30 18:47:54} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc70',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - begin 
+{2014/09/30 18:47:56} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc70',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - end {1}B837C757D0D04C7DD4BD4FA9444A91DF 
+{2014/10/01 08:31:56} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc71',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - begin 
+{2014/10/01 08:31:58} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc71',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - end {1}24158036C6C68DE884938FB06EB9852A 
+{2014/10/01 08:56:05} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc74',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - begin 
+{2014/10/01 08:56:07} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc74',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - end {1}413BB770EEEE18FFF40DEFAD73969E94 
+{2014/10/01 19:37:49} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc75',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - begin 
+{2014/10/01 19:37:51} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc75',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - end {1}C5BE63E76666D11444A7BFBF8669C880 
+{2014/10/01 21:25:07} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc76',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - begin 
+{2014/10/01 21:25:09} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc76',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - end {1}032C07705E5EFA5004681F8E076B169E 
+{2014/10/02 09:29:50} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc81',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - begin 
+{2014/10/02 09:29:52} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc81',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - end {1}824398616666DDF774B78FA5575DD736 
+{2014/10/02 11:22:59} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc84',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - begin 
+{2014/10/02 11:23:01} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc84',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - end {1}1A21B4BE21216E2DD43C3F884D977417 
+{2014/10/02 11:27:12} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc85',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - begin 
+{2014/10/02 11:27:13} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc85',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - end {1}F4E97383404015CAA49C4F8A7FDC4E13 
+{2014/10/02 11:31:08} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc86',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - begin 
+{2014/10/02 11:31:09} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc86',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - end {1}8DB5D42DC7C7E13004D13F9CDA394549 
+{2014/10/02 12:08:52} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc87',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - begin 
+{2014/10/02 12:08:53} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc87',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - end {1}1AE475A7C6C65C1114023F928B05C1B0 
+{2014/10/02 12:18:13} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc88',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - begin 
+{2014/10/02 12:18:14} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc88',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - end {1}A838FA701D1DFE544402EFBAFDA4DFF2 
+{2014/10/02 12:21:59} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc89',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - begin 
+{2014/10/02 12:22:01} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc89',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - end {1}1E7759D1C9C9350DD431AFAF302967BC 
+{2014/10/02 12:27:35} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc90',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - begin 
+{2014/10/02 12:27:36} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc90',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - end {1}3BE7E27AE7E76379947CFF99F30A2972 
+{2014/10/02 12:34:56} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc91',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - begin 
+{2014/10/02 12:34:58} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc91',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - end {1}F9906F1E93933AA11425EF940853CD4E 
+{2014/10/02 12:39:06} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc92',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - begin 
+{2014/10/02 12:39:07} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc92',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - end {1}C75E0ED35E5EDF6224345FA2587D291F 
+{2014/10/02 12:56:37} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc93',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - begin 
+{2014/10/02 12:56:38} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc93',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - end {1}D12BDD24F8F83FD1141DDF976EB373F3 
+{2014/10/02 13:42:24} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc96',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - begin 
+{2014/10/02 13:42:26} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc96',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - end {1}BDD75897C9C915DFF480AFB4EFE608FD 
+{2014/10/02 13:54:22} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc97',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - begin 
+{2014/10/02 13:54:23} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc97',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - end {1}B0C0FDC07A7A371DD4E4BFBEC9FB04F8 
+{2014/10/02 14:02:47} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc100',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - begin 
+{2014/10/02 14:02:49} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc100',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - end {1}6638E3679C9CE55FF4033FB307092E06 
+{2014/10/02 14:41:25} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc101',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - begin 
+{2014/10/02 14:41:26} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc101',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - end {1}C49AB889FAFAF540044ACFB653F19FA8 
+{2014/10/02 16:14:26} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc102',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - begin 
+{2014/10/02 16:14:28} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc102',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - end {1}EEC4D1B38B8BF83224AE6F96DCFB2EAE 
+{2014/10/02 16:17:26} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc103',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - begin 
+{2014/10/02 16:17:27} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc103',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - end {1}A9A0C5F3A9A9DCE5547A0FA3E14EA285 
+{2014/10/02 16:36:00} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc104',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - begin 
+{2014/10/02 16:36:02} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc104',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - end {1}AD842DAAECEC1FCFF4B3FFA7AD4A00C9 
+{2014/10/02 16:38:23} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc105',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - begin 
+{2014/10/02 16:38:24} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc105',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - end {1}D7B05C59CECE31CFF4CC4F9B876ADA93 
+{2014/10/02 16:43:42} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc106',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - begin 
+{2014/10/02 16:43:44} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc106',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - end {1}B9AAB5AA2020B250041C7F9BDE898663 
+{2014/10/02 16:44:58} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc107',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - begin 
+{2014/10/02 16:44:59} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc107',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - end {1}DF72E1B11B1B843334AC3FAA463D1EE5 
+{2014/10/02 16:46:55} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc110',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - begin 
+{2014/10/02 16:46:56} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc110',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - end {1}AACC4BB90B0B2A4CC4436F939530FBB0 
+{2014/10/02 16:47:41} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc111',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - begin 
+{2014/10/02 16:47:42} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc111',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - end {1}5E2433E574746042245EFFA8D7E8CD14 
+{2014/10/02 16:57:03} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc113',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - begin 
+{2014/10/02 16:57:05} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc113',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - end {1}F21751C1C1C14E93346F4FAB93AAB5D6 
+{2014/10/02 17:22:35} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc114',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - begin 
+{2014/10/02 17:22:36} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc114',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - end {1}51483C5BD2D27E82247EDF92A79DC2DB 
+{2014/10/02 17:35:47} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc115',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - begin 
+{2014/10/02 17:35:48} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc115',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - end {1}66BC43E17777C5099473DFA15A0723D6 
+{2014/10/02 17:59:57} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc116',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - begin 
+{2014/10/02 17:59:58} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc116',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - end {1}880DB89E3232891444F7EFB121D52E5E 
+{2014/10/02 20:12:42} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc122',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - begin 
+{2014/10/02 20:12:44} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc122',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - end {1}142E27CDBEBE525FF49D0FA6D59A2B47 
+{2014/10/02 20:13:49} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc123',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - begin 
+{2014/10/02 20:13:50} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc123',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - end {1}14C0ABE663637DB994ABEFBBB72A916D 
+{2014/10/03 00:01:17} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc124',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - begin 
+{2014/10/03 00:01:19} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc124',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - end {1}58D2A47F9F9F9FD774380FB2ECA4669A 
+{2014/10/03 00:12:37} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc125',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - begin 
+{2014/10/03 00:12:38} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc125',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - end {1}B69D1799BBBBC31AA45FDF88B1488D95 
+{2014/10/03 00:18:57} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc126',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - begin 
+{2014/10/03 00:18:58} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc126',
+  'SenderEmail' => 'frederico.lopes@atsinformatica.com.br',
+)) - end {1}8240AAB36464A9C004D6FFA60141407A 
+{2014/10/06 07:37:29} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: ID_PAGSEGURO_INCOMPATIVEL ') - end 
+{2014/10/06 07:38:19} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: ID_PAGSEGURO_INCOMPATIVEL ') - end 
+{2014/10/07 14:57:49} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc128',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - begin 
+{2014/10/07 14:57:52} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc128',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - end {1}9927423ECBCB908334ACEF99230FECDF 
+{2014/10/07 15:08:51} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc129',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - begin 
+{2014/10/07 15:08:53} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc129',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - end {1}AEE61606A4A41766645C8FB33C89A859 
+{2014/10/09 16:40:27} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc143',
+  'SenderEmail' => 'teste01@teste.com',
+)) - begin 
+{2014/10/09 16:40:29} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc143',
+  'SenderEmail' => 'teste01@teste.com',
+)) - end {1}45003F01898950E6649C2F8BF8553B1B 
+{2014/10/18 07:24:36} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 07:34:16} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 07:34:35} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 07:34:59} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 07:38:12} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 07:38:50} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 07:39:05} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 07:39:24} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 07:39:53} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 07:41:26} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 07:41:30} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 07:45:08} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 07:46:43} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 07:49:40} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 07:57:05} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 07:58:37} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 07:58:49} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 07:59:11} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 07:59:17} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 07:59:26} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 08:00:16} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 08:12:34} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 08:12:37} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 08:17:09} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 08:18:26} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 08:18:30} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 08:18:38} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 08:18:57} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 08:19:05} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 08:19:09} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 08:19:12} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 08:19:14} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 08:19:30} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 08:19:30} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 10:18:32} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 10:18:39} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 10:19:09} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 10:20:06} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 10:20:21} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 10:20:22} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 10:20:25} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 10:20:27} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 10:20:27} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 10:20:31} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 10:21:39} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 10:21:39} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 10:27:06} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 10:27:46} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 10:27:47} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 10:27:49} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 10:28:08} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 10:28:12} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 10:28:17} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 10:28:22} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 10:28:28} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 10:28:37} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 10:28:39} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 12:18:07} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 12:18:11} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 12:18:41} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 12:24:38} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 12:24:54} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 12:24:55} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 12:24:59} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 12:25:00} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 12:25:01} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 12:25:05} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 12:26:04} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 12:26:04} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 12:32:46} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 12:33:32} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 12:33:33} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 12:33:37} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 12:33:50} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 12:33:53} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 12:33:55} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 12:34:00} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 12:34:04} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 12:34:13} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 12:34:14} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 14:17:45} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 14:18:01} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 14:18:24} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 14:29:37} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 14:29:54} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 14:29:55} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 14:29:58} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 14:30:00} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 14:30:01} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 14:30:12} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 14:31:15} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 14:31:15} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 14:37:59} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 14:38:45} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 14:38:46} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 14:38:50} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 14:39:07} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 14:39:10} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 14:39:11} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 14:39:13} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 14:39:17} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 14:39:29} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 14:39:36} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 16:16:53} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 16:16:57} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 16:17:17} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 16:33:02} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 16:33:16} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 16:33:17} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 16:33:20} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 16:33:22} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 16:33:23} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 16:33:31} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 16:34:31} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 16:34:32} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 16:44:44} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 16:45:19} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 16:45:20} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 16:45:21} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 16:45:34} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 16:45:35} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 16:45:37} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 16:45:37} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 16:45:40} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 16:45:49} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 16:45:49} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 20:15:21} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 20:15:25} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/18 20:24:01} [Info] PagSeguroService.Notification( 'Erro ao processar notificação. ErrorMessage: CURL can't connect: connect() timed out! ') - end 
+{2014/10/20 14:18:23} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc153',
+  'SenderEmail' => 'eufredy@hotmail.com',
+)) - begin 
+{2014/10/20 14:18:24} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc153',
+  'SenderEmail' => 'eufredy@hotmail.com',
+)) - end {1}361E703B8C8CFA744416FFADF8F0F60E 
+{2014/10/20 14:19:37} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc154',
+  'SenderEmail' => 'eufredy@hotmail.com',
+)) - begin 
+{2014/10/20 14:19:38} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc154',
+  'SenderEmail' => 'eufredy@hotmail.com',
+)) - end {1}5709D62CDFDF2E6CC4781FA9237B3826 
+{2014/10/22 14:09:38} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc156',
+  'SenderEmail' => 'eufredy@hotmail.com',
+)) - begin 
+{2014/10/22 14:09:40} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc156',
+  'SenderEmail' => 'eufredy@hotmail.com',
+)) - end {1}ED725B62FDFD52C554C5BFAEF66A2D40 
+{2014/10/31 13:51:11} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc1',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - begin 
+{2014/10/31 13:51:12} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc1',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - end {1}43B68FA3F1F1096AA4C2AFB91F3F67CF 
+{2014/11/03 17:16:41} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc5',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - begin 
+{2014/11/03 17:16:43} [Info] PagSeguroPaymentService.Register(PagSeguroPaymentRequest: array (
+  'Reference' => 'JN0Rc5',
+  'SenderEmail' => 'avuldarte@gmail.com',
+)) - end {1}7D0108C237377C3224650F8045639D2F 

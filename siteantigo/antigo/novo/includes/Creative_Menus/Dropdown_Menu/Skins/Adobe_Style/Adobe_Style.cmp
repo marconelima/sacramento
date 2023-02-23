@@ -1,0 +1,9 @@
+<div id="menu_options" totalwidth="620" totalheight="41" fittopage="false" skin="Adobe Style" skincustom="" skinfiles="" mainColors="#DADADA,#000000" subColors="#F7F7F7,#DADADA" resizeOptions="" >
+ <div id="main_menu" mainButPos="Center,0"  mainButResize="fit to text" ></div>
+ <div id="main_button" mainButSpacing="2" mainBESettings="RevealUp,5" mainButReverse="true"  mainArrow="4,10" showMainArrow = "true" mainMinSize="0" ></div>
+ <div id="main_text" mainFont="Verdana,10"  mainUpFmt="#585658"  mainOverFmt="#585658"  mainDownFmt="#585658" mainHTSettings="Center,10" mainVTSettings="Middle,5" mainHTSpace="10" ></div>
+ <div id="sub_menu" subButPos="Middle,10" subMESettings="BackSlideUp,10" subLMESettings="BackSlideUp,10" hSubMenuAlign="Center" subMenuReverse="true" openEvent="Rollover" delays="10,10" hSubOverlap="0" vSubOverlap="0" subMinSize="0"></div>
+ <div id="sub_button" subButSpacing="2"  subBESettings="MiddleRevealV,7" subButReverse="true" showSubArrow = "false" subArrow="" subButResize="fit to largest text" ></div>
+ <div id="sub_text" subFont="Verdana,10"   subUpFmt="#585658"   subOverFmt="#CC0000" subDownFmt="#CC0000" subHTSettings="Center,10" subVTSettings="Middle,5"  subHTSpace="10" subVTSpace="10" > </div>
+</div>
+</div>

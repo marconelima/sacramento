@@ -7,8 +7,100 @@ RewriteCond %{REQUEST_URI} !/download_imagem.php/?
 
 RewriteRule ^(.*)$ index.php?pagina=$1
 
+php_value allow_url_fopen on
+
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301] 
+</IFModule>
+
 <FilesMatch "\.(ttf|ttc|otf|eot|woff)$">
     <IfModule mod_headers.c>
         Header set Access-Control-Allow-Origin "*"
     </IfModule>
 </FilesMatch>
+
+#Força a utilizar Cache-Control e Expires header
+<IfModule mod_headers.c>
+Header unset ETag
+</IfModule>
+ FileETag None
+<IfModule mod_expires.c>
+ExpiresActive on
+ExpiresDefault "access plus 1 month"
+ExpiresByType text/cache-manifest "access plus 0 seconds"
+# Html
+ExpiresByType text/html "access plus 0 seconds"
+# Data
+ExpiresByType text/xml "access plus 0 seconds"
+ExpiresByType application/xml "access plus 0 seconds"
+ExpiresByType application/json "access plus 0 seconds"
+# Feed
+ExpiresByType application/rss+xml "access plus 1 hour"
+ExpiresByType application/atom+xml "access plus 1 hour"
+# Favicon
+ExpiresByType image/x-icon "access plus 1 week"
+# Media: images, video, audio
+ExpiresByType image/gif "access plus 1 month"
+ExpiresByType image/png "access plus 1 month"
+ExpiresByType image/jpg "access plus 1 month"
+ExpiresByType image/jpeg "access plus 1 month"
+ExpiresByType video/ogg "access plus 1 month"
+ExpiresByType audio/ogg "access plus 1 month"
+ExpiresByType video/mp4 "access plus 1 month"
+ExpiresByType video/webm "access plus 1 month"
+# HTC files
+ExpiresByType text/x-component "access plus 1 month"
+# Webfonts
+ExpiresByType application/x-font-ttf "access plus 1 month"
+ExpiresByType font/opentype "access plus 1 month"
+ExpiresByType application/x-font-woff "access plus 1 month"
+ExpiresByType image/svg+xml "access plus 1 month"
+ExpiresByType application/vnd.ms-fontobject "access plus 1 month"
+# CSS / JS
+ExpiresByType text/css "access plus 1 year"
+ExpiresByType application/javascript "access plus 1 year"
+ExpiresByType application/x-javascript "access plus 1 year"
+</IfModule>
+#Força o IE a sempre carregar utilizando a última versão disponível
+<IfModule mod_headers.c>
+Header set X-UA-Compatible "IE=Edge,chrome=1"
+<FilesMatch "\.(js|css|gif|png|jpeg|pdf|xml|oga|ogg|m4a|ogv|mp4|m4v|webm|svg|svgz|eot|ttf|otf|woff|ico|webp|appcache|manifest|htc|crx|oex|xpi|safariextz|vcf)$" >
+Header unset X-UA-Compatible
+</FilesMatch>
+</IfModule>
+
+php_flag mail_filter 0
+
+redirect 301 http://industriasacramento.com.br/index.php?pagina=produto&sub=1 https://www.industriasacramento.com.br/catalogo/21/0/0/1/0/0/0/1
+redirect 301 http://industriasacramento.com.br/index.php?pagina=produto&sub=2 https://www.industriasacramento.com.br/catalogo/21/0/0/1/0/0/0/2
+redirect 301 http://industriasacramento.com.br/index.php?pagina=produto&sub=3 https://www.industriasacramento.com.br/catalogo/21/0/0/1/0/0/0/3
+redirect 301 http://industriasacramento.com.br/index.php?pagina=produto&sub=4 https://www.industriasacramento.com.br/catalogo/21/0/0/1/0/0/0/4
+redirect 301 http://industriasacramento.com.br/index.php?pagina=produto&sub=5 https://www.industriasacramento.com.br/catalogo/21/0/0/1/0/0/0/5
+redirect 301 http://industriasacramento.com.br/index.php?pagina=produto&sub=6 https://www.industriasacramento.com.br/catalogo/21/0/0/1/0/0/0/6
+redirect 301 http://industriasacramento.com.br/index.php?pagina=produto&sub=7 https://www.industriasacramento.com.br/catalogo/21/0/0/1/0/0/0/7
+redirect 301 http://industriasacramento.com.br/index.php?pagina=produto&sub=8 https://www.industriasacramento.com.br/catalogo/21/0/0/1/0/0/0/8
+redirect 301 http://industriasacramento.com.br/index.php?pagina=produto&sub=9 https://www.industriasacramento.com.br/catalogo/21/0/0/1/0/0/0/9
+redirect 301 http://industriasacramento.com.br/index.php?pagina=produto&sub=10 https://www.industriasacramento.com.br/catalogo/21/0/0/1/0/0/0/10
+redirect 301 http://industriasacramento.com.br/index.php?pagina=produto&sub=11 https://www.industriasacramento.com.br/catalogo/21/0/0/1/0/0/0/11
+redirect 301 http://industriasacramento.com.br/index.php?pagina=produto&sub=12 https://www.industriasacramento.com.br/catalogo/21/0/0/1/0/0/0/12
+redirect 301 http://industriasacramento.com.br/index.php?pagina=produto&sub=13 https://www.industriasacramento.com.br/catalogo/21/0/0/1/0/0/0/13
+redirect 301 http://industriasacramento.com.br/index.php?pagina=produto&sub=14 https://www.industriasacramento.com.br/catalogo/21/0/0/1/0/0/0/14
+redirect 301 http://industriasacramento.com.br/index.php?pagina=produto&sub=15 https://www.industriasacramento.com.br/catalogo/21/0/0/1/0/0/0/15
+redirect 301 http://industriasacramento.com.br/index.php?pagina=produto&sub=16 https://www.industriasacramento.com.br/catalogo/21/0/0/1/0/0/0/16
+redirect 301 http://industriasacramento.com.br/index.php?pagina=produto&sub=17 https://www.industriasacramento.com.br/catalogo/21/0/0/1/0/0/0/17
+redirect 301 http://industriasacramento.com.br/index.php?pagina=produto&sub=18 https://www.industriasacramento.com.br/catalogo/21/0/0/1/0/0/0/18
+redirect 301 http://industriasacramento.com.br/index.php?pagina=produto&sub=19 https://www.industriasacramento.com.br/catalogo/21/0/0/1/0/0/0/19
+redirect 301 http://industriasacramento.com.br/index.php?pagina=produto&sub=20 https://www.industriasacramento.com.br/catalogo/21/0/0/1/0/0/0/20
+redirect 301 http://industriasacramento.com.br/index.php?pagina=produto&sub=21 https://www.industriasacramento.com.br/catalogo/21/0/0/1/0/0/0/21
+redirect 301 http://industriasacramento.com.br/index.php?pagina=produto&sub=22 https://www.industriasacramento.com.br/catalogo/21/0/0/1/0/0/0/22
+
+redirect 301 http://industriasacramento.com.br/index.php https://www.industriasacramento.com.br
+
+redirect 301 http://industriasacramento.com.br/index.php?pagina=grupo_quem&tela=10 https://www.industriasacramento.com.br/quem-somos/10
+redirect 301 http://industriasacramento.com.br/index.php?pagina=contato https://www.industriasacramento.com.br/fale-conosco/16
+redirect 301 http://industriasacramento.com.br/index.php?pagina=parceiro https://www.industriasacramento.com.br/parceiro/15
+redirect 301 http://industriasacramento.com.br/index.php?pagina=trabalhe https://www.industriasacramento.com.br/trabalhe-conosco/38
+redirect 301 http://industriasacramento.com.br/index.php?pagina=catalogo https://www.industriasacramento.com.br/catalogo/21

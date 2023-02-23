@@ -173,23 +173,23 @@ if($total < 201) {
 
 			echo '<input type="hidden" name="prodid'.$i.'" value="'.$pro->getId(). '" />
 				<div class="row kart-iten d-flex align-items-center" style="border: 1px solid #000;  padding: 10px; margin:5px 0;">
-					<div class="col-sm-6 col-md-2">
+					<div class="col-6 col-md-2">
 						<img src="'.$siteUrl.'source/Produtos/'.$pro->getFoto(). '" alt="" style="width:100%;"/>
 					</div>
-					<div class="col-sm-6 col-md-5">
+					<div class="col-6 col-md-5">
 						<h4>'.$pro->getNome().'</h4>
 						<p>'.$compemento_cortamanho. '</p>
 					</div>
-					<div class="col-sm-6 col-md-2" style="text-align: center;">
+					<div class="col-6 col-md-2" style="text-align: center;">
 						<h6>Quantidade</h6>
 						<input type="text" name="qtde_prod'.$i.'" class="quantity" style="text-align:center; border-radius:10px;" value="'.$pro->getQuantidade(). '" size="3" />
 					</div>
-					<div class="col-sm-3 col-md-2 centrar-carrinho">
+					<div class="col-3 col-md-2 centrar-carrinho">
 						<h5>Unidade</h5>
 						<p>'. $pro->getMedida(). '</p>
 					</div>
 					
-					<div class="col-sm-3 col-md-1 centrar-carrinho">
+					<div class="col-3 col-md-1 centrar-carrinho">
 						<h5>Excluir</h5>
 
 						<a href="' . $siteUrl . 'carrinho/48/0/0/0/0/0/0/0/0/0/' . $pro->getId() . '" style="text-align:center;"><i class="fas fa-times" font-size:16px; style="color:red;"></i></a>
@@ -304,30 +304,30 @@ if($total < 201) {
 
             echo '<input type="hidden" name="prodid' . $i . '" value="' . $pro->getId() . '" />
 				<div class="row kart-iten d-flex align-items-top" style="border: 1px solid #EAEAEA;  padding: 10px; margin:5px 0;">
-					<div class="col-sm-4 col-md-1">
+					<div class="col-4 col-md-1">
 						<img src="' . $siteUrl . 'source/Produtos/' . $pro->getFoto() . '" alt="" style="width:100%;"/>
 					</div>
-					<div class="col-sm-4 col-md-3">
+					<div class="col-4 col-md-3">
 						<h6>' . $pro->getNome() . '</h6>
 						<p>' . $compemento_cortamanho . '</p>
 					</div>
-					<div class="col-sm-4 col-md-2" style="text-align: center;">
+					<div class="col-4 col-md-2" style="text-align: center;">
 						<h6>Quant.</h6>
 						<i class="fas fa-minus menosproduto" data-idproduto="' . $pro->getId() . '" style="font-size: 12px; cursor:pointer; margin-top: 10px;"></i>&nbsp;<input type="text" data-estoque-car="' . $estoque .'" name="qtde_prod' . $i . '" class="quantity" id="prod_' . $pro->getId() . '" style="text-align:center; border-radius:5px; padding:2% 1%; height:30px; width:40%;" value="' . $pro->getQuantidade() . '" size="3" />&nbsp;<i class="fas fa-plus maisproduto" data-idproduto="' . $pro->getId() . '" style="font-size: 12px;  cursor:pointer; margin-top: 10px;"></i>
 					</div>
-					<div class="col-sm-4 col-md-1 centrar-carrinho">
+					<div class="col-3 col-md-1 centrar-carrinho">
 						<h6 style="text-align:center;">Unidade</h6>
 						<p style="text-align:center;">'. $unidadeDescricao.'</p>
 					</div>
-                    <div class="col-sm-6 col-md-2 centrar-carrinho">
+                    <div class="col-3 col-md-2 centrar-carrinho">
                         <h6>Preço</h6>
                         R$ <span id="prod_preco_' . $pro->getId() . '" data-preco="'. $preco.'">' . number_format($preco, 2, ",", ".") . '</span>
                     </div>
-                    <div class="col-sm-6 col-md-2 centrar-carrinho">
+                    <div class="col-3 col-md-2 centrar-carrinho">
                         <h6>Total</h6>
                         <span id="prod_precototal_' . $pro->getId() . '" data-precototal="'. $preco_total_produto. '"> R$' . number_format($preco_total_produto, 2, ",", ".") . '</span>
                     </div>
-                    <div class="col-sm-4 col-md-1 centrar-carrinho" style="text-align:center;">
+                    <div class="col-3 col-md-1 centrar-carrinho" style="text-align:center;">
 						<h6 style="text-align:center;">Excluir</h6>
 
 						<a href="' . $siteUrl . 'carrinho/48/0/0/0/0/0/0/0/0/0/' . $pro->getId() . '" style="text-align:center;"><i class="fas fa-times" font-size:16px; style="color:red;"></i></a>

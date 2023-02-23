@@ -37,7 +37,7 @@ if (isset($_POST['acao']) && @$_POST['acao'] == 'getColocarCarrinho')
         $produto1 = $_POST['produto'];
         $quantidade = $_POST['qtde'];
 
-        $sqlProduto = "SELECT p.nome, p.codigo, p.id, p.marca, p.referencia, p.modelo, p.preco_promocional, p.preco, p.data_promocional_inicio, p.data_promocional_fim, p.descricao, p.peso, p.altura, p.comprimento, p.largura, c.titulo as categoria, sc.titulo as subcategoria, f.foto, f.legenda
+        $sqlProduto = "SELECT p.nome, p.id, p.marca, p.referencia, p.modelo, p.preco_promocional, p.preco, p.data_promocional_inicio, p.data_promocional_fim, p.descricao, p.peso, p.altura, p.comprimento, p.largura, c.titulo as categoria, sc.titulo as subcategoria, f.foto, f.legenda
 					FROM tbproduto p inner join tbprod_subcategoria sc on sc.id = p.subcategoria_id
 					inner join tbprod_categoria c on c.id = sc.categoria_id
 					inner JOIN tbprod_foto f ON f.produto_id = p.id
@@ -56,13 +56,13 @@ if (isset($_POST['acao']) && @$_POST['acao'] == 'getColocarCarrinho')
         $descricao = $rs_produto['descricao'];
         $complemento = "";
 
-        $produto = new Produto($produto1, $nome, $rs_produto['referencia'], $rs_produto['marca'], $rs_produto['modelo'], $preco, $descricao, $rs_produto['foto'], $quantidade, $rs_produto['peso'], $rs_produto['altura'], $rs_produto['comprimento'], $rs_produto['largura'], $complemento, $rs_produto['peso'], $rs_produto['codigo']);
+        $produto = new Produto($produto1, $nome, $rs_produto['referencia'], $rs_produto['marca'], $rs_produto['modelo'], $preco, $descricao, $rs_produto['foto'], $quantidade, $rs_produto['peso'], $rs_produto['altura'], $rs_produto['comprimento'], $rs_produto['largura'], $complemento, $rs_produto['peso']);
         //Adiciona produto 1
-
         $carrinhoSessao->addProduto($produto);
         $_SESSION['qtde'] = @$_SESSION['qtde'] + $quantidade;
 
         $_SESSION["carrinho"] = serialize($carrinhoSessao);
     }
+
 
 }

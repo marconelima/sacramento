@@ -151,11 +151,11 @@ if (isset($_POST['enviar']) && $_POST['enviar'] == "Lembrar") {
             //Server settings
             $mail->SMTPDebug = 0;                      //Enable verbose debug output
             $mail->isSMTP();                                            //Send using SMTP
-            $mail->Host       = 'smtp.uhserver.com';                     //Set the SMTP server to send through
+            $mail->Host       = 'smtps.uhserver.com';                     //Set the SMTP server to send through
             $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
             $mail->Username   = 'vendas_site@industriasacramento.com.br';                     //SMTP username
-            $mail->Password   = '';                               //SMTP password
-            $mail->SMTPSecure = '';            //Enable implicit TLS encryption
+            $mail->Password   = 'G4p2f5D3@sac';                               //SMTP password
+            $mail->SMTPSecure = 'TLS';            //Enable implicit TLS encryption
             $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
             //Recipients
@@ -252,11 +252,11 @@ if (isset($_POST['alterarcadastrar']) && @$_POST['alterarcadastrar'] == "cadastr
                 //Server settings
                 $mail->SMTPDebug = 0;                      //Enable verbose debug output
                 $mail->isSMTP();                                            //Send using SMTP
-                $mail->Host       = 'smtp.uhserver.com';                     //Set the SMTP server to send through
+                $mail->Host       = 'smtps.uhserver.com';                     //Set the SMTP server to send through
                 $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
                 $mail->Username   = 'vendas_site@industriasacramento.com.br';                     //SMTP username
-                $mail->Password   = '';                               //SMTP password
-                $mail->SMTPSecure = '';            //Enable implicit TLS encryption
+                $mail->Password   = 'G4p2f5D3@sac';                               //SMTP password
+                $mail->SMTPSecure = 'TLS';            //Enable implicit TLS encryption
                 $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
                 //Recipients
@@ -345,11 +345,11 @@ if (isset($_POST['cadastrar']) && @$_POST['cadastrar'] == "cadastrar") {
             //Server settings
             $mail->SMTPDebug = 0;                      //Enable verbose debug output
             $mail->isSMTP();                                            //Send using SMTP
-            $mail->Host       = 'smtp.uhserver.com';                     //Set the SMTP server to send through
+            $mail->Host       = 'smtps.uhserver.com';                     //Set the SMTP server to send through
             $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
             $mail->Username   = 'vendas_site@industriasacramento.com.br';                     //SMTP username
-            $mail->Password   = '';                               //SMTP password
-            $mail->SMTPSecure = '';            //Enable implicit TLS encryption
+            $mail->Password   = 'G4p2f5D3@sac';                               //SMTP password
+            $mail->SMTPSecure = 'TLS';            //Enable implicit TLS encryption
             $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
             //Recipients
@@ -553,6 +553,14 @@ if (isset($_SESSION["carrinho"])) {
 <html lang="pt-BR">
 
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PVR5GZZ');</script>
+    <!-- End Google Tag Manager -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Industria Sacramento</title>
@@ -561,6 +569,11 @@ if (isset($_SESSION["carrinho"])) {
     <meta name="keywords" content="<?php echo $rs_configuracao['keyword']; ?>">
     <meta name="description" content="<?php echo $rs_configuracao['meta']; ?>">
     <meta name="google-site-verification" content="a1NwArdNwEY-a1ki2j6I87uncAhqalZIc3DVNvtbmDw" />
+
+    <meta name="facebook-domain-verification" content="al9nzm2hbjysw5jqctodfpj1tsyrbf" />
+
+    <!--<meta name="facebook-domain-verification" content="93r9yzexjgvv3zhljq732yv0oa60gp" />-->
+    
     <!-- FIM SEO -->
 
     <title><?php echo $rs_configuracao['titulopagina']; ?></title>
@@ -645,9 +658,32 @@ if (isset($_SESSION["carrinho"])) {
             })
         })
     </script>
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '297038948328316');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=297038948328316&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code-->
+
 </head>
 
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PVR5GZZ"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <header>
 
         <nav id="nav" class="navbar">
@@ -748,16 +784,18 @@ if (isset($_SESSION["carrinho"])) {
                     <!--<li><a href="<?php echo $siteUrl; ?>carrinho/48" class="text-reset">Carrinho</a></li>-->
 
                 </ul>
+
+                <section class="boxtopsearch" style="padding-left:0!important; padding-right:0!important;">
+                    <div class="container" style="padding-left:0!important; padding-right:0!important;">
+                        <form action="<?php echo $siteUrl; ?>busca/21" method="post" enctype="multipart/form-data" name="formSearch" style="width:100%; margin-bottom: 0;">
+                            <input type="search" name="search" id="iptsearch" class="boxSearch" placeholder="Pesquisar" value="" />&nbsp;<button class="submit-lente btnsearchentrar" type="submit">
+                                <i class="fa fa-search" style="color:FFFFFF; font-size:1em;"></i>
+                            </button>
+                        </form>
+                    </div>
+                </section>
             </div>
-            <section class="boxtopsearch">
-                <div class="container">
-                    <form action="<?php echo $siteUrl; ?>busca/21" method="post" enctype="multipart/form-data" name="formSearch" style="width:100%; margin-bottom: 0;">
-                        <input type="search" name="search" id="iptsearch" class="boxSearch" placeholder="Pesquisar" value="" />&nbsp;<button class="submit-lente btnsearchentrar" type="submit">
-                            <i class="fa fa-search" style="color:FFFFFF; font-size:1em;"></i>
-                        </button>
-                    </form>
-                </div>
-            </section>
+            
         </nav>
 
 

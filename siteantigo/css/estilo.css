@@ -1,0 +1,432 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+
+
+/* RESET */
+
+*{margin:0; padding:0;}
+
+
+
+/* PSEUDO CLASSES */
+
+a {text-decoration:none; }
+
+ul li { display: inline; }
+
+
+
+#main {width:100%; height:auto; position:relative; float:left; background:#25A8BA;}
+
+#box {width:990px; height:auto; position:relative; margin:0 auto;}
+
+
+
+/*CABECALHO*/
+
+#cabecalho {width:100%; height:119px; position:relative; float:left; background:url(../images/header.jpg) no-repeat;}
+
+#topo_menu {width:100%; height:90px; position:relative; float:left;}
+
+#menu_superior{width:auto; height:25px; position:relative; float:right; text-align:right; border-bottom:3px solid #25A8BA;}
+
+.item_menu_superior {display:block; width:100px; height:20px; position:relative; float:right; margin-left:0px; margin-right:0px; font-family:Calibri, Verdana, Geneva, sans-serif; font-size:12pt; color:#000;  padding:5px 10px 0 10px; border-radius:5px 5px 0px 0px;}
+.item_menu_superior:hover {background:#25A8BA; }
+.menu_ativo {background:#25A8BA;}
+.item_menu_superior a {color:#000; text-decoration:none;}
+.item_menu_superior a:hover { }
+.separacao_menu_superior {display:block; width:3px; position:relative; float:right; font-family:Arial, Helvetica, sans-serif; color:#000; font-size:12pt;}
+
+/*FIM CABECALHO*/
+
+
+
+#principal {width:100%; height:auto; position:relative; float:left; background:#FFF;}
+
+#menu {width:170px; height:auto; position:relative; float:left; margin:5px;}
+
+#menu_titulo_principal {width:100%; height:22px; position:relative; float:left; background:url(../images/fundo_top_menu.png) no-repeat; text-align:center; margin-bottom:3px;}
+
+.titulo_menu_lateral {display:block; font-family:Calibri, Verdana, Geneva, sans-serif; font-size:11pt; font-weight:bold; color:#FFF; margin:3px;}
+
+.titulo_menu_lateral a{color:#FFF; text-decoration:none;}
+
+.titulo_menu_lateral a:hover{}
+
+#menu_item {width:168px; height:25px; position:relative; float:left; border:1px solid #CCC; border-bottom:0px; background:#F5F6F2; text-align:center; }
+
+#menu_item:hover {background:#C8D6F0;}
+
+
+
+.menu_lateral {display:block; font-family:Calibri, Verdana, Geneva, sans-serif; font-size:10pt; color:#000; margin:3px;}
+
+.menu_lateral a {color:#000; text-decoration:none;}
+
+.menu_lateral a:hover {color:#1F8C9C;}
+
+#menu_baixo {width:100%; height:15px; border-top:1px solid #CCC; border-bottom:1px solid #CCC; margin-bottom:15px; position:relative; float:left;}
+
+#box_sacramomento {width:100%; height:40px; position:relative; float:left; margin-top:5px; margin-bottom:15px; text-align:center;}
+
+
+
+#corpo {width:790px; height:auto; position:relative; float:left; margin:5px;}
+
+
+
+#box_busca {width:100%; height:50px; position:relative; float:left; margin-bottom:15px;}
+
+#busca {width:610px; height:50px; position:relative; float:left; background:#C8D6F0; text-align:center;}
+
+#box_pesquisa {width:500px; height:auto; position:relative; float:left; text-align:right; margin-right:10px; margin-top:8px; margin-left:10px; }
+.busca {border-radius:5px 5px 5px 5px; width:500px; height:30px; font-size:16px;}
+.btn_busca {width:85px; float:left; height:35px; border-radius:5px 5px 5px 5px; margin-top:-7px; background:url(../images/fundo_btn.png) center no-repeat #22A8B1; color:#fff; font-weight:bold;}
+#box_botao_pesquisa {width:auto; height:auto; position:relative; float:left; margin-top:13px; text-align:left; }
+
+#meucadastro {width:175px; height:50px; position:relative; float:left; margin-left:5px; background:#25A8BA; text-align:center;}
+
+.meucadastro {display:block; font-family:Calibri, Verdana, Geneva, sans-serif; font-size:11pt; font-weight:bold; color:#FFF; margin:15px;}
+
+.meucadastro a {color:#fff; text-decoration:none; }
+
+.meucadastro a:hover {color:#000;}
+
+
+
+#patrocinio_lateral {width:175px; height:252px; position:relative; float:left; margin-left:5px; margin-top:10px; overflow:hidden; background:url(../images/fundo_box_patrocinio.png) no-repeat;}
+
+#patrocinio_rolagem { height:222px; margin-top:10px}
+
+#slides3 {position:relative; float:left; width:170px; height:200px; margin-top:20px; margin-left:2px;}
+
+
+
+#banner_inferior{width:800px; height:180px; position:relative; float:left; margin-top:10px; overflow:hidden; z-index:1;}
+
+#banner_inferior_rolagem { height:180px;}
+
+#slides4 {position:relative; float:left; width:800px; height:180px;}
+
+
+
+#propaganda {width:610px; height:252px; position:relative; float:left; margin-top:10px; overflow:hidden; z-index:1;}
+
+#propaganda_rolagem {height:252px;}
+
+#seta_esquerda {width:70px; height:70px; position:absolute; left:0px; top:140px; z-index:10; cursor:pointer;}
+
+#seta_direita {width:70px; height:70px; position:absolute; left:530px; top:140px; z-index:10; cursor:pointer;}
+
+#slides2{position:relative; float:left; width:600px; height:252px;}
+
+
+
+#box_produto_destaque {width:216px; height:223px; position:relative; float:left; margin-left:62px; margin-top:15px; background:url(../images/fundo_box_destaque.png) no-repeat;}
+
+#box_titulo_destaque {width:100%; height:20px; position:relative; float:left; margin-top:10px; text-align:center; }
+
+.texto_box_destaque {display:block; font-family:Calibri, Verdana, Geneva, sans-serif; font-size:12pt; font-weight:bold; color:#FFF; text-align:center;}
+
+#box_destaque {width:100%; height:160px; position:relative; float:left; margin-left:0px; margin-top:15px; background:#25A8BA; border-radius:5px 5px 5px 5px;}
+#box_imagem_destaque_base {float:left; background:#fff; margin:10px; width:600px !important; height:140px !important; overflow:hidden; }
+#box_imagem_destaque {float:left; width:auto; width:1000px;}
+#box_imagem_destaque img {float:left; width:140px; height:140px;}
+#box_titulo_destaque_2 {float:right; font-weight:bold; font:18px "Trebuchet MS", Arial, Helvetica, sans-serif; color:#fff; width:180px; height:50px; text-align:center; margin-top:50px;}
+
+
+
+#box_produto {width:230px; height:230px; position:relative; float:left; margin-left:15px; margin-right:15px; margin-top:15px;}
+
+#box_imagem_produto_interno {width:100%; margin:8px; height:120px; position:relative; text-align:center; overflow:hidden;}
+
+#box_texto_produto_interno {width:100%; height:40px; position:relative; text-align:center; overflow:hidden;}
+
+#box_codigo_produto_interno {width:100%; height:20px; position:relative; text-align:center; overflow:hidden;}
+
+#box_titulo_destaque_interno {width:100%; height:20px; position:relative; float:left; margin-top:10px; margin-bottom:5px; text-align:center; background:url(../images/fundo_interno_destaque.png) no-repeat;}
+
+#box_separacao_produto {width:2px; height:220px; margin-top:20px; position:relative; float:left; background:url(../images/separacao_produto.png) repeat-y;}
+
+
+
+#box_imagem_produto {width:200px; margin:8px; margin-top:10px; height:135px; position:relative;  text-align:center; overflow:hidden; border:1px solid #FFF;}
+
+#box_texto_produto {width:216px; height:40px; position:relative; text-align:center; overflow:hidden;}
+
+.texto_produto {font-family:Calibri, Verdana, Geneva, sans-serif; font-size:9pt; color:#000; text-align:center;}
+
+.texto_produto a {color:#000; text-decoration:none;}
+
+.texto_produto {color:#1F8C9C;}
+
+
+
+#box_produto_maisvendido {width:772px; height:222px; position:relative; float:left; margin-left:14px; margin-top:15px; background:url(../images/fundo_box_maisvendidos.png) no-repeat; text-align:center; }
+
+#box_maisvendido {width:256px; height:180px; position:relative; float:left; margin-top:35px; overflow:hidden; text-align:center;}
+
+
+
+#rodape {width:100%; height:119px; position:relative; float:left; background:url(../images/footer.jpg) no-repeat;}
+
+#rodape_informacoes {width:540px; height:auto; margin-top:40px; position:relative; float:left; text-align:center;}
+
+.texto_rodape_informacoes {font-family:Calibri, Verdana, Geneva, sans-serif; font-size:9pt; color:#000;}
+
+.texto_rodape_informacoes1 {font-family:Calibri, Verdana, Geneva, sans-serif; font-size:13pt; color:#000;}
+
+#rodape_twitter {width:420px; height:auto; position:relative; float:left; margin-top:30px;}
+
+#imagem_twitter { width:80px; height:64px; position:relative; float:left; text-align:right;}
+
+#texto_twitter {width:260px; height:64px; position:relative; float:left; text-align:center;}
+
+.titulo_rodape_twitter {display:block; margin-bottom:5px; font-family:Calibri, Verdana, Geneva, sans-serif; font-size:12pt; font-weight:bold; color:#1F8C9C;}
+
+.texto_rodape_twitter {display:block; font-family:Calibri, Verdana, Geneva, sans-serif; font-size:9pt; color:#000;}
+
+
+
+
+
+#paginacao {width:100%; height:20px; margin-top:10px; position:relative; float:left; text-align:center; font-family:Calibri, Verdana, Geneva, sans-serif; font-weight:bold;  overflow:hidden;}
+
+#paginacao a {color:#069;}
+
+#paginacao a:hover {color:#000;}
+
+
+
+.mais {font-family:Calibri, Verdana, Geneva, sans-serif; font-size:18px; font-weight:bold; color:#000; cursor:pointer; }
+
+
+
+#botao_orcamento { width:780px; position:relative; float:left; text-align:center; margin-top:30px; margin-bottom:20px;}
+
+
+
+#formulario_orcamento {margin:20px; width:100%; }
+
+
+
+.texto_contato { font-family:Calibri, Verdana, Geneva, sans-serif; font-size:13px; font-weight:bold; color:#000; display:block; }
+
+.input_contato { font-family:Calibri, Verdana, Geneva, sans-serif; font-size:12px; color:#333; width:600px; }
+
+.btn_form_home { background:#DADADA; max-width:200px; width:200px; height:30px; font-family:Calibri,Tahoma, Geneva, sans-serif; font-weight:bold; font-size:13px;}
+
+
+
+#box_item_detalhe_titulo {width:100%; height:30px; position:relative; float:left; margin-top:10px; }
+
+#box_item_detalhe_texto {width:790px; height:auto; position:relative; float:left; margin-top:15px; text-align:justify; }
+
+#box_link_bottom {width:790px; height:20px; text-align:right; position:relative; float:left; margin-top:15px;}
+
+
+
+.nome_item_grande {display:block;  width:100%; margin-top:3px; font-family:Calibri, Verdana, Geneva, sans-serif; font-size:13pt; color:#FF0000;}
+
+.link_bottom {font-family:Calibri, Verdana, Geneva, sans-serif; font-size:13pt; font-weight:bold; color:#069;}
+
+.link_bottom a {color:#069; text-decoration:none; width:80px;}
+
+.link_bottom a:hover {color:#666;}
+
+
+
+.texto_detalhe_item {font-family:Calibri, Verdana, Geneva, sans-serif; font-size:12pt; color:#666; text-align:justify;}
+
+
+
+.navegacao {font-family:Calibri, Verdana, Geneva, sans-serif; font-size:12pt; font-weight:200; color:#666; }
+
+.navegacao a {text-decoration:none; color:#666;}
+
+.navegacao a:hover {text-decoration:underline;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#box_produto_detalhe_pai {width:741px; margin-left:2px; height:auto; top:-5px; z-index:10; background:#033; position:relative; float:left; }
+
+#box_produto_detalhe {width:100%; height:auto; background:#FFF; position:relative; float:left;}
+
+#box_desmostracao_produto {width:100%; height:auto; position:relative; float:left; margin-top:5px;}
+
+#box_demostracao_informacao {width:350px; height:250px; position:relative; float:left; margin-left:3; margin-right:2px;}
+
+#box_informacao_preco {width:340px; height:242px; position:relative; float:left; margin-left:10px; text-align:left; margin-top:10px; }
+
+#box_informcao_botao {width:340px; position:relative; float:left; margin-left:10px; text-align:left;}
+
+#box_demostracao_imagem {width:370px; height:290px; position:relative; float:left; margin-left:2px; margin-right:3px; border:1px solid #999;}
+
+#box_imagem_produto_detalhe {width:200px; height:200px; margin-top:15px; margin-left:85px; text-align:center; }
+
+#box_menu_imagem_produto {width:100%; height:34px; position:relative; float:left; text-align:center; margin-top:5px;}
+
+#box_menu_imagem_produto a { }
+
+#box_menu_imagem_produto a.zoomThumbActive {}
+
+#box_menu_produto {width:100%; height:30px; position:relative; float:left; margin-left:10px; margin-top:10px;}
+
+#box_menu_produto_opcao {width:130px; height:25px; position:relative; float:left; background:#DAE7EF; margin:2px; text-align:center;}
+
+#box_menu_produto_opcao a.abamarcada {background:#75A7C0; width:130px; height:20px; position:relative; float:left; top:-3px; padding-top:3px; text-align:center; }
+
+#box_caracteristica_produto {width:690px; height:300px; margin-left:10px; margin-top:0px; position:relative; float:left; height:auto;}
+
+#box_menu_produto_opcao2 {width:100px; height:25px; position:relative; float:left; background:#DAE7EF; margin:2px; text-align:center;}
+
+#box_menu_produto_opcao2 a.abamarcada {background:#75A7C0; width:100px; height:20px; position:relative; float:left; top:-3px; padding-top:3px; text-align:center; }
+
+
+
+#texto_titulo_produto {width:99%; margin-top:5px; margin-left:10px; margin-bottom:5px; position:relative; float:left; font-family:Calibri, Verdana, Geneva, sans-serif; font-size:14pt; font-weight:bold; color:#F60; }
+
+.aba {border-bottom:1px solid #CCC;}
+
+
+
+.label_preco_interno_produto {font-family:Calibri, Verdana, Geneva, sans-serif; font-size:20pt; color:#900; font-weight:bold; }
+
+.preco_interno_produto {font-family:Calibri, Verdana, Geneva, sans-serif; font-size:20pt; color:#000; font-weight:bold;}
+
+.label_informacao_interno_produto {font-family:Calibri, Verdana, Geneva, sans-serif; font-size:11pt; color:#333; font-weight:bold;}
+
+.informacao_interno_produto {font-family:Calibri, Verdana, Geneva, sans-serif; font-size:11pt; color:#999; }
+
+
+
+.informacao_interno_subproduto {width:340px; height:auto; position:relative; float:left; font-family:Calibri, Verdana, Geneva, sans-serif; font-size:11pt; color:#999; }
+
+.informacao_interno_dados {width:265px; position:relative; float:left; }
+
+.orcamento_preco {color:#C00; font-weight:bold; text-align:right; width:70px; position:relative; float:left; margin-right:2px;}
+
+
+
+.texto_especificacao_produto {font-family:Calibri, Verdana, Geneva, sans-serif; font-size:12pt; color:#415675; font-weight:bold; display:block; margin-top:4px;}
+
+.texto_especificacao_produto a {color:#415675; text-decoration:none;}
+
+.texto_especificacao_produto a:hover {color:#FFF;}
+
+
+
+.texto_especificacao_produto a.abamarcada {color:#FFF; text-decoration:none;}
+
+.texto_especificacao_produto a.abamarcada:hover {color:#415675;}
+
+
+
+.titulo_especificacao {font-family:Calibri, Verdana, Geneva, sans-serif; font-size:14pt; color:#415675; font-weight:bold; display:block; margin-top:10px; margin-left:10px;}
+
+.texto_especificacao {font-family:Calibri, Verdana, Geneva, sans-serif; font-size:12pt; font-weight:100; color:#999; display:block; margin-top:10px; margin-bottom:20px; margin-left:10px;}
+
+.texto_instrucoes {font-family:Calibri, Verdana, Geneva, sans-serif; font-size:9pt; font-weight:100; color:#999; display:block; margin-top:10px; margin-bottom:20px; margin-left:10px;}
+
+
+
+.orcamento_input {width:40px;}
+
+
+
+.texto_menu {margin-top:15px; margin-left:15px; margin-right:15px; position:relative; float:left; font-family:Calibri, Verdana, Geneva, sans-serif; font-size:17pt; font-weight:bold; color:#1A1B61; }
+
+.texto_menu a {text-decoration:none; color:#1A1B61;}
+
+.texto_menu a:hover {color:#FDC410;}
+
+.titulo_principal {font-family:Calibri, Verdana, Geneva, sans-serif; font-size:16pt; font-weight:bold; font-style:italic; color:#026991;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* FORMULARIO */
+
+#formulario form fieldset {border:hidden; padding-top:15px;}
+
+#formulario form fieldset legend {font-family:Verdana, Geneva, sans-serif; font-size:16px; font-weight:bold; color:#333; }
+
+#formulario form label {display:block; padding-top:10px; padding-bottom:10px; }
+
+#formulario form span {font-family:Verdana, Geneva, sans-serif; font-size:10px; font-weight:bold; padding:2px; }
+
+#formulario form input { font-family:Verdana, Geneva, sans-serif; font-size:10px;}
+
+.botao_form { background:#DADADA; width:100px; display:block;  font-family:Tahoma, Geneva, sans-serif; font-weight:bold; font-size:10px;}
+
+.botao_form2 { background:#DADADA; width:150px; font-family:Tahoma, Geneva, sans-serif; font-weight:bold; font-size:10px;}
+
+.input_painel {width:600px; }
+
+.botao_formulario {width:600px; text-align:right; margin-bottom:10px;}
+
+
+
+.titulo_form { display:block; width:400px; color:#000;}
+
+.retorno {font-family:Calibri, Verdana, Geneva, sans-serif; font-size:12px; font-weight:bold; color:#900; }
+
+/* FIM FORMULARIO */
+
+
+
+.titulo_orcamento {font-family:Calibri, Verdana, Geneva, sans-serif; font-size:11pt; font-weight:900; color:#333;}
+
+
+/* ################## NOVA ESTEIRA DE PRODUTOS #################### */
+.slideshow {
+  width: 540px;
+  overflow: hidden;
+  padding: 0 10px;
+  margin:10px;
+  background:#FFFFFF;
+}
+.slides {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.slide {
+  float: left;
+  width: 100px;
+  height: 100px;
+  padding: 20px 20px;
+}
+.slide img {width:100px; height:100px; float:left;}
+
+.btn_home {float:left; margin:17px; }
+.mar_esquerda {margin-left:0px;}
+.mar_centro {margin-left:0px; margin:17px 62px;}
+.mar_direita {margin-right:0px; float:right !important;}
+
+.img_esteira {float:left; margin-top:5px;}

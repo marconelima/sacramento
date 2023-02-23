@@ -1,0 +1,104 @@
+        <html xmlns:o="urn:schemas-microsoft-com:office:office"
+               xmlns:x="urn:schemas-microsoft-com:office:excel"
+                xmlns="http://www.w3.org/TR/REC-html40">
+
+                <head>
+                <meta http-equiv=Content-Type content="text/html; charset=us-ascii">
+                <meta name=ProgId content=Excel.Sheet>
+                <!--[if gte mso 9]><xml>
+                 <o:DocumentProperties>
+                  <o:LastAuthor>Sriram</o:LastAuthor>
+                  <o:LastSaved>2005-01-02T07:46:23Z</o:LastSaved>
+                  <o:Version>10.2625</o:Version>
+                 </o:DocumentProperties>
+                 <o:OfficeDocumentSettings>
+                  <o:DownloadComponents/>
+                 </o:OfficeDocumentSettings>
+                </xml><![endif]-->
+                <style>
+                <!--table
+                    {mso-displayed-decimal-separator:"\.";
+                    mso-displayed-thousand-separator:"\,";}
+                @page
+                    {margin:1.0in .75in 1.0in .75in;
+                    mso-header-margin:.5in;
+                    mso-footer-margin:.5in;}
+                tr
+                    {mso-height-source:auto;}
+                col
+                    {mso-width-source:auto;}
+                br
+                    {mso-data-placement:same-cell;}
+                .style0
+                    {mso-number-format:General;
+                    text-align:general;
+                    vertical-align:bottom;
+                    white-space:nowrap;
+                    mso-rotate:0;
+                    mso-background-source:auto;
+                    mso-pattern:auto;
+                    color:windowtext;
+                    font-size:10.0pt;
+                    font-weight:400;
+                    font-style:normal;
+                    text-decoration:none;
+                    font-family:Arial;
+                    mso-generic-font-family:auto;
+                    mso-font-charset:0;
+                    border:none;
+                    mso-protection:locked visible;
+                    mso-style-name:Normal;
+                    mso-style-id:0;}
+                td
+                    {mso-style-parent:style0;
+                    padding-top:1px;
+                    padding-right:1px;
+                    padding-left:1px;
+                    mso-ignore:padding;
+                    color:windowtext;
+                    font-size:10.0pt;
+                    font-weight:400;
+                    font-style:normal;
+                    text-decoration:none;
+                    font-family:Arial;
+                    mso-generic-font-family:auto;
+                    mso-font-charset:0;
+                    mso-number-format:General;
+                    text-align:general;
+                    vertical-align:bottom;
+                    border:none;
+                    mso-background-source:auto;
+                    mso-pattern:auto;
+                    mso-protection:locked visible;
+                    white-space:nowrap;
+                    mso-rotate:0;}
+                .xl24
+                    {mso-style-parent:style0;
+                    white-space:normal;}
+                -->
+                </style>
+                <!--[if gte mso 9]><xml>
+                 <x:ExcelWorkbook>
+                  <x:ExcelWorksheets>
+                   <x:ExcelWorksheet>
+                    <x:Name>NOME_PLANILHA</x:Name>
+                    <x:WorksheetOptions>
+                     <x:Selected/>
+                     <x:ProtectContents>False</x:ProtectContents>
+                     <x:ProtectObjects>False</x:ProtectObjects>
+                     <x:ProtectScenarios>False</x:ProtectScenarios>
+                    </x:WorksheetOptions>
+                   </x:ExcelWorksheet>
+                  </x:ExcelWorksheets>
+                  <x:WindowHeight>10005</x:WindowHeight>
+                  <x:WindowWidth>10005</x:WindowWidth>
+                  <x:WindowTopX>120</x:WindowTopX>
+                  <x:WindowTopY>135</x:WindowTopY>
+                  <x:ProtectStructure>False</x:ProtectStructure>
+                  <x:ProtectWindows>False</x:ProtectWindows>
+                 </x:ExcelWorkbook>
+                </xml><![endif]-->
+                </head>
+
+                <body link=blue vlink=purple>
+                <table x:str border=0 cellpadding=0 cellspacing=0 style='border-collapse: collapse;table-layout:fixed;'><tr><td class=xl24 width=64 >NOME</td><td class=xl24 width=64 >EMAIL</td></tr><tr><td class=xl24 width=64 >Adriano Valadares</td><td class=xl24 width=64 >adriano.valadares@yahoo.com.br</td></tr><tr><td class=xl24 width=64 >Antônio Augusto Leroy</td><td class=xl24 width=64 >aaalmleroy@yahoo.com.br</td></tr><tr><td class=xl24 width=64 >cleverson valadares</td><td class=xl24 width=64 >cleverson.valadares@gmail.com</td></tr><tr><td class=xl24 width=64 >Clicia Aparecida Alfineto</td><td class=xl24 width=64 >clicia-alfineto@bol.com.br</td></tr><tr><td class=xl24 width=64 >Comercial Japão</td><td class=xl24 width=64 >comercialjapao@gmail.com</td></tr><tr><td class=xl24 width=64 >Eduarda Pereira</td><td class=xl24 width=64 >eduardaspereira@hotmail.com</td></tr><tr><td class=xl24 width=64 >Fabiana</td><td class=xl24 width=64 >fabiana_bibieustaquia@hotmail.com</td></tr><tr><td class=xl24 width=64 >fagner luiz de souza</td><td class=xl24 width=64 >fagnereseustecladosoficial1@hotmail.com</td></tr><tr><td class=xl24 width=64 >Glauber Sacramento</td><td class=xl24 width=64 >glauber@industriasacramento.com.br</td></tr><tr><td class=xl24 width=64 >HIGO CELSO ARAUJO PINA</td><td class=xl24 width=64 >higopega@hotmail.com</td></tr><tr><td class=xl24 width=64 >Luiz</td><td class=xl24 width=64 >contato@cianodigital.com.br</td></tr><tr><td class=xl24 width=64 >Marcone</td><td class=xl24 width=64 >marcone.lima@gmail.com</td></tr><tr><td class=xl24 width=64 >Openmax Distribuidora de Alimentos ltda</td><td class=xl24 width=64 >profetavaz@hotmail.com</td></tr><tr><td class=xl24 width=64 >sacramento</td><td class=xl24 width=64 >ourivessupermercado@yahoo.com.br</td></tr><tr><td class=xl24 width=64 >sacramento</td><td class=xl24 width=64 >barao.fiscal@ig.com.br</td></tr><tr><td class=xl24 width=64 >sacramento</td><td class=xl24 width=64 >calusxml@gmail.com</td></tr><tr><td class=xl24 width=64 >sacramento</td><td class=xl24 width=64 >nfenogueiraesilva@gmail.com</td></tr><tr><td class=xl24 width=64 >sacramento</td><td class=xl24 width=64 >rede.gerais@uol.com.br</td></tr><tr><td class=xl24 width=64 >sacramento</td><td class=xl24 width=64 >ardisson2002@ig.com.br</td></tr><tr><td class=xl24 width=64 >sacramento</td><td class=xl24 width=64 >supermercado.pedrosa@yahoo.com.br</td></tr><tr><td class=xl24 width=64 >sacramento</td><td class=xl24 width=64 >marciamerces0@gmail.com</td></tr><tr><td class=xl24 width=64 >sacramento</td><td class=xl24 width=64 >gerencia_amareal@yahoo.com.br</td></tr><tr><td class=xl24 width=64 >sacramento</td><td class=xl24 width=64 >nfesdmais@megasimples.com.br</td></tr><tr><td class=xl24 width=64 >sacramento</td><td class=xl24 width=64 >lorena.coimbra@uol.com.br</td></tr><tr><td class=xl24 width=64 >sacramento</td><td class=xl24 width=64 >nfe@mastercasashopping.com.br</td></tr><tr><td class=xl24 width=64 >sacramento</td><td class=xl24 width=64 >perfect.higienizacao@hotmail.com</td></tr><tr><td class=xl24 width=64 >sacramento</td><td class=xl24 width=64 >jlmc.jorge@gmail.com</td></tr><tr><td class=xl24 width=64 >sacramento</td><td class=xl24 width=64 >renatapereira300@gmail.com</td></tr><tr><td class=xl24 width=64 >sacramento</td><td class=xl24 width=64 >ppouco@hotmail.com</td></tr><tr><td class=xl24 width=64 >sacramento</td><td class=xl24 width=64 >forteatacado2011@hotmail.com</td></tr><tr><td class=xl24 width=64 >sacramento</td><td class=xl24 width=64 >anamariaeelaurita@yahoo.com.br</td></tr><tr><td class=xl24 width=64 >sacramento</td><td class=xl24 width=64 >depositosouzamaia@yahoo.com.br</td></tr><tr><td class=xl24 width=64 >sacramento</td><td class=xl24 width=64 >mercearia.gasparzinho@yahoo.com.br</td></tr><tr><td class=xl24 width=64 >sacramento</td><td class=xl24 width=64 >daianagabriela23@yahoo.com.br</td></tr><tr><td class=xl24 width=64 >sacramento</td><td class=xl24 width=64 >vilareal@oi.com.br</td></tr><tr><td class=xl24 width=64 >sacramento</td><td class=xl24 width=64 >padariaemerceariajoiarara@yahoo.com.br</td></tr><tr><td class=xl24 width=64 >sacramento</td><td class=xl24 width=64 >rosangelagassabara@gmail.com</td></tr><tr><td class=xl24 width=64 >sacramento</td><td class=xl24 width=64 >construfer11@yahoo.com.br</td></tr><tr><td class=xl24 width=64 >sacramento</td><td class=xl24 width=64 >wagnercocato@yahoo.com.br</td></tr><tr><td class=xl24 width=64 >sacramento</td><td class=xl24 width=64 >fmcomercio2010@ig.com.br</td></tr><tr><td class=xl24 width=64 >sacramento</td><td class=xl24 width=64 >supcoelho@oi.com.br</td></tr><tr><td class=xl24 width=64 >sacramento</td><td class=xl24 width=64 >comercialunidas@gmail.com</td></tr><tr><td class=xl24 width=64 >sacramento</td><td class=xl24 width=64 >mateus.calves@gmail.com</td></tr><tr><td class=xl24 width=64 >sacramento</td><td class=xl24 width=64 >supermercado.dombosco@yahoo.com.br</td></tr><tr><td class=xl24 width=64 >sacramento</td><td class=xl24 width=64 >vicaneu@ig.com.br</td></tr><tr><td class=xl24 width=64 >sacramento</td><td class=xl24 width=64 >wemersonlopes@gmail.com</td></tr><tr><td class=xl24 width=64 >sacramento</td><td class=xl24 width=64 >josuesilva@oi.com.br</td></tr><tr><td class=xl24 width=64 >sacramento</td><td class=xl24 width=64 >supermercadofaria3@bol.com.br</td></tr><tr><td class=xl24 width=64 >sacramento</td><td class=xl24 width=64 >supermercado.santeiro@gmail.com</td></tr><tr><td class=xl24 width=64 >sacramento</td><td class=xl24 width=64 >hsergia@yahoo.com.br</td></tr><tr><td class=xl24 width=64 >sacramento</td><td class=xl24 width=64 >racaoimperial@yahoo.com.br</td></tr><tr><td class=xl24 width=64 >sacramento</td><td class=xl24 width=64 >totalls@hotmail.com</td></tr><tr><td class=xl24 width=64 >sacramento</td><td class=xl24 width=64 >comercialcipo@gmail.com</td></tr><tr><td class=xl24 width=64 >sacramento</td><td class=xl24 width=64 >copacabanaracoesepetshop@yahoo.com.br</td></tr><tr><td class=xl24 width=64 >sacramento</td><td class=xl24 width=64 >lorenaoliveira01@gmail.com</td></tr><tr><td class=xl24 width=64 >sonia maria galdeano da fonseca</td><td class=xl24 width=64 >rjaabbamonti@ig.com.br</td></tr><tr><td class=xl24 width=64 >Wildson Emilio Campos</td><td class=xl24 width=64 >selmalcampos@yahoo.com.br</td></tr></table></body></html>

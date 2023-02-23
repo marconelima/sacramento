@@ -2,28 +2,22 @@
 //CRIAR CLASSE PARA BANCO DE DADOS
 class Recordset{
 /*
-	private $banco 		= "bdsacramento";
+	private $banco 		= "bdindustriasacramento";
 	private $usuario 	= "root";
 	private $senha 		= "";
-	private $hostname 	= "localhost:3307";
-
-
+	private $hostname 	= "localhost";
+*/
 	private $banco 		= "industria2017";
 	private $usuario 	= "industria2017";
 	private $senha 		= "G4p2f5D3@";
-	private $hostname 	= "industria2017.mysql.uhserver.com";
-*/ 
-    private $banco         = "industriateste";
-    private $usuario     = "industriateste";
-    private $senha         = "G4p2f5D3@";
-    private $hostname     = "industriateste.mysql.uhserver.com";
-
-
+	private $hostname 	= "industria2017.mysql.uhserver.com:3306";
+   
 
 	public $conn;
 
 	//CONEXAO COM O BANCO
 	function conexao(){
+
 		$this->conn = mysqli_connect($this->hostname, $this->usuario, $this->senha, $this->banco);
 
 		mysqli_query($this->conn,"SET NAMES 'utf8'");

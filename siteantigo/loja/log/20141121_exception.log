@@ -1,0 +1,9 @@
+*ERROR* 	2014/11/21 - 10:09:50: MySQL server has gone away<br /><br /><pre>
+		SELECT *
+		FROM `ps_quick_access` qa
+		LEFT JOIN `ps_quick_access_lang` qal ON (qa.`id_quick_access` = qal.`id_quick_access` AND qal.`id_lang` = 1)
+		ORDER BY `name` ASC</pre> at line 635 in file classes/db/Db.php
+*ERROR* 	2014/11/21 - 10:39:02: Current theme unselected. Please check your theme configuration. at line 97 in file config/config.inc.php
+*ERROR* 	2014/11/21 - 10:43:20: Current theme unselected. Please check your theme configuration. at line 97 in file config/config.inc.php
+*ERROR* 	2014/11/21 - 11:15:27: Current theme unselected. Please check your theme configuration. at line 97 in file config/config.inc.php
+*ERROR* 	2014/11/21 - 11:23:01: Current theme unselected. Please check your theme configuration. at line 97 in file config/config.inc.php
